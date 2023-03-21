@@ -10,3 +10,14 @@
 * Disect Disk images
 * Import archived files
 * Implement updating using Github for title information.
+# Example output
+```
+Local JSON file exists.
+Loading JSON data...
+Traversing directory structure...
+Found folder for "Advent Rising".
+Advent Rising has unarchived content found at: TDATA/4d4a0009/$c/4d4a000900000003
+Title ID 50430001 not present in JSON file. May want to investigate!
+Traversing directory structure for Title Updates...
+TDATA/4d4a0009/$u/test.xbe: 87088e689b192c389693b3db38d5f26f2c4d55ae
+```
