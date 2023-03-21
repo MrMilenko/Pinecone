@@ -1,5 +1,10 @@
 # PineCone
 * A content sniffer for the Original Xbox.
+# How-To
+* Download the id_database.json
+* Download the appropriate binary for your platform.
+* Working Directory should contain the binary, the json, and a TDATA and UDATA folder you want to process.
+* Run your binary from the commandline. e.g: ./pinecone
 # About
 * Our buddy Harcroft has been keeping a rolling list of missing content for nearly 20 years.
 * The idea of this software is to cut out as much of the manual digging as possible, and expand on it as a tool to archive this data.
