@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -39,6 +40,27 @@ func main() {
 	// Load JSON data
 	fmt.Println("Local JSON file exists.")
 	fmt.Println("Loading JSON data...")
+	if _, err := os.Stat("id_database.json"); os.IsNotExist(err) {
+		// File does not exist locally, so download it
+		fmt.Println("Downloading JSON data...")
+		resp, err := http.Get("https://raw.githubusercontent.com/MrMilenko/PineCone/main/id_database.json")
+		if err != nil {
+			panic(err)
+		}
+		defer resp.Body.Close()
+
+		out, err := os.Create("id_database.json")
+		if err != nil {
+			panic(err)
+		}
+		defer out.Close()
+
+		_, err = io.Copy(out, resp.Body)
+		if err != nil {
+			panic(err)
+		}
+	}
+
 	jsonFile, err := os.Open("id_database.json")
 	if err != nil {
 		panic(err)
@@ -168,7 +190,7 @@ func main() {
 					}
 
 					for _, f := range files {
-						if filepath.Ext(f.Name()) == ".xbe" {
+						if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
 							filePath := filepath.Join(subDir, f.Name())
 							fileHash, err := getSHA1Hash(filePath)
 							if err != nil {
