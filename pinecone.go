@@ -13,11 +13,12 @@ import (
 )
 
 type TitleData struct {
-	TitleName    string   `json:"Title Name"`
-	ContentIDs   []string `json:"Content IDs"`
-	TitleUpdates []string `json:"Title Updates"`
-	Archived     []string `json:"Archived"`
+	TitleName    string              `json:"Title Name"`
+	ContentIDs   []string            `json:"Content IDs"`
+	TitleUpdates []string            `json:"Title Updates"`
+	Archived     []map[string]string `json:"Archived"`
 }
+
 type TitleList struct {
 	Titles map[string]TitleData `json:"Titles"`
 }
@@ -25,11 +26,11 @@ type TitleList struct {
 func removeCommentsFromJSON(jsonStr string) string {
 	// remove // style comments
 	re := regexp.MustCompile(`(?m)^[ \t]*//.*\n?`)
-	jsonStr = re.ReplaceAllString(jsonStr, "oopsie doodle")
+	jsonStr = re.ReplaceAllString(jsonStr, "")
 
 	// remove /* ... */ style comments
 	re = regexp.MustCompile(`/\*[\s\S]*?\*/`)
-	jsonStr = re.ReplaceAllString(jsonStr, "wtf is this")
+	jsonStr = re.ReplaceAllString(jsonStr, "")
 
 	return jsonStr
 }
@@ -89,35 +90,35 @@ func main() {
 						var subContentPath string // declare subContentPath outside the for loop
 						for _, subContent := range subContents {
 							subContentPath = subDir + "/" + subContent.Name()
-							// assign subContentPath here
 							if subContent.IsDir() {
 								contentID := strings.ToLower(subContent.Name())
 								if contains(titleData.ContentIDs, contentID) {
 									// check if content is archived
 									archivedContentID := strings.ToLower(contentID)
-									if contains(titleData.Archived, archivedContentID) {
-										fmt.Printf("%s content found at: %s is archived.\n", titleData.TitleName, subContentPath)
-									} else {
-										// Check if the content is archived or not
-										isArchived := false
-										for _, archivedContentID := range titleData.Archived {
-											if archivedContentID == contentID {
-												isArchived = true
+									var archivedName string
+									for _, archived := range titleData.Archived {
+										for archivedID, name := range archived {
+											if archivedID == archivedContentID {
+												archivedName = name
 												break
 											}
 										}
-										if !isArchived {
-											fmt.Printf("%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
-											foundUnarchivedContent = true
-										} else {
-											fmt.Printf("%s content found at: %s is archived.\n", titleData.TitleName, subContentPath)
+										if archivedName != "" {
+											break
 										}
+									}
+									if archivedName != "" {
+										fmt.Printf("%s content found at: %s is archived (%s).\n", titleData.TitleName, subContentPath, archivedName)
+									} else {
+										fmt.Printf("%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
+										foundUnarchivedContent = true
 									}
 								} else {
 									fmt.Printf("%s unknown content found at: %s\n", titleData.TitleName, subContentPath)
 								}
 							}
 						}
+
 						if foundUnarchivedContent {
 							//Attemptiong to get SHA1 hash of the content
 							//Scan for files in the folder
@@ -155,7 +156,7 @@ func main() {
 
 		if info.IsDir() {
 			// check if folder is in the correct format (TDATA\TitleID)
-			if strings.HasPrefix(info.Name(), "4") && len(info.Name()) == 8 {
+			if len(info.Name()) == 8 {
 				// check for subfolders in the format of TDATA\TitleID\$u
 				subDir := filepath.Join(path, "$u")
 				subInfo, err := os.Stat(subDir)
