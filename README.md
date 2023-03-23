@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MrMilenko/PineCone/main/images/cleet.png "width="200" />
+</p>
+<p align="center">I'm Cleet. Cletus T. Pine.</p>
+
 # PineCone
 * A content sniffer for the Original Xbox.
 # How-To
