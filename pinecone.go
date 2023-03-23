@@ -40,10 +40,23 @@ func main() {
 	// Load JSON data
 	fmt.Println("Local JSON file exists.")
 	fmt.Println("Loading JSON data...")
+
 	if _, err := os.Stat("id_database.json"); os.IsNotExist(err) {
 		// File does not exist locally, so download it
+		// Downloading from Milenko's GitHub repo for now.
 		fmt.Println("Downloading JSON data...")
-		resp, err := http.Get("https://raw.githubusercontent.com/MrMilenko/PineCone/main/id_database.json")
+		owner := "MrMilenko"
+		repo := "PineCone"
+		path := "id_database.json"
+		url := fmt.Sprintf("https://api.github.com/repos/%s/%s/contents/%s", owner, repo, path)
+
+		req, err := http.NewRequest("GET", url, nil)
+		if err != nil {
+			panic(err)
+		}
+		req.Header.Set("Accept", "application/vnd.github.v3.raw")
+
+		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
 			panic(err)
 		}
@@ -81,6 +94,7 @@ func main() {
 	}
 
 	// Traverse directory structure
+	fmt.Println("Traversing directory structure...")
 	fmt.Println("Traversing directory structure...")
 
 	err = filepath.Walk("TDATA", func(path string, info os.FileInfo, err error) error {
