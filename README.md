@@ -8,7 +8,23 @@
 # How-To
 * Download the id_database.json
 * Download the appropriate binary for your platform.
-* Working Directory should contain the binary, the json, and a TDATA and UDATA folder you want to process.
+* Working Directory should look like this:
+```
+PineCone
+|-- pinecone binary
+|
+|-- data
+| |-- id_database.json
+|
+|-- dump
+| |-- TDATA
+| |-- UDATA
+| |-- C (optional)
+| |-- E (optional)
+| |-- F (optional)
+| |-- G (optional)
+```
+   
 * Run your binary from the commandline. e.g: ./pinecone (or pinecone.exe) (optional flags: --update, --homebrew, --ugc (user generated content))
 # About
 * Our buddy Harcroft has been keeping a rolling list of missing content for nearly 20 years.
