@@ -9,17 +9,20 @@
 * Download the id_database.json
 * Download the appropriate binary for your platform.
 * Working Directory should contain the binary, the json, and a TDATA and UDATA folder you want to process.
-* Run your binary from the commandline. e.g: ./pinecone
+* Run your binary from the commandline. e.g: ./pinecone (or pinecone.exe) (optional flags: --update, --homebrew, --ugc (user generated content))
 # About
 * Our buddy Harcroft has been keeping a rolling list of missing content for nearly 20 years.
 * The idea of this software is to cut out as much of the manual digging as possible, and expand on it as a tool to archive this data.
 # Hows this work?
 * Drop UDATA and TDATA into a dump folder.
 * Analyze the dump for userdata and DLC's, User Created Content, Content Update Files.
-# Planned Features
+* (Optional) Analyze the dump for Homebrew content in a C E F G folder structure.
+# Todo
 * Disect Disk images
-* Import archived files
-* Implement updating using Github for title information.
+* Import archived dumps
+* Export output for easy viewing
+* Add more flags for more specific searches
+* Create "Homebrew" JSON file to identify homebrew content.
 # Example output
 ```
 Local JSON file exists.
