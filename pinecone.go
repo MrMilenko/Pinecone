@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/sha1"
+	"encoding/binary"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -19,24 +20,28 @@ var (
 	updateFlag   = flag.Bool("update", false, "Update the JSON data")
 	ugcFlag      = flag.Bool("ugc", false, "Search for User Generated Content")
 	homebrewFlag = flag.Bool("homebrew", false, "Search for Homebrew Content")
+	savesFlag    = flag.Bool("saves", false, "Search for Save Games")
 )
 
 var xboxExtensions = []string{
-	// Modify this list to add/remove extensions to search for
-	// Xbox Specific Extensions
 	".xpr",
 	".xbx",
+	".zip",
 	".xip",
 	".xap",
-	// Generic extensions
-	".zip",
-	".rar",
+	".pl",
 	".py",
 	".txt",
 	".cfg",
 	".ini",
 	".nfo",
 	".xml",
+	".png",
+	".jpg",
+	".jpeg",
+	".bmp",
+	".gif",
+	".svg",
 }
 
 type TitleData struct {
@@ -368,6 +373,129 @@ func checkForHomebrew(rootDir string) error {
 	return err
 }
 
+func CheckForSavedGames(drive string) {
+	fmt.Printf("\nChecking for saved games...\n")
+
+	gamesDir := filepath.Join(drive, "UDATA")
+	games, err := ioutil.ReadDir(gamesDir)
+	if err != nil {
+		fmt.Println("Error reading games directory:", err)
+		return
+	}
+
+	for _, game := range games {
+		if !game.IsDir() {
+			continue
+		}
+
+		if game.Name() == "fffe0000" {
+			continue // Ignore Xbox Dashboard folder
+		}
+
+		gameID := game.Name()
+		gameDir := filepath.Join(gamesDir, gameID)
+
+		// Check for TitleMeta.xbx in the game directory
+		titleMetaFile := filepath.Join(gameDir, "TitleMeta.xbx")
+		_, err := os.Stat(titleMetaFile)
+		if err != nil {
+			fmt.Printf("No TitleMeta.xbx found for game %s\n", gameID)
+
+			// Check for TitleMeta.xbx in the root game directory
+			titleMetaFile = filepath.Join(gameDir, "..", "TitleMeta.xbx")
+			_, err = os.Stat(titleMetaFile)
+			if err != nil {
+				fmt.Printf("No TitleMeta.xbx found for game %s in root game directory\n", gameID)
+				continue
+			}
+		}
+
+		// Parse TitleMeta.xbx
+		titleMeta, err := parseTitleMeta(titleMetaFile)
+		if err != nil {
+			fmt.Printf("Error parsing TitleMeta.xbx for game %s: %s\n", gameID, err)
+			continue
+		}
+
+		fmt.Printf("\nTitleMeta.xbx data:\nTitleID: %s\nTitleName: %s\n", gameID, titleMeta.TitleName)
+
+		// Check for TitleImage.xbx
+		titleImageFile := filepath.Join(gameDir, "TitleImage.xbx")
+		_, err = os.Stat(titleImageFile)
+		if err != nil {
+			fmt.Printf("TitleImage.xbx not found for game %s\n", gameID)
+		} else {
+			fmt.Printf("TitleImage.xbx found for game %s\n", gameID)
+		}
+	}
+}
+
+type TitleMeta struct {
+	TitleID   string
+	TitleName string
+}
+
+func parseTitleMeta(file string) (*TitleMeta, error) {
+	data, err := ioutil.ReadFile(file)
+	if err != nil {
+		return nil, err
+	}
+
+	// Remove UTF-16 byte order mark (BOM)
+	if len(data) > 1 && data[0] == 0xFF && data[1] == 0xFE {
+		data = data[2:]
+	}
+
+	//fmt.Println("TitleMeta file content:", string(data))
+
+	var titleMeta TitleMeta
+	lines := strings.Split(string(data), "\n")
+	for _, line := range lines {
+		fields := strings.Split(line, "=")
+		if len(fields) != 2 {
+			continue
+		}
+		key, value := fields[0], fields[1]
+		switch key {
+		case "TitleName":
+			value = strings.TrimSpace(value)
+			if len(value) > 2 && value[0] == 0xFF && value[1] == 0xFE {
+				value = value[2:]
+			}
+			titleMeta.TitleName = value
+		default:
+			value = strings.TrimSpace(value)
+			if len(value) > 2 && value[0] == 0xFF && value[1] == 0xFE {
+				value = value[2:]
+			}
+			titleMeta.TitleName = value
+		}
+	}
+
+	return &titleMeta, nil
+}
+
+type SaveMeta struct {
+	SaveName  string
+	Timestamp string
+}
+
+func parseSaveMeta(file string) (*SaveMeta, error) {
+	f, err := os.Open(file)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	var saveMeta SaveMeta
+	err = binary.Read(f, binary.BigEndian, &saveMeta)
+	if err != nil {
+		return nil, err
+	}
+
+	return &saveMeta, nil
+}
+
 func main() {
 	// Check if TDATA folder exists
 	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
@@ -378,7 +506,7 @@ func main() {
 	flag.Parse() // Parse command line flags
 
 	// Load JSON data if update flag is set, otherwise use local copies
-	err := loadJSONData("data/id_database.json", "MrMilenko", "PineCone", "id_database.json", &titles, *updateFlag)
+	err := loadJSONData("id_database.json", "MrMilenko", "PineCone", "id_database.json", &titles, *updateFlag)
 	if err != nil {
 		panic(err)
 	}
@@ -406,6 +534,10 @@ func main() {
 	// check homebrew directories
 	if *homebrewFlag {
 		checkForHomebrew("dump/")
+	}
+	// check homebrew directories
+	if *savesFlag {
+		CheckForSavedGames("dump/")
 	}
 }
 
