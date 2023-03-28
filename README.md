@@ -23,6 +23,10 @@
 * Export output for easy viewing
 * Add more flags for more specific searches
 * Create "Homebrew" JSON file to identify homebrew content.
+# Experimental Flags
+* --homebrew: This flag will search for homebrew content in the C E F G folders.
+* --ugc: This flag will search for User Generated Content in the UDATA folder.
+* --saves: This flag will search for Save Games in the UDATA folder. Functionality is not complete, just scans folders and parses TitleMeta.xbx.
 # Example output
 ```
 Local JSON file exists.
