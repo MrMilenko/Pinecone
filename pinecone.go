@@ -55,6 +55,16 @@ type TitleList struct {
 	Titles map[string]TitleData `json:"Titles"`
 }
 
+type TitleMeta struct {
+	TitleID   string
+	TitleName string
+}
+
+type SaveMeta struct {
+	SaveName  string
+	Timestamp string
+}
+
 func removeCommentsFromJSON(jsonStr string) string {
 	// remove // style comments
 	re := regexp.MustCompile(`(?m)^[ \t]*//.*\n?`)
@@ -134,139 +144,116 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 	return nil
 }
-
-func checkForDLC() error {
-	return filepath.Walk("dump/TDATA", func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-
-		if info.IsDir() {
-			// check if folder is in the correct format (TDATA\TitleID)
-			if len(info.Name()) == 8 {
-				// check for subfolders in the format of TDATA\TitleID\$c\ContentID
-				subDir := filepath.Join(path, "$c")
-				subInfo, err := os.Stat(subDir)
-				if err == nil && subInfo.IsDir() {
-					// get title information from JSON
-					titleID := strings.ToLower(info.Name())
-					titleData, ok := titles.Titles[titleID]
-					if ok {
-						fmt.Printf("Found folder for \"%s\".\n", titleData.TitleName)
-						fmt.Printf("Found DLC for \"%s\".\n", titleData.TitleName)
-					} else {
-						fmt.Printf("Title ID %s not present in JSON file. May want to investigate!\n", titleID)
-					}
-					// scan for content folders within the $c directory
-					subContents, err := ioutil.ReadDir(subDir)
-					if err == nil {
-						foundUnarchivedContent := false
-						var subContentPath string // declare subContentPath outside the for loop
-						for _, subContent := range subContents {
-							subContentPath = subDir + "/" + subContent.Name()
-							if subContent.IsDir() {
-								contentID := strings.ToLower(subContent.Name())
-								if contains(titleData.ContentIDs, contentID) {
-									// check if content is archived
-									archivedContentID := strings.ToLower(contentID)
-									var archivedName string
-									for _, archived := range titleData.Archived {
-										for archivedID, name := range archived {
-											if archivedID == archivedContentID {
-												archivedName = name
-												break
-											}
-										}
-										if archivedName != "" {
-											break
-										}
-									}
-									if archivedName != "" {
-										fmt.Printf("%s content found at: %s is archived (%s).\n", titleData.TitleName, subContentPath, archivedName)
-									} else {
-										fmt.Printf("%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
-										foundUnarchivedContent = true
-									}
-								} else {
-									fmt.Printf("%s unknown content found at: %s\n", titleData.TitleName, subContentPath)
-								}
-							}
-						}
-
-						if foundUnarchivedContent {
-							// Attempting to get SHA1 hash of the content
-							// Scan for files in the folder
-							files, err := ioutil.ReadDir(subContentPath)
-							if err != nil {
-								fmt.Println(err)
-							}
-							for _, f := range files {
-								if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
-									fmt.Println("Found content.. " + f.Name())
-								} else {
-									fmt.Println("Found unknown file format: " + f.Name())
-								}
-							}
-
-							// Get SHA1 hash of the files
-							// fmt.Println(getSHA1Hash(subContentPath))
-						}
-
-					}
-				}
-			}
-		}
-		return nil
-	})
-}
-
-func checkForUpdates(directory string) error {
+func checkForContent(directory string) error {
 	// check if directory exists
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		return fmt.Errorf("%s directory not found", directory)
 	}
-	// traverse directory structure
+
 	err := filepath.Walk(directory, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
-		if info.IsDir() {
-			// check if folder is in the correct format (TDATA\TitleID)
-			if len(info.Name()) == 8 {
-				// check for subfolders in the format of TDATA\TitleID\$u
-				subDir := filepath.Join(path, "$u")
-				subInfo, err := os.Stat(subDir)
-				if err == nil && subInfo.IsDir() {
-					// get title information from JSON
-					titleID := strings.ToLower(info.Name())
-					titleData, ok := titles.Titles[titleID]
-					if ok {
-						fmt.Printf("Found Possible Title Updates for \"%s\".\n", titleData.TitleName)
-						// scan for XBE files within the $u directory
-						files, err := ioutil.ReadDir(subDir)
-						if err != nil {
-							fmt.Println(err)
-						}
-						for _, f := range files {
-							if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
-								filePath := filepath.Join(subDir, f.Name())
-								fileHash, err := getSHA1Hash(filePath)
-								if err != nil {
-									fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
-								} else {
-									fmt.Printf("Path: %s\n", filePath)
-									fmt.Printf("SHA1: %s\n", fileHash)
+
+		if info.IsDir() && len(info.Name()) == 8 {
+			titleID := strings.ToLower(info.Name())
+			titleData, ok := titles.Titles[titleID]
+			if ok {
+				fmt.Printf("Found folder for \"%s\".\n", titleData.TitleName)
+
+				subDirDLC := filepath.Join(path, "$c")
+				subInfoDLC, err := os.Stat(subDirDLC)
+				if err == nil && subInfoDLC.IsDir() {
+					fmt.Printf("Found DLC for \"%s\".\n", titleData.TitleName)
+
+					subContents, err := ioutil.ReadDir(subDirDLC)
+					if err != nil {
+						return err
+					}
+
+					foundUnarchivedContent := false
+					var subContentPath string
+					for _, subContent := range subContents {
+						subContentPath = subDirDLC + "/" + subContent.Name()
+						if subContent.IsDir() {
+							contentID := strings.ToLower(subContent.Name())
+							if contains(titleData.ContentIDs, contentID) {
+								archivedContentID := strings.ToLower(contentID)
+								var archivedName string
+								for _, archived := range titleData.Archived {
+									for archivedID, name := range archived {
+										if archivedID == archivedContentID {
+											archivedName = name
+											break
+										}
+									}
+									if archivedName != "" {
+										break
+									}
 								}
+
+								if archivedName != "" {
+									fmt.Printf("%s content found at: %s is archived (%s).\n", titleData.TitleName, subContentPath, archivedName)
+								} else {
+									fmt.Printf("%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
+									foundUnarchivedContent = true
+								}
+							} else {
+								fmt.Printf("%s unknown content found at: %s\n", titleData.TitleName, subContentPath)
 							}
 						}
-					} else {
-						fmt.Printf("No Title Updates Found in $u for %s..\n", titleID)
 					}
+
+					if foundUnarchivedContent {
+						files, err := ioutil.ReadDir(subContentPath)
+						if err != nil {
+							return err
+						}
+
+						for _, f := range files {
+							if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
+								fmt.Println("Found content.. " + f.Name())
+							} else {
+								fmt.Println("Found unknown file format: " + f.Name())
+							}
+						}
+					}
+				} else {
+					fmt.Printf("No DLC Found for %s..\n", titleID)
 				}
+
+				subDirUpdates := filepath.Join(path, "$u")
+				subInfoUpdates, err := os.Stat(subDirUpdates)
+				if err == nil && subInfoUpdates.IsDir() {
+					fmt.Printf("\nFound Possible Title Updates for \"%s\".\n", titleData.TitleName)
+
+					files, err := ioutil.ReadDir(subDirUpdates)
+					if err != nil {
+						fmt.Println(err)
+					}
+					for _, f := range files {
+						if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
+							filePath := filepath.Join(subDirUpdates, f.Name())
+
+							fileHash, err := getSHA1Hash(filePath)
+							if err != nil {
+								fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
+							} else {
+								fmt.Printf("Path: %s\n", filePath)
+								fmt.Printf("SHA1: %s\n", fileHash)
+							}
+						}
+					}
+				} else {
+					fmt.Printf("No Title Updates Found in $u for %s..\n", titleID)
+				}
+			} else {
+				fmt.Printf("Title ID %s not present in JSON file. May want to investigate!\n", titleID)
 			}
 		}
 		return nil
 	})
+
 	return err
 }
 
@@ -373,7 +360,7 @@ func checkForHomebrew(rootDir string) error {
 	return err
 }
 
-func CheckForSavedGames(drive string) {
+func checkForSavedGames(drive string) {
 	fmt.Printf("\nChecking for saved games...\n")
 
 	gamesDir := filepath.Join(drive, "UDATA")
@@ -429,12 +416,6 @@ func CheckForSavedGames(drive string) {
 		}
 	}
 }
-
-type TitleMeta struct {
-	TitleID   string
-	TitleName string
-}
-
 func parseTitleMeta(file string) (*TitleMeta, error) {
 	data, err := ioutil.ReadFile(file)
 	if err != nil {
@@ -475,11 +456,6 @@ func parseTitleMeta(file string) (*TitleMeta, error) {
 	return &titleMeta, nil
 }
 
-type SaveMeta struct {
-	SaveName  string
-	Timestamp string
-}
-
 func parseSaveMeta(file string) (*SaveMeta, error) {
 	f, err := os.Open(file)
 	if err != nil {
@@ -494,51 +470,6 @@ func parseSaveMeta(file string) (*SaveMeta, error) {
 	}
 
 	return &saveMeta, nil
-}
-
-func main() {
-	// Check if TDATA folder exists
-	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
-		fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
-		return
-	}
-
-	flag.Parse() // Parse command line flags
-
-	// Load JSON data if update flag is set, otherwise use local copies
-	err := loadJSONData("id_database.json", "MrMilenko", "PineCone", "id_database.json", &titles, *updateFlag)
-	if err != nil {
-		panic(err)
-	}
-
-	// Traverse directory structure
-	fmt.Println("Checking for DLC...")
-	err = checkForDLC()
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println("\nChecking for Title Updates...")
-	err = checkForUpdates("dump/TDATA")
-	if err != nil {
-		panic(err)
-	}
-
-	// check for user generated content
-	if *ugcFlag {
-		err := checkForUGC("dump/TDATA")
-		if err != nil {
-			fmt.Println(err)
-		}
-	}
-	// check homebrew directories
-	if *homebrewFlag {
-		checkForHomebrew("dump/")
-	}
-	// check homebrew directories
-	if *savesFlag {
-		CheckForSavedGames("dump/")
-	}
 }
 
 func getSHA1Hash(filePath string) (string, error) {
@@ -564,4 +495,42 @@ func contains(slice []string, val string) bool {
 		}
 	}
 	return false
+}
+
+func main() {
+	// Check if TDATA folder exists
+	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
+		fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
+		return
+	}
+
+	flag.Parse() // Parse command line flags
+
+	// Load JSON data if update flag is set, otherwise use local copies
+	err := loadJSONData("data/id_database.json", "MrMilenko", "PineCone", "id_database.json", &titles, *updateFlag)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Checking for Content...\n")
+	err = checkForContent("dump/TDATA")
+	if err != nil {
+		panic(err)
+	}
+
+	// check for user generated content
+	if *ugcFlag {
+		err := checkForUGC("dump/TDATA")
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
+	// check homebrew directories
+	if *homebrewFlag {
+		checkForHomebrew("dump/")
+	}
+	// check homebrew directories
+	if *savesFlag {
+		checkForSavedGames("dump/")
+	}
 }
