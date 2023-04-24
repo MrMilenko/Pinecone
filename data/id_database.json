@@ -203,7 +203,7 @@
             "Title Updates Known": [
                 {
                     "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000300000103:NTSC 0103",
-                    "unknownhash": "0000000400000104:PAL 0104"
+                    "3f21dcc041526e926a02db6ba6435371b27bf9d2": "0000000400000104:PAL 0104"
                 }
             ],
             "Archived": []
@@ -220,7 +220,7 @@
                 {
                     "9fb347f6da1e18e32f79f9adf18058d102c698ce": "0000000100000101:NTSC 0101",
                     "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000200000102:PAL 0102",
-                    "unknownhash": "0000000300000103:PAL 0103"
+                    "72a15e87f70b9a38415bcfcac490a3fece8fecad": "0000000300000103:PAL 0103"
                 }
             ],
             "Archived": []
