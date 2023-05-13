@@ -4,7 +4,7 @@
 <p align="center">I'm Cleet. Cletus T. Pine.</p>
 
 # PineCone
-* A content sniffer for the Original Xbox.
+* A content discovery tool, for original Xbox DLC and Title Updates.
 # How-To
 * Download the id_database.json
 * Download the appropriate binary for your platform.
