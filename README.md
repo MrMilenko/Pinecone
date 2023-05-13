@@ -39,6 +39,7 @@ PineCone
 * Export output for easy viewing
 * Add more flags for more specific searches
 * Create "Homebrew" JSON file to identify homebrew content.
+* Beautify output, to make it easier on the eyes.
 # Experimental Flags
 * --homebrew: This flag will search for homebrew content in the C E F G folders.
 * --ugc: This flag will search for User Generated Content in the UDATA folder.
