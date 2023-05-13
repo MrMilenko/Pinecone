@@ -134,7 +134,7 @@
                 "0000000200000102"
                 ],
             "Title Updates Known": [{
-                "2f3bacc9974157e1e66c2b272f0532b831ef118b": "0000000100000101:RF 0101",
+                "2f3bacc9974157e1e66c2b272f0532b831ef118b": "0000000100000101:RF worldwide 0101",
                 "unknownhash": "0000000200000102:PAL Germany 0102"
                 }],
             "Archived": []
@@ -188,8 +188,8 @@
             ],
             "Title Updates Known": [{
                 "9fb347f6da1e18e32f79f9adf18058d102c698ce": "0000000100000101:NTSC 0101",
-                "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000200000102:PAL 0102",
-                "72a15e87f70b9a38415bcfcac490a3fece8fecad": "0000000300000103:PAL 0103"
+                "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
+                "72a15e87f70b9a38415bcfcac490a3fece8fecad": "0000000300000103:PAL French/German/Italian 0103"
                 }],
             "Archived": []
         },
@@ -650,8 +650,8 @@
                 "0000000400000204"
             ],
             "Title Updates Known": [{
-                "37aef1de6a945ffe7bb1afb6d7663be2cf38c253": "0000000100000101:RF 0101",
-                "095e58134f0a72919398dc8e2768a67b581e66cf": "0000000100000201:RF 0201",
+                "37aef1de6a945ffe7bb1afb6d7663be2cf38c253": "0000000100000101:RF worldwide 0101",
+                "095e58134f0a72919398dc8e2768a67b581e66cf": "0000000100000201:RF worldwide 0201",
                 "unknownhash": "0000000400000104:PAL German 0104",
                 "unknownhash": "0000000400000204:PAL German 0204"
             }],
@@ -681,6 +681,16 @@
             "Archived": []
         },
         "454d0009": {
+            "Title Name": "Fight Club",
+            "Content IDs": [
+                "5655002f00000804"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
+                "5655002f00000804": "Download Pack 1"
+        }]},
+        "454d0009": {
             "Title Name": "FlaOut",
             "Content IDs": [],
             "Title Updates": [
@@ -700,7 +710,7 @@
                 "0000004600000146"
             ],
             "Title Updates Known": [{
-                "09beb345370cd0d9a37d8740d591dd80499acfe1": "0000000100000301:RF Standalone 0301",
+                "09beb345370cd0d9a37d8740d591dd80499acfe1": "0000000100000301:RF standalone 0301",
                 "073671904c334c92f22bc2652f1841e871ef5540": "0000004600000146:RF XBLA combo 0146"
             }],
             "Archived": []
@@ -1126,7 +1136,7 @@
                 "unknownhash": "0000000100000301:NTSC+PAL 0301",
                 "unknownhash": "0000000100000401:NTSC+PAL 0401",
                 "a84b1da97c8597226578f282a9a8b9c755e687f9": "0000000100000601:NTSC+PAL 0601",
-                "unknownhash": "0000000400000504:NTSC-J South East Asia 0504",
+                "unknownhash": "0000000400000504:NTSC-J South-East Asia 0504",
                 "unknownhash": "0000000700000207:NTSC-J Japan 0207",
                 "unknownhash": "0000000700000407:NTSC-J Japan 0407"
             }],
@@ -1754,7 +1764,7 @@
             ],
             "Title Updates Known": [{
                 "unknownhash": "0000000100000101:PAL TOCA 2 Europe 0101",
-                "13d6979fd1dc6cd57038eefc688b1452a97432bf": "0000000200000102:NTSC TOCA 2 NorthAmerica 0102",
+                "13d6979fd1dc6cd57038eefc688b1452a97432bf": "0000000200000102:NTSC TOCA 2 North America 0102",
                 "unknownhash": "0000000300000103:NTSC-J TOCA 2 Japan 0103",
                 "unknownhash": "0000000400000104:PAL DTM 2 Germany 0104",
                 "814b620c506b49b8e0ee0023ed9f45de6fbf9296": "0000000500000105:PAL V8 Supercars Australia 0105"
@@ -2018,8 +2028,8 @@
                 "0000000a0000010a"
             ],
             "Title Updates Known": [{
-                "13733799ce6119577128957b357aa16092fcd456": "0000000500000105:RF 0105",
-                "8d233a9cfe87649d7b3481cea5598d734d92d9f5": "0000000500000305:RF 0305",
+                "13733799ce6119577128957b357aa16092fcd456": "0000000500000105:RF worldwide 0105",
+                "8d233a9cfe87649d7b3481cea5598d734d92d9f5": "0000000500000305:RF worldwide 0305",
                 "unknownhash": "0000000600000106:PAL Spain/Italy 0106",
                 "unknownhash": "0000000600000306:PAL Spain/Italy 0306",
                 "unknownhash": "0000000700000107:PAL France 0107",
@@ -2058,8 +2068,8 @@
                 "0000000300000303"
             ],
             "Title Updates Known": [{
-                "a5d78200dea3db3cc69ff7501530578fff3fa2f6": "0000000100000101:RF 0101",
-                "13bd15330f31f186ff4caa6bcda7489152de83cc": "0000000100000201:RF 0201",
+                "a5d78200dea3db3cc69ff7501530578fff3fa2f6": "0000000100000101:RF worldwide 0101",
+                "13bd15330f31f186ff4caa6bcda7489152de83cc": "0000000100000201:RF worldwide 0201",
                 "unknownhash": "0000000200000202:PAL France 0202",
                 "unknownhash": "0000000200000302:PAL France 0302",
                 "unknownhash": "0000000300000203:PAL Germany 0203",
@@ -2181,8 +2191,8 @@
                 "unknownhash": "0000000500000105:Xbox Live Starter disc 0105",
                 "5e58054f273aecbcb4f70b1b823034d99468b3c6": "0000001600000116:NTSC Clone Wars combo 0116",
                 "unknownhash": "0000001700000117:unknown NTSC-J? 0117",
-                "unknownhash": "0000001e0000011e:NTSC Standalone 011e",
-                "1711750501dd57420d4df4413f96a09a801ed000": "0000001e0000021e:NTSC Standalone 021e",
+                "unknownhash": "0000001e0000011e:NTSC standalone 011e",
+                "1711750501dd57420d4df4413f96a09a801ed000": "0000001e0000021e:NTSC standalone 021e",
                 "unknownhash": "0000002100000121:PAL 0121",
                 "unknownhash": "0000002100000221:PAL 0221"
             }],
@@ -2328,12 +2338,12 @@
                 "0000000200000502"
             ],
             "Title Updates Known": [{
-                "b37a43c7c5ccb537dba3402c82d6c00813f50b5f": "0000000100000201:RF 0201",
+                "b37a43c7c5ccb537dba3402c82d6c00813f50b5f": "0000000100000201:RF worldwide 0201",
                 "unknownhash": "0000000100000301:RF 0301",
-                "30c6a2f53fac188c00d2db74854ab9dc465b896f": "0000000100000501:RF 0501",
+                "30c6a2f53fac188c00d2db74854ab9dc465b896f": "0000000100000501:RF worldwide 0501",
                 "unknownhash": "0000000200000202:PAL Germany 0202",
                 "unknownhash": "0000000200000302:PAL Germany 0302",
-                "0c926d500dd4b729f9a39014ee2e36f419fa3061": "0000000200000502:RF 0502"
+                "0c926d500dd4b729f9a39014ee2e36f419fa3061": "0000000200000502:RF worldwide 0502"
             }],
             "Archived": [{
                 "5553001300000000": "MEAT FACTORY",
@@ -2480,11 +2490,11 @@
                 "0000000600000206"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000200000102:RF 0102",
-                "096eca78e1778cb514a1745f16d04275f6e1327a": "0000000200000202:RF 0202",
-                "a2bcaadecf36bbdd9e5c531c69d2ec905776179f": "0000000200000302:RF 0302",
-                "bd8c144b9162484a5d079af9c26d5e2635a94b0a": "0000000200000402:RF 0402",
-                "unknownhash": "0000000300000103:RF 0103",
+                "unknownhash": "0000000200000102:RF worldwide 0102",
+                "096eca78e1778cb514a1745f16d04275f6e1327a": "0000000200000202:RF worldwide 0202",
+                "a2bcaadecf36bbdd9e5c531c69d2ec905776179f": "0000000200000302:RF worldwide 0302",
+                "bd8c144b9162484a5d079af9c26d5e2635a94b0a": "0000000200000402:RF worldwide 0402",
+                "unknownhash": "0000000300000103:RF worldwide 0103",
                 "f5ab61fe1deda42db51cf4234bd79fc7dc08715d": "0000000400000204:NTSC-J Japan 0204",
                 "unknownhash": "0000000600000206:NTSC-J Korea? 0206"
             }],
@@ -2514,9 +2524,9 @@
                 "unknownhash": "0000000200000102:PAL 0102",
                 "unknownhash": "0000000200000602:PAL 0602",
                 "1b5b68d377dbcdda87cbe8ebe73a0bd2a8e43dc9": "0000000200000702:PAL 0702",
-                "unknownhash": "0000000300000103:NTSC-J Kor 0103",
-                "unknownhash": "0000000300000503:NTSC-J Kor 0503",
-                "unknownhash": "0000000300000603:NTSC-J Kor 0603",
+                "unknownhash": "0000000300000103:NTSC-J Korea 0103",
+                "unknownhash": "0000000300000503:NTSC-J Korea 0503",
+                "unknownhash": "0000000300000603:NTSC-J Korea 0603",
                 "d6f5da176666e6b9af3e8be7b2a045b879213ff4": "0000002000000120:NTSC NCAA 2005 combo 0120",
                 "0346f04f644b7664e2caa33017fdb95d690481af": "0000002100000121:NTSC Amped 2 combo 0121"
             }],
