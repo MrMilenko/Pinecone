@@ -883,8 +883,10 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "4253000600000001": "Mike Janis Update",
+                "4253000600000002": "Terry McMillen Update"
+        }]},
         "53410003": {
             "Title Name": "Iron Phoenix",
             "Content IDs": [
@@ -1026,9 +1028,9 @@
                 "271e30c6c1fc985879e435ef234d7bbda2de1eaa": "0000000100000101:NTSC 0101",
                 "unknownhash": "0000000100000201:NTSC 0201",
                 "4738fe5f7dfac3a9aca390c1b01842d6ab20dfb1": "0000000100000301:NTSC 0301",
-                "unknownhash": "0000000200000102:PAL 0101",
-                "unknownhash": "0000000200000202:PAL 0102",
-                "unknownhash": "0000000200000302:PAL 0104",
+                "unknownhash": "0000000200000102:PAL 0102",
+                "unknownhash": "0000000200000202:PAL 0202",
+                "unknownhash": "0000000200000302:PAL 0302",
                 "unknownhash": "0000000300000101:NTSC-J 0103",
                 "unknownhash": "0000000300000201:NTSC-J 0203",
                 "unknownhash": "0000000300000303:NTSC-J 0303"
@@ -1377,8 +1379,7 @@
             ],
             "Title Updates Known": [{
                 "e0e71451484ca9e413660716c5c877183b2ddcb9": "0000000100000301:NTSC+NTSC-J 0301"
-                }
-            ],
+            }],
             "Archived": []
         },
         "53450013": {
@@ -1788,7 +1789,7 @@
                 "4d53003900020001": "2 new skins for each car"
         }]},
         "584c0008": {
-            "Title Name": "Re-Volt Online August Beta",
+            "Title Name": "Re-Volt Online August Beta worldwide/Xbox Live Starter Kit Disc 1.0 Japan",
             "Content IDs": [
                 "584c000800000001",
                 "584c000800000002",
@@ -1815,8 +1816,15 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "584c000100000001": "Evil Phat Car",
+                "584c000100000002": "Evil Candy Car",
+                "584c000100000003": "Evil Toyeca Car",
+                "584c000100000004": "Evil Phat Car Keys",
+                "584c000100000005": "Evil Candy Car Keys",
+                "584c000100000006": "Evil Toyeca Car Keys",
+				"584c000100000007": "UFO Car Keys"
+        }]},
         "41560010": {
             "Title Name": "Return to Castle Wolfenstein Tides of War",
             "Content IDs": [
@@ -1833,12 +1841,12 @@
                 "0000000400000304"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000200000102:RF 0102",
-                "e07b329609ae5a853d6a3d17d07225c961cf237f": "0000000200000202:RF 0202",
-                "236f5ecfece01ecc8e62aac66ac04ba676f6705d": "0000000200000302:RF 0302",
-                "unknownhash": "0000000400000104:PAL 0104",
-                "unknownhash": "0000000400000204:PAL 0204",
-                "unknownhash": "0000000400000304:PAL 0304"
+                "unknownhash": "0000000200000102:RF worldwide 0102",
+                "e07b329609ae5a853d6a3d17d07225c961cf237f": "0000000200000202:RF worldwide 0202",
+                "236f5ecfece01ecc8e62aac66ac04ba676f6705d": "0000000200000302:RF worldwide 0302",
+                "unknownhash": "0000000400000104:PAL France 0104",
+                "unknownhash": "0000000400000204:PAL France 0204",
+                "unknownhash": "0000000400000304:PAL France 0304"
                 }
             ],
             "Archived": [{
@@ -2208,7 +2216,8 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
-                "5451002820000005": "Robot Battle Arena"
+                "5451002800000005": "Robot Battle Arena (North America)",
+				"5451002820000005": "Robot Battle Arena (Europe/Australia)"
         }]},
         "45410066": {
             "Title Name": "Timesplitters: Future Perfect",
@@ -2339,7 +2348,7 @@
             ],
             "Title Updates Known": [{
                 "b37a43c7c5ccb537dba3402c82d6c00813f50b5f": "0000000100000201:RF worldwide 0201",
-                "unknownhash": "0000000100000301:RF 0301",
+                "unknownhash": "0000000100000301:RF worldwide 0301",
                 "30c6a2f53fac188c00d2db74854ab9dc465b896f": "0000000100000501:RF worldwide 0501",
                 "unknownhash": "0000000200000202:PAL Germany 0202",
                 "unknownhash": "0000000200000302:PAL Germany 0302",
@@ -2773,7 +2782,8 @@
                 "0000000200050005"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000200050005:NTSC+PAL 50005"
+				"unknownhash": "0000000000030003:NTSC 30002",
+				"unknownhash": "0000000200050005:NTSC+PAL 50005"
             }],
             "Archived": []
         },
