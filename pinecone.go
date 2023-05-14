@@ -16,39 +16,28 @@ import (
 )
 
 var (
-	titles       TitleList
-	updateFlag   = flag.Bool("update", false, "Update the JSON data")
-	ugcFlag      = flag.Bool("ugc", false, "Search for User Generated Content")
-	homebrewFlag = flag.Bool("homebrew", false, "Search for Homebrew Content")
-	savesFlag    = flag.Bool("saves", false, "Search for Save Games")
+	titles        TitleList
+	updateFlag    = flag.Bool("update", false, "Update the JSON data")
+	ugcFlag       = flag.Bool("ugc", false, "Search for User Generated Content")
+	homebrewFlag  = flag.Bool("homebrew", false, "Search for Homebrew Content")
+	savesFlag     = flag.Bool("saves", false, "Search for Save Games")
+	summarizeFlag = flag.Bool("summarize", false, "Summarize the results")
 )
 
 var xboxExtensions = []string{
-	".xpr",
+	".xpe",
 	".xbx",
-	".zip",
+	".xpr",
 	".xip",
 	".xap",
-	".pl",
-	".py",
-	".txt",
-	".cfg",
-	".ini",
-	".nfo",
-	".xml",
-	".png",
-	".jpg",
-	".jpeg",
-	".bmp",
-	".gif",
-	".svg",
 }
 
 type TitleData struct {
-	TitleName    string              `json:"Title Name,"`
-	ContentIDs   []string            `json:"Content IDs"`
-	TitleUpdates []string            `json:"Title Updates"`
-	Archived     []map[string]string `json:"Archived"`
+	TitleName         string              `json:"Title Name,"`
+	ContentIDs        []string            `json:"Content IDs"`
+	TitleUpdates      []string            `json:"Title Updates"`
+	TitleUpdatesKnown []map[string]string `json:"Title Updates Known"`
+	Archived          []map[string]string `json:"Archived"`
 }
 
 type TitleList struct {
@@ -159,6 +148,7 @@ func checkForContent(directory string) error {
 			titleID := strings.ToLower(info.Name())
 			titleData, ok := titles.Titles[titleID]
 			if ok {
+				fmt.Printf("==================================================\n")
 				fmt.Printf("Found folder for \"%s\".\n", titleData.TitleName)
 
 				subDirDLC := filepath.Join(path, "$c")
@@ -225,7 +215,7 @@ func checkForContent(directory string) error {
 				subDirUpdates := filepath.Join(path, "$u")
 				subInfoUpdates, err := os.Stat(subDirUpdates)
 				if err == nil && subInfoUpdates.IsDir() {
-					fmt.Printf("\nFound Possible Title Updates for \"%s\".\n", titleData.TitleName)
+					//fmt.Printf("\nFolder found for \"%s\".\n", titleData.TitleName)
 
 					files, err := ioutil.ReadDir(subDirUpdates)
 					if err != nil {
@@ -241,6 +231,13 @@ func checkForContent(directory string) error {
 							} else {
 								fmt.Printf("Path: %s\n", filePath)
 								fmt.Printf("SHA1: %s\n", fileHash)
+								for _, knownUpdate := range titleData.TitleUpdatesKnown {
+									for knownHash, name := range knownUpdate {
+										if knownHash == fileHash {
+											fmt.Printf("SHA1 hash matches for file %s (%s)\n", f.Name(), name)
+										}
+									}
+								}
 							}
 						}
 					}
@@ -496,7 +493,20 @@ func contains(slice []string, val string) bool {
 	}
 	return false
 }
+func summarizeData(titles TitleList) {
+	totalKnown := 0
+	totalArchived := 0
 
+	for _, titleData := range titles.Titles {
+		totalKnown += len(titleData.ContentIDs)
+		for _, archive := range titleData.Archived {
+			totalArchived += len(archive)
+		}
+	}
+
+	fmt.Printf("Total known content IDs: %d\n", totalKnown)
+	fmt.Printf("Total archived content IDs: %d\n", totalArchived)
+}
 func main() {
 	// Check if TDATA folder exists
 	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
@@ -507,12 +517,12 @@ func main() {
 	flag.Parse() // Parse command line flags
 
 	// Load JSON data if update flag is set, otherwise use local copies
-	err := loadJSONData("data/id_database.json", "MrMilenko", "PineCone", "id_database.json", &titles, *updateFlag)
+	err := loadJSONData("data/id_database.json", "OfficialTeamUIX", "Pinecone", "id_database.json", &titles, *updateFlag)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("Checking for Content...\n")
+	fmt.Println("Checking for Content...")
 	err = checkForContent("dump/TDATA")
 	if err != nil {
 		panic(err)
@@ -532,5 +542,8 @@ func main() {
 	// check homebrew directories
 	if *savesFlag {
 		checkForSavedGames("dump/")
+	}
+	if *summarizeFlag {
+		summarizeData(titles)
 	}
 }
