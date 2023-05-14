@@ -517,7 +517,7 @@ func main() {
 	flag.Parse() // Parse command line flags
 
 	// Load JSON data if update flag is set, otherwise use local copies
-	err := loadJSONData("data/id_database.json", "OfficialTeamUIX", "Pinecone", "id_database.json", &titles, *updateFlag)
+	err := loadJSONData("data/id_database.json", "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, *updateFlag)
 	if err != nil {
 		panic(err)
 	}
