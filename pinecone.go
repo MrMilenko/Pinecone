@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"strings"
 )
 
@@ -19,6 +20,7 @@ var (
 	updateFlag    = flag.Bool("update", false, "Update the JSON data from the source URL")
 	summarizeFlag = flag.Bool("summarize", false, "Print summary statistics for all titles")
 	titleIDFlag   = flag.String("titleid", "", "Filter statistics by Title ID")
+	fatxplorer    = flag.Bool("fatxplorer", false, "Use FatXplorer's X: drive")
 	helpFlag      = flag.Bool("help", false, "Display help information")
 )
 
@@ -212,6 +214,15 @@ func checkForContent(directory string) error {
 								for _, knownUpdate := range titleData.TitleUpdatesKnown {
 									for knownHash, name := range knownUpdate {
 										if knownHash == fileHash {
+											// Split the name into two parts, before and after the colon
+											parts := strings.SplitN(name, ":", 2)
+											// Check if the split was successful
+											if len(parts) >= 2 {
+												// If yes, use the second part (index 1) as the name
+												name = parts[1]
+											}
+											// Else, the name remains unchanged
+
 											fmt.Printf("Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 											fmt.Printf("Path: %s\n", filePath)
 											fmt.Printf("SHA1: %s\n", fileHash)
@@ -231,6 +242,7 @@ func checkForContent(directory string) error {
 					}
 				} else {
 					fmt.Printf("No Title Updates Found in $u for %s..\n", titleID)
+					fmt.Print("====================================================================================================\n")
 				}
 			} else {
 				fmt.Printf("Title ID %s not present in JSON file.\n", titleID)
@@ -300,12 +312,6 @@ func printTitleStats(data *TitleData) {
 }
 
 func main() {
-	// Check if TDATA folder exists
-	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
-		fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
-		return
-	}
-
 	flag.Parse() // Parse command line flags
 
 	// Check for help flag
@@ -314,6 +320,7 @@ func main() {
 		fmt.Println("  -update: Update the JSON data from the source URL. If not set, uses local copies of data.")
 		fmt.Println("  -summarize: Print summary statistics for all titles. If not set, checks for content in the TDATA folder.")
 		fmt.Println("  -titleid: Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
+		fmt.Println("  -fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
 		fmt.Println("  -help: Display this help information.")
 		return
 	}
@@ -323,9 +330,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Pinecone v0.3")
+	fmt.Println("Pinecone v0.3.1b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	fmt.Println("====================================================================================================")
+	flag.Parse()
 
 	if *titleIDFlag != "" {
 		// if the titleID flag is set, print stats for that title
@@ -333,8 +341,25 @@ func main() {
 	} else if *summarizeFlag {
 		// if the summarize flag is set, print stats for all titles
 		printStats("", true)
+	} else if *fatxplorer {
+		if runtime.GOOS == "windows" {
+			if _, err := os.Stat(`X:\`); os.IsNotExist(err) {
+				fmt.Println(`FatXplorer's X: drive not found`)
+			} else {
+				fmt.Println("Checking for Content...")
+				fmt.Println("====================================================================================================")
+				checkForContent("X:\\TDATA")
+			}
+		} else {
+			fmt.Println("FatXplorer mode is only available on Windows.")
+		}
 	} else {
-		// if neither flag is set, proceed normally
+		// If no flag is set, proceed normally
+		// Check if TDATA folder exists
+		if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
+			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
+			return
+		}
 		fmt.Println("Checking for Content...")
 		fmt.Println("====================================================================================================")
 		err = checkForContent("dump/TDATA")
