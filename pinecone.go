@@ -2,7 +2,6 @@ package main
 
 import (
 	"crypto/sha1"
-	"encoding/binary"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -17,20 +16,11 @@ import (
 
 var (
 	titles        TitleList
-	updateFlag    = flag.Bool("update", false, "Update the JSON data")
-	ugcFlag       = flag.Bool("ugc", false, "Search for User Generated Content")
-	homebrewFlag  = flag.Bool("homebrew", false, "Search for Homebrew Content")
-	savesFlag     = flag.Bool("saves", false, "Search for Save Games")
-	summarizeFlag = flag.Bool("summarize", false, "Summarize the results")
+	updateFlag    = flag.Bool("update", false, "Update the JSON data from the source URL")
+	summarizeFlag = flag.Bool("summarize", false, "Print summary statistics for all titles")
+	titleIDFlag   = flag.String("titleid", "", "Filter statistics by Title ID")
+	helpFlag      = flag.Bool("help", false, "Display help information")
 )
-
-var xboxExtensions = []string{
-	".xpe",
-	".xbx",
-	".xpr",
-	".xip",
-	".xap",
-}
 
 type TitleData struct {
 	TitleName         string              `json:"Title Name,"`
@@ -42,16 +32,6 @@ type TitleData struct {
 
 type TitleList struct {
 	Titles map[string]TitleData `json:"Titles"`
-}
-
-type TitleMeta struct {
-	TitleID   string
-	TitleName string
-}
-
-type SaveMeta struct {
-	SaveName  string
-	Timestamp string
 }
 
 func removeCommentsFromJSON(jsonStr string) string {
@@ -148,14 +128,11 @@ func checkForContent(directory string) error {
 			titleID := strings.ToLower(info.Name())
 			titleData, ok := titles.Titles[titleID]
 			if ok {
-				fmt.Printf("==================================================\n")
 				fmt.Printf("Found folder for \"%s\".\n", titleData.TitleName)
 
 				subDirDLC := filepath.Join(path, "$c")
 				subInfoDLC, err := os.Stat(subDirDLC)
 				if err == nil && subInfoDLC.IsDir() {
-					fmt.Printf("Found DLC for \"%s\".\n", titleData.TitleName)
-
 					subContents, err := ioutil.ReadDir(subDirDLC)
 					if err != nil {
 						return err
@@ -221,6 +198,7 @@ func checkForContent(directory string) error {
 					if err != nil {
 						fmt.Println(err)
 					}
+					hashMatchFound := false
 					for _, f := range files {
 						if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
 							filePath := filepath.Join(subDirUpdates, f.Name())
@@ -229,14 +207,24 @@ func checkForContent(directory string) error {
 							if err != nil {
 								fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
 							} else {
-								fmt.Printf("Path: %s\n", filePath)
-								fmt.Printf("SHA1: %s\n", fileHash)
+								//fmt.Printf("Path: %s\n", filePath)
+								//fmt.Printf("SHA1: %s\n", fileHash)
 								for _, knownUpdate := range titleData.TitleUpdatesKnown {
 									for knownHash, name := range knownUpdate {
 										if knownHash == fileHash {
-											fmt.Printf("SHA1 hash matches for file %s (%s)\n", f.Name(), name)
+											fmt.Printf("Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
+											fmt.Printf("Path: %s\n", filePath)
+											fmt.Printf("SHA1: %s\n", fileHash)
+											fmt.Print("====================================================================================================\n")
+											hashMatchFound = true
 										}
 									}
+								}
+								if !hashMatchFound {
+									fmt.Printf("No SHA1 hash matches found for file %s\n", f.Name())
+									fmt.Printf("SHA1 for unknown content: %s\n", fileHash)
+									fmt.Printf("Path: %s\n", filePath)
+									fmt.Print("====================================================================================================\n")
 								}
 							}
 						}
@@ -245,228 +233,17 @@ func checkForContent(directory string) error {
 					fmt.Printf("No Title Updates Found in $u for %s..\n", titleID)
 				}
 			} else {
-				fmt.Printf("Title ID %s not present in JSON file. May want to investigate!\n", titleID)
+				fmt.Printf("Title ID %s not present in JSON file.\n", titleID)
+				fmt.Print("We found a folder with the correct format, but it's not in the JSON file.\n")
+				fmt.Print("Please report this to the developer.\n")
+				fmt.Print("Path: " + path + "\n")
+				fmt.Print("====================================================================================================\n")
 			}
 		}
 		return nil
 	})
 
 	return err
-}
-
-func checkForUGC(directory string) error {
-	// check if directory exists
-	if _, err := os.Stat(directory); os.IsNotExist(err) {
-		return fmt.Errorf("%s directory not found", directory)
-	}
-	fmt.Println("\nChecking for user generated content..")
-	// traverse directory structure
-	err := filepath.Walk(directory, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if info.IsDir() {
-			// check if folder is in the correct format (TDATA\TitleID)
-			if len(info.Name()) == 8 {
-				// check for subfolders in the format of TDATA\TitleID\$k and TDATA\TitleID\$k\Subfolder
-				ySubDir := filepath.Join(path, "$y")
-				ySubInfo, err := os.Stat(ySubDir)
-				if err == nil && ySubInfo.IsDir() {
-					titleID := strings.ToLower(info.Name())
-					fmt.Printf("Found Possible user made content for: \"%s\".\n", titleID)
-
-					// loop through files in the $k subdirectory
-					kFiles, err := ioutil.ReadDir(ySubDir)
-					if err != nil {
-						fmt.Println(err)
-					}
-					for _, f := range kFiles {
-						if f.Mode().IsRegular() {
-							filePath := filepath.Join(ySubDir, f.Name())
-							fileHash, err := getSHA1Hash(filePath)
-							if err != nil {
-								fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
-							} else {
-								fmt.Printf("Path: %s\n", filePath)
-								fmt.Printf("SHA1: %s\n", fileHash)
-							}
-						}
-					}
-
-					// loop through files in subdirectories of the $k subdirectory
-					ySubDirs, err := ioutil.ReadDir(ySubDir)
-					if err != nil {
-						fmt.Println(err)
-					}
-					for _, subDir := range ySubDirs {
-						if subDir.IsDir() {
-							subPath := filepath.Join(ySubDir, subDir.Name())
-							subFiles, err := ioutil.ReadDir(subPath)
-							if err != nil {
-								fmt.Println(err)
-							}
-							for _, f := range subFiles {
-								if f.Mode().IsRegular() {
-									filePath := filepath.Join(subPath, f.Name())
-									fileHash, err := getSHA1Hash(filePath)
-									if err != nil {
-										fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
-									} else {
-										fmt.Printf("Path: %s\n", filePath)
-										fmt.Printf("SHA1: %s\n", fileHash)
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		return nil
-	})
-	return err
-}
-func checkForHomebrew(rootDir string) error {
-	fmt.Println("\nSearching for Homebrew content..")
-	// traverse directory structure
-	err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if info.IsDir() {
-			// skip TDATA and UDATA directories
-			if info.Name() == "TDATA" || info.Name() == "UDATA" {
-				return filepath.SkipDir
-			}
-
-		} else if info.Mode().IsRegular() {
-			// check if file is known Xbox homebrew file type(s)
-			if contains(xboxExtensions, filepath.Ext(info.Name())) {
-				filePath := path
-				fileHash, err := getSHA1Hash(filePath)
-				if err != nil {
-					fmt.Printf("Error calculating hash for file %s: %s\n", info.Name(), err)
-				} else {
-					fmt.Printf("Path: %s\n", filePath)
-					fmt.Printf("SHA1: %s\n", fileHash)
-				}
-			}
-		}
-		return nil
-	})
-	return err
-}
-
-func checkForSavedGames(drive string) {
-	fmt.Printf("\nChecking for saved games...\n")
-
-	gamesDir := filepath.Join(drive, "UDATA")
-	games, err := ioutil.ReadDir(gamesDir)
-	if err != nil {
-		fmt.Println("Error reading games directory:", err)
-		return
-	}
-
-	for _, game := range games {
-		if !game.IsDir() {
-			continue
-		}
-
-		if game.Name() == "fffe0000" {
-			continue // Ignore Xbox Dashboard folder
-		}
-
-		gameID := game.Name()
-		gameDir := filepath.Join(gamesDir, gameID)
-
-		// Check for TitleMeta.xbx in the game directory
-		titleMetaFile := filepath.Join(gameDir, "TitleMeta.xbx")
-		_, err := os.Stat(titleMetaFile)
-		if err != nil {
-			fmt.Printf("No TitleMeta.xbx found for game %s\n", gameID)
-
-			// Check for TitleMeta.xbx in the root game directory
-			titleMetaFile = filepath.Join(gameDir, "..", "TitleMeta.xbx")
-			_, err = os.Stat(titleMetaFile)
-			if err != nil {
-				fmt.Printf("No TitleMeta.xbx found for game %s in root game directory\n", gameID)
-				continue
-			}
-		}
-
-		// Parse TitleMeta.xbx
-		titleMeta, err := parseTitleMeta(titleMetaFile)
-		if err != nil {
-			fmt.Printf("Error parsing TitleMeta.xbx for game %s: %s\n", gameID, err)
-			continue
-		}
-
-		fmt.Printf("\nTitleMeta.xbx data:\nTitleID: %s\nTitleName: %s\n", gameID, titleMeta.TitleName)
-
-		// Check for TitleImage.xbx
-		titleImageFile := filepath.Join(gameDir, "TitleImage.xbx")
-		_, err = os.Stat(titleImageFile)
-		if err != nil {
-			fmt.Printf("TitleImage.xbx not found for game %s\n", gameID)
-		} else {
-			fmt.Printf("TitleImage.xbx found for game %s\n", gameID)
-		}
-	}
-}
-func parseTitleMeta(file string) (*TitleMeta, error) {
-	data, err := ioutil.ReadFile(file)
-	if err != nil {
-		return nil, err
-	}
-
-	// Remove UTF-16 byte order mark (BOM)
-	if len(data) > 1 && data[0] == 0xFF && data[1] == 0xFE {
-		data = data[2:]
-	}
-
-	//fmt.Println("TitleMeta file content:", string(data))
-
-	var titleMeta TitleMeta
-	lines := strings.Split(string(data), "\n")
-	for _, line := range lines {
-		fields := strings.Split(line, "=")
-		if len(fields) != 2 {
-			continue
-		}
-		key, value := fields[0], fields[1]
-		switch key {
-		case "TitleName":
-			value = strings.TrimSpace(value)
-			if len(value) > 2 && value[0] == 0xFF && value[1] == 0xFE {
-				value = value[2:]
-			}
-			titleMeta.TitleName = value
-		default:
-			value = strings.TrimSpace(value)
-			if len(value) > 2 && value[0] == 0xFF && value[1] == 0xFE {
-				value = value[2:]
-			}
-			titleMeta.TitleName = value
-		}
-	}
-
-	return &titleMeta, nil
-}
-
-func parseSaveMeta(file string) (*SaveMeta, error) {
-	f, err := os.Open(file)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
-
-	var saveMeta SaveMeta
-	err = binary.Read(f, binary.BigEndian, &saveMeta)
-	if err != nil {
-		return nil, err
-	}
-
-	return &saveMeta, nil
 }
 
 func getSHA1Hash(filePath string) (string, error) {
@@ -493,20 +270,35 @@ func contains(slice []string, val string) bool {
 	}
 	return false
 }
-func summarizeData(titles TitleList) {
-	totalKnown := 0
-	totalArchived := 0
 
-	for _, titleData := range titles.Titles {
-		totalKnown += len(titleData.ContentIDs)
-		for _, archive := range titleData.Archived {
-			totalArchived += len(archive)
+// Prints statistics for a specific title or for all titles if batch is true.
+func printStats(titleID string, batch bool) {
+	if batch {
+		for id, data := range titles.Titles {
+			fmt.Printf("Statistics for title ID %s:\n", id)
+			printTitleStats(&data)
 		}
+	} else {
+		data, ok := titles.Titles[titleID]
+		if !ok {
+			fmt.Printf("No data found for title ID %s\n", titleID)
+			return
+		}
+		fmt.Printf("Statistics for title ID %s:\n", titleID)
+		printTitleStats(&data)
 	}
-
-	fmt.Printf("Total known content IDs: %d\n", totalKnown)
-	fmt.Printf("Total archived content IDs: %d\n", totalArchived)
 }
+
+// Prints statistics for a TitleData.
+func printTitleStats(data *TitleData) {
+	fmt.Println("Title:", data.TitleName)
+	fmt.Println("Total number of Content IDs:", len(data.ContentIDs))
+	fmt.Println("Total number of Title Updates:", len(data.TitleUpdates))
+	fmt.Println("Total number of Known Title Updates:", len(data.TitleUpdatesKnown))
+	fmt.Println("Total number of Archived items:", len(data.Archived))
+	fmt.Println()
+}
+
 func main() {
 	// Check if TDATA folder exists
 	if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
@@ -516,34 +308,38 @@ func main() {
 
 	flag.Parse() // Parse command line flags
 
+	// Check for help flag
+	if *helpFlag {
+		fmt.Println("Usage of Pinecone:")
+		fmt.Println("  -update: Update the JSON data from the source URL. If not set, uses local copies of data.")
+		fmt.Println("  -summarize: Print summary statistics for all titles. If not set, checks for content in the TDATA folder.")
+		fmt.Println("  -titleid: Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
+		fmt.Println("  -help: Display this help information.")
+		return
+	}
+
 	// Load JSON data if update flag is set, otherwise use local copies
 	err := loadJSONData("data/id_database.json", "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, *updateFlag)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Pinecone v0.3")
+	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
+	fmt.Println("====================================================================================================")
 
-	fmt.Println("Checking for Content...")
-	err = checkForContent("dump/TDATA")
-	if err != nil {
-		panic(err)
-	}
-
-	// check for user generated content
-	if *ugcFlag {
-		err := checkForUGC("dump/TDATA")
+	if *titleIDFlag != "" {
+		// if the titleID flag is set, print stats for that title
+		printStats(*titleIDFlag, false)
+	} else if *summarizeFlag {
+		// if the summarize flag is set, print stats for all titles
+		printStats("", true)
+	} else {
+		// if neither flag is set, proceed normally
+		fmt.Println("Checking for Content...")
+		fmt.Println("====================================================================================================")
+		err = checkForContent("dump/TDATA")
 		if err != nil {
-			fmt.Println(err)
+			panic(err)
 		}
-	}
-	// check homebrew directories
-	if *homebrewFlag {
-		checkForHomebrew("dump/")
-	}
-	// check homebrew directories
-	if *savesFlag {
-		checkForSavedGames("dump/")
-	}
-	if *summarizeFlag {
-		summarizeData(titles)
 	}
 }
