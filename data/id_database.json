@@ -190,7 +190,7 @@
             ],
             "Title Updates Known": [{
                 "9fb347f6da1e18e32f79f9adf18058d102c698ce": "0000000100000101:NTSC 0101",
-                "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
+                "01866b17f299f4dbe13974d12fc3a350beabd591": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
                 "72a15e87f70b9a38415bcfcac490a3fece8fecad": "0000000300000103:PAL French/German/Italian 0103"
                 }],
             "Archived": []
@@ -1050,7 +1050,7 @@
                 "4738fe5f7dfac3a9aca390c1b01842d6ab20dfb1": "0000000100000301:NTSC 0301",
                 "unknownhash": "0000000200000102:PAL 0102",
                 "unknownhash": "0000000200000302:PAL 0302",
-                "unknownhash": "0000000200000402:PAL 0402",
+                "844eb82aa377604120682b50e9b07464caae9fef": "0000000200000402:PAL 0402",
                 "unknownhash": "0000000300000101:NTSC-J 0103",
                 "unknownhash": "0000000300000201:NTSC-J 0203",
                 "unknownhash": "0000000300000303:NTSC-J 0303"
@@ -1344,7 +1344,7 @@
             ],
             "Title Updates Known": [{
                 "b3934420a969dedb2d49cf4682b5b54061bda71f": "0000000300000103:NTSC-J 0103",
-                "unknownhash": "0000000400000104:PAL 0104",
+                "634a7d1afacf14ca267c0e7d4e99141ae7794f78": "0000000400000104:PAL 0104",
                 "unknownhash": "0000000600000106:NTSC 0106"
             }],
             "Archived": []
@@ -2122,7 +2122,7 @@
                 "e5e8b7f594967290495ba0ec98d16b7025cf4968": "0000000005ab8501:NTSC black label 5ab8501",
                 "c44fec9e81b236e3b22bff3ad9a1846a1bb7e0e4": "0000000005ab8502:PAL Europe 5ab8502",
                 "b0fd9d899aca242ffbcd0babc1abaa4f3466ad07": "0000000005ab850a:NTSC platinum hits 5ab850a",
-                "e7fe0ff560513443873c8e72b854a80696bcbe29": "0000000005ab850b:NTSC-J Korea 5ab850b"
+                "01b4c94d139e0a80fcf0e6a269411f9d3b2ef3b8": "0000000005ab850b:NTSC-J Korea 5ab850b"
             }],
             "Archived": [{
                 "4c41000300000011": "Yavin Station"
@@ -2281,7 +2281,7 @@
                 "0000000300000103"
             ],
             "Title Updates Known": [{
-                "e9d8e93c39a9546a5619109e58264a20e5d768ec": "0000000100000101:NTSC 0101",
+                "2155c88fe095e4a0a956dcd9ad58d32c28e5578a": "0000000100000101:NTSC 0101",
                 "unknownhash": "0000000200000102:PAL Europe 0102",
                 "unknownhash": "0000000300000103:PAL Germany 0103"
             }],
