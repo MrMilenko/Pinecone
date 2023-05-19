@@ -730,8 +730,8 @@
             ],
             "Title Updates Known": [{
                 "unknownhash": "0000000100000101:RF standalone 0101",
-                "unknownhash": "0000000100000201:RF standalone 0201",                
-				"09beb345370cd0d9a37d8740d591dd80499acfe1": "0000000100000301:RF standalone 0301",
+                "a92827d449e7590b36fd58646436871393ecf2b5": "0000000100000201:RF standalone 0201",
+		"09beb345370cd0d9a37d8740d591dd80499acfe1": "0000000100000301:RF standalone 0301",
                 "073671904c334c92f22bc2652f1841e871ef5540": "0000004600000146:RF XBLA combo 0146"
             }],
             "Archived": []
