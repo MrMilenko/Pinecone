@@ -72,6 +72,9 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Download JSON data
 		jsonData, err := downloadJSONData(fmt.Sprintf("https://api.github.com/repos/%s/%s/contents/%s", owner, repo, path))
+		if err != nil {
+			fmt.Println("Error downloading JSON data: " + err.Error())
+		}
 
 		// Check if downloaded JSON is different from existing JSON
 		if _, err := os.Stat(jsonFilePath); err == nil {
@@ -116,7 +119,6 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 	return nil
 }
 func checkForContent(directory string) error {
-	// check if directory exists
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		return fmt.Errorf("%s directory not found", directory)
 	}
@@ -126,136 +128,131 @@ func checkForContent(directory string) error {
 			return err
 		}
 
-		if info.IsDir() && len(info.Name()) == 8 {
-			titleID := strings.ToLower(info.Name())
-			titleData, ok := titles.Titles[titleID]
-			if ok {
-				fmt.Printf("Found folder for \"%s\".\n", titleData.TitleName)
-
-				subDirDLC := filepath.Join(path, "$c")
-				subInfoDLC, err := os.Stat(subDirDLC)
-				if err == nil && subInfoDLC.IsDir() {
-					subContents, err := ioutil.ReadDir(subDirDLC)
-					if err != nil {
-						return err
-					}
-
-					foundUnarchivedContent := false
-					var subContentPath string
-					for _, subContent := range subContents {
-						subContentPath = subDirDLC + "/" + subContent.Name()
-						if subContent.IsDir() {
-							contentID := strings.ToLower(subContent.Name())
-							if contains(titleData.ContentIDs, contentID) {
-								archivedContentID := strings.ToLower(contentID)
-								var archivedName string
-								for _, archived := range titleData.Archived {
-									for archivedID, name := range archived {
-										if archivedID == archivedContentID {
-											archivedName = name
-											break
-										}
-									}
-									if archivedName != "" {
-										break
-									}
-								}
-
-								if archivedName != "" {
-									fmt.Printf("%s content found at: %s is archived (%s).\n", titleData.TitleName, subContentPath, archivedName)
-								} else {
-									fmt.Printf("%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
-									foundUnarchivedContent = true
-								}
-							} else {
-								fmt.Printf("%s unknown content found at: %s\n", titleData.TitleName, subContentPath)
-							}
-						}
-					}
-
-					if foundUnarchivedContent {
-						files, err := ioutil.ReadDir(subContentPath)
-						if err != nil {
-							return err
-						}
-
-						for _, f := range files {
-							if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
-								fmt.Println("Found content.. " + f.Name())
-							} else {
-								fmt.Println("Found unknown file format: " + f.Name())
-							}
-						}
-					}
-				} else {
-					fmt.Printf("No DLC Found for %s..\n", titleID)
-				}
-
-				subDirUpdates := filepath.Join(path, "$u")
-				subInfoUpdates, err := os.Stat(subDirUpdates)
-				if err == nil && subInfoUpdates.IsDir() {
-					//fmt.Printf("\nFolder found for \"%s\".\n", titleData.TitleName)
-
-					files, err := ioutil.ReadDir(subDirUpdates)
-					if err != nil {
-						fmt.Println(err)
-					}
-					hashMatchFound := false
-					for _, f := range files {
-						if filepath.Ext(f.Name()) == ".xbe" || filepath.Ext(f.Name()) == ".xbx" {
-							filePath := filepath.Join(subDirUpdates, f.Name())
-
-							fileHash, err := getSHA1Hash(filePath)
-							if err != nil {
-								fmt.Printf("Error calculating hash for file %s: %s\n", f.Name(), err)
-							} else {
-								//fmt.Printf("Path: %s\n", filePath)
-								//fmt.Printf("SHA1: %s\n", fileHash)
-								for _, knownUpdate := range titleData.TitleUpdatesKnown {
-									for knownHash, name := range knownUpdate {
-										if knownHash == fileHash {
-											// Split the name into two parts, before and after the colon
-											parts := strings.SplitN(name, ":", 2)
-											// Check if the split was successful
-											if len(parts) >= 2 {
-												// If yes, use the second part (index 1) as the name
-												name = parts[1]
-											}
-											// Else, the name remains unchanged
-
-											fmt.Printf("Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
-											fmt.Printf("Path: %s\n", filePath)
-											fmt.Printf("SHA1: %s\n", fileHash)
-											fmt.Print("====================================================================================================\n")
-											hashMatchFound = true
-										}
-									}
-								}
-								if !hashMatchFound {
-									fmt.Printf("No SHA1 hash matches found for file %s\n", f.Name())
-									fmt.Printf("SHA1 for unknown content: %s\n", fileHash)
-									fmt.Printf("Path: %s\n", filePath)
-									fmt.Print("====================================================================================================\n")
-								}
-							}
-						}
-					}
-				} else {
-					fmt.Printf("No Title Updates Found in $u for %s..\n", titleID)
-					fmt.Print("====================================================================================================\n")
-				}
-			} else {
-				fmt.Printf("Title ID %s not present in JSON file.\n", titleID)
-				fmt.Print("We found a folder with the correct format, but it's not in the JSON file.\n")
-				fmt.Print("Please report this to the developer.\n")
-				fmt.Print("Path: " + path + "\n")
-				fmt.Print("====================================================================================================\n")
-			}
+		if !info.IsDir() || len(info.Name()) != 8 {
+			return nil
 		}
+
+		titleID := strings.ToLower(info.Name())
+		titleData, ok := titles.Titles[titleID]
+		if !ok {
+			return nil
+		}
+
+		//fmt.Println("Found folder for \"" + titleData.TitleName + "\".")
+		fmt.Println("    " + "Title Name: " + titleData.TitleName)
+
+		subDirDLC := filepath.Join(path, "$c")
+		subInfoDLC, err := os.Stat(subDirDLC)
+		if err == nil && subInfoDLC.IsDir() {
+			err = processDLCContent(subDirDLC, titleData, titleID, directory)
+			if err != nil {
+				return err
+			}
+		} else {
+			fmt.Println("    No DLC Found for " + titleID + "..")
+		}
+
+		subDirUpdates := filepath.Join(path, "$u")
+		subInfoUpdates, err := os.Stat(subDirUpdates)
+		if err == nil && subInfoUpdates.IsDir() {
+			err = processUpdates(subDirUpdates, titleData, titleID, directory)
+			if err != nil {
+				return err
+			}
+		} else {
+			fmt.Println("    No Title Updates Found in $u for " + titleID + "..")
+		}
+
+		fmt.Println("    =============================================================================")
+
 		return nil
 	})
-
 	return err
+}
+
+func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
+	subContents, err := ioutil.ReadDir(subDirDLC)
+	if err != nil {
+		return err
+	}
+
+	for _, subContent := range subContents {
+		subContentPath := filepath.Join(subDirDLC, subContent.Name())
+		if !subContent.IsDir() {
+			continue
+		}
+
+		contentID := strings.ToLower(subContent.Name())
+		if !contains(titleData.ContentIDs, contentID) {
+			fmt.Println("    " + "Unknown content found at: " + subContentPath)
+			continue
+		}
+
+		archivedName := ""
+		for _, archived := range titleData.Archived {
+			for archivedID, name := range archived {
+				if archivedID == contentID {
+					archivedName = name
+					break
+				}
+			}
+			if archivedName != "" {
+				break
+			}
+		}
+
+		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
+		if archivedName != "" {
+			fmt.Println("    " + "Content is known and archived (" + archivedName + ")")
+		} else {
+			fmt.Println("    " + titleData.TitleName + " has unarchived content found at: " + subContentPath)
+		}
+	}
+
+	return nil
+}
+
+func processUpdates(subDirUpdates string, titleData TitleData, titleID string, directory string) error {
+	files, err := ioutil.ReadDir(subDirUpdates)
+	if err != nil {
+		return err
+	}
+
+	for _, f := range files {
+		if filepath.Ext(f.Name()) != ".xbe" {
+			continue
+		}
+
+		filePath := filepath.Join(subDirUpdates, f.Name())
+		fileHash, err := getSHA1Hash(filePath)
+		if err != nil {
+			fmt.Println("    Error calculating hash for file: " + f.Name() + ", error: " + err.Error())
+			continue
+		}
+
+		for _, knownUpdate := range titleData.TitleUpdatesKnown {
+			for knownHash, name := range knownUpdate {
+				if knownHash == fileHash {
+					fmt.Println("    ---------------------------- Title and File Info ----------------------------")
+					fmt.Println("    Title update found for " + titleData.TitleName + " (" + titleID + ") (" + name + ")")
+					filePath = strings.TrimPrefix(filePath, directory+"/")
+					fmt.Println("    Path: " + filePath)
+					fmt.Println("    SHA1: " + fileHash)
+					fmt.Println("    =============================================================================")
+					return nil
+				}
+			}
+		}
+
+		fmt.Println("    ---------------------------- Title and File Info ----------------------------")
+		fmt.Println("    Unknown Title Update found for " + titleData.TitleName + " (" + titleID + ")")
+		filePath = strings.TrimPrefix(filePath, directory+"/")
+		fmt.Println("    Path: " + filePath)
+		fmt.Println("    SHA1: " + fileHash)
+
+	}
+
+	return nil
 }
 
 func getSHA1Hash(filePath string) (string, error) {
@@ -330,9 +327,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Pinecone v0.3.1b")
-	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
-	fmt.Println("====================================================================================================")
+	fmt.Println("    ========================== Pinecone v0.3.2b - CLI ==========================")
 	flag.Parse()
 
 	if *titleIDFlag != "" {
@@ -346,8 +341,7 @@ func main() {
 			if _, err := os.Stat(`X:\`); os.IsNotExist(err) {
 				fmt.Println(`FatXplorer's X: drive not found`)
 			} else {
-				fmt.Println("Checking for Content...")
-				fmt.Println("====================================================================================================")
+
 				checkForContent("X:\\TDATA")
 			}
 		} else {
@@ -360,8 +354,6 @@ func main() {
 			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
 			return
 		}
-		fmt.Println("Checking for Content...")
-		fmt.Println("====================================================================================================")
 		err = checkForContent("dump/TDATA")
 		if err != nil {
 			panic(err)
