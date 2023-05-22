@@ -715,7 +715,7 @@
             ],
             "Title Updates Known": [{
                 "unknownhash": "0000000100000101:PAL Europe 0101",
-				"unknownhash": "0000000200000102:PAL Germany 0102"
+		"unknownhash": "0000000200000102:PAL Germany 0102"
             }],
             "Archived": []
         },
@@ -1298,6 +1298,14 @@
                 "4d53002a00000005",
                 "4d53002a00000006"
             ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000300000103",
+                "0000000400000104",
+                "0000000500000105",
+                "0000000500000205",				
+                "0000000700000107"
+            ],
             "Title Updates Known": [{
                 "unknownhash": "0000000200000102:NTSC-J Japan 0102",
                 "e520e16140441596968c2e5b9c5f82e4c3486d8e": "0000000300000103:PAL 0103",
@@ -1306,7 +1314,6 @@
                 "unknownhash": "0000000500000205:NTSC-J South-East Asia 0205",
                 "unknownhash": "0000000700000107:unknown Korea? 0107"
             }],
-            "Title Updates Known": [],
             "Archived": [{
                 "4d53002a00000001": "Car Pack 1",
                 "4d53002a00000002": "Track Pack 1",
@@ -1775,7 +1782,7 @@
             "Archived": []
         },
         "5345000f": {
-            "Title Name": "Race Driver 2 (TOCA 2, DTM 2, V8 2",
+            "Title Name": "Race Driver 2 (TOCA 2, DTM 2, V8 2)",
             "Content IDs": [],
             "Title Updates": [
                 "0000000100000101",
@@ -1788,7 +1795,7 @@
                 "unknownhash": "0000000100000101:PAL TOCA 2 Europe 0101",
                 "13d6979fd1dc6cd57038eefc688b1452a97432bf": "0000000200000102:NTSC TOCA 2 North America 0102",
                 "unknownhash": "0000000300000103:NTSC-J TOCA 2 Japan 0103",
-                "unknownhash": "0000000400000104:PAL DTM 2 Germany 0104",
+                "d06c284e85926cfe9cd0bf0a402bacf7e6bcef45": "0000000400000104:PAL DTM 2 Germany 0104",
                 "814b620c506b49b8e0ee0023ed9f45de6fbf9296": "0000000500000105:PAL V8 Supercars Australia 0105"
             }],
             "Archived": []
@@ -1844,7 +1851,7 @@
                 "584c000100000004": "Evil Phat Car Keys",
                 "584c000100000005": "Evil Candy Car Keys",
                 "584c000100000006": "Evil Toyeca Car Keys",
-				"584c000100000007": "UFO Car Keys"
+		"584c000100000007": "UFO Car Keys"
         }]},
         "41560010": {
             "Title Name": "Return to Castle Wolfenstein Tides of War",
@@ -2249,7 +2256,7 @@
             "Title Updates Known": [],
             "Archived": [{
                 "5451002800000005": "Robot Battle Arena (North America)",
-				"5451002820000005": "Robot Battle Arena (Europe/Australia)"
+		"5451002820000005": "Robot Battle Arena (Europe/Australia)"
         }]},
         "45410066": {
             "Title Name": "Timesplitters: Future Perfect",
@@ -2280,7 +2287,7 @@
                 "5345000f00000002": "Earlbot",
                 "5345000f00000003": "GeekJam",				
                 "5345000f00000010": "Hades Environment",
-				"5345000f00000020": "Funkadelic Environment"
+		"5345000f00000020": "Funkadelic Environment"
         }]},
         "55530006": {
             "Title Name": "Tom Clancy's Ghost Recon",
@@ -2292,7 +2299,7 @@
             ],
             "Title Updates Known": [{
                 "2155c88fe095e4a0a956dcd9ad58d32c28e5578a": "0000000100000101:NTSC 0101",
-                "unknownhash": "0000000200000102:PAL Europe 0102",
+                "589473e5af31b68ff65b48643a1b9e536a2c8204": "0000000200000102:PAL Europe 0102",
                 "unknownhash": "0000000300000103:PAL Germany 0103"
             }],
             "Archived": []
@@ -2824,8 +2831,8 @@
                 "0000000200050005"
             ],
             "Title Updates Known": [{
-				"f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
-				"unknownhash": "0000000200050005:NTSC+PAL 50005"
+		"f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
+		"unknownhash": "0000000200050005:NTSC+PAL 50005"
             }],
             "Archived": []
         },
