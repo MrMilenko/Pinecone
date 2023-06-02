@@ -831,7 +831,7 @@
                 "0000000a0000050a"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000300000103:RF English Update 1",
+                "f912f676ff2e5a33b6352ea410ac7c95f51c44b1": "0000000300000103:RF English Update 1",
                 "79b1832fbc0cb6e0abb3bb54967fe3c615a2188e": "0000000300000203:RF English Update 2",
                 "4130789398a3addd38bb8ac26259f78b5dcd4326": "0000000300000303:RF English Update 3",
                 "ce983a196b09c5ffaaf281b8489b209c7ee9c16b": "0000000300000503:RF English Update 4",
@@ -1660,16 +1660,16 @@
                 "0000000400000104"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000100000101:NTSC-J 0101",
+                "d25f86e13fe127431ddf9789a991a0655db1839a": "0000000100000101:NTSC-J 0101",
                 "4c97ebbcc75da748e73dcf5933736414dba1e8de": "0000000300000103:PAL 0103",
                 "1c13fc66353a19791279ea513a999059f006be47": "0000000400000104:NTSC 0104"
             }],
             "Archived": [{
-                "4d53004a20000048": "Central Dome Fire Swirl",
-                "4d53004a2000011c": "PSO/The East Tower (Fan made from GC)",
-                "4d53004a2000011d": "PSO/The West Tower (Fan made from GC)",
-                "4d53004a200001dd": "PSO/Seat of the Heart (Fan made from GC)",
-                "4d53004a200003a2": "PSO/The Mag Farm (Fan made)"
+                "4d53004a20000048": "Central Dome Fire Swirl (Eng)",
+                "4d53004a2000011c": "PSO/The East Tower (Eng/Fan made from GC)",
+                "4d53004a2000011d": "PSO/The West Tower (Eng/Fan made from GC)",
+                "4d53004a200001dd": "PSO/Seat of the Heart (Eng/Fan made from GC)",
+                "4d53004a200003a2": "PSO/The Mag Farm (Eng/Fan made)"
         }]},
         "4d530043": {
             "Title Name": "Phantasy Star Online Beta",
