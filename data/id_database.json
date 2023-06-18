@@ -561,6 +561,7 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
+                    "5345002320031105": "ESPN NBA Roster (2003-11-05)",
                     "5345002320031222": "ESPN NBA Roster (2003-12-22)"
         }]},
         "5345002e": {
@@ -584,10 +585,13 @@
                 "0000000100000101"
             ],
             "Title Updates Known": [{
-                "unknownhash": "0000000100000101:NTSC 0101"
+                "97ae31c0e3f6c5d328d40f8d55c30455ffb60a25": "0000000100000101:NTSC 0101"
             }],
-            "Archived": []
-        },
+            "Archived": [{
+                    "5345002220030910": "Week 1 Roster Update (2003-09-10)",
+                    "5345002220031008": "Week 5 Roster Update (2003-10-08)",
+                    "5345002220031201": "ESPN NFL Roster (2003-12-01)"
+        }]},
         "5345002c": {
             "Title Name": "ESPN NFL Football (2K4) PAL",
             "Content IDs": [
@@ -1665,7 +1669,9 @@
                 "1c13fc66353a19791279ea513a999059f006be47": "0000000400000104:NTSC 0104"
             }],
             "Archived": [{
+                "4d53004a10000048": "Central Dome Fire Swirl (Jpn)",
                 "4d53004a20000048": "Central Dome Fire Swirl (Eng)",
+                "4d53004a30000048": "Central Dome Fire Swirl (Ger)",
                 "4d53004a2000011c": "PSO/The East Tower (Eng/Fan made from GC)",
                 "4d53004a2000011d": "PSO/The West Tower (Eng/Fan made from GC)",
                 "4d53004a200001dd": "PSO/Seat of the Heart (Eng/Fan made from GC)",
@@ -1734,7 +1740,7 @@
             "Title Updates Known": [{
                 "unknownhash": "0000000200000102:PAL 0102",
                 "5ee652acd805253be07f28f278bf236946a488c6": "0000000200000202:PAL 0202",
-                "unknownhash": "0000000500000105:NTSC+NTSC-J 0105",
+                "8a416d3c2f980e354667f4745d8a6621528825ea": "0000000500000105:NTSC+NTSC-J 0105",
                 "da0bfc1d8e593ae84707183140a698a87738f33f": "0000000500000205:NTSC+NTSC-J 0205"
             }],
             "Archived": [{
@@ -1970,7 +1976,11 @@
                 "7c5bdf2b0761cd1338a7cbe0695cfafbc1cedcd1": "0000000800000208:NTSC 0208"
             }],
             "Archived": [{
+                "5345002100230002": "segaGT Online Competition Info 2",
+                "5345002100230003": "segaGT Online Competition Info 3",
+                "5345002100230004": "segaGT Online Competition Info 4",
                 "5345002100230006": "segaGT Online Competition Info 6",
+                "5345002100230007": "segaGT Online Competition Info 7",
                 "5345002100230008": "segaGT Online Competition Info 8",
                 "534500210023000e": "segaGT Online Competition Info 14",
                 "534500210023000f": "segaGT Online Competition Info 15",
