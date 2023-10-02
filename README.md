@@ -25,7 +25,7 @@ PineCone
 | |-- G (optional)
 ```
    
-* Run your binary from the commandline. e.g: ./pinecone (or pinecone.exe) (optional flags: --update, --homebrew, --ugc (user generated content))
+* Run your binary from the commandline. e.g: ./pinecone (or pinecone.exe) (optional flags: -fatxplorer (Windows only, mount E as X in fatxplorer))
 # About
 * Our buddy Harcroft has been keeping a rolling list of missing content for nearly 20 years.
 * The idea of this software is to cut out as much of the manual digging as possible, and expand on it as a tool to archive this data.
@@ -41,9 +41,10 @@ PineCone
 * Create "Homebrew" JSON file to identify homebrew content.
 * Beautify output, to make it easier on the eyes.
 # Experimental Flags
-* --homebrew: This flag will search for homebrew content in the C E F G folders.
-* --ugc: This flag will search for User Generated Content in the UDATA folder.
-* --saves: This flag will search for Save Games in the UDATA folder. Functionality is not complete, just scans folders and parses TitleMeta.xbx.
+* -fatxplorer: This flag will use a mounted E drive on partition X to scan.
+* -update: This flag updates only the JSON. Useful between builds without major changes.
+* -statistics: This will output statistics of the JSON, i.e totals.
+* -titleid=ABCD1234: This will output the JSON details on a specific TitleID when provided.
 # Example output
 ```
 Local JSON file exists.

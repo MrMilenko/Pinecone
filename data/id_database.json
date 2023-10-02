@@ -1,58 +1,52 @@
 {
-    "4d4a0009": {
-        "Title Name": "Advent Rising",
-        "Content IDs": [
-            "4d4a000900000000",
-            "4d4a000900000001",
-            "4d4a000900000002",
-            "4d4a000900000003",
-            "4d4a000900000004",
-            "4d4a000900000005"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+    "Titles": {
+        "4d4a0009": {
+            "Title Name": "Advent Rising",
+            "Content IDs": [
+                "4d4a000900000000",
+                "4d4a000900000001",
+                "4d4a000900000002",
+                "4d4a000900000003",
+                "4d4a000900000004",
+                "4d4a000900000005"
+		],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d4a000900000000": "Contest Week 1",
                 "4d4a000900000001": "Contest Week 2"
-            }
-        ]
-    },
-    "5a440004": {
-        "Title Name": "Alien Hominid",
-        "Content IDs": [
-            "5a44000400000001",
-            "5a44000400000002",
-            "5a44000400000003",
-            "5a44000400000004"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "5a440004": {
+            "Title Name": "Alien Hominid",
+            "Content IDs": [
+                "5a44000400000001",
+                "5a44000400000002",
+                "5a44000400000003",
+                "5a44000400000004"
+                ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5a44000400000001": "Chicken Pack",
                 "5a44000400000002": "Ultra Hyper Load",
                 "5a44000400000003": "Big Load Of Levels",
                 "5a44000400000004": "You Can't Win"
-            }
-        ]
-    },
-    "41430018": {
-        "Title Name": "All Star Baseball 2004",
-        "Content IDs": [
-            "4143001800000001",
-            "4143001800000002",
-            "4143001800000003",
-            "4143001800000004",
-            "4143001800000005",
-            "4143001800000006",
-            "4143001800000007",
-            "4143001800000008"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "41430018": {
+            "Title Name": "All Star Baseball 2004",
+            "Content IDs": [
+                "4143001800000001",
+                "4143001800000002",
+                "4143001800000003",
+                "4143001800000004",
+                "4143001800000005",
+                "4143001800000006",
+                "4143001800000007",
+                "4143001800000008"
+                ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4143001800000001": "ASB 2004 Roster #1",
                 "4143001800000002": "ASB 2004 Roster #2",
                 "4143001800000003": "ASB 2004 Roster #3",
@@ -60,74 +54,59 @@
                 "4143001800000006": "ASB 2004 Roster #6",
                 "4143001800000007": "ASB 2004 Roster #7",
                 "4143001800000008": "ASB 2004 Roster #8"
-            }
-        ]
-    },
-    "4143001c": {
-        "Title Name": "All Star Baseball 2005",
-        "Content IDs": [
-            "4143001c00000001",
-            "4143001c00000002",
-            "4143001c00000003"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4143001c": {
+            "Title Name": "All Star Baseball 2005",
+            "Content IDs": [
+                "4143001c00000001",
+                "4143001c00000002",
+                "4143001c00000003"
+				],
+            "Title Updates": [
+                "0000000100000201"
+				],
+            "Title Updates Known": [{
                 "e00eb8c6af9b2940da116daa18b0de93c6989755": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4143001c00000003": "ASB Rosters"
-            }
-        ]
-    },
-    "4d530041": {
-        "Title Name": "Amped 2",
-        "Content IDs": [
-            "4d53004100000001",
-            "4d53004100000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4d530041": {
+            "Title Name": "Amped 2",
+            "Content IDs": [
+                "4d53004100000001",
+                "4d53004100000002"],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d53004100000001": "Slopestyle"
-            }
-        ]
-    },
-    "4c41000d": {
-        "Title Name": "Armed and Dangerous",
-        "Content IDs": [
-            "4c41000d00000003"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4c41000d": {
+            "Title Name": "Armed and Dangerous",
+            "Content IDs": [
+                "4c41000d00000003"
+                ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4c41000d00000003": "Summer Home"
-            }
-        ]
-    },
-    "45410062": {
-        "Title Name": "Battlefield 2 Modern Combat",
-        "Content IDs": [
-            "4541006200000001"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000200000102",
-            "0000000200000202",
-            "0000000300000103",
-            "0000000300000203",
-            "0000000400000104",
-            "0000000400000204"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "45410062": {
+            "Title Name": "Battlefield 2 Modern Combat",
+            "Content IDs": [
+                "4541006200000001"
+                ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000200000102",
+                "0000000200000202",
+                "0000000300000103",
+                "0000000300000203",
+                "0000000400000104",
+                "0000000400000204"
+                ],
+            "Title Updates Known": [{
                 "4541006200000000000000000000000000000000": "0000000100000101:NTSC 0101",
                 "ca76b7f7a44a026cbf01a31e0e41570d7ec56c52": "0000000100000201:NTSC 0201",
                 "4541006200000000000000000000000000000001": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
@@ -136,203 +115,172 @@
                 "4541006200000000000000000000000000000003": "0000000300000203:PAL French/German/Italian 0203",
                 "4541006200000000000000000000000000000004": "0000000400000104:unknown 0104",
                 "4541006200000000000000000000000000000005": "0000000400000204:unknown 0204"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4541006200000001": "Warsome Booster Pack"
-            }
-        ]
-    },
-    "5553005a": {
-        "Title Name": "Brothers in Arms Earned in Blood",
-        "Content IDs": [
-            "5553005a00000016"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "5553005a": {
+            "Title Name": "Brothers in Arms Earned in Blood",
+            "Content IDs": [
+                "5553005a00000016"
+                ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5553005a00000016": "Skirmish Map Pack"
-            }
-        ]
-    },
-    "5553003c": {
-        "Title Name": "Brothers in Arms Road to Hill 30",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "5553003c": {
+            "Title Name": "Brothers in Arms Road to Hill 30",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102"
+                ],
+            "Title Updates Known": [{
                 "2f3bacc9974157e1e66c2b272f0532b831ef118b": "0000000100000101:RF worldwide 0101",
                 "5553003c00000000000000000000000000000000": "0000000200000102:PAL Germany 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "4d53001e": {
-        "Title Name": "Brute Force",
-        "Content IDs": [
-            "4d53001e00000001",
-            "4d53001e00000002",
-            "4d53001e00000003",
-            "4d53001e00000004",
-            "4d53001e00000005",
-            "4d53001e00000006",
-            "4d53001e00000007",
-            "4d53001e00000008",
-            "4d53001e00000009"
-        ],
-        "Title Updates": [
-            "0000000600000106",
-            "0000000700000107"
-        ],
-        "Title Updates Known": [
-            {
+                }],
+            "Archived": []
+        },
+        "4d53001e": {
+            "Title Name": "Brute Force",
+            "Content IDs": [
+                "4d53001e00000001",
+                "4d53001e00000002",
+                "4d53001e00000003",
+                "4d53001e00000004",
+                "4d53001e00000005",
+                "4d53001e00000006",
+                "4d53001e00000007",
+                "4d53001e00000008",
+                "4d53001e00000009"
+                ],
+            "Title Updates": [
+                "0000000600000106",
+                "0000000700000107"
+                ],
+            "Title Updates Known": [{
                 "ad83ce5037d33ea77d32d5f6097c7e2fc5cd230d": "0000000600000106:NTSC 0106",
                 "dd5a1b1187ee30a5f50a5346da8d1a56d19ce821": "0000000700000107:PAL 0107"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4d53001e00000001": "BF: Lockjaw",
                 "4d53001e00000002": "BF: Cerulean",
                 "4d53001e00000003": "BF: Prisoner's Lament",
                 "4d53001e00000004": "BF: Lockjaw",
                 "4d53001e00000005": "BF: Cerulean",
-                "4d53001e00000006": "BF: Prisoner's Lament"
-            }
-        ]
-    },
-    "41430019": {
-        "Title Name": "Burnout 2: Point of Impact",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000300000103",
-            "0000000400000104"
-        ],
-        "Title Updates Known": [
-            {
+                "4d53001e00000006": "BF: Prisoner's Lament"		    
+        }]},
+        "41430019": {
+            "Title Name": "Burnout 2: Point of Impact",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000300000103",
+                "0000000400000104"
+                ],
+            "Title Updates Known": [{
                 "0ef1f132b1dfe8c08b6b1441d357095d6a7403c8": "0000000300000103:NTSC 0103",
                 "3f21dcc041526e926a02db6ba6435371b27bf9d2": "0000000400000104:PAL 0104"
-            }
-        ],
-        "Archived": []
-    },
-    "4541005b": {
-        "Title Name": "Burnout 3: Takedown",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+                }],
+            "Archived": []
+        },
+        "4541005b": {
+            "Title Name": "Burnout 3: Takedown",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "9fb347f6da1e18e32f79f9adf18058d102c698ce": "0000000100000101:NTSC 0101",
                 "01866b17f299f4dbe13974d12fc3a350beabd591": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
                 "72a15e87f70b9a38415bcfcac490a3fece8fecad": "0000000300000103:PAL French/German/Italian 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "43430008": {
-        "Title Name": "Capcom vs. SNK 2 EO",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+                }],
+            "Archived": []
+        },
+        "43430008": {
+            "Title Name": "Capcom vs. SNK 2 EO",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "4343000800000000000000000000000000000000": "0000000100000101:NTSC-J 0101",
                 "d7f6a0338fb5e2bb45b95528adbf0a1ebbd1bff3": "0000000200000102:NTSC 0102",
                 "a17479975e81d21aa621ffeb5e82efff66d84a21": "0000000300000103:PAL 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "53430006": {
-        "Title Name": "Conflict Desert Storm II Back to Baghdad",
-        "Content IDs": [
-            "5343000600000001",
-            "5343000600000002",
-            "5343000600000003",
-            "5343000600000004",
-            "5343000600000005"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+                }],
+            "Archived": []
+        },
+        "53430006": {
+            "Title Name": "Conflict Desert Storm II Back to Baghdad",
+            "Content IDs": [
+                "5343000600000001",
+                "5343000600000002",
+                "5343000600000003",
+                "5343000600000004",
+                "5343000600000005"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5343000600000001": "Counter Terrorist",
                 "5343000600000002": "British DPM",
                 "5343000600000003": "Woodland",
                 "5343000600000004": "Iraqi Republican",
                 "5343000600000005": "Christmas"
-            }
-        ]
-    },
-    "4d530036": {
-        "Title Name": "Counter-Strike",
-        "Content IDs": [
-            "4d53003600000001",
-            "4d53003600000002"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d530036": {
+            "Title Name": "Counter-Strike",
+            "Content IDs": [
+                "4d53003600000001",
+                "4d53003600000002"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "a55fd59c1adb1ddbd338fd31d54c8a161ed6d781": "0000000100000101:NTSC 0101",
                 "1cea9b98a9634c637067542426f10e23a42b6f43": "0000000200000102:PAL 0102"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4d53003600000001": "Office Map",
                 "4d53003600000002": "Inferno Map"
-            }
-        ]
-    },
-    "4d530021": {
-        "Title Name": "Crimson Skies",
-        "Content IDs": [
-            "4d53002101000001",
-            "4d53002101000002",
-            "4d53002101000003",
-            "4d53002101000004",
-            "4d53002101000005",
-            "4d53002101000006",
-            "4d53002101000007",
-            "4d53002101000008",
-            "4d53002101000102",
-            "4d53002101000103"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000200000102",
-            "0000000200000202",
-            "0000000300000103",
-            "0000000300000203"
-        ],
-        "Title Updates Known": [
-            {
-                "4d53002100000000000000000000000000000000": "0000000100000101:NTSC 0101",
+        }]},
+        "4d530021": {
+            "Title Name": "Crimson Skies",
+            "Content IDs": [
+                "4d53002101000001",
+                "4d53002101000002",
+                "4d53002101000003",
+                "4d53002101000004",
+                "4d53002101000005",
+                "4d53002101000006",
+                "4d53002101000007",
+                "4d53002101000008",
+                "4d53002101000102",
+                "4d53002101000103"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000200000102",
+                "0000000200000202",
+                "0000000300000103",
+                "0000000300000203"
+            ],
+            "Title Updates Known": [{
+                "6b0e6f62d79bf47b96cbdb400c63c87bce504607": "0000000100000101:NTSC 0101",
                 "9da1a0e186e7122188b92802e733fefccd8fae2f": "0000000100000201:NTSC 0201",
                 "4d53002100000000000000000000000000000001": "0000000200000102:NTSC-J 0102",
                 "4d53002100000000000000000000000000000002": "0000000200000202:NTSC-J 0202",
                 "15fe15f8ada0d4d7ff5ca19c2709250d619aec8e": "0000000300000103:PAL 0103",
                 "2d685be249a2353c5c0149015492e55fb142adac": "0000000300000203:PAL 0203"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4d53002101000001": "Firebrand",
                 "4d53002101000002": "Fury",
                 "4d53002101000003": "Caverns",
@@ -343,65 +291,59 @@
                 "4d53002101000008": "Badlands",
                 "4d53002101000102": "Fury (Japan)",
                 "4d53002101000103": "Caverns (Japan)"
-            }
-        ]
-    },
-    "4b4e0019": {
-        "Title Name": "Dance Dance Revolution Ultramix 1",
-        "Content IDs": [
-            "4b4e001900000001",
-            "4b4e001900000003",
-            "4b4e001900000004",
-            "4b4e001900000005",
-            "4b4e001900000006",
-            "4b4e001900000007"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4b4e0019": {
+            "Title Name": "Dance Dance Revolution Ultramix 1",
+            "Content IDs": [
+                "4b4e001900000001",
+                "4b4e001900000003",
+                "4b4e001900000004",
+                "4b4e001900000005",
+                "4b4e001900000006",
+                "4b4e001900000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4b4e001900000001": "SP1",
                 "4b4e001900000003": "SP2",
                 "4b4e001900000004": "SP3",
                 "4b4e001900000005": "SP4",
                 "4b4e001900000006": "SP5",
                 "4b4e001900000007": "SP6"
-            }
-        ]
-    },
-    "4b4e0021": {
-        "Title Name": "Dance Dance Revolution Ultramix 2",
-        "Content IDs": [
-            "4b4e002100000001",
-            "4b4e002100000002",
-            "4b4e002100000003",
-            "4b4e002100000004",
-            "4b4e002100000005",
-            "4b4e002100000006",
-            "4b4e002100000007",
-            "4b4e002100000008",
-            "4b4e002100000009",
-            "4b4e00210000000a",
-            "4b4e00210000000b",
-            "4b4e00210000000c",
-            "4b4e00210000000f",
-            "4b4e002100000010",
-            "4b4e002100000011",
-            "4b4e002100000012",
-            "4b4e002100000013",
-            "4b4e002100000014",
-            "4b4e002100000015",
-            "4b4e002100000016",
-            "4b4e002100000017",
-            "4b4e002100000018",
-            "4b4e002100000019",
-            "4b4e00210000001a",
-            "4b4e00210000001b"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4b4e0021": {
+            "Title Name": "Dance Dance Revolution Ultramix 2",
+            "Content IDs": [
+                "4b4e002100000001",
+                "4b4e002100000002",
+                "4b4e002100000003",
+                "4b4e002100000004",
+                "4b4e002100000005",
+                "4b4e002100000006",
+                "4b4e002100000007",
+                "4b4e002100000008",
+                "4b4e002100000009",
+                "4b4e00210000000a",
+                "4b4e00210000000b",
+                "4b4e00210000000c",
+                "4b4e00210000000f",
+                "4b4e002100000010",
+                "4b4e002100000011",
+                "4b4e002100000012",
+                "4b4e002100000013",
+                "4b4e002100000014",
+                "4b4e002100000015",
+                "4b4e002100000016",
+                "4b4e002100000017",
+                "4b4e002100000018",
+                "4b4e002100000019",
+                "4b4e00210000001a",
+                "4b4e00210000001b"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4b4e002100000001": "SP1",
                 "4b4e002100000004": "SP4",
                 "4b4e002100000007": "SP7",
@@ -411,561 +353,470 @@
                 "4b4e00210000000b": "SP11",
                 "4b4e00210000000c": "SP12",
                 "4b4e00210000001b": "Dancer Unlock Key"
-            }
-        ]
-    },
-    "4b4e0029": {
-        "Title Name": "Dance Dance Revolution Ultramix 3",
-        "Content IDs": [
-            "4b4e002900000001",
-            "4b4e002900000002",
-            "4b4e002900000003",
-            "4b4e002900000004",
-            "4b4e002900000005",
-            "4b4e002900000006",
-            "4b4e002900000007",
-            "4b4e002900000008",
-            "4b4e002900000009",
-            "4b4e00290000000a",
-            "4b4e00290000000b",
-            "4b4e00290000000c",
-            "4b4e00290000000d",
-            "4b4e00290000000e",
-            "4b4e00290000000f",
-            "4b4e00290000001a",
-            "4b4e002900000019"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4b4e0029": {
+            "Title Name": "Dance Dance Revolution Ultramix 3",
+            "Content IDs": [
+                "4b4e002900000001",
+                "4b4e002900000002",
+                "4b4e002900000003",
+                "4b4e002900000004",
+                "4b4e002900000005",
+                "4b4e002900000006",
+                "4b4e002900000007",
+                "4b4e002900000008",
+                "4b4e002900000009",
+                "4b4e00290000000a",
+                "4b4e00290000000b",
+                "4b4e00290000000c",
+                "4b4e00290000000d",
+                "4b4e00290000000e",
+                "4b4e00290000000f",
+                "4b4e00290000001a",
+                "4b4e002900000019"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "20380171ab803ce8db790704c6159d97bb4b633f": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4b4e002900000004": "Song Pack 4",
                 "4b4e00290000000d": "Song Pack 13",
                 "4b4e00290000000e": "Song Pack 14",
                 "4b4e00290000000f": "Song Pack 15",
                 "4b4e002900000019": "Song Pack 25",
                 "4b4e00290000001a": "Song Pack 26"
-            }
-        ]
-    },
-    "4b4e0037": {
-        "Title Name": "Dance Dance Revolution Ultramix 4",
-        "Content IDs": [
-            "4b4e003700000001",
-            "4b4e003700000002",
-            "4b4e003700000003",
-            "4b4e003700000004",
-            "4b4e003700000005",
-            "4b4e003700000006",
-            "4b4e003700000007",
-            "4b4e003700000008",
-            "4b4e003700000009",
-            "4b4e00370000000a",
-            "4b4e00370000000b",
-            "4b4e00370000000c",
-            "4b4e00370000000d",
-            "4b4e00370000000e",
-            "4b4e00370000000f",
-            "4b4e003700000010",
-            "4b4e003700000011",
-            "4b4e00370000001f"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4b4e0037": {
+            "Title Name": "Dance Dance Revolution Ultramix 4",
+            "Content IDs": [
+                "4b4e003700000001",
+                "4b4e003700000002",
+                "4b4e003700000003",
+                "4b4e003700000004",
+                "4b4e003700000005",
+                "4b4e003700000006",
+                "4b4e003700000007",
+                "4b4e003700000008",
+                "4b4e003700000009",
+                "4b4e00370000000a",
+                "4b4e00370000000b",
+                "4b4e00370000000c",
+                "4b4e00370000000d",
+                "4b4e00370000000e",
+                "4b4e00370000000f",
+                "4b4e003700000010",
+                "4b4e003700000011",
+                "4b4e00370000001f"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4b4e003700000010": "Song Pack 16",
                 "4b4e003700000011": "Song Pack 17"
-            }
-        ]
-    },
-    "4b4e001d": {
-        "Title Name": "Dancing Stage Unleashed",
-        "Content IDs": [
-            "4b4e001d00000002",
-            "4b4e001d00000004",
-            "4b4e001d00000005",
-            "4b4e001d00000006",
-            "4b4e001d00000007",
-            "4b4e001d00000013"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "43430016": {
-        "Title Name": "Darkwatch",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4b4e001d": {
+            "Title Name": "Dancing Stage Unleashed",
+            "Content IDs": [
+                "4b4e001d00000002",
+                "4b4e001d00000004",
+                "4b4e001d00000005",
+                "4b4e001d00000006",
+                "4b4e001d00000007",
+                "4b4e001d00000013"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "43430016": {
+            "Title Name": "Darkwatch",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "7674284c8b4b8120cdcb120f1da5806a563a518e": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "54430006": {
-        "Title Name": "Dead or Alive 2 Ultimate",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000500000105",
-            "0000000600000106"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "54430006": {
+            "Title Name": "Dead or Alive 2 Ultimate",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000500000105",
+                "0000000600000106"
+            ],
+            "Title Updates Known": [{
                 "a85b963a2bcea02999f4a122072fe6782cb6edc8": "0000000500000105:NTSC+NTSC-J DOAU1 0105",
                 "e359fb4b6e33095ffc5ae1c47ff226321262a29e": "0000000600000106:NTSC+NTSC-J DOAU2 0106"
-            }
-        ],
-        "Archived": []
-    },
-    "41560020": {
-        "Title Name": "Doom 3",
-        "Content IDs": [
-            "4156002000000021",
-            "4156002000000022",
-            "4156002000000023",
-            "4156002000000037",
-            "4156002000000038",
-            "4156002000000042"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "41560020": {
+            "Title Name": "Doom 3",
+            "Content IDs": [
+                "4156002000000021",
+                "4156002000000022",
+                "4156002000000023",
+                "4156002000000037",
+                "4156002000000038",
+                "4156002000000042"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4156002000000022": "Communications",
                 "4156002000000042": "Surface"
-            }
-        ]
-    },
-    "49470038": {
-        "Title Name": "Driv3r",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "49470038": {
+            "Title Name": "Driv3r",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "fc7afa5d731abdf1a8fdb260a897bcacf7d19e6f": "0000000200000102:RF 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "434d0028": {
-        "Title Name": "England International Football 2004 Edition",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "434d0028": {
+            "Title Name": "England International Football 2004 Edition",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "434d002800000000000000000000000000000000": "0000000100000101:PAL 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "53450028": {
-        "Title Name": "ESPN Major League Baseball (2K4)",
-        "Content IDs": [
-            "5345002820040428",
-            "5345002820040615",
-            "5345002820040815"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "53450028": {
+            "Title Name": "ESPN Major League Baseball (2K4)",
+            "Content IDs": [
+                "5345002820040428",
+                "5345002820040615",
+                "5345002820040815"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "5345002800000000000000000000000000000000": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "54540092": {
-        "Title Name": "ESPN Major League Baseball 2K6",
-        "Content IDs": [
-            "5454009220060508",
-            "5454009220060614",
-            "5454009220060906"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "545400b1": {
-        "Title Name": "ESPN Major League Baseball 2K7",
-        "Content IDs": [
-            "545400b120070212"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "53450031": {
-        "Title Name": "ESPN NBA 2K5",
-        "Content IDs": [
-            "5345003120041109",
-            "5345003120041207",
-            "5345003120050111",
-            "5345003120050309",
-            "5345003120050426"
-        ],
-        "Title Updates": [
-            "0000000200000202"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "53450031": {
+            "Title Name": "ESPN NBA 2K5",
+            "Content IDs": [
+                "5345003120041109",
+                "5345003120041207",
+                "5345003120050111",
+                "5345003120050309",
+                "5345003120050426"
+            ],
+            "Title Updates": [
+                "0000000200000202"
+            ],
+            "Title Updates Known": [{
                 "833eedc5b6ce8c066a0500e1ff4338588ee8bd28": "0000000200000202:NTSC 0202"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5345003120041109": "Roster (2004-11-09)",
                 "5345003120041207": "Roster (2004-12-07)",
                 "5345003120050111": "Roster (2005-01-11)",
                 "5345003120050309": "Roster (2005-03-09)",
                 "5345003120050426": "Roster (2005-04-26)"
-            }
-        ]
-    },
-    "53450023": {
-        "Title Name": "ESPN NBA Basketball (2K4) NTSC",
-        "Content IDs": [
-            "5345002320031105",
-            "5345002320031222",
-            "5345002320040223",
-            "5345002320040419"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
-                "5345002320031105": "ESPN NBA Roster (2003-11-05)",
-                "5345002320031222": "ESPN NBA Roster (2003-12-22)"
-            }
-        ]
-    },
-    "5345002e": {
-        "Title Name": "ESPN NBA Basketball (2K4) PAL",
-        "Content IDs": [
-            "5345002e20031029"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "53450022": {
-        "Title Name": "ESPN NFL Football (2K4) NTSC",
-        "Content IDs": [
-            "5345002220030910",
-            "5345002220031008",
-            "5345002220031201",
-            "5345002220040102"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
-                "97ae31c0e3f6c5d328d40f8d55c30455ffb60a25": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": [
-            {
-                "5345002220030910": "Week 1 Roster Update (2003-09-10)",
-                "5345002220031008": "Week 5 Roster Update (2003-10-08)",
-                "5345002220031201": "ESPN NFL Roster (2003-12-01)"
-            }
-        ]
-    },
-    "5345002c": {
-        "Title Name": "ESPN NFL Football (2K4) PAL",
-        "Content IDs": [
-            "5345002c20030910"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "53450030": {
-        "Title Name": "ESPN NFL 2K5",
-        "Content IDs": [
-            "5345003020040915",
-            "5345003020041007",
-            "5345003020041119",
-            "5345003020050107"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "53450023": {
+            "Title Name": "ESPN NBA Basketball (2K4) NTSC",
+            "Content IDs": [
+                "5345002320031105",
+                "5345002320031222",
+                "5345002320040223",
+                "5345002320040419"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
+                    "5345002320031105": "ESPN NBA Roster (2003-11-05)",
+                    "5345002320031222": "ESPN NBA Roster (2003-12-22)"
+        }]},
+        "5345002e": {
+            "Title Name": "ESPN NBA Basketball (2K4) PAL",
+            "Content IDs": [
+                "5345002e20031029"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "53450022": {
+            "Title Name": "ESPN NFL Football (2K4) NTSC",
+            "Content IDs": [
+                "5345002220030910",
+                "5345002220031008",
+                "5345002220031201",
+                "5345002220040102"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
+                    "97ae31c0e3f6c5d328d40f8d55c30455ffb60a25": "0000000100000101:NTSC 0101"
+            }],
+            "Archived": [{
+                    "5345002220030910": "Week 1 Roster Update (2003-09-10)",
+                    "5345002220031008": "Week 5 Roster Update (2003-10-08)",
+                    "5345002220031201": "ESPN NFL Roster (2003-12-01)"
+        }]},
+        "5345002c": {
+            "Title Name": "ESPN NFL Football (2K4) PAL",
+            "Content IDs": [
+                "5345002c20030910"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "53450030": {
+            "Title Name": "ESPN NFL 2K5",
+            "Content IDs": [
+                "5345003020040915",
+                "5345003020041007",
+                "5345003020041119",
+                "5345003020050107"
+            ],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "6dad6048099762fa9f983f8a48d0388d84a216a9": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [
+                {
                 "5345003020040915": "Roster (2004-09-15)",
                 "5345003020041007": "Roster (2004-10-07)",
                 "5345003020041119": "Roster (2004-11-19)",
                 "5345003020050107": "Roster (2005-01-07)"
-            }
-        ]
-    },
-    "53450032": {
-        "Title Name": "ESPN NHL 2K5",
-        "Content IDs": [
-            "5345003220041018"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "53450032": {
+            "Title Name": "ESPN NHL 2K5",
+            "Content IDs": [
+                "5345003220041018"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5345003220041018": "October Roster Update"
-            }
-        ]
-    },
-    "53450026": {
-        "Title Name": "ESPN NHL Hockey (2K4) NTSC",
-        "Content IDs": [
-            "5345002620031008",
-            "5345002620031202",
-            "5345002620040401",
-            "5345002620040402"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "53450026": {
+            "Title Name": "ESPN NHL Hockey (2K4) NTSC",
+            "Content IDs": [
+                "5345002620031008",
+                "5345002620031202",
+                "5345002620040401",
+                "5345002620040402"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5345002620031008": "NHL Roster Update 1",
                 "5345002620031202": "NHL Roster Update 2",
                 "5345002620040401": "Improved Scoring",
                 "5345002620040402": "Roster Update 3"
-            }
-        ]
-    },
-    "5345002d": {
-        "Title Name": "ESPN NHL Hockey (2K4) PAL",
-        "Content IDs": [
-            "5345002d20040401",
-            "5345002d20040402"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "55530008": {
-        "Title Name": "Far Cry Instincts",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000400000104",
-            "0000000400000204"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "5345002d": {
+            "Title Name": "ESPN NHL Hockey (2K4) PAL",
+            "Content IDs": [
+                "5345002d20040401",
+                "5345002d20040402"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "55530008": {
+            "Title Name": "Far Cry Instincts",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000400000104",
+                "0000000400000204"
+            ],
+            "Title Updates Known": [{
                 "37aef1de6a945ffe7bb1afb6d7663be2cf38c253": "0000000100000101:RF worldwide 0101",
                 "095e58134f0a72919398dc8e2768a67b581e66cf": "0000000100000201:RF worldwide 0201",
                 "5553000800000000000000000000000000000000": "0000000400000104:PAL German 0104",
                 "5553000800000000000000000000000000000001": "0000000400000204:PAL German 0204"
-            }
-        ],
-        "Archived": []
-    },
-    "55530060": {
-        "Title Name": "Far Cry Instincts Evolution",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000300000203"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "55530060": {
+            "Title Name": "Far Cry Instincts Evolution",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000300000203"
+            ],
+            "Title Updates Known": [{
                 "dd78bc7d431099f897adfcde3dda7e183f079bcf": "0000000300000203:RF 0203"
-            }
-        ],
-        "Archived": []
-    },
-    "454100a6": {
-        "Title Name": "FIFA 07",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000500000105",
-            "0000000700000107",
-            "0000000800000108"
-        ],
-        "Title Updates Known": [
-            {
+                }],
+            "Archived": []
+        },
+        "454100a6": {
+            "Title Name": "FIFA 07",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000500000105",
+                "0000000700000107",
+                "0000000800000108"
+            ],
+            "Title Updates Known": [{
                 "454100a600000000000000000000000000000000": "0000000200000102:PAL France/Germany 0102",
                 "454100a600000000000000000000000000000001": "0000000500000105:NTSC 0105",
                 "454100a600000000000000000000000000000002": "0000000700000107:PAL Europe 0107",
                 "454100a600000000000000000000000000000003": "0000000800000108:PAL Sweden 0108"
-            }
-        ],
-        "Archived": []
-    },
-    "5655002f": {
-        "Title Name": "Fight Club",
-        "Content IDs": [
-            "5655002f00000804"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "5655002f": {
+            "Title Name": "Fight Club",
+            "Content IDs": [
+                "5655002f00000804"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5655002f00000804": "Download Pack 1"
-            }
-        ]
-    },
-    "454d0009": {
-        "Title Name": "FlatOut",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "454d0009": {
+            "Title Name": "FlatOut",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "454d000900000000000000000000000000000000": "0000000100000101:PAL Europe 0101",
                 "454d000900000000000000000000000000000001": "0000000200000102:PAL Germany 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "4d53006e": {
-        "Title Name": "Forza Motorsport",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000100000301",
-            "0000004600000146"
-        ],
-        "Title Updates Known": [
-            {
-                "4d53006e00000000000000000000000000000000": "0000000100000101:RF standalone 0101",
+            }],
+            "Archived": []
+        },
+        "4d53006e": {
+            "Title Name": "Forza Motorsport",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000100000301",
+                "0000004600000146"
+            ],
+            "Title Updates Known": [{
+                "74dcaf85cd2f20af5ba3667c54e68b22ae2eda00": "0000000100000101:RF standalone 0101",
                 "a92827d449e7590b36fd58646436871393ecf2b5": "0000000100000201:RF standalone 0201",
                 "09beb345370cd0d9a37d8740d591dd80499acfe1": "0000000100000301:RF standalone 0301",
                 "073671904c334c92f22bc2652f1841e871ef5540": "0000004600000146:RF XBLA combo 0146"
-            }
-        ],
-        "Archived": []
-    },
-    "54510022": {
-        "Title Name": "Full Spectrum Warrior",
-        "Content IDs": [
-            "5451002200000001",
-            "5451002200000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510022": {
+            "Title Name": "Full Spectrum Warrior",
+            "Content IDs": [
+                "5451002200000001",
+                "5451002200000002"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5451002200000001": "Epilogue 1",
                 "5451002200000002": "Epilogue 2"
-            }
-        ]
-    },
-    "545100f8": {
-        "Title Name": "Full Spectrum Warrior Ten Hammers",
-        "Content IDs": [
-            "545100f800000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "545100f8": {
+            "Title Name": "Full Spectrum Warrior Ten Hammers",
+            "Content IDs": [
+                "545100f800000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "545100f800000001": "After Zafarra"
-            }
-        ]
-    },
-    "49470039": {
-        "Title Name": "Godzilla Destroy All Monsters Melee",
-        "Content IDs": [
-            "494700390000000c"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "49470039": {
+            "Title Name": "Godzilla Destroy All Monsters Melee",
+            "Content IDs": [
+                "494700390000000c"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "494700390000000c": "Thrashburg"
-            }
-        ]
-    },
-    "53410002": {
-        "Title Name": "Guilty Gear XX #Reload The Midnight Carnival",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "53410002": {
+            "Title Name": "Guilty Gear XX #Reload The Midnight Carnival",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "5341000200000000000000000000000000000000": "0000000200000102:NTSC-J 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "4d530064": {
-        "Title Name": "Halo 2",
-        "Content IDs": [
-            "4d53006400000001",
-            "4d53006400000002",
-            "4d53006400000003",
-            "4d53006400000004"
-        ],
-        "Title Updates": [
-            "0000000300000103",
-            "0000000300000203",
-            "0000000300000303",
-            "0000000300000503",
-            "0000000300000803",
-            "0000000400000104",
-            "0000000400000204",
-            "0000000400000304",
-            "0000000400000404",
-            "0000000400000504",
-            "0000000500000105",
-            "0000000500000205",
-            "0000000500000305",
-            "0000000500000405",
-            "0000000500000505",
-            "0000000600000106",
-            "0000000600000206",
-            "0000000600000306",
-            "0000000600000406",
-            "0000000600000506",
-            "0000000700000107",
-            "0000000700000207",
-            "0000000700000307",
-            "0000000700000407",
-            "0000000700000507",
-            "0000000800000108",
-            "0000000800000208",
-            "0000000800000308",
-            "0000000800000408",
-            "0000000800000508",
-            "0000000900000109",
-            "0000000900000209",
-            "0000000900000309",
-            "0000000900000409",
-            "0000000900000509",
-            "0000000a0000010a",
-            "0000000a0000020a",
-            "0000000a0000030a",
-            "0000000a0000040a",
-            "0000000a0000050a"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d530064": {
+            "Title Name": "Halo 2",
+            "Content IDs": [
+                "4d53006400000001",
+                "4d53006400000002",
+                "4d53006400000003",
+                "4d53006400000004"
+            ],
+            "Title Updates": [
+                "0000000300000103",
+                "0000000300000203",
+                "0000000300000303",
+                "0000000300000503",
+                "0000000300000803",
+                "0000000400000104",
+                "0000000400000204",
+                "0000000400000304",
+                "0000000400000404",
+                "0000000400000504",
+                "0000000500000105",
+                "0000000500000205",
+                "0000000500000305",
+                "0000000500000405",
+                "0000000500000505",
+                "0000000600000106",
+                "0000000600000206",
+                "0000000600000306",
+                "0000000600000406",
+                "0000000600000506",
+                "0000000700000107",
+                "0000000700000207",
+                "0000000700000307",
+                "0000000700000407",
+                "0000000700000507",
+                "0000000800000108",
+                "0000000800000208",
+                "0000000800000308",
+                "0000000800000408",
+                "0000000800000508",
+                "0000000900000109",
+                "0000000900000209",
+                "0000000900000309",
+                "0000000900000409",
+                "0000000900000509",
+                "0000000a0000010a",
+                "0000000a0000020a",
+                "0000000a0000030a",
+                "0000000a0000040a",
+                "0000000a0000050a"
+            ],
+            "Title Updates Known": [{
                 "f912f676ff2e5a33b6352ea410ac7c95f51c44b1": "0000000300000103:RF English Update 1",
                 "79b1832fbc0cb6e0abb3bb54967fe3c615a2188e": "0000000300000203:RF English Update 2",
                 "4130789398a3addd38bb8ac26259f78b5dcd4326": "0000000300000303:RF English Update 3",
@@ -1006,240 +857,204 @@
                 "613defa7b9f54ddd87aac57e4f946a1626546563": "0000000a0000030a:RF Japanese Update 3",
                 "4d53006400000000000000000000000000000017": "0000000a0000040a:RF Japanese Update 4",
                 "4d53006400000000000000000000000000000018": "0000000a0000050a:RF Japanese Update 5"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53006400000001": "Bonus Map Pack",
                 "4d53006400000002": "Killtacular Pack",
                 "4d53006400000003": "Maptacular Pack",
                 "4d53006400000004": "Blastacular Pack"
-            }
-        ]
-    },
-    "4d530082": {
-        "Title Name": "Halo 2 Beta",
-        "Content IDs": [
-            "4d53008200000000"
-        ],
-        "Title Updates": [
-            "0000000000000101",
-            "0000000000000201",
-            "0000000000000301",
-            "0000000000000402"
-        ],
-        "Title Updates Known": [
-            {
-                "4d53008200000000000000000000000000000000": "0000000000000101:RF 0101",
+        }]},
+        "4d530082": {
+            "Title Name": "Halo 2 Beta",
+            "Content IDs": [
+                "4d53008200000000"
+            ],
+            "Title Updates": [
+                "0000000000000101",
+                "0000000000000201",
+                "0000000000000301",
+                "0000000000000401"
+            ],
+            "Title Updates Known": [{
+                "80f3bf79e60d7f08a9befc8866bf626324142d5d": "0000000000000101:RF 0101",
                 "4d53008200000000000000000000000000000001": "0000000000000201:RF 0201",
                 "af4c19c73dff53677744f3359a2a7b16a236187c": "0000000000000301:RF 0301",
                 "d496b362910d00c1d9271cd4489b512203ddfc24": "0000000000000401:RF 0401"
-            }
-        ],
-        "Archived": [
-            {
+                }],
+            "Archived": [{
                 "4d53008200000000": "Multiplayer Map: Lockout"
-            }
-        ]
-    },
-    "54440006": {
-        "Title Name": "High Heat Major League Baseball 2004",
-        "Content IDs": [
-            "5444000600000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "5655002d": {
-        "Title Name": "Hunter The Reckoning Redeemer",
-        "Content IDs": [
-            "5655002d00000001",
-            "5655002d00000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},		
+        "54440006": {
+            "Title Name": "High Heat Major League Baseball 2004",
+            "Content IDs": [
+                "5444000600000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "5655002d": {
+            "Title Name": "Hunter The Reckoning Redeemer",
+            "Content IDs": [
+                "5655002d00000001",
+                "5655002d00000002"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5655002d00000001": "Costume Set #1",
                 "5655002d00000002": "Costume Set #2"
-            }
-        ]
-    },
-    "42530006": {
-        "Title Name": "IHRA Drag Racing 2004",
-        "Content IDs": [
-            "4253000600000001",
-            "4253000600000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "42530006": {
+            "Title Name": "IHRA Drag Racing 2004",
+            "Content IDs": [
+                "4253000600000001",
+                "4253000600000002"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4253000600000001": "Mike Janis Update",
                 "4253000600000002": "Terry McMillen Update"
-            }
-        ]
-    },
-    "53410003": {
-        "Title Name": "Iron Phoenix",
-        "Content IDs": [
-            "5341000300000001",
-            "5341000300000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "53410003": {
+            "Title Name": "Iron Phoenix",
+            "Content IDs": [
+                "5341000300000001",
+                "5341000300000002"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5341000300000001": "Shin's fortress",
                 "5341000300000002": "Night Demon Island"
-            }
-        ]
-    },
-    "4d53006d": {
-        "Title Name": "Jade Empire",
-        "Content IDs": [
-            "4d53006d00000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4d53006d": {
+            "Title Name": "Jade Empire",
+            "Content IDs": [
+                "4d53006d00000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d53006d00000001": "Monk Zeng Content"
-            }
-        ]
-    },
-    "545100ef": {
-        "Title Name": "Juiced",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "545100ef": {
+            "Title Name": "Juiced",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "545100ef00000000000000000000000000000000": "0000000100000201:NTSC+PAL 0201"
-            }
-        ],
-        "Archived": []
-    },
-    "4b4e0025": {
-        "Title Name": "Karaoke Revolution",
-        "Content IDs": [
-            "4b4e002500000001",
-            "4b4e002500000002",
-            "4b4e002500000003",
-            "4b4e002500000004",
-            "4b4e002500000005",
-            "4b4e002500000006"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "4b4e0025": {
+            "Title Name": "Karaoke Revolution",
+            "Content IDs": [
+                "4b4e002500000001",
+                "4b4e002500000002",
+                "4b4e002500000003",
+                "4b4e002500000004",
+                "4b4e002500000005",
+                "4b4e002500000006"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4b4e002500000001": "KRX1 - Classic Rock",
                 "4b4e002500000004": "KRX4   Top 40"
-            }
-        ]
-    },
-    "4b4e002e": {
-        "Title Name": "Karaoke Revolution Party",
-        "Content IDs": [
-            "4b4e002e00000001",
-            "4b4e002e00000002",
-            "4b4e002e00000003",
-            "4b4e002e00000004",
-            "4b4e002e00000005",
-            "4b4e002e00000006",
-            "4b4e002e00000007",
-            "4b4e002e00000008",
-            "4b4e002e00000009",
-            "4b4e002e0000000a",
-            "4b4e002e0000000b",
-            "4b4e002e0000000c",
-            "4b4e002e0000000d",
-            "4b4e002e0000000e",
-            "4b4e002e0000000f",
-            "4b4e002e00000010",
-            "4b4e002e00000011",
-            "4b4e002e00000012",
-            "4b4e002e00000013",
-            "4b4e002e00000014",
-            "4b4e002e00000015",
-            "4b4e002e00000016"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4b4e002e": {
+            "Title Name": "Karaoke Revolution Party",
+            "Content IDs": [
+                "4b4e002e00000001",
+                "4b4e002e00000002",
+                "4b4e002e00000003",
+                "4b4e002e00000004",
+                "4b4e002e00000005",
+                "4b4e002e00000006",
+                "4b4e002e00000007",
+                "4b4e002e00000008",
+                "4b4e002e00000009",
+                "4b4e002e0000000a",
+                "4b4e002e0000000b",
+                "4b4e002e0000000c",
+                "4b4e002e0000000d",
+                "4b4e002e0000000e",
+                "4b4e002e0000000f",
+                "4b4e002e00000010",
+                "4b4e002e00000011",
+                "4b4e002e00000012",
+                "4b4e002e00000013",
+                "4b4e002e00000014",
+                "4b4e002e00000015",
+                "4b4e002e00000016"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4b4e002e00000015": "KRXM1 - Mega Pack (1-20)",
                 "4b4e002e00000016": "KRXB1 - Bonus Pack"
-            }
-        ]
-    },
-    "544d0007": {
-        "Title Name": "Knights of the Temple Infernal Crusade",
-        "Content IDs": [
-            "544d000700000002",
-            "544d000700000003",
-            "544d000700000004",
-            "544d000700000005",
-            "544d000700000006",
-            "544d000700000007"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "544d0007": {
+            "Title Name": "Knights of the Temple Infernal Crusade",
+            "Content IDs": [
+                "544d000700000002",
+                "544d000700000003",
+                "544d000700000004",
+                "544d000700000005",
+                "544d000700000006",
+                "544d000700000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "544d000700000002": "Battle Woods",
                 "544d000700000003": "The Old Colloseum",
                 "544d000700000004": "Showdown in Acre",
                 "544d000700000005": "Limbo Macabre",
                 "544d000700000006": "For Whom The Bell Tolls",
                 "544d000700000007": "Cavern Of Doom"
-            }
-        ]
-    },
-    "4d570025": {
-        "Title Name": "L.A. Rush",
-        "Content IDs": [
-            "4d57002500706573",
-            "4d5700250070636d",
-            "4d57002500707373",
-            "4d57002500707372",
-            "4d5700250070736c"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4d570025": {
+            "Title Name": "L.A. Rush",
+            "Content IDs": [
+                "4d57002500706573",
+                "4d5700250070636d",
+                "4d57002500707373",
+                "4d57002500707372",
+                "4d5700250070736c"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d5700250070636d": "'67 Chevrolet Camaro",
                 "4d5700250070736c": "'02 Nissan Skyline",
                 "4d57002500706573": "'04 Cadillac Escalade",
                 "4d57002500707372": "'04 Chevrolet SSR",
                 "4d57002500707373": "'70 Chevrolet Chevelle SS"
-            }
-        ]
-    },
-    "4d53005d": {
-        "Title Name": "Links 2004",
-        "Content IDs": [
-            "4d53005d00000001",
-            "4d53005d00000002",
-            "4d53005d00000004"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000100000301",
-            "0000000200000102",
-            "0000000200000302",
-            "0000000200000402",
-            "0000000300000103",
-            "0000000300000203",
-            "0000000300000303"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d53005d": {
+            "Title Name": "Links 2004",
+            "Content IDs": [
+                "4d53005d00000001",
+                "4d53005d00000002",
+                "4d53005d00000004"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000100000301",
+                "0000000200000102",
+                "0000000200000302",
+                "0000000200000402",
+                "0000000300000103",
+                "0000000300000203",
+                "0000000300000303"
+            ],
+            "Title Updates Known": [{
                 "271e30c6c1fc985879e435ef234d7bbda2de1eaa": "0000000100000101:NTSC 0101",
                 "4d53005d00000000000000000000000000000000": "0000000100000201:NTSC 0201",
                 "4738fe5f7dfac3a9aca390c1b01842d6ab20dfb1": "0000000100000301:NTSC 0301",
@@ -1249,116 +1064,127 @@
                 "4d53005d00000000000000000000000000000003": "0000000300000101:NTSC-J 0103",
                 "4d53005d00000000000000000000000000000004": "0000000300000201:NTSC-J 0203",
                 "4d53005d00000000000000000000000000000005": "0000000300000303:NTSC-J 0303"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53005d00000001": "Kapalua Plantation",
                 "4d53005d00000002": "OM Director's Cut",
                 "4d53005d00000004": "The Gallery"
-            }
-        ]
-    },
-    "53450037": {
-        "Title Name": "Major League Baseball 2K5",
-        "Content IDs": [
-            "5345003720050214",
-            "5345003720050318",
-            "5345003720050417",
-            "5345003720050513",
-            "5345003720050621",
-            "5345003720050803"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4947000e": {
-        "Title Name": "Magic The Gathering Battlegrounds",
-        "Content IDs": [
-            "4947000e00000002"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4947000e": {
+            "Title Name": "Magic The Gathering Battlegrounds",
+            "Content IDs": [
+                "4947000e00000002"
+            ],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "05dd4b7e16aea18b2319b72596dd2760e816940e": "0000000100000201:RF 0201"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4947000e00000002": "Expansion Pack"
-            }
-        ]
-    },
-    "4d530017": {
-        "Title Name": "MechAssault",
-        "Content IDs": [
-            "4d53001700000001",
-            "4d53001700000002",
-            "4d53001700000003",
-            "4d53001700000004",
-            "4d53001700000005",
-            "4d53001700000006",
-            "4d53001700000007",
-            "4d53001700000008",
-            "4d53001700000009",
-            "4d5300170000000a",
-            "4d5300170000000b",
-            "4d5300170000000c",
-            "4d5300170000000d",
-            "4d5300170000000e",
-            "4d5300170000000f",
-            "4d53001700000010",
-            "4d53001700000011",
-            "4d53001700000012",
-            "4d53001700000013",
-            "4d53001700000014",
-            "4d53001700000015",
-            "4d53001700000016",
-            "4d53001700000017",
-            "4d53001700000018",
-            "4d53001700000019",
-            "4d5300170000001a",
-            "4d5300170000001b",
-            "4d5300170000001c",
-            "4d5300170000001d",
-            "4d5300170000001e",
-            "4d5300170000001f",
-            "4d53001700000020",
-            "4d53001700000021",
-            "4d53001700000022",
-            "4d53001700000023",
-            "4d53001700000024",
-            "4d53001700000025",
-            "4d53001700000026",
-            "4d53001700000027",
-            "4d53001700000028",
-            "4d53001700000029",
-            "4d5300170000002a",
-            "4d5300170000002b",
-            "4d5300170000002c",
-            "4d5300170000002d",
-            "4d5300170000002e",
-            "4d5300170000002f",
-            "4d53001700000030",
-            "4d53001700000035",
-            "4d53001700000036",
-            "4d53001700000037",
-            "4d53001700000038"
-        ],
-        "Title Updates": [
-            "0000000100000201",
-            "0000000100000301",
-            "0000000100000401",
-            "0000000100000601",
-            "0000000400000504",
-            "0000000700000207",
-            "0000000700000407"
-        ],
-        "Title Updates Known": [
-            {
+        }]},		
+        "53450037": {
+            "Title Name": "Major League Baseball 2K5",
+            "Content IDs": [
+                "5345003720050214",
+                "5345003720050318",
+                "5345003720050417",
+                "5345003720050513",
+                "5345003720050621",
+                "5345003720050803"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "54540092": {
+            "Title Name": "Major League Baseball 2K6",
+            "Content IDs": [
+                "5454009220060508",
+                "5454009220060614",
+                "5454009220060906"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "545400b1": {
+            "Title Name": "Major League Baseball 2K7",
+            "Content IDs": [
+                "545400b120070212"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },		
+
+        "4d530017": {
+            "Title Name": "MechAssault",
+            "Content IDs": [
+                "4d53001700000001",
+                "4d53001700000002",
+                "4d53001700000003",
+                "4d53001700000004",
+                "4d53001700000005",
+                "4d53001700000006",
+                "4d53001700000007",
+                "4d53001700000008",
+                "4d53001700000009",
+                "4d5300170000000a",
+                "4d5300170000000b",
+                "4d5300170000000c",
+                "4d5300170000000d",
+                "4d5300170000000e",
+                "4d5300170000000f",
+                "4d53001700000010",
+                "4d53001700000011",
+                "4d53001700000012",
+                "4d53001700000013",
+                "4d53001700000014",
+                "4d53001700000015",
+                "4d53001700000016",
+                "4d53001700000017",
+                "4d53001700000018",
+                "4d53001700000019",
+                "4d5300170000001a",
+                "4d5300170000001b",
+                "4d5300170000001c",
+                "4d5300170000001d",
+                "4d5300170000001e",
+                "4d5300170000001f",
+                "4d53001700000020",
+                "4d53001700000021",
+                "4d53001700000022",
+                "4d53001700000023",
+                "4d53001700000024",
+                "4d53001700000025",
+                "4d53001700000026",
+                "4d53001700000027",
+                "4d53001700000028",
+                "4d53001700000029",
+                "4d5300170000002a",
+                "4d5300170000002b",
+                "4d5300170000002c",
+                "4d5300170000002d",
+                "4d5300170000002e",
+                "4d5300170000002f",
+                "4d53001700000030",
+                "4d53001700000035",
+                "4d53001700000036",
+                "4d53001700000037",
+                "4d53001700000038"
+            ],
+            "Title Updates": [
+                "0000000100000201",
+                "0000000100000301",
+                "0000000100000401",
+                "0000000100000601",
+                "0000000400000504",
+                "0000000700000207",
+                "0000000700000407"
+            ],
+            "Title Updates Known": [{
                 "4d53001700000000000000000000000000000000": "0000000100000201:NTSC+PAL 0201",
                 "4d53001700000000000000000000000000000001": "0000000100000301:NTSC+PAL 0301",
                 "4d53001700000000000000000000000000000002": "0000000100000401:NTSC+PAL 0401",
@@ -1366,89 +1192,84 @@
                 "4d53001700000000000000000000000000000003": "0000000400000504:NTSC-J South-East Asia 0504",
                 "4d53001700000000000000000000000000000004": "0000000700000207:NTSC-J Japan 0207",
                 "4d53001700000000000000000000000000000005": "0000000700000407:NTSC-J Japan 0407"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53001700000001": "1 - Hell's Kitchen",
                 "4d53001700000005": "2 - Raven",
+                "4d53001700000008": "2 - Raven (Region 4)",
                 "4d53001700000009": "3 - Stone Cold",
+                "4d5300170000000c": "3 - Stone Cold (Region 4)",
                 "4d5300170000000d": "4 - Corvus",
+                "4d53001700000010": "4 - Corvus (Region 4)",
                 "4d53001700000011": "5 - Midtown Mayhem",
-                "4d53001700000014": "5 - Midtown Mayhem",
+                "4d53001700000014": "5 - Midtown Mayhem (Region 4)",
                 "4d53001700000015": "6 - Desert Storm",
-                "4d53001700000018": "6 - Desert Storm",
+                "4d53001700000018": "6 - Desert Storm (Region 4)",
                 "4d53001700000019": "7 - Hellbringer",
-                "4d5300170000001c": "7 - Hellbringer",
+                "4d5300170000001c": "7 - Hellbringer (Region 4)",
                 "4d5300170000001d": "8 - Loki",
-                "4d53001700000020": "8 - Loki",
+                "4d53001700000020": "8 - Loki (Region 4)",
                 "4d53001700000021": "9 - Demolition Town",
+                "4d53001700000024": "9 - Demolition Town (Region 4)",
                 "4d53001700000025": "10 - Rock Solid",
                 "4d53001700000029": "11 - Jotenheim",
                 "4d5300170000002d": "12 - Gametypes",
+                "4d53001700000030": "12 - Gametypes (Region 4)",
                 "4d53001700000035": "14 - Objective Package"
-            }
-        ]
-    },
-    "4d53006b": {
-        "Title Name": "MechAssault 2 Lone Wolf",
-        "Content IDs": [
-            "4d53006b00000001",
-            "4d53006b00000002"
-        ],
-        "Title Updates": [
-            "0000000600000106",
-            "0000000600000206"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d53006b": {
+            "Title Name": "MechAssault 2 Lone Wolf",
+            "Content IDs": [
+                "4d53006b00000001",
+                "4d53006b00000002"
+            ],
+            "Title Updates": [
+                "0000000600000106",
+                "0000000600000206"
+            ],
+            "Title Updates Known": [{
                 "34d7dcec040ce99d15e87be8a9a66f5b96b7f16f": "0000000100000201:RF 0106",
                 "631f5659046551dc782522551acf9c0de3f13636": "0000000600000206:RF 0206"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53006b00000001": "01 New Maps",
                 "4d53006b00000002": "02 Battle Pack"
-            }
-        ]
-    },
-    "46530006": {
-        "Title Name": "Metal Wolf Chaos",
-        "Content IDs": [
-            "465300060001001e",
-            "465300060001001f",
-            "4653000600010028",
-            "4653000600010072",
-            "46530006000100cb",
-            "4653000600010118",
-            "465300060001017c",
-            "46530006000101e0",
-            "46530006000101ae",
-            "4653000600010259",
-            "46530006000102c9",
-            "4653000600010336",
-            "465300060001039a",
-            "4653000600020001",
-            "4653000600020002",
-            "4653000600020003",
-            "4653000600020004",
-            "4653000600020005",
-            "4653000600020006",
-            "4653000600020007",
-            "4653000600020008",
-            "4653000600020009",
-            "465300060002000a",
-            "465300060002000b",
-            "465300060002000c",
-            "465300060002000d",
-            "465300060002000e",
-            "4653000600040069"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "46530006": {
+            "Title Name": "Metal Wolf Chaos",
+            "Content IDs": [
+                "465300060001001e",
+                "465300060001001f",
+                "4653000600010028",
+                "4653000600010072",
+                "46530006000100cb",
+                "4653000600010118",
+                "465300060001017c",
+                "46530006000101e0",
+                "46530006000101ae",
+                "4653000600010259",
+                "46530006000102c9",
+                "4653000600010336",
+                "465300060001039a",
+                "4653000600020001",
+                "4653000600020002",
+                "4653000600020003",
+                "4653000600020004",
+                "4653000600020005",
+                "4653000600020006",
+                "4653000600020007",
+                "4653000600020008",
+                "4653000600020009",
+                "465300060002000a",
+                "465300060002000b",
+                "465300060002000c",
+                "465300060002000d",
+                "465300060002000e",
+                "4653000600040069"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "465300060001001e": "WRE-RH",
                 "465300060001001f": "GRE-RH",
                 "4653000600010028": "RAYG",
@@ -1477,148 +1298,130 @@
                 "465300060002000d": "wesher",
                 "465300060002000e": "kokyu",
                 "4653000600040069": "GRAY"
-            }
-        ]
-    },
-    "58580007": {
-        "Title Name": "Microsoft Windows Media Center Extender for Xbox",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "58580007": {
+            "Title Name": "Microsoft Windows Media Center Extender for Xbox",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "5858000700000000000000000000000000000000": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": []
-    },
-    "54540079": {
-        "Title Name": "Midnight Club 3 DUB Edition",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "54540079": {
+            "Title Name": "Midnight Club 3 DUB Edition",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "a023e20ff0a1b5e43d1ca8d3fce0690ca8df386f": "0000000100000101:NTSC 0101",
                 "5454007900000000000000000000000000000000": "0000000200000102:PAL 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "4d53002a": {
-        "Title Name": "Midtown Madness 3",
-        "Content IDs": [
-            "4d53002a00000001",
-            "4d53002a00000002",
-            "4d53002a00000003",
-            "4d53002a00000004",
-            "4d53002a00000005",
-            "4d53002a00000006"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000300000103",
-            "0000000400000104",
-            "0000000500000105",
-            "0000000500000205",
-            "0000000700000107"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d53002a": {
+            "Title Name": "Midtown Madness 3",
+            "Content IDs": [
+                "4d53002a00000001",
+                "4d53002a00000002",
+                "4d53002a00000003",
+                "4d53002a00000004",
+                "4d53002a00000005",
+                "4d53002a00000006"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000300000103",
+                "0000000400000104",
+                "0000000500000105",
+                "0000000500000205",				
+                "0000000700000107"
+            ],
+            "Title Updates Known": [{
                 "4d53002a00000000000000000000000000000000": "0000000200000102:NTSC-J Japan 0102",
                 "e520e16140441596968c2e5b9c5f82e4c3486d8e": "0000000300000103:PAL 0103",
                 "30fb381739cbfe6e91bc767cbea6df487bbb3afd": "0000000400000104:NTSC 0104",
                 "4d53002a00000000000000000000000000000001": "0000000500000105:NTSC-J South-East Asia 0105",
                 "4d53002a00000000000000000000000000000002": "0000000500000205:NTSC-J South-East Asia 0205",
                 "4d53002a00000000000000000000000000000003": "0000000700000107:unknown Korea? 0107"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53002a00000001": "Car Pack 1",
                 "4d53002a00000002": "Track Pack 1",
                 "4d53002a00000003": "Midtown Madness 3 Track Pack 2",
                 "4d53002a00000004": "Car Pack 2",
                 "4d53002a00000005": "Midtown Madness 3 Car Pack 3",
                 "4d53002a00000006": "Midtown Madness 3 Car Pack 4"
-            }
-        ]
-    },
-    "4d530034": {
-        "Title Name": "MLB Inside Pitch 2003",
-        "Content IDs": [
-            "4d53003400000004"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "54510015": {
-        "Title Name": "MotoGP Online Demo",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d530034": {
+            "Title Name": "MLB Inside Pitch 2003",
+            "Content IDs": [
+                "4d53003400000004"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "54510015": {
+            "Title Name": "MotoGP Online Demo",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "f23a214912fb38ff9afb7dbd2ffd168453434a2e": "0000000300000103:NTSC+PAL 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "54510016": {
-        "Title Name": "MotoGP URT2 Online Challenge",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000300000103",
-            "0000000400000104",
-            "0000000600000106"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510016": {
+            "Title Name": "MotoGP URT2 Online Challenge",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000300000103",
+                "0000000400000104",
+                "0000000600000106"
+            ],
+            "Title Updates Known": [{
                 "b3934420a969dedb2d49cf4682b5b54061bda71f": "0000000300000103:NTSC-J 0103",
                 "634a7d1afacf14ca267c0e7d4e99141ae7794f78": "0000000400000104:PAL 0104",
                 "5451001600000000000000000000000000000000": "0000000600000106:NTSC 0106"
-            }
-        ],
-        "Archived": []
-    },
-    "54510088": {
-        "Title Name": "MotoGP Ultimate Racing Technology 3",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000400000204",
-            "0000000500000205"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510088": {
+            "Title Name": "MotoGP Ultimate Racing Technology 3",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000400000204",
+                "0000000500000205"
+            ],
+            "Title Updates Known": [{
                 "b12e4e405834fb3e1c77e0d8fa21bdfde5dd9701": "0000000400000204:RF 0204",
                 "5451008800000000000000000000000000000000": "0000000500000205:PAL Italian 0205"
-            }
-        ],
-        "Archived": []
-    },
-    "54510010": {
-        "Title Name": "MX Superfly",
-        "Content IDs": [
-            "5451001000000001",
-            "5451001000000002",
-            "545100100000000a",
-            "545100100000000b",
-            "545100100000000c",
-            "545100100000000d",
-            "545100100000000e",
-            "545100100000000f",
-            "5451001000000010",
-            "5451001000000012",
-            "5451001000000013"
-        ],
-        "Title Updates": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510010": {
+            "Title Name": "MX Superfly",
+            "Content IDs": [
+                "5451001000000001",
+                "5451001000000002",
+                "545100100000000a",
+                "545100100000000b",
+                "545100100000000c",
+                "545100100000000d",
+                "545100100000000e",
+                "545100100000000f",
+                "5451001000000010",
+                "5451001000000012",
+                "5451001000000013"
+            ],
+            "Title Updates": [],
+            "Archived": [{
                 "5451001000000001": "Mall Jump Track Unlock",
                 "5451001000000002": "Backyard Bash Track Unlock",
                 "545100100000000a": "Bubba and Armor",
@@ -1630,335 +1433,296 @@
                 "5451001000000010": "Bones and Pharaoh",
                 "5451001000000012": "Baller and Swoosh",
                 "5451001000000013": "Dynamite and Vega"
-            }
-        ]
-    },
-    "545100ed": {
-        "Title Name": "MX vs. ATV Unleashed ",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000301"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "545100ed": {
+            "Title Name": "MX vs. ATV Unleashed ",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000301"
+            ],
+            "Title Updates Known": [{
                 "e0e71451484ca9e413660716c5c877183b2ddcb9": "0000000100000301:NTSC+NTSC-J 0301"
-            }
-        ],
-        "Archived": []
-    },
-    "53450013": {
-        "Title Name": "NBA 2K3",
-        "Content IDs": [
-            "5345001320021105",
-            "5345001320030117",
-            "5345001320030228",
-            "5345001320030429"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "53450013": {
+            "Title Name": "NBA 2K3",
+            "Content IDs": [
+                "5345001320021105",
+                "5345001320030117",
+                "5345001320030228",
+                "5345001320030429"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "5345001300000000000000000000000000000000": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5345001320021105": "Roster Update 11/5/2002",
                 "5345001320030117": "Roster Update 1/17/2003",
                 "5345001320030228": "Roster Update 2/28/2003",
                 "5345001320030429": "Roster Update 4/29/2003"
-            }
-        ]
-    },
-    "54540090": {
-        "Title Name": "NBA 2K6",
-        "Content IDs": [
-            "5454009020051020",
-            "5454009020060426"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "54540090": {
+            "Title Name": "NBA 2K6",
+            "Content IDs": [
+                "5454009020051020",
+                "5454009020060426"
+            ],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "5454009000000000000000000000000000000000": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": []
-    },
-    "545400ae": {
-        "Title Name": "NBA 2K7",
-        "Content IDs": [
-            "545400ae20070109",
-            "545400ae20070228"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4d53000b": {
-        "Title Name": "NBA Inside Drive 2004",
-        "Content IDs": [
-            "4d53000b00000001",
-            "4d53000b00000002",
-            "4d53000b00000003",
-            "4d53000b00000004",
-            "4d53000b00000005",
-            "4d53000b00000006"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "41430013": {
-        "Title Name": "NBA Jam",
-        "Content IDs": [
-            "414300130000000c",
-            "4143001300000010"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "53450011": {
-        "Title Name": "NFL 2K3",
-        "Content IDs": [
-            "5345001120021101",
-            "5345001120021210",
-            "5345001120030103"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4d530028": {
-        "Title Name": "NFL Fever 2003",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000400010004",
-            "0000000500020005",
-            "0000000600010006"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "545400ae": {
+            "Title Name": "NBA 2K7",
+            "Content IDs": [
+                "545400ae20070109",
+                "545400ae20070228"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "4d53000b": {
+            "Title Name": "NBA Inside Drive 2004",
+            "Content IDs": [
+                "4d53000b00000001",
+                "4d53000b00000002",
+                "4d53000b00000003",
+                "4d53000b00000004",
+                "4d53000b00000005",
+                "4d53000b00000006"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "41430013": {
+            "Title Name": "NBA Jam",
+            "Content IDs": [
+                "414300130000000c",
+                "4143001300000010"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "53450011": {
+            "Title Name": "NFL 2K3",
+            "Content IDs": [
+                "5345001120021101",
+                "5345001120021210",
+                "5345001120030103"
+            ],
+            "Title Updates": [
+                "0000000100030001"
+            ],
+            "Title Updates Known": [{
+                "cb9802cad47af379729da008763466bc811a3607": "0000000100030001:NTSC 30001"
+            }],
+            "Archived": [{
+                "5345001120021210": "Week 14 Update 12/10/2002",
+                "5345001120030103": "Week 17 Update 1/3/2003"
+        }]},
+        "4d530028": {
+            "Title Name": "NFL Fever 2003",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000400010004",
+                "0000000500020005",
+                "0000000600010006"
+            ],
+            "Title Updates Known": [{
                 "eb80dee47f605d673479d892e92dad4ad42cd1ef": "0000000400010004:NTSC 10004",
                 "4d53002800000000000000000000000000000000": "0000000500020005:PAL 20005",
                 "4d53002800000000000000000000000000000001": "0000000600010006:NTSC 10006"
-            }
-        ],
-        "Archived": []
-    },
-    "4d53004d": {
-        "Title Name": "NFL Fever 2004",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000400000104",
-            "0000000400000204",
-            "0000000000d91f03"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d53004d": {
+            "Title Name": "NFL Fever 2004",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000400000104",
+                "0000000400000204",
+                "0000000000d91f03"
+            ],
+            "Title Updates Known": [{
                 "7fa53dd7a7e0f821efcb9ca7b39f3e88ff06b7d1": "0000000000d91f03:NTSC d91f03",
                 "4d53004d00000000000000000000000000000000": "0000000400000104:PAL 0104",
                 "4d53004d00000000000000000000000000000001": "0000000400000204:PAL 0204"
-            }
-        ],
-        "Archived": []
-    },
-    "5454008d": {
-        "Title Name": "NHL 2K6",
-        "Content IDs": [
-            "5454008d20050915",
-            "5454008d20051013",
-            "5454008d20051102",
-            "5454008d20051215",
-            "5454008d20060403"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "5454008d": {
+            "Title Name": "NHL 2K6",
+            "Content IDs": [
+                "5454008d20050915",
+                "5454008d20051013",
+                "5454008d20051102",
+                "5454008d20051215",
+                "5454008d20060403"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "6bf1a43e1ccfbf599e246d89de80e0f6252ef75d": "0000000100000101:NTSC 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5454008d20050915": "Roster Update 1 - September 15th",
                 "5454008d20051013": "Roster Update 2 - October 13th",
                 "5454008d20051102": "Roster Update 3 - November 2nd",
                 "5454008d20051215": "Roster Update 5 - December 15th",
                 "5454008d20060403": "Roster Update 7 - April 3rd"
-            }
-        ]
-    },
-    "545400ad": {
-        "Title Name": "NHL 2K7",
-        "Content IDs": [
-            "545400ad20061023",
-            "545400ad20061201",
-            "545400ad20070125"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "545400ad": {
+            "Title Name": "NHL 2K7",
+            "Content IDs": [
+                "545400ad20061023",
+                "545400ad20061201",
+                "545400ad20070125"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "545400ad20061023": "October 23rd Roster Update",
                 "545400ad20061201": "December 1st Roster Update",
                 "545400ad20070125": "January 25th Roster Update"
-            }
-        ]
-    },
-    "4d53004e": {
-        "Title Name": "NHL Rivals 2004",
-        "Content IDs": [
-            "4d53004e00000100",
-            "4d53004e00000101",
-            "4d53004e00000102",
-            "4d53004e00000103",
-            "4d53004e00000104"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d53004e": {
+            "Title Name": "NHL Rivals 2004",
+            "Content IDs": [
+                "4d53004e00000100",
+                "4d53004e00000101",
+                "4d53004e00000102",
+                "4d53004e00000103",
+                "4d53004e00000104"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "00227b2f7617ebbbbb7df913f89d85a9d2e1d634": "0000000100000101:NTSC+NTSC-J 0101",
                 "4d53004e00000000000000000000000000000000": "0000000200000102:PAL 0102"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53004e00000100": "Roster Update #1",
                 "4d53004e00000101": "2004 All-Star Ice Logo",
                 "4d53004e00000103": "Roster Update #2A",
                 "4d53004e00000104": "Roster Update #3"
-            }
-        ]
-    },
-    "54430003": {
-        "Title Name": "Ninja Gaiden",
-        "Content IDs": [
-            "5443000300020001",
-            "5443000300030002",
-            "5443000300030003",
-            "5443000300040001",
-            "5443000300040002"
-        ],
-        "Title Updates": [
-            "0000000000010504",
-            "0000000000010604",
-            "0000000000011405"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "54430003": {
+            "Title Name": "Ninja Gaiden",
+            "Content IDs": [
+                "5443000300020001",
+                "5443000300030002",
+                "5443000300030003",
+                "5443000300040001",
+                "5443000300040002"
+            ],
+            "Title Updates": [
+                "0000000000010504",
+                "0000000000010604",
+                "0000000000011405"
+            ],
+            "Title Updates Known": [{
                 "1f302eed55a96c28d7def07643638072f007271a": "0000000000010504:NTSC+NTSC-J 10504",
                 "2edb428b04fd938835baa2508c803bd356ec22d9": "0000000000010604:NTSC+NTSC-J 10604",
                 "b280a9a958f50537f8687610180d9d76fefd120b": "0000000000011405:PAL 11405"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5443000300020001": "#1 MasterNinjaTournament",
                 "5443000300030002": "Hurricane 1",
                 "5443000300030003": "Hurricane 2",
                 "5443000300040001": "#1 Tournament Notice",
                 "5443000300040002": "Notice(Sep3,2004)"
-            }
-        ]
-    },
-    "54540017": {
-        "Title Name": "Outlaw Golf 2",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "54540017": {
+            "Title Name": "Outlaw Golf 2",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "d1ea5ffcaaa2a1fba2abd60871485ae7aef7c31c": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": []
-    },
-    "53530007": {
-        "Title Name": "Outlaw Volleyball PAL",
-        "Content IDs": [
-            "5353000700000001"
-        ],
-        "Title Updates": [
-            "0000000100000301"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "53530007": {
+            "Title Name": "Outlaw Volleyball PAL",
+            "Content IDs": [
+                "5353000700000001"
+            ],
+            "Title Updates": [
+                "0000000100000301"
+            ],
+            "Title Updates Known": [{
                 "5353000700000000000000000000000000000000": "0000000100000301:PAL 0301"
-            }
-        ],
-        "Archived": []
-    },
-    "53530003": {
-        "Title Name": "Outlaw Volleyball NTSC",
-        "Content IDs": [
-            "5353000300000001"
-        ],
-        "Title Updates": [
-            "0000000400000204"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "53530003": {
+            "Title Name": "Outlaw Volleyball NTSC",
+            "Content IDs": [
+                "5353000300000001"
+            ],
+            "Title Updates": [
+                "0000000400000204"
+            ],
+            "Title Updates Known": [{
                 "a73995fec8949d3cf367b10909839c66cce72af9": "0000000400000204:NTSC 0204"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5353000300000001": "Trixie"
-            }
-        ]
-    },
-    "4d53004a": {
-        "Title Name": "Phantasy Star Online",
-        "Content IDs": [
-            "4d53004a10000048",
-            "4d53004a1000011c",
-            "4d53004a1000011d",
-            "4d53004a100001dd",
-            "4d53004a100003a2",
-            "4d53004a20000048",
-            "4d53004a2000011c",
-            "4d53004a2000011d",
-            "4d53004a200001dd",
-            "4d53004a200003a2",
-            "4d53004a30000048",
-            "4d53004a3000011c",
-            "4d53004a3000011d",
-            "4d53004a300001dd",
-            "4d53004a300003a2",
-            "4d53004a40000048",
-            "4d53004a4000011c",
-            "4d53004a4000011d",
-            "4d53004a400001dd",
-            "4d53004a400003a2",
-            "4d53004a50000048",
-            "4d53004a5000011c",
-            "4d53004a5000011d",
-            "4d53004a500001dd",
-            "4d53004a500003a2"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000300000103",
-            "0000000400000104"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d53004a": {
+            "Title Name": "Phantasy Star Online",
+            "Content IDs": [
+                "4d53004a10000048",
+                "4d53004a1000011c",
+                "4d53004a1000011d",
+                "4d53004a100001dd",
+                "4d53004a100003a2",
+                "4d53004a20000048",
+                "4d53004a2000011c",
+                "4d53004a2000011d",
+                "4d53004a200001dd",
+                "4d53004a200003a2",
+                "4d53004a30000048",
+                "4d53004a3000011c",
+                "4d53004a3000011d",
+                "4d53004a300001dd",
+                "4d53004a300003a2",
+                "4d53004a40000048",
+                "4d53004a4000011c",
+                "4d53004a4000011d",
+                "4d53004a400001dd",
+                "4d53004a400003a2",
+                "4d53004a50000048",
+                "4d53004a5000011c",
+                "4d53004a5000011d",
+                "4d53004a500001dd",
+                "4d53004a500003a2"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000300000103",
+                "0000000400000104"
+            ],
+            "Title Updates Known": [{
                 "d25f86e13fe127431ddf9789a991a0655db1839a": "0000000100000101:NTSC-J 0101",
                 "4c97ebbcc75da748e73dcf5933736414dba1e8de": "0000000300000103:PAL 0103",
                 "1c13fc66353a19791279ea513a999059f006be47": "0000000400000104:NTSC 0104"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53004a10000048": "Central Dome Fire Swirl (Japanese)",
                 "4d53004a1000011c": "The East Tower (Japanese, fan creation from GC)",
                 "4d53004a1000011d": "The West Tower (Japanese, fan creation from GC)",
@@ -1982,219 +1746,185 @@
                 "4d53004a5000011d": "The West Tower (Spanish, fan creation from GC)",
                 "4d53004a500001dd": "Seat of the Heart (Spanish, fan creation from GC)",
                 "4d53004a500003a2": "The Mag Farm (Spanish, fan creation)"
-            }
-        ]
-    },
-    "4d530043": {
-        "Title Name": "Phantasy Star Online Beta",
-        "Content IDs": [
-            "4d53004300000007"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4d530046": {
-        "Title Name": "Phantom Dust",
-        "Content IDs": [
-            "4d53004600101100",
-            "4d53004600101200"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4d530043": {
+            "Title Name": "Phantasy Star Online Beta",
+            "Content IDs": [
+                "4d53004300000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "4d530046": {
+            "Title Name": "Phantom Dust",
+            "Content IDs": [
+                "4d53004600101100",
+                "4d53004600101200"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d53004600101100": "Skill Update 110",
                 "4d53004600101200": "Skill Update 120"
-            }
-        ]
-    },
-    "5553003b": {
-        "Title Name": "Prince of Persia Warrior Within",
-        "Content IDs": [
-            "5553003b08000001",
-            "5553003b08000002"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
-                "b4bcaca2b670573444d339f928c638eb23964d17": "0000000100000201:NTSC 0201"
-            }
-        ],
-        "Archived": [
-            {
+        }]},
+        "5553003b": {
+            "Title Name": "Prince of Persia Warrior Within",
+            "Content IDs": [
+                "5553003b08000001",
+                "5553003b08000002"
+            ],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
+                "b4bcaca2b670573444d339f928c638eb23964d17": "0000000100000201:RF 0201"
+            }],
+            "Archived": [{
                 "5553003b08000001": "The Waterfront Tower",
                 "5553003b08000002": "The Grotto of Trials"
-            }
-        ]
-    },
-    "4b4e0022": {
-        "Title Name": "Pro Evolution Soccer 4",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4b4e0022": {
+            "Title Name": "Pro Evolution Soccer 4",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "4f3ffa7da4ca0ce6227f1a0c4578c6f5e6dabe53": "0000000100000101:PAL 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "4d53004b": {
-        "Title Name": "Project Gotham Racing 2",
-        "Content IDs": [
-            "4d53004b00000001",
-            "4d53004b00000002"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202",
-            "0000000500000105",
-            "0000000500000205"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d53004b": {
+            "Title Name": "Project Gotham Racing 2",
+            "Content IDs": [
+                "4d53004b00000001",
+                "4d53004b00000002"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202",
+                "0000000500000105",
+                "0000000500000205"
+            ],
+            "Title Updates Known": [{
                 "4d53004b00000000000000000000000000000000": "0000000200000102:PAL 0102",
                 "5ee652acd805253be07f28f278bf236946a488c6": "0000000200000202:PAL 0202",
                 "8a416d3c2f980e354667f4745d8a6621528825ea": "0000000500000105:NTSC+NTSC-J 0105",
                 "da0bfc1d8e593ae84707183140a698a87738f33f": "0000000500000205:NTSC+NTSC-J 0205"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53004b00000001": "PGR2 Paris Booster Pack",
                 "4d53004b00000002": "PGR2 Long Beach Booster Pack"
-            }
-        ]
-    },
-    "45530019": {
-        "Title Name": "Project Snowblind",
-        "Content IDs": [
-            "4553001900000000"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "45530019": {
+            "Title Name": "Project Snowblind",
+            "Content IDs": [
+                "4553001900000000"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [
+                {
                 "4553001900000000000000000000000000000000": "0000000200000102:PAL 0102",
                 "6c439f0fac1f802adb9ce350a1f0bbb6b09e32a4": "0000000300000103:NTSC+NTSC-J 0103"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4553001900000000": "REPAIR BAY"
-            }
-        ]
-    },
-    "41440002": {
-        "Title Name": "Pump It Up Exceed",
-        "Content IDs": [
-            "4144000200000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "41440002": {
+            "Title Name": "Pump It Up Exceed",
+            "Content IDs": [
+                "4144000200000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4553001900000000": "Step Editor"
-            }
-        ]
-    },
-    "434d000e": {
-        "Title Name": "Race Driver (TOCA, DTM, V8)",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000300000103",
-            "0000000400000104",
-            "0000000500000105"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "434d000e": {
+            "Title Name": "Race Driver (TOCA, DTM, V8)",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000300000103",
+                "0000000400000104",
+                "0000000500000105"
+            ],
+            "Title Updates Known": [{
                 "434d000e00000000000000000000000000000000": "0000000100000101:PAL TOCA Europe 0101",
                 "434d000e00000000000000000000000000000001": "0000000300000103:PAL DTM Germany 0103",
                 "434d000e00000000000000000000000000000002": "0000000400000104:PAL TOCA Italy 0104",
                 "434d000e00000000000000000000000000000003": "0000000500000105:PAL V8 Supercars Australia 0105"
-            }
-        ],
-        "Archived": []
-    },
-    "434d0011": {
-        "Title Name": "Race Driver 2 (TOCA 2, DTM 2, V8 2)",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102",
-            "0000000300000103",
-            "0000000400000104",
-            "0000000500000105"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "434d0011": {
+            "Title Name": "Race Driver 2 (TOCA 2, DTM 2, V8 2)",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102",
+                "0000000300000103",
+                "0000000400000104",
+                "0000000500000105"
+            ],
+            "Title Updates Known": [{
                 "434d001100000000000000000000000000000000": "0000000100000101:PAL TOCA 2 Europe 0101",
                 "13d6979fd1dc6cd57038eefc688b1452a97432bf": "0000000200000102:NTSC TOCA 2 North America 0102",
                 "434d001100000000000000000000000000000001": "0000000300000103:NTSC-J TOCA 2 Japan 0103",
                 "d06c284e85926cfe9cd0bf0a402bacf7e6bcef45": "0000000400000104:PAL DTM 2 Germany 0104",
                 "814b620c506b49b8e0ee0023ed9f45de6fbf9296": "0000000500000105:PAL V8 Supercars Australia 0105"
-            }
-        ],
-        "Archived": []
-    },
-    "4d530039": {
-        "Title Name": "Rallisport Challenge 2",
-        "Content IDs": [
-            "4d53003900010003",
-            "4d53003900020001"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d530039": {
+            "Title Name": "Rallisport Challenge 2",
+            "Content IDs": [
+                "4d53003900010003",
+                "4d53003900020001"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "5649110a9be7c9923c1caf0410330691d1d09b4c": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53003900010003": "4 vehicles, 2 careers",
                 "4d53003900020001": "2 new skins for each car"
-            }
-        ]
-    },
-    "584c0008": {
-        "Title Name": "Re-Volt Online August Beta worldwide/Xbox Live Starter Kit Disc 1.0 Japan",
-        "Content IDs": [
-            "584c000800000001",
-            "584c000800000002",
-            "584c000800000003",
-            "584c000800000004",
-            "584c000800000005",
-            "584c000800000006",
-            "584c000800000007"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "584c0001": {
-        "Title Name": "Re-Volt Xbox Live Beta Starter Kit Disc 1.0",
-        "Content IDs": [
-            "584c000100000001",
-            "584c000100000002",
-            "584c000100000003",
-            "584c000100000004",
-            "584c000100000005",
-            "584c000100000006",
-            "584c000100000007"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "584c0008": {
+            "Title Name": "Re-Volt Online August Beta worldwide/Xbox Live Starter Kit Disc 1.0 Japan",
+            "Content IDs": [
+                "584c000800000001",
+                "584c000800000002",
+                "584c000800000003",
+                "584c000800000004",
+                "584c000800000005",
+                "584c000800000006",
+                "584c000800000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "584c0001": {
+            "Title Name": "Re-Volt Xbox Live Beta Starter Kit Disc 1.0",
+            "Content IDs": [
+                "584c000100000001",
+                "584c000100000002",
+                "584c000100000003",
+                "584c000100000004",
+                "584c000100000005",
+                "584c000100000006",
+                "584c000100000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "584c000100000001": "Evil Phat Car",
                 "584c000100000002": "Evil Candy Car",
                 "584c000100000003": "Evil Toyeca Car",
@@ -2202,135 +1932,120 @@
                 "584c000100000005": "Evil Candy Car Keys",
                 "584c000100000006": "Evil Toyeca Car Keys",
                 "584c000100000007": "UFO Car Keys"
-            }
-        ]
-    },
-    "41560010": {
-        "Title Name": "Return to Castle Wolfenstein Tides of War",
-        "Content IDs": [
-            "4156001000000001",
-            "4156001000000002",
-            "4156001000000003",
-            "4156001010000001",
-            "4156001010000002",
-            "4156001010000003",
-            "4156001020000001",
-            "4156001020000002",
-            "4156001020000003"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202",
-            "0000000200000302",
-            "0000000400000104",
-            "0000000400000204",
-            "0000000400000304"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "41560010": {
+            "Title Name": "Return to Castle Wolfenstein Tides of War",
+            "Content IDs": [
+                "4156001000000001",
+                "4156001000000002",
+                "4156001000000003",
+                "4156001010000001",
+                "4156001010000002",
+                "4156001010000003",
+                "4156001020000001",
+                "4156001020000002",
+                "4156001020000003"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202",
+                "0000000200000302",
+                "0000000400000104",
+                "0000000400000204",
+                "0000000400000304"
+            ],
+            "Title Updates Known": [{
                 "4156001000000000000000000000000000000000": "0000000200000102:RF worldwide 0102",
                 "e07b329609ae5a853d6a3d17d07225c961cf237f": "0000000200000202:RF worldwide 0202",
                 "236f5ecfece01ecc8e62aac66ac04ba676f6705d": "0000000200000302:RF worldwide 0302",
                 "4156001000000000000000000000000000000001": "0000000400000104:PAL France 0104",
                 "4156001000000000000000000000000000000002": "0000000400000204:PAL France 0204",
                 "4156001000000000000000000000000000000003": "0000000400000304:PAL France 0304"
-            }
-        ],
-        "Archived": [
-            {
+                }
+            ],
+            "Archived": [{
                 "4156001000000001": "Barn - Multiplayer",
                 "4156001000000002": "Chateau - Multiplayer",
                 "4156001000000003": "Safe - Multiplayer",
                 "4156001020000001": "Barn - Multiplayer",
                 "4156001020000002": "Chateau - Multiplayer",
                 "4156001020000003": "Safe - Multiplayer"
-            }
-        ]
-    },
-    "49500006": {
-        "Title Name": "Run Like Hell",
-        "Content IDs": [
-            "4950000600000000",
-            "4950000600000001",
-            "4950000600000002",
-            "4950000600000003",
-            "4950000600000a01",
-            "4950000600000a02"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "49500006": {
+            "Title Name": "Run Like Hell",
+            "Content IDs": [
+                "4950000600000000",
+                "4950000600000001",
+                "4950000600000002",
+                "4950000600000003",
+                "4950000600000a01",
+                "4950000600000a02"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4950000600000000": "Samantha",
                 "4950000600000001": "Zombie",
                 "4950000600000002": "Cyber",
                 "4950000600000003": "Eightball",
                 "4950000600000a01": "Arena Death",
                 "4950000600000a02": "Shooting Gallery"
-            }
-        ]
-    },
-    "4c410006": {
-        "Title Name": "Secret Weapons Over Normandy",
-        "Content IDs": [
-            "4c41000600000001",
-            "4c41000600000007",
-            "4c4100060000000d",
-            "4c41000600000013"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4c410006": {
+            "Title Name": "Secret Weapons Over Normandy",
+            "Content IDs": [
+                "4c41000600000001",
+                "4c41000600000007",
+                "4c4100060000000d",
+                "4c41000600000013"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4c41000600000001": "SWON Corsair F4U Package USA",
                 "4c41000600000007": "SWON Ki-61 and Last Chance USA",
                 "4c4100060000000d": "SWON Mc202 and Tripoli USA",
                 "4c41000600000013": "SWON He 162 and Furious Engel USA"
-            }
-        ]
-    },
-    "53450021": {
-        "Title Name": "Sega GT Online",
-        "Content IDs": [
-            "5345002100230001",
-            "5345002100230002",
-            "5345002100230003",
-            "5345002100230004",
-            "5345002100230005",
-            "5345002100230006",
-            "5345002100230007",
-            "5345002100230008",
-            "5345002100230009",
-            "534500210023000a",
-            "534500210023000b",
-            "534500210023000c",
-            "534500210023000d",
-            "534500210023000e",
-            "534500210023000f",
-            "5345002100230010",
-            "5345002100230011",
-            "5345002100230012",
-            "5345002100230013",
-            "5345002100230014",
-            "5345002100230015",
-            "5345002100230016",
-            "5345002100230017",
-            "5345002100230018"
-        ],
-        "Title Updates": [
-            "0000000500000205",
-            "0000000600000106",
-            "0000000800000208"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "53450021": {
+            "Title Name": "Sega GT Online",
+            "Content IDs": [
+                "5345002100230001",
+                "5345002100230002",
+                "5345002100230003",
+                "5345002100230004",
+                "5345002100230005",
+                "5345002100230006",
+                "5345002100230007",
+                "5345002100230008",
+                "5345002100230009",
+                "534500210023000a",
+                "534500210023000b",
+                "534500210023000c",
+                "534500210023000d",
+                "534500210023000e",
+                "534500210023000f",
+                "5345002100230010",
+                "5345002100230011",
+                "5345002100230012",
+                "5345002100230013",
+                "5345002100230014",
+                "5345002100230015",
+                "5345002100230016",
+                "5345002100230017",
+                "5345002100230018"
+            ],
+            "Title Updates": [
+                "0000000500000205",
+                "0000000600000106",
+                "0000000800000208"
+            ],
+            "Title Updates Known": [{
                 "5345002100000000000000000000000000000000": "0000000500000205:PAL 0205",
                 "fc993d442c2a0c21a04cbabc1eb62d8a38a9746f": "0000000600000106:NTSC-J 0106",
                 "7c5bdf2b0761cd1338a7cbe0695cfafbc1cedcd1": "0000000800000208:NTSC 0208"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5345002100230002": "segaGT Online Competition Info 2",
                 "5345002100230003": "segaGT Online Competition Info 3",
                 "5345002100230004": "segaGT Online Competition Info 4",
@@ -2341,122 +2056,107 @@
                 "534500210023000f": "segaGT Online Competition Info 15",
                 "5345002100230013": "segaGT Online Competition Info 19",
                 "5345002100230017": "segaGT Online Competition Info 23"
-            }
-        ]
-    },
-    "4b490002": {
-        "Title Name": "Shikigami no Shiro II",
-        "Content IDs": [
-            "4b49000200000001",
-            "4b49000200000002",
-            "4b49000200000003",
-            "4b49000200000004",
-            "4b49000200000005",
-            "4b49000200000006",
-            "4b49000200000007",
-            "4b49000200000008",
-            "4b49000200000009",
-            "4b49000200000010",
-            "4b49000200000011",
-            "4b49000200000012"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "5454008f": {
-        "Title Name": "Sid Meier's Pirates!",
-        "Content IDs": [
-            "5454008f00000001",
-            "5454008f00000002",
-            "5454008f00000003"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4b490002": {
+            "Title Name": "Shikigami no Shiro II",
+            "Content IDs": [
+                "4b49000200000001",
+                "4b49000200000002",
+                "4b49000200000003",
+                "4b49000200000004",
+                "4b49000200000005",
+                "4b49000200000006",
+                "4b49000200000007",
+                "4b49000200000008",
+                "4b49000200000009",
+                "4b49000200000010",
+                "4b49000200000011",
+                "4b49000200000012"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "5454008f": {
+            "Title Name": "Sid Meier's Pirates!",
+            "Content IDs": [
+                "5454008f00000001",
+                "5454008f00000002",
+                "5454008f00000003"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "ae4b50c94733f57767aec2f6699fc4bb895700a6": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5454008f00000001": "Flag and Sail Pack 1",
                 "5454008f00000002": "Vs Ship Battle Map Pack",
                 "5454008f00000003": "Even the Odds Pack"
-            }
-        ]
-    },
-    "4156001b": {
-        "Title Name": "Soldier of Fortune: Double Helix",
-        "Content IDs": [
-            "4156001b0aaaaaa1",
-            "4156001b0aaaaaa2",
-            "4156001b0aaaaaa3",
-            "4156001b0aaaaaa4",
-            "4156001b0aaaaaa5"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4156001b": {
+            "Title Name": "Soldier of Fortune: Double Helix",
+            "Content IDs": [
+                "4156001b0aaaaaa1",
+                "4156001b0aaaaaa2",
+                "4156001b0aaaaaa3",
+                "4156001b0aaaaaa4",
+                "4156001b0aaaaaa5"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4156001b0aaaaaa1": "Kowloon Market",
                 "4156001b0aaaaaa2": "Oil Rig",
                 "4156001b0aaaaaa3": "Kremenchug Hydroelectric",
                 "4156001b0aaaaaa4": "Ruins",
                 "4156001b0aaaaaa5": "Cheapshot Forest"
-            }
-        ]
-    },
-    "53450029": {
-        "Title Name": "Spikeout Battle Street",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "53450029": {
+            "Title Name": "Spikeout Battle Street",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "55389fbae4f05928e72eefd1163c96acacd36974": "0000000100000101:NTSC-J 0101",
                 "7ab4f8f8f1957625dc9a228999c9f90279fd17e9": "0000000200000102:NTSC 0102",
                 "5345002900000000000000000000000000000000": "0000000300000103:PAL 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "4d4d0001": {
-        "Title Name": "Stacked with Daniel Negreanu",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000302"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d4d0001": {
+            "Title Name": "Stacked with Daniel Negreanu",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000302"
+            ],
+            "Title Updates Known": [{
                 "4d4d000100000000000000000000000000000000": "0000000200000302:NTSC 0302"
-            }
-        ],
-        "Archived": []
-    },
-    "4c410011": {
-        "Title Name": "Star Wars BattleFront",
-        "Content IDs": [
-            "4c41001100000006"
-        ],
-        "Title Updates": [
-            "0000000500000105",
-            "0000000500000305",
-            "0000000600000106",
-            "0000000600000306",
-            "0000000700000107",
-            "0000000700000307",
-            "0000000800000108",
-            "0000000800000308",
-            "0000000a0000010a",
-            "0000000a0000010a"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4c410011": {
+            "Title Name": "Star Wars BattleFront",
+            "Content IDs": [
+                "4c41001100000006"
+            ],
+            "Title Updates": [
+                "0000000500000105",
+                "0000000500000305",
+                "0000000600000106",
+                "0000000600000306",
+                "0000000700000107",
+                "0000000700000307",
+                "0000000800000108",
+                "0000000800000308",
+                "0000000a0000010a",
+                "0000000a0000030a"
+            ],
+            "Title Updates Known": [{
                 "13733799ce6119577128957b357aa16092fcd456": "0000000500000105:RF worldwide 0105",
                 "8d233a9cfe87649d7b3481cea5598d734d92d9f5": "0000000500000305:RF worldwide 0305",
                 "4c41001100000000000000000000000000000000": "0000000600000106:PAL Spain/Italy 0106",
@@ -2467,314 +2167,265 @@
                 "4c41001100000000000000000000000000000005": "0000000800000308:PAL Germany 0308",
                 "4c41001100000000000000000000000000000006": "0000000a0000010a:NTSC-J 010a",
                 "4c41001100000000000000000000000000000007": "0000000a0000030a:NTSC-J 030a"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4c41001100000006": "Jabba"
-            }
-        ]
-    },
-    "4c410012": {
-        "Title Name": "Star Wars Battlefront Demo",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000402"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4c410012": {
+            "Title Name": "Star Wars Battlefront Demo",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000402"
+            ],
+            "Title Updates Known": [{
                 "4c41001200000000000000000000000000000000": "0000000200000402:RF 0402"
-            }
-        ],
-        "Archived": []
-    },
-    "4c41001a": {
-        "Title Name": "Star Wars Battlefront 2",
-        "Content IDs": [
-            "4c41001a00000003",
-            "4c41001a00000004"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000201",
-            "0000000200000202",
-            "0000000200000302",
-            "0000000300000203",
-            "0000000300000303"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4c41001a": {
+            "Title Name": "Star Wars Battlefront 2",
+            "Content IDs": [
+                "4c41001a00000003",
+                "4c41001a00000004"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000201",
+                "0000000200000202",
+                "0000000200000302",
+                "0000000300000203",
+                "0000000300000303"
+            ],
+            "Title Updates Known": [{
                 "a5d78200dea3db3cc69ff7501530578fff3fa2f6": "0000000100000101:RF worldwide 0101",
                 "13bd15330f31f186ff4caa6bcda7489152de83cc": "0000000100000201:RF worldwide 0201",
                 "4c41001a00000000000000000000000000000000": "0000000200000202:PAL France 0202",
                 "4c41001a00000000000000000000000000000001": "0000000200000302:PAL France 0302",
                 "4c41001a00000000000000000000000000000002": "0000000300000203:PAL Germany 0203",
                 "e7fe0ff560513443873c8e72b854a80696bcbe29": "0000000300000303:PAL Germany 0303"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4c41001a00000003": "Kashyyyk Assault",
                 "4c41001a00000004": "Expansion Pack"
-            }
-        ]
-    },
-    "4c410003": {
-        "Title Name": "Star Wars Knights of the Old Republic",
-        "Content IDs": [
-            "4c41000300000011"
-        ],
-        "Title Updates": [
-            "0000000005ab8501",
-            "0000000005ab8502",
-            "0000000005ab850a",
-            "0000000005ab850b"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4c410003": {
+            "Title Name": "Star Wars Knights of the Old Republic",
+            "Content IDs": [
+                "4c41000300000011"
+            ],
+            "Title Updates": [
+                "0000000005ab8501",
+                "0000000005ab8502",
+                "0000000005ab850a",
+                "0000000005ab850b"
+            ],
+            "Title Updates Known": [{
                 "e5e8b7f594967290495ba0ec98d16b7025cf4968": "0000000005ab8501:NTSC black label 5ab8501",
                 "c44fec9e81b236e3b22bff3ad9a1846a1bb7e0e4": "0000000005ab8502:PAL Europe 5ab8502",
                 "b0fd9d899aca242ffbcd0babc1abaa4f3466ad07": "0000000005ab850a:NTSC platinum hits 5ab850a",
                 "01b4c94d139e0a80fcf0e6a269411f9d3b2ef3b8": "0000000005ab850b:NTSC-J Korea 5ab850b"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4c41000300000011": "Yavin Station"
-            }
-        ]
-    },
-    "4c410013": {
-        "Title Name": "Star Wars Republic Commando",
-        "Content IDs": [
-            "4c41001300000001",
-            "4c41001300000002"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "4c410013": {
+            "Title Name": "Star Wars Republic Commando",
+            "Content IDs": [
+                "4c41001300000001",
+                "4c41001300000002"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4c41001300000002": "Hangar"
-            }
-        ]
-    },
-    "4c410019": {
-        "Title Name": "Star Wars Republic Commando (Japan)",
-        "Content IDs": [
-            "4c41001900000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4c410004": {
-        "Title Name": "Star Wars The Clone Wars",
-        "Content IDs": [
-            "4c41000400388005",
-            "4c410004003d0001",
-            "4c410004003d0003"
-        ],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000200000102",
-            "0000000600000106"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4c410019": {
+            "Title Name": "Star Wars Republic Commando (Japan)",
+            "Content IDs": [
+                "4c41001900000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "4c410004": {
+            "Title Name": "Star Wars The Clone Wars",
+            "Content IDs": [
+                "4c41000400388005",
+                "4c410004003d0001",
+                "4c410004003d0003"
+            ],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000200000102",
+                "0000000600000106"
+            ],
+            "Title Updates Known": [{
                 "2a151a809379f9b25f3c80a1df641ce473b5e420": "0000000100000101:RF 0101",
                 "4c41000400000000000000000000000000000000": "0000000200000102:PAL Europe 0102",
                 "4c41000400000000000000000000000000000001": "0000000600000106:PAL Spain 0106"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4c41000400388005": "Kashyyyk Conquest",
                 "4c410004003d0001": "Rhen Var CZ",
                 "4c410004003d0003": "Raxus CZ"
-            }
-        ]
-    },
-    "43430009": {
-        "Title Name": "Steel Battalion Line of Contact",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "43430009": {
+            "Title Name": "Steel Battalion Line of Contact",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "d9bc08f0981421b3be8ff3fce94d321e783276e0": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "4343000f": {
-        "Title Name": "Street Fighter Anniversary Collection",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000300000103",
-            "0000000400000104"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "4343000f": {
+            "Title Name": "Street Fighter Anniversary Collection",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000300000103",
+                "0000000400000104"
+            ],
+            "Title Updates Known": [{
                 "f0a617221d0eff8d97018b6671abd9a51ea7d8b1": "0000000300000103:RF Europe/Japan 0103",
                 "660674f8095043c869d5ef373314cf717ac23a47": "0000000400000104:RF North America 0104"
-            }
-        ],
-        "Archived": []
-    },
-    "56560025": {
-        "Title Name": "SWAT Global Strike Team",
-        "Content IDs": [
-            "5656002500001011",
-            "5656002500001012"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "56560025": {
+            "Title Name": "SWAT Global Strike Team",
+            "Content IDs": [
+                "5656002500001011",
+                "5656002500001012"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5656002500001011": "ONE STOP SHOPPING",
                 "5656002500001012": "MILITANT HIDEOUT"
-            }
-        ]
-    },
-    "5451001c": {
-        "Title Name": "Tetris Worlds Online",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000500000105",
-            "0000001600000116",
-            "0000001700000117",
-            "0000001e0000011e",
-            "0000001e0000021e",
-            "0000002100000121",
-            "0000002100000221"
-        ],
-        "Title Updates Known": [
-            {
-                "5451001c00000000000000000000000000000000": "0000000500000105:Xbox Live Starter disc 0105",
+        }]},
+        "5451001c": {
+            "Title Name": "Tetris Worlds Online",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000500000105",
+                "0000001600000116",
+                "0000001700000117",
+                "0000001e0000011e",
+                "0000001e0000021e",
+                "0000002100000121",
+                "0000002100000221"
+            ],
+            "Title Updates Known": [{
+                "5451001c00000000000000000000000000000000": "0000000500000105:NTSC Xbox Live Starter 0105",
                 "5e58054f273aecbcb4f70b1b823034d99468b3c6": "0000001600000116:NTSC Clone Wars combo 0116",
                 "5451001c00000000000000000000000000000001": "0000001700000117:unknown NTSC-J? 0117",
                 "5451001c00000000000000000000000000000002": "0000001e0000011e:NTSC standalone 011e",
                 "1711750501dd57420d4df4413f96a09a801ed000": "0000001e0000021e:NTSC standalone 021e",
                 "5451001c00000000000000000000000000000003": "0000002100000121:PAL 0121",
                 "5451001c00000000000000000000000000000004": "0000002100000221:PAL 0221"
-            }
-        ],
-        "Archived": []
-    },
-    "54510028": {
-        "Title Name": "The Incredibles",
-        "Content IDs": [
-            "5451002800000005",
-            "5451002810000005",
-            "5451002820000005"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510028": {
+            "Title Name": "The Incredibles",
+            "Content IDs": [
+                "5451002800000005",
+                "5451002810000005",
+                "5451002820000005"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5451002800000005": "Robot Battle Arena (North America)",
                 "5451002820000005": "Robot Battle Arena (Europe/Australia)"
-            }
-        ]
-    },
-    "45410066": {
-        "Title Name": "Timesplitters: Future Perfect",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000201",
-            "0000000200000202"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "45410066": {
+            "Title Name": "Timesplitters: Future Perfect",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000201",
+                "0000000200000202"
+            ],
+            "Title Updates Known": [{
                 "e9d8e93c39a9546a5619109e58264a20e5d768ec": "0000000100000201:NTSC 0201",
                 "3f2f003d48d6a6de0f2955f4129bdc4b8ff9d479": "0000000200000202:PAL 0202"
-            }
-        ],
-        "Archived": []
-    },
-    "5345000f": {
-        "Title Name": "ToeJam & Earl III Mission to Earth",
-        "Content IDs": [
-            "5345000f00000001",
-            "5345000f00000002",
-            "5345000f00000003",
-            "5345000f00000010",
-            "5345000f00000020"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "5345000f": {
+            "Title Name": "ToeJam & Earl III Mission to Earth",
+            "Content IDs": [
+                "5345000f00000001",
+                "5345000f00000002",
+                "5345000f00000003",
+                "5345000f00000010",
+                "5345000f00000020"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5345000f00000001": "Suteki",
                 "5345000f00000002": "Earlbot",
-                "5345000f00000003": "GeekJam",
+                "5345000f00000003": "GeekJam",				
                 "5345000f00000010": "Hades Environment",
                 "5345000f00000020": "Funkadelic Environment"
-            }
-        ]
-    },
-    "55530006": {
-        "Title Name": "Tom Clancy's Ghost Recon",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101.",
-            "0000000200000102",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "55530006": {
+            "Title Name": "Tom Clancy's Ghost Recon",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101.",
+                "0000000200000102",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "2155c88fe095e4a0a956dcd9ad58d32c28e5578a": "0000000100000101:NTSC 0101",
                 "589473e5af31b68ff65b48643a1b9e536a2c8204": "0000000200000102:PAL Europe 0102",
                 "5553000600000000000000000000000000000001": "0000000300000103:PAL Germany 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "55530005": {
-        "Title Name": "Tom Clancy's Ghost Recon 2",
-        "Content IDs": [
-            "5553000500000001",
-            "5553000500000002",
-            "5553000500000003"
-        ],
-        "Title Updates": [
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "55530005": {
+            "Title Name": "Tom Clancy's Ghost Recon 2",
+            "Content IDs": [
+                "5553000500000001",
+                "5553000500000002",
+                "5553000500000003"
+            ],
+            "Title Updates": [
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "a47d127be7e26e948655d122b50e5dd81d927f7b": "0000000200000102:RF 0102"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553000500000001": "Tactical Pack 1",
                 "5553000500000002": "Tactical Pack 2",
                 "5553000500000003": "Tactical Pack 3"
-            }
-        ]
-    },
-    "55530007": {
-        "Title Name": "Tom Clancy's Ghost Recon Island Thunder",
-        "Content IDs": [
-            "5553000700000001",
-            "5553000700000002",
-            "5553000700000003",
-            "5553000700000004",
-            "5553000700000005",
-            "5553000700000006",
-            "5553000700000007",
-            "5553000700000008",
-            "5553000700000009",
-            "555300070000000a",
-            "555300070000000b",
-            "555300070000000c",
-            "555300070000000d"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "55530007": {
+            "Title Name": "Tom Clancy's Ghost Recon Island Thunder",
+            "Content IDs": [
+                "5553000700000001",
+                "5553000700000002",
+                "5553000700000003",
+                "5553000700000004",
+                "5553000700000005",
+                "5553000700000006",
+                "5553000700000007",
+                "5553000700000008",
+                "5553000700000009",
+                "555300070000000a",
+                "555300070000000b",
+                "555300070000000c",
+                "555300070000000d"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5553000700000001": "1. Refinery",
                 "5553000700000002": "2. Beach",
                 "5553000700000003": "3. Ghost Town",
@@ -2788,60 +2439,50 @@
                 "555300070000000b": "11. Trenches",
                 "555300070000000c": "12. City",
                 "555300070000000d": "13. Minen"
-            }
-        ]
-    },
-    "5553004d": {
-        "Title Name": "Tom Clancy's Ghost Recon 2 Summit Strike",
-        "Content IDs": [
-            "5553004d00000001"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "5553004d": {
+            "Title Name": "Tom Clancy's Ghost Recon 2 Summit Strike",
+            "Content IDs": [
+                "5553004d00000001"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "59fd58ee203b06da20eb52b4243281b7524faafa": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553004d00000001": "Bonus Content"
-            }
-        ]
-    },
-    "55530013": {
-        "Title Name": "Tom Clancy's Rainbow Six 3",
-        "Content IDs": [
-            "5553001300000000",
-            "5553001300000001",
-            "5553001300000002",
-            "5553001300000004",
-            "5553001300000005",
-            "5553001300000006",
-            "5553001300000007",
-            "5553001300000008"
-        ],
-        "Title Updates": [
-            "0000000100000201",
-            "0000000100000301",
-            "0000000100000501",
-            "0000000200000202",
-            "0000000200000302",
-            "0000000200000502"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "55530013": {
+            "Title Name": "Tom Clancy's Rainbow Six 3",
+            "Content IDs": [
+                "5553001300000000",
+                "5553001300000001",
+                "5553001300000002",
+                "5553001300000004",
+                "5553001300000005",
+                "5553001300000006",
+                "5553001300000007",
+                "5553001300000008"
+            ],
+            "Title Updates": [
+                "0000000100000201",
+                "0000000100000301",
+                "0000000100000501",
+                "0000000200000202",
+                "0000000200000302",
+                "0000000200000502"
+            ],
+            "Title Updates Known": [{
                 "b37a43c7c5ccb537dba3402c82d6c00813f50b5f": "0000000100000201:RF worldwide 0201",
                 "5553001300000000000000000000000000000000": "0000000100000301:RF worldwide 0301",
                 "30c6a2f53fac188c00d2db74854ab9dc465b896f": "0000000100000501:RF worldwide 0501",
                 "5553001300000000000000000000000000000001": "0000000200000202:PAL Germany 0202",
                 "5553001300000000000000000000000000000002": "0000000200000302:PAL Germany 0302",
-                "0c926d500dd4b729f9a39014ee2e36f419fa3061": "0000000200000502:RF worldwide 0502"
-            }
-        ],
-        "Archived": [
-            {
+                "0c926d500dd4b729f9a39014ee2e36f419fa3061": "0000000200000502:PAL Germany 0502"
+            }],
+            "Archived": [{
                 "5553001300000000": "MEAT FACTORY",
                 "5553001300000001": "GARAGE",
                 "5553001300000002": "CARNIVAL",
@@ -2850,95 +2491,80 @@
                 "5553001300000006": "Scharins",
                 "5553001300000007": "CloseQuarter",
                 "5553001300000008": "Scharins (v2)"
-            }
-        ]
-    },
-    "55530037": {
-        "Title Name": "Tom Clancy's Rainbow Six 3 Black Arrow",
-        "Content IDs": [
-            "5553003700000001",
-            "5553003700000002",
-            "5553003700000003",
-            "5553003700000004",
-            "5553003700000013"
-        ],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "55530037": {
+            "Title Name": "Tom Clancy's Rainbow Six 3 Black Arrow",
+            "Content IDs": [
+                "5553003700000001",
+                "5553003700000002",
+                "5553003700000003",
+                "5553003700000004",
+                "5553003700000013"
+            ],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "66c70b3fb3518cbf1b5e9ce2a598c9444be4d7cb": "0000000100000201:RF 0201"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553003700000001": "Village",
                 "5553003700000002": "AssaultPack1",
                 "5553003700000003": "AssaultPack2",
                 "5553003700000004": "Bootcamp"
-            }
-        ]
-    },
-    "5553005f": {
-        "Title Name": "Tom Clancy's Rainbow Six Critical Hour",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "5553005f": {
+            "Title Name": "Tom Clancy's Rainbow Six Critical Hour",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "1f30fab37004117342491d86a2b12e2b7c8f5730": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "55530048": {
-        "Title Name": "Tom Clancy's Rainbow Six Lockdown",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202",
-            "0000000300000103"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "55530048": {
+            "Title Name": "Tom Clancy's Rainbow Six Lockdown",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202",
+                "0000000300000103"
+            ],
+            "Title Updates Known": [{
                 "63dccfb0fd0880953edc6d7a54f1f4a6e9be27c3": "0000000200000102:RF 0102",
                 "53b92ea8cd332c5519e25974fb0c6f92801de967": "0000000200000202:RF 0202",
                 "5553004800000000000000000000000000000000": "0000000300000103:NTSC-J 0103"
-            }
-        ],
-        "Archived": []
-    },
-    "5553000c": {
-        "Title Name": "Tom Clancy's Splinter Cell",
-        "Content IDs": [
-            "5553000c00000003",
-            "5553000c00000004",
-            "5553000c00000005",
-            "5553000c00000006",
-            "5553000c00000007",
-            "5553000c00000009",
-            "5553000c00000013",
-            "5553000c00000100",
-            "5553000c00000200",
-            "5553000c00000500",
-            "5553000c00000501",
-            "5553000c00000502"
-        ],
-        "Title Updates": [
-            "0000000900000109",
-            "000000000000010a"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "5553000c": {
+            "Title Name": "Tom Clancy's Splinter Cell",
+            "Content IDs": [
+                "5553000c00000003",
+                "5553000c00000004",
+                "5553000c00000005",
+                "5553000c00000006",
+                "5553000c00000007",
+                "5553000c00000013",
+                "5553000c00000100",
+                "5553000c00000200",
+                "5553000c00000500",
+                "5553000c00000501",
+                "5553000c00000502"
+            ],
+            "Title Updates": [
+                "0000000900000109",
+                "000000000000010a"
+            ],
+            "Title Updates Known": [{
                 "5efbe0dbc3a6ec317854173c5d1f48cc60b6797e": "0000000900000109:RF 0109",
                 "e8c71f50e24e1254b979641c2c82f5e6f8e33179": "000000000000010a:PAL 001a"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553000c00000003": "Vselka Infiltration (North America)",
-                "555000c000000004": "Vselka Infiltration (PAL Disc)",
+                "5553000c00000004": "Vselka Infiltration (PAL Disc)",
                 "5553000c00000005": "Vselka Submarine (North America)",
                 "5553000c00000006": "Vselka Submarine (PAL Disc)",
                 "5553000c00000013": "Kolacell (PAL Disc only)",
@@ -2947,73 +2573,60 @@
                 "5553000c00000500": "Vselka Submarine (PAL Disc/Live)",
                 "5553000c00000501": "Infiltration (Japan)",
                 "5553000c00000502": "Submarine (Japan)"
-            }
-        ]
-    },
-    "55530038": {
-        "Title Name": "Tom Clancy's Splinter Cell Chaos Theory",
-        "Content IDs": [
-            "5553003804902482",
-            "5553003804902483"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202",
-            "0000000200000402"
-        ],
-        "Title Updates Known": [
-            {
-                "5553003800000000000000000000000000000000": "0000000200000102:RF 102",
-                "5553003800000000000000000000000000000001": "0000000200000202:RF 202",
+        }]},
+        "55530038": {
+            "Title Name": "Tom Clancy's Splinter Cell Chaos Theory",
+            "Content IDs": [
+                "5553003804902482",
+                "5553003804902483"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202",
+                "0000000200000402"
+            ],
+            "Title Updates Known": [{
+                "5553003800000000000000000000000000000000": "0000000200000102:RF 0102",
+                "5553003800000000000000000000000000000001": "0000000200000202:RF 0202",
                 "fdd69b19d9a45f1ac863b2b0fbefd393e3a47f70": "0000000200000402:RF 0402"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553003804902482": "Nuclear Plant",
                 "5553003804902483": "UN Headquarters"
-            }
-        ]
-    },
-    "55530041": {
-        "Title Name": "Tom Clancy's Splinter Cell Chaos Theory VS",
-        "Content IDs": [
-            "5553004100000001",
-            "5553004100000002"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "55530041": {
+            "Title Name": "Tom Clancy's Splinter Cell Chaos Theory VS",
+            "Content IDs": [
+                "5553004100000001",
+                "5553004100000002"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202"
+            ],
+            "Title Updates Known": [{
                 "5553004100000000000000000000000000000000": "0000000200000102:RF 0102",
                 "34a7c1fd2512cb4cd1b5ccbddfb6ab0157bbf49a": "0000000200000202:RF 0202"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553004100000001": "STEEL SQUAT",
                 "5553004100000002": "POLAR BASE"
-            }
-        ]
-    },
-    "55530019": {
-        "Title Name": "Tom Clancy's Splinter Cell Pandora Tomorrow",
-        "Content IDs": [
-            "5553001900000001"
-        ],
-        "Title Updates": [
-            "0000000200000102",
-            "0000000200000202",
-            "0000000200000302",
-            "0000000200000402",
-            "0000000300000103",
-            "0000000400000204",
-            "0000000600000206"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "55530019": {
+            "Title Name": "Tom Clancy's Splinter Cell Pandora Tomorrow",
+            "Content IDs": [
+                "5553001900000001"
+            ],
+            "Title Updates": [
+                "0000000200000102",
+                "0000000200000202",
+                "0000000200000302",
+                "0000000200000402",
+                "0000000300000103",
+                "0000000400000204",
+                "0000000600000206"
+            ],
+            "Title Updates Known": [{
                 "5553001900000000000000000000000000000000": "0000000200000102:RF worldwide 0102",
                 "096eca78e1778cb514a1745f16d04275f6e1327a": "0000000200000202:RF worldwide 0202",
                 "a2bcaadecf36bbdd9e5c531c69d2ec905776179f": "0000000200000302:RF worldwide 0302",
@@ -3021,32 +2634,27 @@
                 "5553001900000000000000000000000000000001": "0000000300000103:unknown 0103",
                 "f5ab61fe1deda42db51cf4234bd79fc7dc08715d": "0000000400000204:NTSC-J Japan 0204",
                 "5553001900000000000000000000000000000002": "0000000600000206:unknown NTSC-J Korea? 0206"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "5553001900000001": "Federal Bank / River Mall"
-            }
-        ]
-    },
-    "4d530035": {
-        "Title Name": "TopSpin",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101",
-            "0000000100000501",
-            "0000000100000601",
-            "0000000200000102",
-            "0000000200000602",
-            "0000000200000702",
-            "0000000300000103",
-            "0000000300000503",
-            "0000000300000603",
-            "0000002000000120",
-            "0000002100000121"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d530035": {
+            "Title Name": "TopSpin",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101",
+                "0000000100000501",
+                "0000000100000601",
+                "0000000200000102",
+                "0000000200000602",
+                "0000000200000702",
+                "0000000300000103",
+                "0000000300000503",
+                "0000000300000603",
+                "0000002000000120",
+                "0000002100000121"
+            ],
+            "Title Updates Known": [{
                 "4d53003500000000000000000000000000000000": "0000000100000101:NTSC 0101",
                 "4d53003500000000000000000000000000000001": "0000000100000501:NTSC 0501",
                 "e37590238068f327665b7cae1adb2e4700276f16": "0000000100000601:NTSC standalone 0601",
@@ -3058,63 +2666,54 @@
                 "4d53003500000000000000000000000000000006": "0000000300000603:NTSC-J Korea 0603",
                 "d6f5da176666e6b9af3e8be7b2a045b879213ff4": "0000002000000120:NTSC NCAA 2005 combo 0120",
                 "0346f04f644b7664e2caa33017fdb95d690481af": "0000002100000121:NTSC Amped 2 combo 0121"
-            }
-        ],
-        "Archived": []
-    },
-    "42560001": {
-        "Title Name": "TRON 2.0 Killer App",
-        "Content IDs": [
-            "4256000100000001",
-            "4256000100000002",
-            "4256000100000003"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "42560001": {
+            "Title Name": "TRON 2.0 Killer App",
+            "Content IDs": [
+                "4256000100000001",
+                "4256000100000002",
+                "4256000100000003"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4256000100000001": "Tron Colors",
                 "4256000100000002": "Shareware Level",
                 "4256000100000003": "Team Shareware Level"
-            }
-        ]
-    },
-    "4947003c": {
-        "Title Name": "Unreal 2 The Awakening",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000201"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4947003c": {
+            "Title Name": "Unreal 2 The Awakening",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000201"
+            ],
+            "Title Updates Known": [{
                 "5d3302f427e2e06a2f2def6a5d44482d6d84213e": "0000000100000201:NTSC+NTSC-J 0201"
-            }
-        ],
-        "Archived": []
-    },
-    "49470024": {
-        "Title Name": "Unreal Championship",
-        "Content IDs": [
-            "4947002400000010",
-            "4947002400000011",
-            "4947002400000020",
-            "4947002400000021",
-            "4947002400000030",
-            "4947002400000031",
-            "4947002400000040",
-            "4947002400000041",
-            "49470024000001ff"
-        ],
-        "Title Updates": [
-            "0000000000000605"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "49470024": {
+            "Title Name": "Unreal Championship",
+            "Content IDs": [
+                "4947002400000010",
+                "4947002400000011",
+                "4947002400000020",
+                "4947002400000021",
+                "4947002400000030",
+                "4947002400000031",
+                "4947002400000040",
+                "4947002400000041",
+                "49470024000001ff"
+            ],
+            "Title Updates": [
+                "0000000000000605"
+            ],
+            "Title Updates Known": [{
                 "f1371219c0097410b09a6292a157ab2937b96015": "0000000000000605:NTSC+PAL 0605"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4947002400000010": "Inferno",
                 "4947002400000011": "Inferno",
                 "4947002400000020": "AquaMortis",
@@ -3124,37 +2723,32 @@
                 "4947002400000040": "OtarosRun",
                 "4947002400000041": "OtarosRun",
                 "49470024000001ff": "Sample Content Package"
-            }
-        ]
-    },
-    "4d570021": {
-        "Title Name": "Unreal Championship 2",
-        "Content IDs": [
-            "4d57002101000000",
-            "4d57002101000001",
-            "4d57002101000002",
-            "4d57002101000003",
-            "4d57002101000004",
-            "4d57002101000005",
-            "4d57002101000006",
-            "4d57002101000007",
-            "4d57002101000008",
-            "4d57002101000009",
-            "4d57002102000000",
-            "4d57002102000001",
-            "4d57002102000002",
-            "4d57002102000003"
-        ],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "4d570021": {
+            "Title Name": "Unreal Championship 2",
+            "Content IDs": [
+                "4d57002101000000",
+                "4d57002101000001",
+                "4d57002101000002",
+                "4d57002101000003",
+                "4d57002101000004",
+                "4d57002101000005",
+                "4d57002101000006",
+                "4d57002101000007",
+                "4d57002101000008",
+                "4d57002101000009",
+                "4d57002102000000",
+                "4d57002102000001",
+                "4d57002102000002",
+                "4d57002102000003"
+            ],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "82d98ae569fc8eb00c6d670ee9fdce49857a653f": "0000000100000101:RF 0101"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d57002101000000": "Character: Syzygy",
                 "4d57002101000001": "Character: Kraag",
                 "4d57002101000002": "Character: Jackhammer",
@@ -3169,109 +2763,99 @@
                 "4d57002102000001": "Map: Monoxide",
                 "4d57002102000002": "Map: OD-Ascension",
                 "4d57002102000003": "Map: Sever"
-            }
-        ]
-    },
-    "5454000a": {
-        "Title Name": "Vietcong Purple Haze",
-        "Content IDs": [
-            "5454000a00000001"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+        }]},
+        "5454000a": {
+            "Title Name": "Vietcong Purple Haze",
+            "Content IDs": [
+                "5454000a00000001"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "5454000a00000001": "In Country"
-            }
-        ]
-    },
-    "41560054": {
-        "Title Name": "World Series of Poker",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000200000102"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "41560054": {
+            "Title Name": "World Series of Poker",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000200000102"
+            ],
+            "Title Updates Known": [{
                 "e0620d3f1b6243e40f7a19e22da4402514fb9eb8": "0000000200000102:RF 0102"
-            }
-        ],
-        "Archived": []
-    },
-    "54510024": {
-        "Title Name": "WWE WrestleMania XXI",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000100000101"
-        ],
-        "Title Updates Known": [
-            {
+            }],
+            "Archived": []
+        },
+        "54510024": {
+            "Title Name": "WWE WrestleMania XXI",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000100000101"
+            ],
+            "Title Updates Known": [{
                 "8df7fbe71fffdf02788fac30f35cb5c8ee3d43e5": "0000000100000101:NTSC+NTSC-J 0101"
-            }
-        ],
-        "Archived": []
-    },
-    "4d5300c8": {
-        "Title Name": "Xbox Live Arcade",
-        "Content IDs": [
-            "4d5300c800000001",
-            "4d5300c800000002",
-            "4d5300c800000003",
-            "4d5300c800000004",
-            "4d5300c800000005",
-            "4d5300c800000006",
-            "4d5300c800000007",
-            "4d5300c800000008",
-            "4d5300c800000009",
-            "4d5300c80000000a",
-            "4d5300c80000000b",
-            "4d5300c80000000c",
-            "4d5300c80000000d",
-            "4d5300c80000000e",
-            "4d5300c80000000f",
-            "4d5300c800000010",
-            "4d5300c800000011",
-            "4d5300c800000012",
-            "4d5300c800000013",
-            "4d5300c800000014",
-            "4d5300c800000015",
-            "4d5300c800000016",
-            "4d5300c800000017",
-            "4d5300c800000018",
-            "4d5300c800000019",
-            "4d5300c80000001a",
-            "4d5300c80000001b",
-            "4d5300c801000002",
-            "4d5300c801000003",
-            "4d5300c801000004",
-            "4d5300c801000005",
-            "4d5300c801000006",
-            "4d5300c801000007",
-            "4d5300c801000008",
-            "4d5300c801000009",
-            "4d5300c80100000a",
-            "4d5300c80100000b",
-            "4d5300c80100000c",
-            "4d5300c80100000d",
-            "4d5300c80100000e",
-            "4d5300c80100000f",
-            "4d5300c801000010",
-            "4d5300c801000011",
-            "4d5300c801000012",
-            "4d5300c801000013",
-            "4d5300c801000014",
-            "4d5300c801000015",
-            "4d5300c801000016",
-            "4d5300c801000017",
-            "4d5300c801000018",
-            "4d5300c801000019",
-            "4d5300c80100001a",
-            "4d5300c80100001b"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": [
-            {
+            }],
+            "Archived": []
+        },
+        "4d5300c8": {
+            "Title Name": "Xbox Live Arcade",
+            "Content IDs": [
+                "4d5300c800000001",
+                "4d5300c800000002",
+                "4d5300c800000003",
+                "4d5300c800000004",
+                "4d5300c800000005",
+                "4d5300c800000006",
+                "4d5300c800000007",
+                "4d5300c800000008",
+                "4d5300c800000009",
+                "4d5300c80000000a",
+                "4d5300c80000000b",
+                "4d5300c80000000c",
+                "4d5300c80000000d",
+                "4d5300c80000000e",
+                "4d5300c80000000f",
+                "4d5300c800000010",
+                "4d5300c800000011",
+                "4d5300c800000012",
+                "4d5300c800000013",
+                "4d5300c800000014",
+                "4d5300c800000015",
+                "4d5300c800000016",
+                "4d5300c800000017",
+                "4d5300c800000018",
+                "4d5300c800000019",
+                "4d5300c80000001a",
+                "4d5300c80000001b",
+                "4d5300c801000002",
+                "4d5300c801000003",
+                "4d5300c801000004",
+                "4d5300c801000005",
+                "4d5300c801000006",
+                "4d5300c801000007",
+                "4d5300c801000008",
+                "4d5300c801000009",
+                "4d5300c80100000a",
+                "4d5300c80100000b",
+                "4d5300c80100000c",
+                "4d5300c80100000d",
+                "4d5300c80100000e",
+                "4d5300c80100000f",
+                "4d5300c801000010",
+                "4d5300c801000011",
+                "4d5300c801000012",
+                "4d5300c801000013",
+                "4d5300c801000014",
+                "4d5300c801000015",
+                "4d5300c801000016",
+                "4d5300c801000017",
+                "4d5300c801000018",
+                "4d5300c801000019",
+                "4d5300c80100001a",
+                "4d5300c80100001b"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
                 "4d5300c800000001": "Ms. Pac-Man",
                 "4d5300c800000002": "Guardian",
                 "4d5300c800000003": "Feeding Frenzy",
@@ -3325,68 +2909,61 @@
                 "4d5300c801000019": "Atomaders [Key]",
                 "4d5300c80100001a": "Pipeline [Key]",
                 "4d5300c80100001b": "Smash TV [Key]"
-            }
-        ]
-    },
-    "584c0005": {
-        "Title Name": "Xbox Live Connectivity Tool",
-        "Content IDs": [],
-        "Title Updates": [
-            "0000000000030003",
-            "0000000200050005"
-        ],
-        "Title Updates Known": [
-            {
-                "f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
-                "584c000500000000000000000000000000000001": "0000000200050005:NTSC+PAL 50005"
-            }
-        ],
-        "Archived": []
-    },
-    "ffed19fb": {
-        "Title Name": "Xbox Live Production Testing",
-        "Content IDs": [
-            "ffed19fb00000001",
-            "ffed19fb00000002",
-            "ffed19fb00000003",
-            "ffed19fb00000004",
-            "ffed19fb00000005",
-            "ffed19fb00000006"
-        ],
-        "Title Updates": [],
-        "Title Updates Known": [],
-        "Archived": []
-    },
-    "4d53005a": {
-        "Title Name": "Xbox Music Mixer",
-        "Content IDs": [
-            "4d53005a00000104",
-            "4d53005a00000105",
-            "4d53005a00000106",
-            "4d53005a00000107",
-            "4d53005a00000108",
-            "4d53005a00000109",
-            "4d53005a0000010a",
-            "4d53005a0000010b",
-            "4d53005a00000111",
-            "4d53005a00000117",
-            "4d53005a00000120",
-            "4d53005a00000121",
-            "4d53005a00000123",
-            "4d53005a00000124"
-        ],
-        "Title Updates": [
-            "0000000400000104",
-            "0000000400000204"
-        ],
-        "Title Updates Known": [
-            {
+        }]},
+        "584c0005": {
+            "Title Name": "Xbox Live Connectivity Tool",
+            "Content IDs": [],
+            "Title Updates": [
+                "0000000000030003",
+                "0000000200050005"
+            ],
+            "Title Updates Known": [{
+		"f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
+		"584c000500000000000000000000000000000001": "0000000200050005:NTSC+PAL 50005"
+            }],
+            "Archived": []
+        },
+        "ffed19fb": {
+            "Title Name": "Xbox Live Production Testing",
+            "Content IDs": [
+                "ffed19fb00000001",
+                "ffed19fb00000002",
+                "ffed19fb00000003",
+                "ffed19fb00000004",
+                "ffed19fb00000005",
+                "ffed19fb00000006"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": []
+        },
+        "4d53005a": {
+            "Title Name": "Xbox Music Mixer",
+            "Content IDs": [
+                "4d53005a00000104",
+                "4d53005a00000105",
+                "4d53005a00000106",
+                "4d53005a00000107",
+                "4d53005a00000108",
+                "4d53005a00000109",
+                "4d53005a0000010a",
+                "4d53005a0000010b",
+                "4d53005a00000111",
+                "4d53005a00000117",
+                "4d53005a00000120",
+                "4d53005a00000121",
+                "4d53005a00000123",
+                "4d53005a00000124"
+            ],
+            "Title Updates": [
+                "0000000400000104",
+                "0000000400000204"
+            ],
+            "Title Updates Known": [{
                 "4d53005a00000000000000000000000000000000": "0000000400000104:NTSC 0104",
                 "16a03666894efcca51b039fad65e5e5f138c1a2a": "0000000400000204:NTSC 0204"
-            }
-        ],
-        "Archived": [
-            {
+            }],
+            "Archived": [{
                 "4d53005a00000106": "Country Male Vol1",
                 "4d53005a00000107": "Country Female Vol1",
                 "4d53005a00000108": "Karaoke Classics Vol1",
@@ -3399,7 +2976,4 @@
                 "4d53005a00000121": "Christmas Vol1",
                 "4d53005a00000123": "New Fractal Visualizer",
                 "4d53005a00000124": "Jingle Bells Karaoke"
-            }
-        ]
-    }
-}
+    }]}}}
