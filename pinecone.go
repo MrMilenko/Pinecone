@@ -13,6 +13,8 @@ import (
 	"regexp"
 	"runtime"
 	"strings"
+
+	"github.com/fatih/color"
 )
 
 var (
@@ -72,9 +74,6 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Download JSON data
 		jsonData, err := downloadJSONData(fmt.Sprintf("https://api.github.com/repos/%s/%s/contents/%s", owner, repo, path))
-		if err != nil {
-			fmt.Println("Error downloading JSON data: " + err.Error())
-		}
 
 		// Check if downloaded JSON is different from existing JSON
 		if _, err := os.Stat(jsonFilePath); err == nil {
@@ -118,8 +117,29 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 	return nil
 }
+
+const (
+	headerWidth = 100
+	separator   = ""
+)
+
+func printHeader(title string) {
+	title = strings.TrimSpace(title)
+	if len(title) > headerWidth-6 { // -6 to account for spaces and equals signs
+		title = title[:headerWidth-9] + "..."
+	}
+	formattedTitle := "== " + title + " =="
+	padLen := (headerWidth - len(formattedTitle)) / 2
+	color.New(color.FgCyan).Println(strings.Repeat("=", padLen) + formattedTitle + strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
+}
+
+func printInfo(colorCode color.Attribute, format string, args ...interface{}) {
+	color.New(colorCode).Printf("    "+format, args...)
+}
+
 func checkForContent(directory string) error {
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
+		printInfo(color.FgYellow, "%s directory not found\n", directory)
 		return fmt.Errorf("%s directory not found", directory)
 	}
 
@@ -137,9 +157,7 @@ func checkForContent(directory string) error {
 		if !ok {
 			return nil
 		}
-
-		//fmt.Println("Found folder for \"" + titleData.TitleName + "\".")
-		fmt.Println("    " + "Title Name: " + titleData.TitleName)
+		printHeader(titleData.TitleName)
 
 		subDirDLC := filepath.Join(path, "$c")
 		subInfoDLC, err := os.Stat(subDirDLC)
@@ -149,7 +167,7 @@ func checkForContent(directory string) error {
 				return err
 			}
 		} else {
-			fmt.Println("    No DLC Found for " + titleID + "..")
+			printInfo(color.FgYellow, "No DLC Found for %s..\n", titleID)
 		}
 
 		subDirUpdates := filepath.Join(path, "$u")
@@ -160,16 +178,13 @@ func checkForContent(directory string) error {
 				return err
 			}
 		} else {
-			fmt.Println("    No Title Updates Found in $u for " + titleID + "..")
+			printInfo(color.FgYellow, "No Title Updates Found in $u for %s..\n", titleID)
 		}
-
-		fmt.Println("    =============================================================================")
 
 		return nil
 	})
 	return err
 }
-
 func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
 	subContents, err := ioutil.ReadDir(subDirDLC)
 	if err != nil {
@@ -184,7 +199,7 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
-			fmt.Println("    " + "Unknown content found at: " + subContentPath)
+			printInfo(color.FgRed, "Unknown content found at: %s\n", subContentPath)
 			continue
 		}
 
@@ -203,16 +218,22 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
 		if archivedName != "" {
-			fmt.Println("    " + "Content is known and archived (" + archivedName + ")")
+			printInfo(color.FgGreen, "Content is known and archived (%s)\n", archivedName)
 		} else {
-			fmt.Println("    " + titleData.TitleName + " has unarchived content found at: " + subContentPath)
+			printInfo(color.FgYellow, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
 		}
 	}
 
 	return nil
 }
-
 func processUpdates(subDirUpdates string, titleData TitleData, titleID string, directory string) error {
+	// Load the ignore list from ignorelist.json in the data folder
+	ignoreList, err := loadIgnoreList("data/ignorelist.json")
+	if err != nil {
+		printInfo(color.FgYellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.\n", err.Error())
+		ignoreList = []string{} // Empty ignore list to prevent panics
+	}
+
 	files, err := ioutil.ReadDir(subDirUpdates)
 	if err != nil {
 		return err
@@ -223,36 +244,62 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 			continue
 		}
 
-		filePath := filepath.Join(subDirUpdates, f.Name())
-		fileHash, err := getSHA1Hash(filePath)
-		if err != nil {
-			fmt.Println("    Error calculating hash for file: " + f.Name() + ", error: " + err.Error())
+		// Skip if the file is in the ignore list
+		if contains(ignoreList, f.Name()) {
 			continue
 		}
 
+		filePath := filepath.Join(subDirUpdates, f.Name())
+		fileHash, err := getSHA1Hash(filePath)
+		if err != nil {
+			printInfo(color.FgRed, "Error calculating hash for file: %s, error: %s\n", f.Name(), err.Error())
+			continue
+		}
+
+		knownUpdateFound := false
 		for _, knownUpdate := range titleData.TitleUpdatesKnown {
 			for knownHash, name := range knownUpdate {
 				if knownHash == fileHash {
-					fmt.Println("    ---------------------------- Title and File Info ----------------------------")
-					fmt.Println("    Title update found for " + titleData.TitleName + " (" + titleID + ") (" + name + ")")
+					printHeader("File Info")
+					printInfo(color.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 					filePath = strings.TrimPrefix(filePath, directory+"/")
-					fmt.Println("    Path: " + filePath)
-					fmt.Println("    SHA1: " + fileHash)
-					fmt.Println("    =============================================================================")
-					return nil
+					printInfo(color.FgGreen, "Path: %s\n", filePath)
+					printInfo(color.FgGreen, "SHA1: %s\n", fileHash)
+					fmt.Println(separator)
+					knownUpdateFound = true
+					break
 				}
+			}
+			if knownUpdateFound {
+				break
 			}
 		}
 
-		fmt.Println("    ---------------------------- Title and File Info ----------------------------")
-		fmt.Println("    Unknown Title Update found for " + titleData.TitleName + " (" + titleID + ")")
-		filePath = strings.TrimPrefix(filePath, directory+"/")
-		fmt.Println("    Path: " + filePath)
-		fmt.Println("    SHA1: " + fileHash)
-
+		if !knownUpdateFound {
+			printHeader("File Info")
+			printInfo(color.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
+			filePath = strings.TrimPrefix(filePath, directory+"/")
+			printInfo(color.FgRed, "Path: %s\n", filePath)
+			printInfo(color.FgRed, "SHA1: %s\n", fileHash)
+		}
 	}
 
 	return nil
+}
+
+func loadIgnoreList(filepath string) ([]string, error) {
+	var ignoreList []string
+
+	data, err := ioutil.ReadFile(filepath)
+	if err != nil {
+		return nil, err
+	}
+
+	if err := json.Unmarshal(data, &ignoreList); err != nil {
+		return nil, err
+	}
+
+	return ignoreList, nil
 }
 
 func getSHA1Hash(filePath string) (string, error) {
@@ -327,7 +374,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("    ========================== Pinecone v0.3.2b - CLI ==========================")
+	fmt.Println("Pinecone v0.4.1b")
+	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	flag.Parse()
 
 	if *titleIDFlag != "" {
@@ -341,7 +389,8 @@ func main() {
 			if _, err := os.Stat(`X:\`); os.IsNotExist(err) {
 				fmt.Println(`FatXplorer's X: drive not found`)
 			} else {
-
+				fmt.Println("Checking for Content...")
+				fmt.Println("====================================================================================================")
 				checkForContent("X:\\TDATA")
 			}
 		} else {
@@ -354,6 +403,8 @@ func main() {
 			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
 			return
 		}
+		fmt.Println("Checking for Content...")
+		fmt.Println("====================================================================================================")
 		err = checkForContent("dump/TDATA")
 		if err != nil {
 			panic(err)
