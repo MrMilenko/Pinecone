@@ -330,10 +330,7 @@ func contains(slice []string, val string) bool {
 // Prints statistics for a specific title or for all titles if batch is true.
 func printStats(titleID string, batch bool) {
 	if batch {
-		for id, data := range titles.Titles {
-			fmt.Printf("Statistics for title ID %s:\n", id)
-			printTitleStats(&data)
-		}
+		printTotalStats()
 	} else {
 		data, ok := titles.Titles[titleID]
 		if !ok {
@@ -345,7 +342,7 @@ func printStats(titleID string, batch bool) {
 	}
 }
 
-// Prints statistics for a TitleData.
+// Prints statistics for TitleData.
 func printTitleStats(data *TitleData) {
 	fmt.Println("Title:", data.TitleName)
 	fmt.Println("Total number of Content IDs:", len(data.ContentIDs))
@@ -355,6 +352,53 @@ func printTitleStats(data *TitleData) {
 	fmt.Println()
 }
 
+func printTotalStats() {
+	totalTitles := len(titles.Titles)
+	totalContentIDs := 0
+	totalTitleUpdates := 0
+	totalKnownTitleUpdates := 0
+	totalArchivedItems := 0
+
+	// Set to store unique hashes of known title updates and archived items
+	knownTitleUpdateHashes := make(map[string]struct{})
+	archivedItemHashes := make(map[string]struct{})
+
+	for _, data := range titles.Titles {
+		totalContentIDs += len(data.ContentIDs)
+		totalTitleUpdates += len(data.TitleUpdates)
+
+		// Count unique known title updates
+		for _, knownUpdate := range data.TitleUpdatesKnown {
+			for hash := range knownUpdate {
+				knownTitleUpdateHashes[hash] = struct{}{}
+			}
+		}
+
+		// Count unique archived items
+		for _, archivedItem := range data.Archived {
+			for hash := range archivedItem {
+				archivedItemHashes[hash] = struct{}{}
+			}
+		}
+	}
+
+	totalKnownTitleUpdates = len(knownTitleUpdateHashes)
+	totalArchivedItems = len(archivedItemHashes)
+
+	fmt.Println("Total Titles:", totalTitles)
+	fmt.Println("Total Content IDs:", totalContentIDs)
+	fmt.Println("Total Title Updates:", totalTitleUpdates)
+	fmt.Println("Total Known Title Updates:", totalKnownTitleUpdates)
+	fmt.Println("Total Archived Items:", totalArchivedItems)
+}
+func promptForDownload(url string) bool {
+	var response string
+	fmt.Printf("The required JSON data is not found. It can be downloaded from %s\n", url)
+	fmt.Print("Do you want to download it now? (yes/no): ")
+	fmt.Scanln(&response)
+
+	return strings.ToLower(response) == "yes"
+}
 func main() {
 	flag.Parse() // Parse command line flags
 
@@ -368,13 +412,47 @@ func main() {
 		fmt.Println("  -help: Display this help information.")
 		return
 	}
+	jsonFilePath := "data/id_database.json"
+	jsonDataFolder := "data"
+	jsonURL := "https://api.github.com/repos/OfficialTeamUIX/Pinecone/contents/data/id_database.json"
 
-	// Load JSON data if update flag is set, otherwise use local copies
-	err := loadJSONData("data/id_database.json", "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, *updateFlag)
-	if err != nil {
-		panic(err)
+	// Ensure data folder exists
+	if _, err := os.Stat(jsonDataFolder); os.IsNotExist(err) {
+		fmt.Println("Data folder not found. Creating...")
+		if mkDirErr := os.Mkdir(jsonDataFolder, 0755); mkDirErr != nil {
+			fmt.Println("Error creating data folder:", mkDirErr)
+			return
+		}
 	}
-	fmt.Println("Pinecone v0.4.1b")
+	// Check if JSON file exists
+	if _, err := os.Stat(jsonFilePath); os.IsNotExist(err) {
+		// Prompt for download if JSON file doesn't exist
+		if promptForDownload(jsonURL) {
+			err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, true)
+			if err != nil {
+				fmt.Println("Error downloading data:", err)
+				return
+			}
+		} else {
+			fmt.Println("Download aborted by user.")
+			return
+		}
+	} else if *updateFlag {
+		// Handle manual update
+		err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, true)
+		if err != nil {
+			fmt.Println("Error updating data:", err)
+			return
+		}
+	} else {
+		// Load existing JSON data
+		err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, false)
+		if err != nil {
+			fmt.Println("Error loading data:", err)
+			return
+		}
+	}
+	fmt.Println("Pinecone v0.4.2b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	flag.Parse()
 
@@ -405,7 +483,7 @@ func main() {
 		}
 		fmt.Println("Checking for Content...")
 		fmt.Println("====================================================================================================")
-		err = checkForContent("dump/TDATA")
+		err := checkForContent("dump/TDATA")
 		if err != nil {
 			panic(err)
 		}
