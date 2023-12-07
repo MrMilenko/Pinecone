@@ -452,7 +452,7 @@ func main() {
 			return
 		}
 	}
-	fmt.Println("Pinecone v0.4.1b")
+	fmt.Println("Pinecone v0.4.2b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	flag.Parse()
 
