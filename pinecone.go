@@ -6,7 +6,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -63,7 +62,7 @@ func downloadJSONData(url string) ([]byte, error) {
 	}
 	defer resp.Body.Close()
 
-	return ioutil.ReadAll(resp.Body)
+	return io.ReadAll(resp.Body)
 }
 
 func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateFlag bool) error {
@@ -77,7 +76,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Check if downloaded JSON is different from existing JSON
 		if _, err := os.Stat(jsonFilePath); err == nil {
-			existingData, err := ioutil.ReadFile(jsonFilePath)
+			existingData, err := os.ReadFile(jsonFilePath)
 			if err != nil {
 				return err
 			}
@@ -90,7 +89,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Write the newly downloaded JSON to file
 		fmt.Printf("Updating %s...\n", jsonFilePath)
-		err = ioutil.WriteFile(jsonFilePath, jsonData, 0644)
+		err = os.WriteFile(jsonFilePath, jsonData, 0644)
 		if err != nil {
 			return err
 		}
@@ -104,7 +103,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 		}
 	} else {
 		// Load existing JSON data
-		jsonData, err := ioutil.ReadFile(jsonFilePath)
+		jsonData, err := os.ReadFile(jsonFilePath)
 		if err != nil {
 			return err
 		}
@@ -186,7 +185,7 @@ func checkForContent(directory string) error {
 	return err
 }
 func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
-	subContents, err := ioutil.ReadDir(subDirDLC)
+	subContents, err := os.ReadDir(subDirDLC)
 	if err != nil {
 		return err
 	}
@@ -234,7 +233,7 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		ignoreList = []string{} // Empty ignore list to prevent panics
 	}
 
-	files, err := ioutil.ReadDir(subDirUpdates)
+	files, err := os.ReadDir(subDirUpdates)
 	if err != nil {
 		return err
 	}
@@ -290,7 +289,7 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 func loadIgnoreList(filepath string) ([]string, error) {
 	var ignoreList []string
 
-	data, err := ioutil.ReadFile(filepath)
+	data, err := os.ReadFile(filepath)
 	if err != nil {
 		return nil, err
 	}
@@ -414,7 +413,7 @@ func main() {
 	}
 	jsonFilePath := "data/id_database.json"
 	jsonDataFolder := "data"
-	jsonURL := "https://api.github.com/repos/OfficialTeamUIX/Pinecone/contents/data/id_database.json"
+	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
 	// Ensure data folder exists
 	if _, err := os.Stat(jsonDataFolder); os.IsNotExist(err) {
@@ -428,7 +427,7 @@ func main() {
 	if _, err := os.Stat(jsonFilePath); os.IsNotExist(err) {
 		// Prompt for download if JSON file doesn't exist
 		if promptForDownload(jsonURL) {
-			err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, true)
+			err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
 			if err != nil {
 				fmt.Println("Error downloading data:", err)
 				return
@@ -439,14 +438,14 @@ func main() {
 		}
 	} else if *updateFlag {
 		// Handle manual update
-		err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, true)
+		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
 		if err != nil {
 			fmt.Println("Error updating data:", err)
 			return
 		}
 	} else {
 		// Load existing JSON data
-		err := loadJSONData(jsonFilePath, "OfficialTeamUIX", "Pinecone", "data/id_database.json", &titles, false)
+		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, false)
 		if err != nil {
 			fmt.Println("Error loading data:", err)
 			return
