@@ -196,6 +196,23 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 			continue
 		}
 
+		subDirContents, err := os.ReadDir(subContentPath)
+		if err != nil {
+			return err
+		}
+
+		hasContentMetaXbx := false
+		for _, dlcFiles := range subDirContents {
+			if strings.Contains(strings.ToLower(dlcFiles.Name()), "contentmeta.xbx") {
+				hasContentMetaXbx = true
+				break
+			}
+		}
+
+		if !hasContentMetaXbx {
+			continue
+		}
+
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
 			printInfo(color.FgRed, "Unknown content found at: %s\n", subContentPath)
