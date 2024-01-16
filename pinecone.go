@@ -203,7 +203,7 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 		hasContentMetaXbx := false
 		for _, dlcFiles := range subDirContents {
-			if strings.Contains(strings.ToLower(dlcFiles.Name()), "contentmeta.xbx") {
+			if strings.Contains(strings.ToLower(dlcFiles.Name()), "contentmeta.xbx") && !dlcFiles.IsDir() {
 				hasContentMetaXbx = true
 				break
 			}
