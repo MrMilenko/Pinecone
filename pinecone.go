@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -22,6 +23,7 @@ var (
 	summarizeFlag = flag.Bool("summarize", false, "Print summary statistics for all titles")
 	titleIDFlag   = flag.String("titleid", "", "Filter statistics by Title ID")
 	fatxplorer    = flag.Bool("fatxplorer", false, "Use FatXplorer's X: drive")
+	dumpLocation  = flag.String("dumpLocation", "dump", "Directory to search for TDATA/UDATA directories")
 	helpFlag      = flag.Bool("help", false, "Display help information")
 )
 
@@ -73,6 +75,9 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Download JSON data
 		jsonData, err := downloadJSONData(fmt.Sprintf("https://api.github.com/repos/%s/%s/contents/%s", owner, repo, path))
+		if err != nil {
+			return err
+		}
 
 		// Check if downloaded JSON is different from existing JSON
 		if _, err := os.Stat(jsonFilePath); err == nil {
@@ -408,6 +413,7 @@ func main() {
 		fmt.Println("  -summarize: Print summary statistics for all titles. If not set, checks for content in the TDATA folder.")
 		fmt.Println("  -titleid: Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
 		fmt.Println("  -fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
+		fmt.Println("  -dumpLocation: Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
 		fmt.Println("  -help: Display this help information.")
 		return
 	}
@@ -451,6 +457,21 @@ func main() {
 			return
 		}
 	}
+
+	if *dumpLocation != "dump" {
+		if _, err := os.Stat(*dumpLocation); os.IsNotExist(err) {
+			log.Fatalln("Directory does not exist, exiting...")
+		}
+	} else {
+		if _, err := os.Stat(*dumpLocation); os.IsNotExist(err) {
+			fmt.Println("Default dump folder not found. Creating...")
+			if mkDirErr := os.Mkdir(*dumpLocation, 0755); mkDirErr != nil {
+				log.Fatalln("Error creating dump folder:", mkDirErr)
+			}
+			log.Fatalln("Please place TDATA folder in the \"dump\" folder")
+		}
+	}
+
 	fmt.Println("Pinecone v0.4.2b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	flag.Parse()
@@ -476,7 +497,7 @@ func main() {
 	} else {
 		// If no flag is set, proceed normally
 		// Check if TDATA folder exists
-		if _, err := os.Stat("dump/TDATA"); os.IsNotExist(err) {
+		if _, err := os.Stat(*dumpLocation + "/TDATA"); os.IsNotExist(err) {
 			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
 			return
 		}
