@@ -19,12 +19,12 @@ import (
 
 var (
 	titles        TitleList
-	updateFlag    = flag.Bool("update", false, "Update the JSON data from the source URL")
-	summarizeFlag = flag.Bool("summarize", false, "Print summary statistics for all titles")
-	titleIDFlag   = flag.String("titleid", "", "Filter statistics by Title ID")
-	fatxplorer    = flag.Bool("fatxplorer", false, "Use FatXplorer's X: drive")
-	dumpLocation  = flag.String("dumpLocation", "dump", "Directory to search for TDATA/UDATA directories")
-	helpFlag      = flag.Bool("help", false, "Display help information")
+	updateFlag    = false
+	summarizeFlag = false
+	titleIDFlag   = ""
+	fatxplorer    = false
+	dumpLocation  = "dump"
+	helpFlag      = false
 )
 
 type TitleData struct {
@@ -404,17 +404,31 @@ func promptForDownload(url string) bool {
 	return strings.ToLower(response) == "yes"
 }
 func main() {
+
+	flag.BoolVar(&updateFlag, "update", false, "Update the JSON data from the source URL")
+	flag.BoolVar(&updateFlag, "u", false, "Update the JSON data from the source URL")
+	flag.BoolVar(&summarizeFlag, "summarize", false, "Print summary statistics for all titles")
+	flag.BoolVar(&summarizeFlag, "s", false, "Print summary statistics for all titles")
+	flag.StringVar(&titleIDFlag, "titleid", "", "Filter statistics by Title ID")
+	flag.StringVar(&titleIDFlag, "tID", "", "Filter statistics by Title ID")
+	flag.BoolVar(&fatxplorer, "fatxplorer", false, "Use FatXplorer's X: drive")
+	flag.BoolVar(&fatxplorer, "f", false, "Use FatXplorer's X: drive")
+	flag.StringVar(&dumpLocation, "location", "dump", "Directory to search for TDATA/UDATA directories")
+	flag.StringVar(&dumpLocation, "l", "dump", "Directory to search for TDATA/UDATA directories")
+	flag.BoolVar(&helpFlag, "help", false, "Display help information")
+	flag.BoolVar(&helpFlag, "h", false, "Display help information")
+
 	flag.Parse() // Parse command line flags
 
 	// Check for help flag
-	if *helpFlag {
+	if helpFlag {
 		fmt.Println("Usage of Pinecone:")
-		fmt.Println("  -update: Update the JSON data from the source URL. If not set, uses local copies of data.")
-		fmt.Println("  -summarize: Print summary statistics for all titles. If not set, checks for content in the TDATA folder.")
-		fmt.Println("  -titleid: Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
-		fmt.Println("  -fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
-		fmt.Println("  -dumpLocation: Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
-		fmt.Println("  -help: Display this help information.")
+		fmt.Println("  -u, --update:     Update the JSON data from the source URL. If not set, uses local copies of data.")
+		fmt.Println("  -s, --summarize:  Print summary statistics for all titles. If not set, checks for content in the TDATA folder.")
+		fmt.Println("  -tID, --titleid:  Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
+		fmt.Println("  -f, --fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
+		fmt.Println("  -l --location:    Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
+		fmt.Println("  -h, --help:       Display this help information.")
 		return
 	}
 	jsonFilePath := "data/id_database.json"
@@ -442,7 +456,7 @@ func main() {
 			fmt.Println("Download aborted by user.")
 			return
 		}
-	} else if *updateFlag {
+	} else if updateFlag {
 		// Handle manual update
 		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
 		if err != nil {
@@ -458,14 +472,14 @@ func main() {
 		}
 	}
 
-	if *dumpLocation != "dump" {
-		if _, err := os.Stat(*dumpLocation); os.IsNotExist(err) {
+	if dumpLocation != "dump" {
+		if _, err := os.Stat(dumpLocation); os.IsNotExist(err) {
 			log.Fatalln("Directory does not exist, exiting...")
 		}
 	} else {
-		if _, err := os.Stat(*dumpLocation); os.IsNotExist(err) {
+		if _, err := os.Stat(dumpLocation); os.IsNotExist(err) {
 			fmt.Println("Default dump folder not found. Creating...")
-			if mkDirErr := os.Mkdir(*dumpLocation, 0755); mkDirErr != nil {
+			if mkDirErr := os.Mkdir(dumpLocation, 0755); mkDirErr != nil {
 				log.Fatalln("Error creating dump folder:", mkDirErr)
 			}
 			log.Fatalln("Please place TDATA folder in the \"dump\" folder")
@@ -476,13 +490,13 @@ func main() {
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 	flag.Parse()
 
-	if *titleIDFlag != "" {
+	if titleIDFlag != "" {
 		// if the titleID flag is set, print stats for that title
-		printStats(*titleIDFlag, false)
-	} else if *summarizeFlag {
+		printStats(titleIDFlag, false)
+	} else if summarizeFlag {
 		// if the summarize flag is set, print stats for all titles
 		printStats("", true)
-	} else if *fatxplorer {
+	} else if fatxplorer {
 		if runtime.GOOS == "windows" {
 			if _, err := os.Stat(`X:\`); os.IsNotExist(err) {
 				fmt.Println(`FatXplorer's X: drive not found`)
@@ -497,7 +511,7 @@ func main() {
 	} else {
 		// If no flag is set, proceed normally
 		// Check if TDATA folder exists
-		if _, err := os.Stat(*dumpLocation + "/TDATA"); os.IsNotExist(err) {
+		if _, err := os.Stat(dumpLocation + "/TDATA"); os.IsNotExist(err) {
 			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
 			return
 		}
