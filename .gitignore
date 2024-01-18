@@ -2,7 +2,7 @@
 dump/.DS_Store
 dump/TDATA/.DS_Store
 .DS_Store
-
+dump/**/
 
 # Go related
 # Binaries for programs and plugins
