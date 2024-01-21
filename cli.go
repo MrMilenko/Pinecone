@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"runtime"
+	"log"
 	"strings"
 
 	"github.com/fatih/color"
@@ -109,54 +108,26 @@ func promptForDownload(url string) bool {
 }
 
 func startCLI(options CLIOptions) {
-	ok := checkDataFolder(options.DataFolder)
-	if !ok {
-		os.Exit(1)
+	err := checkDataFolder(options.DataFolder)
+	if err != nil {
+		log.Fatalln(err)
 	}
 
-	ok = checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
-	if !ok {
-		os.Exit(1)
+	err = checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
+	if err != nil {
+		log.Fatalln(err)
 	}
 
-	ok = checkDumpFolder(dumpLocation)
-	if !ok {
-		os.Exit(1)
+	err = checkDumpFolder(dumpLocation)
+	if err != nil {
+		log.Fatalln(err)
 	}
 
 	fmt.Println("Pinecone v0.4.2b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 
-	if titleIDFlag != "" {
-		// if the titleID flag is set, print stats for that title
-		printStats(titleIDFlag, false)
-	} else if summarizeFlag {
-		// if the summarize flag is set, print stats for all titles
-		printStats("", true)
-	} else if fatxplorer {
-		if runtime.GOOS == "windows" {
-			if _, err := os.Stat(`X:\`); os.IsNotExist(err) {
-				fmt.Println(`FatXplorer's X: drive not found`)
-			} else {
-				fmt.Println("Checking for Content...")
-				fmt.Println("====================================================================================================")
-				checkForContent("X:\\TDATA")
-			}
-		} else {
-			fmt.Println("FatXplorer mode is only available on Windows.")
-		}
-	} else {
-		// If no flag is set, proceed normally
-		// Check if TDATA folder exists
-		if _, err := os.Stat(dumpLocation + "/TDATA"); os.IsNotExist(err) {
-			fmt.Println("TDATA folder not found. Please place TDATA folder in the dump folder.")
-			return
-		}
-		fmt.Println("Checking for Content...")
-		fmt.Println("====================================================================================================")
-		err := checkForContent("dump/TDATA")
-		if err != nil {
-			panic(err)
-		}
-	}
+	err = checkParsingSettings()
+	if err != nil {
+		log.Fatalln(err)
+	}	
 }

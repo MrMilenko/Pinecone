@@ -100,6 +100,7 @@ func checkForContent(directory string) error {
 	})
 	return err
 }
+
 func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
 	subContents, err := os.ReadDir(subDirDLC)
 	if err != nil {
@@ -158,6 +159,7 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 	return nil
 }
+
 func processUpdates(subDirUpdates string, titleData TitleData, titleID string, directory string) error {
 	// Load the ignore list from ignorelist.json in the data folder
 	ignoreList, err := loadIgnoreList("data/ignorelist.json")
