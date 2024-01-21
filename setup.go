@@ -28,7 +28,6 @@ func checkDatabaseFile(jsonFilePath string, jsonURL string, updateFlag bool) err
 			}
 		} else {
 			return fmt.Errorf("Download aborted by user.")
-			
 		}
 	} else if updateFlag {
 		// Handle manual update
@@ -78,7 +77,7 @@ func checkParsingSettings() error {
 				fmt.Println("Checking for Content...")
 				fmt.Println("====================================================================================================")
 				err := checkForContent("X:\\TDATA")
-				if  err != nil {
+				if err != nil {
 					return err
 				}
 			}
@@ -90,7 +89,6 @@ func checkParsingSettings() error {
 		// Check if TDATA folder exists
 		if _, err := os.Stat(dumpLocation + "/TDATA"); os.IsNotExist(err) {
 			return fmt.Errorf("TDATA folder not found. Please place TDATA folder in the dump folder.")
-			
 		}
 		fmt.Println("Checking for Content...")
 		fmt.Println("====================================================================================================")

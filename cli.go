@@ -129,5 +129,5 @@ func startCLI(options CLIOptions) {
 	err = checkParsingSettings()
 	if err != nil {
 		log.Fatalln(err)
-	}	
+	}
 }
