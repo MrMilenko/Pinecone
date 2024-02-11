@@ -241,7 +241,7 @@ func startGUI(options GUIOptions) {
 			output.SetText(output.Text + "Checking for Content...\n")
 			err := checkForContent(path)
 			if nil != err {
-				
+				log.Fatalln(err)
 			}
 		}
 	})
