@@ -11,7 +11,7 @@ func checkDataFolder(dataFolder string) error {
 	if _, err := os.Stat(dataFolder); os.IsNotExist(err) {
 		fmt.Println("Data folder not found. Creating...")
 		if mkDirErr := os.Mkdir(dataFolder, 0755); mkDirErr != nil {
-			return fmt.Errorf("Error creating data folder: %v", mkDirErr)
+			return fmt.Errorf("error creating data folder: %v", mkDirErr)
 		}
 	}
 	return nil
@@ -24,22 +24,22 @@ func checkDatabaseFile(jsonFilePath string, jsonURL string, updateFlag bool) err
 		if promptForDownload(jsonURL) {
 			err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
 			if err != nil {
-				return fmt.Errorf("Error downloading data: %v ", err)
+				return fmt.Errorf("error downloading data: %v ", err)
 			}
 		} else {
-			return fmt.Errorf("Download aborted by user.")
+			return fmt.Errorf("download aborted by user")
 		}
 	} else if updateFlag {
 		// Handle manual update
 		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", jsonFilePath, &titles, true)
 		if err != nil {
-			return fmt.Errorf("Error updating data: %v", err)
+			return fmt.Errorf("error updating data: %v", err)
 		}
 	} else {
 		// Load existing JSON data
 		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", jsonFilePath, &titles, false)
 		if err != nil {
-			return fmt.Errorf("Error loading data: %v", err)
+			return fmt.Errorf("error loading data: %v", err)
 		}
 	}
 	return nil
@@ -48,15 +48,15 @@ func checkDatabaseFile(jsonFilePath string, jsonURL string, updateFlag bool) err
 func checkDumpFolder(dumpLocation string) error {
 	if dumpLocation != "dump" {
 		if _, err := os.Stat(dumpLocation); os.IsNotExist(err) {
-			return fmt.Errorf("Directory does not exist, exiting...")
+			return fmt.Errorf("directory does not exist, exiting")
 		}
 	} else {
 		if _, err := os.Stat(dumpLocation); os.IsNotExist(err) {
 			fmt.Println("Default dump folder not found. Creating...")
 			if mkDirErr := os.Mkdir(dumpLocation, 0755); mkDirErr != nil {
-				return fmt.Errorf("Error creating dump folder: %v", mkDirErr)
+				return fmt.Errorf("error creating dump folder: %v", mkDirErr)
 			}
-			return fmt.Errorf("Please place TDATA folder in the \"dump\" folder")
+			return fmt.Errorf("please place TDATA folder in the \"dump\" folder")
 		}
 	}
 	return nil
@@ -82,13 +82,13 @@ func checkParsingSettings() error {
 				}
 			}
 		} else {
-			return fmt.Errorf("FatXplorer mode is only available on Windows.")
+			return fmt.Errorf("FatXplorer mode is only available on Windows")
 		}
 	} else {
 		// If no flag is set, proceed normally
 		// Check if TDATA folder exists
 		if _, err := os.Stat(dumpLocation + "/TDATA"); os.IsNotExist(err) {
-			return fmt.Errorf("TDATA folder not found. Please place TDATA folder in the dump folder.")
+			return fmt.Errorf("TDATA folder not found. Please place TDATA folder in the dump folder")
 		}
 		fmt.Println("Checking for Content...")
 		fmt.Println("====================================================================================================")
