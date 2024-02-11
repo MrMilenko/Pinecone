@@ -14,6 +14,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -221,10 +222,10 @@ func startGUI(options GUIOptions) {
 
 	var (
 		tdataButtonIcon      = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
-		searchButtonIcon     = loadImage("searchButton", options.DataFolder+"/buttons/search.svg")
-		updateJSONButtonIcon = loadImage("updateJSONButton", options.DataFolder+"/buttons/cloud-down.svg")
-		saveButtonIcon       = loadImage("saveButton", options.DataFolder+"/buttons/floppy-disk.svg")
-		settingsButtonIcon   = loadImage("settingsButton", options.DataFolder+"/buttons/gear.svg")
+		// searchButtonIcon     = loadImage("searchButton", options.DataFolder+"/buttons/search.svg")
+		// updateJSONButtonIcon = loadImage("updateJSONButton", options.DataFolder+"/buttons/cloud-down.svg")
+		// saveButtonIcon       = loadImage("saveButton", options.DataFolder+"/buttons/floppy-disk.svg")
+		// settingsButtonIcon   = loadImage("settingsButton", options.DataFolder+"/buttons/gear.svg")
 		exitButtonIcon       = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
 	)
 
@@ -233,7 +234,7 @@ func startGUI(options GUIOptions) {
 		setDumpFolder(w)
 	})
 
-	scanPath := widget.NewButtonWithIcon("", searchButtonIcon, func() {
+	scanPath := widget.NewButtonWithIcon("", theme.SearchIcon(), func() {
 		if dumpLocation == "" {
 			output.SetText(output.Text + "Please set a path first.\n")
 		} else {
@@ -246,11 +247,11 @@ func startGUI(options GUIOptions) {
 		}
 	})
 	// Save output to a file in the homeDir with a timestamp.
-	saveOutput := widget.NewButtonWithIcon("", saveButtonIcon, func() {
+	saveOutput := widget.NewButtonWithIcon("", theme.DocumentSaveIcon(), func() {
 		saveOutput()
 	})
 
-	updateJSON := widget.NewButtonWithIcon("", updateJSONButtonIcon, func() {
+	updateJSON := widget.NewButtonWithIcon("", theme.DownloadIcon(), func() {
 		var updateJSON = true
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON)
 		if err != nil {
@@ -258,7 +259,7 @@ func startGUI(options GUIOptions) {
 		}
 	})
 	// Create the settings button with the settings icon
-	settingsButton := widget.NewButtonWithIcon("", settingsButtonIcon, func() {
+	settingsButton := widget.NewButtonWithIcon("", theme.SettingsIcon(), func() {
 		// Open the settings screen
 		settings, err := loadSettings()
 		if err != nil {
