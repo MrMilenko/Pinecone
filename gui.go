@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"image/color"
 	"log"
 	"os"
 	"path/filepath"
@@ -11,6 +12,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/layout"
@@ -18,7 +20,13 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-var output = widget.NewMultiLineEntry()
+var outputContainer = container.New(layout.NewVBoxLayout())
+
+var (
+	Red    = color.RGBA{255, 0, 0, 1}
+	Yellow = color.RGBA{255, 255, 0, 1}
+	Green  = color.RGBA{0, 255, 0, 1}
+)
 
 type GUIOptions struct {
 	DataFolder   string
@@ -43,6 +51,23 @@ func loadImage(name, path string) *fyne.StaticResource {
 		StaticName:    name,
 		StaticContent: imgBytes,
 	}
+}
+
+func addHeader(title string) {
+	title = strings.TrimSpace(title)
+	if len(title) > headerWidth-6 { // -6 to account for spaces and equals signs
+		title = title[:headerWidth-9] + "..."
+	}
+	formattedTitle := "== " + title + " =="
+	padLen := (headerWidth - len(formattedTitle)) / 2
+	addText(color.White, strings.Repeat("=", padLen) + formattedTitle + strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
+}
+
+func addText(textColor color.Color, format string, args ...interface{}) {
+	outputContainer.Add(canvas.NewText(fmt.Sprintf(format, args...), textColor))
+	outputContainer.Refresh()
+	outputContainer.Show()
+	fmt.Printf("Objects: %v", outputContainer.Objects)
 }
 
 func loadSettings() (*Settings, error) {
@@ -174,14 +199,17 @@ func setDumpFolder(window fyne.Window) {
 		// Convert path to be used in the checkForContent function
 		path = strings.Replace(path, "file://", "", -1)
 		// set global scanpath variable to the selected folder
-		if strings.Contains(path, "TDATA") {
+		output := widget.NewLabel("")
+		
+		if _, err := os.Stat(path + "/TDATA"); os.IsNotExist(err) {
 			dumpLocation = path
 			// We don't want usernames in the log, so we'll just show the folder name AFTER passing it to checkForContent
 			// path = strings.Replace(path, homeDir, "", -1)
-			output.SetText(output.Text + "Path set to: " + path + "\n")
+			output.SetText("Path set to: " + path + "\n")
 		} else {
-			output.SetText(output.Text + "Incorrect pathing. Please select a TDATA folder.\n")
+			output.SetText("Incorrect pathing. Please select a dump with TDATA folder.\n")
 		}
+		outputContainer.Add(output)
 	}, window)
 }
 
@@ -201,18 +229,26 @@ func saveOutput() {
 		}
 	}
 	// Write output to file
-	err := os.WriteFile(outputPath, []byte(output.Text), 0644)
+	fileText := ""
+	for _, obj := range outputContainer.Objects {
+		if textObj, ok := obj.(*canvas.Text); ok {
+			// Append the text value to the string
+			fileText += textObj.Text
+		}
+	}
+	err := os.WriteFile(outputPath, []byte(fileText), 0644)
 	if err != nil {
 		panic(err)
 	}
 	// Debug output, show the path we're scanning
-	output.SetText(output.Text + "Output saved to: " + outputPath + "\n")
-
+	output := widget.NewLabel("Output saved to: " + outputPath + "\n")
+	outputContainer.Add(output)
 }
 
 func startGUI(options GUIOptions) {
 	a := app.New()
 	w := a.NewWindow("Pinecone 0.5.0")
+	output := widget.NewLabel("")
 
 	// First Load welcome message
 	fakeConsole := fmt.Sprintln("Welcome to Pinecone v0.5.0b")
@@ -221,12 +257,8 @@ func startGUI(options GUIOptions) {
 	w.Resize(fyne.Size{Width: 800, Height: 300})
 
 	var (
-		tdataButtonIcon      = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
-		// searchButtonIcon     = loadImage("searchButton", options.DataFolder+"/buttons/search.svg")
-		// updateJSONButtonIcon = loadImage("updateJSONButton", options.DataFolder+"/buttons/cloud-down.svg")
-		// saveButtonIcon       = loadImage("saveButton", options.DataFolder+"/buttons/floppy-disk.svg")
-		// settingsButtonIcon   = loadImage("settingsButton", options.DataFolder+"/buttons/gear.svg")
-		exitButtonIcon       = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
+		tdataButtonIcon = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
+		exitButtonIcon = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
 	)
 
 	// set folder to scan, but only if it is a TDATA folder.
@@ -242,7 +274,7 @@ func startGUI(options GUIOptions) {
 			output.SetText(output.Text + "Checking for Content...\n")
 			err := checkForContent(path)
 			if nil != err {
-				log.Fatalln(err)
+				addText(Red, err.Error())
 			}
 		}
 	})
@@ -255,7 +287,7 @@ func startGUI(options GUIOptions) {
 		var updateJSON = true
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON)
 		if err != nil {
-			log.Fatalln(err)
+			fmt.Println(err)
 		}
 	})
 	// Create the settings button with the settings icon
@@ -263,7 +295,7 @@ func startGUI(options GUIOptions) {
 		// Open the settings screen
 		settings, err := loadSettings()
 		if err != nil {
-			log.Println(err)
+			fmt.Println(err)
 			settings = &Settings{}
 		}
 		showSettingsDialog(w, settings, a)
@@ -283,8 +315,9 @@ func startGUI(options GUIOptions) {
 	// Add the hamburger button to the hamburgerMenu
 	sideMenu.Add(buttons)
 
+	outputContainer.Add(output)
 	// Create a container with scroll for the output
-	outputScroll := container.NewScroll(output)
+	outputScroll := container.NewScroll(outputContainer)
 
 	// Create a container to hold the main content of the window
 	mainContent := container.NewBorder(nil, nil, nil, nil, outputScroll)

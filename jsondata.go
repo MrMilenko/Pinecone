@@ -4,6 +4,7 @@ import (
 	"crypto/sha1"
 	"encoding/json"
 	"fmt"
+	"image/color"
 	"io"
 	"net/http"
 	"os"
@@ -40,7 +41,6 @@ func downloadJSONData(url string) ([]byte, error) {
 
 func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateFlag bool) error {
 	if updateFlag {
-
 		//Notify we're checking for updates
 		fmt.Printf("Checking for PineCone updates..\n")
 
@@ -64,14 +64,22 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 		}
 
 		// Write the newly downloaded JSON to file
-		fmt.Printf("Updating %s...\n", jsonFilePath)
+		if guiEnabled {
+			addText(color.White, "Updating %s...\n", jsonFilePath)
+		} else {
+			fmt.Printf("Updating %s...\n", jsonFilePath)
+		}
 		err = os.WriteFile(jsonFilePath, jsonData, 0644)
 		if err != nil {
 			return err
 		}
 
 		// Load the newly downloaded JSON data
-		fmt.Printf("Reloading %s...\n", path)
+		if guiEnabled {
+			addText(color.White, "Reloading %s...\n", path)
+		} else {
+			fmt.Printf("Reloading %s...\n", path)
+		}
 		jsonStr := removeCommentsFromJSON(string(jsonData))
 		err = json.Unmarshal([]byte(jsonStr), &v)
 		if err != nil {

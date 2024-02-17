@@ -24,3 +24,7 @@ pinecone
 
 # Go workspace file
 go.work
+
+discord.go
+
+output/

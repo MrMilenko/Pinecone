@@ -13,7 +13,7 @@ var (
 	fatxplorer    = false
 	dumpLocation  = "dump"
 	helpFlag      = false
-	guiEnabled   = true
+	guiEnabled    = true
 )
 
 func main() {
@@ -51,7 +51,6 @@ func main() {
 	jsonDataFolder := "data"
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
-	
 	if guiEnabled {
 		// TODO: GUI Option
 		guiOpts := GUIOptions{
@@ -59,7 +58,7 @@ func main() {
 			JSONFilePath: jsonFilePath,
 			JSONUrl:      jsonURL,
 		}
-		
+
 		startGUI(guiOpts)
 	} else {
 		cliOpts := CLIOptions{
