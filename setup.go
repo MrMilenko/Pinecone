@@ -10,7 +10,7 @@ func checkDataFolder(dataFolder string) error {
 	// Ensure data folder exists
 	if _, err := os.Stat(dataFolder); os.IsNotExist(err) {
 		fmt.Println("Data folder not found. Creating...")
-		if mkDirErr := os.Mkdir(dataFolder, 0755); mkDirErr != nil {
+		if mkDirErr := os.Mkdir(dataFolder, 0o755); mkDirErr != nil {
 			return fmt.Errorf("error creating data folder: %v", mkDirErr)
 		}
 	}
@@ -53,7 +53,7 @@ func checkDumpFolder(dumpLocation string) error {
 	} else {
 		if _, err := os.Stat(dumpLocation); os.IsNotExist(err) {
 			fmt.Println("Default dump folder not found. Creating...")
-			if mkDirErr := os.Mkdir(dumpLocation, 0755); mkDirErr != nil {
+			if mkDirErr := os.Mkdir(dumpLocation, 0o755); mkDirErr != nil {
 				return fmt.Errorf("error creating dump folder: %v", mkDirErr)
 			}
 			return fmt.Errorf("please place TDATA folder in the \"dump\" folder")

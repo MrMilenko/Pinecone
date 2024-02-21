@@ -41,7 +41,7 @@ func downloadJSONData(url string) ([]byte, error) {
 
 func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateFlag bool) error {
 	if updateFlag {
-		//Notify we're checking for updates
+		// Notify we're checking for updates
 		fmt.Printf("Checking for PineCone updates..\n")
 
 		// Download JSON data
@@ -69,7 +69,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 		} else {
 			fmt.Printf("Updating %s...\n", jsonFilePath)
 		}
-		err = os.WriteFile(jsonFilePath, jsonData, 0644)
+		err = os.WriteFile(jsonFilePath, jsonData, 0o644)
 		if err != nil {
 			return err
 		}

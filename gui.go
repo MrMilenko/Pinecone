@@ -23,9 +23,9 @@ import (
 var outputContainer = container.New(layout.NewVBoxLayout())
 
 var (
-	Red    = color.RGBA{255, 0, 0, 1}
-	Yellow = color.RGBA{255, 255, 0, 1}
-	Green  = color.RGBA{0, 255, 0, 1}
+	Red    = color.RGBA{255, 0, 0, 0}
+	Yellow = color.RGBA{255, 255, 0, 0}
+	Green  = color.RGBA{0, 255, 0, 0}
 )
 
 type GUIOptions struct {
@@ -60,7 +60,7 @@ func addHeader(title string) {
 	}
 	formattedTitle := "== " + title + " =="
 	padLen := (headerWidth - len(formattedTitle)) / 2
-	addText(color.White, strings.Repeat("=", padLen) + formattedTitle + strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
+	addText(color.White, strings.Repeat("=", padLen)+formattedTitle+strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
 }
 
 func addText(textColor color.Color, format string, args ...interface{}) {
@@ -195,12 +195,12 @@ func setDumpFolder(window fyne.Window) {
 			return
 		}
 		// Set path to the selected folder
-		var path = list.String()
+		path := list.String()
 		// Convert path to be used in the checkForContent function
 		path = strings.Replace(path, "file://", "", -1)
 		// set global scanpath variable to the selected folder
 		output := widget.NewLabel("")
-		
+
 		if _, err := os.Stat(path + "/TDATA"); os.IsNotExist(err) {
 			dumpLocation = path
 			// We don't want usernames in the log, so we'll just show the folder name AFTER passing it to checkForContent
@@ -223,7 +223,7 @@ func saveOutput() {
 	// Create the 'output' directory if it doesn't exist
 	outputDir := filepath.Dir(outputPath)
 	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
-		err = os.MkdirAll(outputDir, 0755)
+		err = os.MkdirAll(outputDir, 0o755)
 		if err != nil {
 			panic(err)
 		}
@@ -236,7 +236,7 @@ func saveOutput() {
 			fileText += textObj.Text
 		}
 	}
-	err := os.WriteFile(outputPath, []byte(fileText), 0644)
+	err := os.WriteFile(outputPath, []byte(fileText), 0o644)
 	if err != nil {
 		panic(err)
 	}
@@ -258,7 +258,7 @@ func startGUI(options GUIOptions) {
 
 	var (
 		tdataButtonIcon = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
-		exitButtonIcon = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
+		exitButtonIcon  = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
 	)
 
 	// set folder to scan, but only if it is a TDATA folder.
@@ -284,7 +284,7 @@ func startGUI(options GUIOptions) {
 	})
 
 	updateJSON := widget.NewButtonWithIcon("", theme.DownloadIcon(), func() {
-		var updateJSON = true
+		updateJSON := true
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON)
 		if err != nil {
 			fmt.Println(err)

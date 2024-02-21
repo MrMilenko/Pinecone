@@ -45,7 +45,7 @@ func loadIgnoreList(filepath string) ([]string, error) {
 
 func contains(slice []string, val string) bool {
 	for _, item := range slice {
-		//fmt.Printf("Comparing %q to %q\n", item, val)
+		// fmt.Printf("Comparing %q to %q\n", item, val)
 		if item == val {
 			return true
 		}

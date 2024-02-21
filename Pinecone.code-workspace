@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"go.useLanguageServer": true,
+		"gopls": {
+			"formatting.gofumpt": true,
+		},
+	}
+}
