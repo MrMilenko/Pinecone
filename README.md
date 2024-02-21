@@ -79,6 +79,7 @@ TDATA/4d4a0009/$u/test.xbe: 87088e689b192c389693b3db38d5f26f2c4d55ae
 
 * `go` 1.21.5 or later
 * `fyne` 2.4.3 or later
+* `gofumpt` 0.6.0 or later (our prefered formatter)
 
 ## Build instructions
 
@@ -88,8 +89,14 @@ TDATA/4d4a0009/$u/test.xbe: 87088e689b192c389693b3db38d5f26f2c4d55ae
 go install fyne.io/fyne/v2/cmd/fyne@latest
 ```
 
-2. Run `go mod tidy` in the root directory to install all depandancies
-3. Run `go build .`. WARNING: First compile will take a long time. Be patient!
+2. Install `gofumpt` CLI tool
+
+```sh
+go install mvdan.cc/gofumpt@latest
+```
+
+3. Run `go mod tidy` in the root directory to install all depandancies
+4. Run `go build .`. WARNING: First compile will take a long time. Be patient!
 
 ## Packaging for Release
 

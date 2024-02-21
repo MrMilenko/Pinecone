@@ -9,5 +9,6 @@
 		"gopls": {
 			"formatting.gofumpt": true,
 		},
+		"editor.formatOnSave": true,
 	}
 }
