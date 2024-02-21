@@ -1,7 +1,7 @@
 Website = "https://github.com/Xbox-Preservation-Project/Pinecone"
 
 [Details]
-  Icon = "Icon.png"
-  Name = "PineCone"
-  Version = "0.5.0"
-  Build = 2
+Icon = "Icon.png"
+Name = "PineCone"
+Version = "0.5.0"
+Build = 2
