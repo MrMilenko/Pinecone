@@ -11,7 +11,7 @@ var (
 	summarizeFlag = false
 	titleIDFlag   = ""
 	fatxplorer    = false
-	dumpLocation  = "dump"
+	dumpLocation  = "./dump/"
 	helpFlag      = false
 	guiEnabled    = true
 )
@@ -25,8 +25,8 @@ func main() {
 	flag.StringVar(&titleIDFlag, "tID", "", "Filter statistics by Title ID")
 	flag.BoolVar(&fatxplorer, "fatxplorer", false, "Use FatXplorer's X: drive")
 	flag.BoolVar(&fatxplorer, "f", false, "Use FatXplorer's X: drive")
-	flag.StringVar(&dumpLocation, "location", "dump", "Directory to search for TDATA/UDATA directories")
-	flag.StringVar(&dumpLocation, "l", "dump", "Directory to search for TDATA/UDATA directories")
+	flag.StringVar(&dumpLocation, "location", "./dump/", "Directory to search for TDATA/UDATA directories")
+	flag.StringVar(&dumpLocation, "l", "./dump/", "Directory to search for TDATA/UDATA directories")
 	flag.BoolVar(&helpFlag, "help", false, "Display help information")
 	flag.BoolVar(&helpFlag, "h", false, "Display help information")
 	flag.BoolVar(&guiEnabled, "gui", true, "Enable GUI")

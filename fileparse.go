@@ -54,6 +54,7 @@ func contains(slice []string, val string) bool {
 }
 
 func checkForContent(directory string) error {
+	fmt.Println("CHECKING CONTENT, DIR IS: ", directory)
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		if !guiEnabled {
 			printInfo(fatihColor.FgYellow, "%s directory not found\n", directory)
@@ -62,6 +63,7 @@ func checkForContent(directory string) error {
 	}
 
 	logOutput := func(s string) {
+		fmt.Printf("LOGGING STRING: %v", s)
 		if !guiEnabled {
 			printInfo(fatihColor.FgYellow, s)
 		} else {
@@ -83,7 +85,12 @@ func checkForContent(directory string) error {
 		if !ok {
 			return nil
 		}
-		printHeader(titleData.TitleName)
+		if guiEnabled {
+			fmt.Println("TITLE: ", titleData.TitleName)
+			addHeader(titleData.TitleName)
+		} else {
+			printHeader(titleData.TitleName)
+		}
 
 		subDirDLC := filepath.Join(path, "$c")
 		subInfoDLC, err := os.Stat(subDirDLC)

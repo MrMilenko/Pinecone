@@ -6,6 +6,7 @@ import (
 	"image/color"
 	"log"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 	"time"
@@ -60,11 +61,12 @@ func addHeader(title string) {
 	}
 	formattedTitle := "== " + title + " =="
 	padLen := (headerWidth - len(formattedTitle)) / 2
-	addText(color.White, strings.Repeat("=", padLen)+formattedTitle+strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
+	addText(theme.ForegroundColor(), strings.Repeat("=", padLen)+formattedTitle+strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
 }
 
 func addText(textColor color.Color, format string, args ...interface{}) {
-	outputContainer.Add(canvas.NewText(fmt.Sprintf(format, args...), textColor))
+	output := canvas.NewText(fmt.Sprintf(format, args...), textColor)
+	outputContainer.Add(output)
 	outputContainer.Refresh()
 	outputContainer.Show()
 	fmt.Printf("Objects: %v", outputContainer.Objects)
@@ -168,7 +170,7 @@ func showSettingsDialog(parent fyne.Window, settings *Settings, app fyne.App) {
 	})
 
 	content := container.NewVBox(
-		widget.NewLabel("User Info:"),
+		canvas.NewText("User Info:", theme.ForegroundColor()),
 		userNameEntry,
 		discordEntry,
 		twitterEntry,
@@ -194,22 +196,24 @@ func setDumpFolder(window fyne.Window) {
 		if list == nil { // user cancelled
 			return
 		}
-		// Set path to the selected folder
-		path := list.String()
+		// Set tmpDumpPath to the selected folder
+		tmpDumpPath := list.String()
 		// Convert path to be used in the checkForContent function
-		path = strings.Replace(path, "file://", "", -1)
+		tmpDumpPath = strings.Replace(tmpDumpPath, "file://", "", -1)
 		// set global scanpath variable to the selected folder
-		output := widget.NewLabel("")
+		// output := widget.NewLabel("")
 
-		if _, err := os.Stat(path + "/TDATA"); os.IsNotExist(err) {
-			dumpLocation = path
+		if _, err := os.Stat(path.Join(tmpDumpPath + "TDATA")); os.IsNotExist(err) {
+			dumpLocation = tmpDumpPath
 			// We don't want usernames in the log, so we'll just show the folder name AFTER passing it to checkForContent
 			// path = strings.Replace(path, homeDir, "", -1)
-			output.SetText("Path set to: " + path + "\n")
+			output := canvas.NewText("Path set to: "+tmpDumpPath, theme.ForegroundColor())
+			outputContainer.Add(output)
 		} else {
-			output.SetText("Incorrect pathing. Please select a dump with TDATA folder.\n")
+			output := canvas.NewText("Incorrect pathing. Please select a dump with TDATA folder.\n", theme.ForegroundColor())
+			outputContainer.Add(output)
 		}
-		outputContainer.Add(output)
+		// outputContainer.Add(output)
 	}, window)
 }
 
@@ -274,6 +278,7 @@ func startGUI(options GUIOptions) {
 			output.SetText(output.Text + "Checking for Content...\n")
 			err := checkForContent(path)
 			if nil != err {
+				fmt.Println("ERROR: ", err.Error())
 				addText(Red, err.Error())
 			}
 		}

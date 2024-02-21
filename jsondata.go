@@ -4,11 +4,12 @@ import (
 	"crypto/sha1"
 	"encoding/json"
 	"fmt"
-	"image/color"
 	"io"
 	"net/http"
 	"os"
 	"regexp"
+
+	"fyne.io/fyne/v2/theme"
 )
 
 func removeCommentsFromJSON(jsonStr string) string {
@@ -65,7 +66,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Write the newly downloaded JSON to file
 		if guiEnabled {
-			addText(color.White, "Updating %s...\n", jsonFilePath)
+			addText(theme.ForegroundColor(), "Updating %s...\n", jsonFilePath)
 		} else {
 			fmt.Printf("Updating %s...\n", jsonFilePath)
 		}
@@ -76,7 +77,7 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 
 		// Load the newly downloaded JSON data
 		if guiEnabled {
-			addText(color.White, "Reloading %s...\n", path)
+			addText(theme.ForegroundColor(), "Reloading %s...\n", path)
 		} else {
 			fmt.Printf("Reloading %s...\n", path)
 		}
