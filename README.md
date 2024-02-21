@@ -13,7 +13,7 @@
 * Download the appropriate binary for your platform.
 * Working Directory should look like this:
 
-```
+```sh
 PineCone
 |-- pinecone binary
 |
@@ -90,3 +90,15 @@ go install fyne.io/fyne/v2/cmd/fyne@latest
 
 2. Run `go mod tidy` in the root directory to install all depandancies
 3. Run `go build .`. WARNING: First compile will take a long time. Be patient!
+
+## Packaging for Release
+
+Fyne provides a simple way to build for release. Simply run the following command:
+
+```sh
+fyne package -os {OS-NAME}
+```
+
+Where `OS-NAME` is either `windows`, `linux`, or `darwin`(macOS) for your operating system of choice.
+
+`FyneApp.toml` can be modified to change a variety of build variables, which you can find in the [fyne docs](https://docs.fyne.io/).
