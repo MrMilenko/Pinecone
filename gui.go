@@ -24,9 +24,9 @@ import (
 var outputContainer = container.New(layout.NewVBoxLayout())
 
 var (
-	Red    = color.RGBA{255, 0, 0, 0}
-	Yellow = color.RGBA{255, 255, 0, 0}
-	Green  = color.RGBA{0, 255, 0, 0}
+	Red    = color.RGBA{255, 0, 0, 255}
+	Yellow = color.RGBA{255, 255, 0, 255}
+	Green  = color.RGBA{0, 255, 0, 255}
 )
 
 type GUIOptions struct {
@@ -69,7 +69,6 @@ func addText(textColor color.Color, format string, args ...interface{}) {
 	outputContainer.Add(output)
 	outputContainer.Refresh()
 	outputContainer.Show()
-	fmt.Printf("Objects: %v", outputContainer.Objects)
 }
 
 func loadSettings() (*Settings, error) {
@@ -276,7 +275,19 @@ func startGUI(options GUIOptions) {
 		} else {
 			path := dumpLocation
 			output.SetText(output.Text + "Checking for Content...\n")
-			err := checkForContent(path)
+			err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
+			if err != nil {
+				fmt.Println("ERROR: ", err.Error())
+				addText(Red, err.Error())
+			}
+
+			err = checkDumpFolder(path)
+			if nil != err {
+				fmt.Println("ERROR: ", err.Error())
+				addText(Red, err.Error())
+			}
+
+			err = checkParsingSettings()
 			if nil != err {
 				fmt.Println("ERROR: ", err.Error())
 				addText(Red, err.Error())

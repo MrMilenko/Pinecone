@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"path"
 )
 
 var (
@@ -47,6 +48,7 @@ func main() {
 		return
 	}
 
+	dumpLocation = path.Clean(dumpLocation)
 	jsonFilePath := "data/id_database.json"
 	jsonDataFolder := "data"
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
