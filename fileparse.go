@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"fyne.io/fyne/v2/theme"
 	fatihColor "github.com/fatih/color"
 )
 
@@ -54,7 +55,6 @@ func contains(slice []string, val string) bool {
 }
 
 func checkForContent(directory string) error {
-	fmt.Println("CHECKING CONTENT, DIR IS: ", directory)
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		if !guiEnabled {
 			printInfo(fatihColor.FgYellow, "%s directory not found\n", directory)
@@ -62,13 +62,11 @@ func checkForContent(directory string) error {
 		return fmt.Errorf("%s directory not found", directory)
 	}
 
-	fmt.Println("PASS THE BAD PART")
-
 	logOutput := func(s string) {
 		if !guiEnabled {
 			printInfo(fatihColor.FgYellow, s+"\n")
 		} else {
-			addText(Red, s)
+			addText(theme.ErrorColor(), s)
 		}
 	}
 
@@ -151,7 +149,7 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
 			if guiEnabled {
-				addText(Red, "Unknown content found at: %s", subContentPath)
+				addText(theme.ErrorColor(), "Unknown content found at: %s", subContentPath)
 			}
 			printInfo(fatihColor.FgRed, "Unknown content found at: %s\n", subContentPath)
 
@@ -221,7 +219,7 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		fileHash, err := getSHA1Hash(filePath)
 		if err != nil {
 			if guiEnabled {
-				addText(Red, "Error calculating hash for file: %s, error: %s", f.Name(), err.Error())
+				addText(theme.ErrorColor(), "Error calculating hash for file: %s, error: %s", f.Name(), err.Error())
 			}
 			printInfo(fatihColor.FgRed, "Error calculating hash for file: %s, error: %s\n", f.Name(), err.Error())
 
@@ -259,10 +257,10 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		if !knownUpdateFound {
 			if guiEnabled {
 				addHeader("File Info")
-				addText(Red, "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
+				addText(theme.ErrorColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
 				filePath = strings.TrimPrefix(filePath, directory+"/")
-				addText(Red, "Path: %s", filePath)
-				addText(Red, "SHA1: %s", fileHash)
+				addText(theme.ErrorColor(), "Path: %s", filePath)
+				addText(theme.ErrorColor(), "SHA1: %s", fileHash)
 			}
 			printHeader("File Info")
 			printInfo(fatihColor.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)

@@ -231,19 +231,19 @@ func guiScanContent(options GUIOptions) {
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
 		if err != nil {
 			fmt.Println("ERROR: ", err.Error())
-			addText(Red, err.Error())
+			addText(theme.ErrorColor(), err.Error())
 		}
 
 		err = checkDumpFolder(path)
 		if nil != err {
 			fmt.Println("ERROR: ", err.Error())
-			addText(Red, err.Error())
+			addText(theme.ErrorColor(), err.Error())
 		}
 
 		err = checkParsingSettings()
 		if nil != err {
 			fmt.Println("ERROR: ", err.Error())
-			addText(Red, err.Error())
+			addText(theme.ErrorColor(), err.Error())
 		}
 	}
 }
@@ -291,10 +291,7 @@ func startGUI(options GUIOptions) {
 
 	w.Resize(fyne.Size{Width: 800, Height: 600})
 
-	var (
-		tdataButtonIcon = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
-		exitButtonIcon  = loadImage("exitButton", options.DataFolder+"/buttons/exit.svg")
-	)
+	tdataButtonIcon := loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
 
 	// set folder to scan, but only if it is a TDATA folder.
 	setFolder := widget.NewButtonWithIcon("Set Dump Folder", tdataButtonIcon, func() {
@@ -328,7 +325,7 @@ func startGUI(options GUIOptions) {
 	})
 
 	// Exit the application
-	exit := widget.NewButtonWithIcon("Exit", exitButtonIcon, func() {
+	exit := widget.NewButtonWithIcon("Exit", theme.LogoutIcon(), func() {
 		a.Quit()
 	})
 
