@@ -305,11 +305,12 @@ func saveOutput() {
 
 func startGUI(options GUIOptions) {
 	a := app.New()
-	w := a.NewWindow("Pinecone 0.5.0")
+	windowName := fmt.Sprintf("Pinecone %s", version)
+	w := a.NewWindow(windowName)
 	output := widget.NewLabel("")
 
 	// First Load welcome message
-	fakeConsole := fmt.Sprintln("Welcome to Pinecone v0.5.0b")
+	fakeConsole := fmt.Sprintf("Welcome to Pinecone v%s\n", version)
 	output.SetText(output.Text + fakeConsole)
 
 	w.Resize(fyne.Size{Width: 800, Height: 600})

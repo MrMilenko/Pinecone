@@ -15,6 +15,7 @@ var (
 	dumpLocation  = "./dump/"
 	helpFlag      = false
 	guiEnabled    = true
+	version       = "0.5.0"
 )
 
 func main() {
