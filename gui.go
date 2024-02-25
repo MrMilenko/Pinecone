@@ -23,12 +23,6 @@ import (
 
 var outputContainer = container.New(layout.NewVBoxLayout())
 
-var (
-	Red    = color.RGBA{255, 0, 0, 255}
-	Yellow = color.RGBA{255, 255, 0, 255}
-	Green  = color.RGBA{0, 255, 0, 255}
-)
-
 type GUIOptions struct {
 	DataFolder   string
 	JSONFilePath string
@@ -220,32 +214,61 @@ func setDumpFolder(window fyne.Window) {
 	}, window)
 }
 
-func guiScanContent(options GUIOptions) {
+func guiScanDump() {
+	fmt.Println("DEVLIN: HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM")
+
+	err := checkDumpFolder(dumpLocation)
+	if nil != err {
+		fmt.Println("ERROR: ", err.Error())
+		addText(theme.ErrorColor(), err.Error())
+	}
+
+	err = checkParsingSettings()
+	if nil != err {
+		fmt.Println("ERROR: ", err.Error())
+		addText(theme.ErrorColor(), err.Error())
+	}
+}
+
+func guiStartScan(options GUIOptions, window fyne.Window) {
 	if dumpLocation == "" {
 		output := canvas.NewText("Please set a path first.", theme.ForegroundColor())
 		outputContainer.Add(output)
 	} else {
-		path := dumpLocation
 		output := canvas.NewText("Checking for Content...", theme.ForegroundColor())
 		outputContainer.Add(output)
-		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
+		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag, window)
 		if err != nil {
 			fmt.Println("ERROR: ", err.Error())
 			addText(theme.ErrorColor(), err.Error())
 		}
-
-		err = checkDumpFolder(path)
-		if nil != err {
-			fmt.Println("ERROR: ", err.Error())
-			addText(theme.ErrorColor(), err.Error())
-		}
-
-		err = checkParsingSettings()
-		if nil != err {
-			fmt.Println("ERROR: ", err.Error())
-			addText(theme.ErrorColor(), err.Error())
-		}
 	}
+}
+
+func guiShowDownloadConfirmation(window fyne.Window, filePath string, url string) {
+	message := fmt.Sprintf("The required JSON data is not found.\nIt can be downloaded from:\n%s\nDo you want to download it now?", url)
+	confirmation := dialog.NewConfirm("Confirmation", message, func(confirmed bool) {
+		if confirmed {
+			// Action to perform if confirmed
+			// dialog.ShowInformation("Confirmed", "Action confirmed", window)
+			err := loadJSONData(filePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
+			if err != nil {
+				text := fmt.Sprintf("error downloading data: %v", err)
+				output := canvas.NewText(text, theme.ErrorColor())
+				outputContainer.Add(output)
+				return
+			}
+			guiScanDump()
+		} else {
+			// Action to perform if canceled
+			// dialog.ShowInformation("Canceled", "Action canceled", window)
+			output := canvas.NewText("Download aborted by user", theme.ErrorColor())
+			outputContainer.Add(output)
+		}
+	}, window)
+
+	// Show the confirmation dialog
+	confirmation.Show()
 }
 
 func saveOutput() {
@@ -299,7 +322,7 @@ func startGUI(options GUIOptions) {
 	})
 
 	scanPath := widget.NewButtonWithIcon("Scan For Content", theme.SearchIcon(), func() {
-		guiScanContent(options)
+		guiStartScan(options, w)
 	})
 	// Save output to a file in the homeDir with a timestamp.
 	saveOutput := widget.NewButtonWithIcon("Save Output", theme.DocumentSaveIcon(), func() {
@@ -308,7 +331,7 @@ func startGUI(options GUIOptions) {
 
 	updateJSON := widget.NewButtonWithIcon("Update Database", theme.DownloadIcon(), func() {
 		updateJSON := true
-		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON)
+		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON, nil)
 		if err != nil {
 			fmt.Println(err)
 		}

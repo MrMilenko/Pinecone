@@ -54,7 +54,6 @@ func main() {
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
 	if guiEnabled {
-		// TODO: GUI Option
 		guiOpts := GUIOptions{
 			DataFolder:   jsonDataFolder,
 			JSONFilePath: jsonFilePath,
