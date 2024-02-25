@@ -56,9 +56,7 @@ func contains(slice []string, val string) bool {
 
 func checkForContent(directory string) error {
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
-		if !guiEnabled {
-			printInfo(fatihColor.FgYellow, "%s directory not found\n", directory)
-		}
+		printInfo(fatihColor.FgYellow, "%s directory not found\n", directory)
 		return fmt.Errorf("%s directory not found", directory)
 	}
 
@@ -172,13 +170,13 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
 		if archivedName != "" {
 			if guiEnabled {
-				addText(Green, "Content is known and archived (%s)", archivedName)
+				addText(theme.SuccessColor(), "Content is known and archived (%s)", archivedName)
 			}
 			printInfo(fatihColor.FgGreen, "Content is known and archived (%s)\n", archivedName)
 
 		} else {
 			if guiEnabled {
-				addText(Yellow, "%s has unarchived content found at: %s", titleData.TitleName, subContentPath)
+				addText(theme.WarningColor(), "%s has unarchived content found at: %s", titleData.TitleName, subContentPath)
 			}
 			printInfo(fatihColor.FgYellow, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
 
@@ -193,7 +191,7 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 	ignoreList, err := loadIgnoreList("data/ignorelist.json")
 	if err != nil {
 		if guiEnabled {
-			addText(Yellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.", err.Error())
+			addText(theme.WarningColor(), "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.", err.Error())
 		}
 		printInfo(fatihColor.FgYellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.\n", err.Error())
 
@@ -232,10 +230,10 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 				if knownHash == fileHash {
 					if guiEnabled {
 						addHeader("File Info")
-						addText(Green, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
+						addText(theme.SuccessColor(), "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
 						filePath = strings.TrimPrefix(filePath, directory+"/")
-						addText(Green, "Path: %s", filePath)
-						addText(Green, "SHA1: %s", fileHash)
+						addText(theme.SuccessColor(), "Path: %s", filePath)
+						addText(theme.SuccessColor(), "SHA1: %s", fileHash)
 						addText(color.Transparent, separator)
 					}
 					printHeader("File Info")
