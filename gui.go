@@ -43,6 +43,10 @@ type Settings struct {
 	EnableDiscordNotifications bool   `json:"enableDiscordNotifications"`
 }
 
+const (
+	guiHeaderWidth = 50
+)
+
 func loadImage(name, path string) *fyne.StaticResource {
 	imgBytes, err := os.ReadFile(path)
 	if err != nil {
@@ -56,12 +60,12 @@ func loadImage(name, path string) *fyne.StaticResource {
 
 func addHeader(title string) {
 	title = strings.TrimSpace(title)
-	if len(title) > headerWidth-6 { // -6 to account for spaces and equals signs
-		title = title[:headerWidth-9] + "..."
+	if len(title) > guiHeaderWidth-6 { // -6 to account for spaces and equals signs
+		title = title[:guiHeaderWidth-4] + "..."
 	}
 	formattedTitle := "== " + title + " =="
-	padLen := (headerWidth - len(formattedTitle)) / 2
-	addText(theme.ForegroundColor(), strings.Repeat("=", padLen)+formattedTitle+strings.Repeat("=", headerWidth-padLen-len(formattedTitle)))
+	padLen := (guiHeaderWidth - len(formattedTitle)) / 2
+	addText(theme.ForegroundColor(), strings.Repeat("=", padLen)+formattedTitle+strings.Repeat("=", guiHeaderWidth-padLen-len(formattedTitle)))
 }
 
 func addText(textColor color.Color, format string, args ...interface{}) {
@@ -216,6 +220,34 @@ func setDumpFolder(window fyne.Window) {
 	}, window)
 }
 
+func guiScanContent(options GUIOptions) {
+	if dumpLocation == "" {
+		output := canvas.NewText("Please set a path first.", theme.ForegroundColor())
+		outputContainer.Add(output)
+	} else {
+		path := dumpLocation
+		output := canvas.NewText("Checking for Content...", theme.ForegroundColor())
+		outputContainer.Add(output)
+		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
+		if err != nil {
+			fmt.Println("ERROR: ", err.Error())
+			addText(Red, err.Error())
+		}
+
+		err = checkDumpFolder(path)
+		if nil != err {
+			fmt.Println("ERROR: ", err.Error())
+			addText(Red, err.Error())
+		}
+
+		err = checkParsingSettings()
+		if nil != err {
+			fmt.Println("ERROR: ", err.Error())
+			addText(Red, err.Error())
+		}
+	}
+}
+
 func saveOutput() {
 	// Get current time
 	t := time.Now()
@@ -257,7 +289,7 @@ func startGUI(options GUIOptions) {
 	fakeConsole := fmt.Sprintln("Welcome to Pinecone v0.5.0b")
 	output.SetText(output.Text + fakeConsole)
 
-	w.Resize(fyne.Size{Width: 800, Height: 300})
+	w.Resize(fyne.Size{Width: 800, Height: 600})
 
 	var (
 		tdataButtonIcon = loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
@@ -265,41 +297,19 @@ func startGUI(options GUIOptions) {
 	)
 
 	// set folder to scan, but only if it is a TDATA folder.
-	setFolder := widget.NewButtonWithIcon("", tdataButtonIcon, func() {
+	setFolder := widget.NewButtonWithIcon("Set Dump Folder", tdataButtonIcon, func() {
 		setDumpFolder(w)
 	})
 
-	scanPath := widget.NewButtonWithIcon("", theme.SearchIcon(), func() {
-		if dumpLocation == "" {
-			output.SetText(output.Text + "Please set a path first.\n")
-		} else {
-			path := dumpLocation
-			output.SetText(output.Text + "Checking for Content...\n")
-			err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
-			if err != nil {
-				fmt.Println("ERROR: ", err.Error())
-				addText(Red, err.Error())
-			}
-
-			err = checkDumpFolder(path)
-			if nil != err {
-				fmt.Println("ERROR: ", err.Error())
-				addText(Red, err.Error())
-			}
-
-			err = checkParsingSettings()
-			if nil != err {
-				fmt.Println("ERROR: ", err.Error())
-				addText(Red, err.Error())
-			}
-		}
+	scanPath := widget.NewButtonWithIcon("Scan For Content", theme.SearchIcon(), func() {
+		guiScanContent(options)
 	})
 	// Save output to a file in the homeDir with a timestamp.
-	saveOutput := widget.NewButtonWithIcon("", theme.DocumentSaveIcon(), func() {
+	saveOutput := widget.NewButtonWithIcon("Save Output", theme.DocumentSaveIcon(), func() {
 		saveOutput()
 	})
 
-	updateJSON := widget.NewButtonWithIcon("", theme.DownloadIcon(), func() {
+	updateJSON := widget.NewButtonWithIcon("Update Database", theme.DownloadIcon(), func() {
 		updateJSON := true
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON)
 		if err != nil {
@@ -307,7 +317,7 @@ func startGUI(options GUIOptions) {
 		}
 	})
 	// Create the settings button with the settings icon
-	settingsButton := widget.NewButtonWithIcon("", theme.SettingsIcon(), func() {
+	settingsButton := widget.NewButtonWithIcon("Settings", theme.SettingsIcon(), func() {
 		// Open the settings screen
 		settings, err := loadSettings()
 		if err != nil {
@@ -318,7 +328,7 @@ func startGUI(options GUIOptions) {
 	})
 
 	// Exit the application
-	exit := widget.NewButtonWithIcon("", exitButtonIcon, func() {
+	exit := widget.NewButtonWithIcon("Exit", exitButtonIcon, func() {
 		a.Quit()
 	})
 

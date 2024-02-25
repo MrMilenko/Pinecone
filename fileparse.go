@@ -66,11 +66,10 @@ func checkForContent(directory string) error {
 
 	logOutput := func(s string) {
 		if !guiEnabled {
-			printInfo(fatihColor.FgYellow, s + "\n")
+			printInfo(fatihColor.FgYellow, s+"\n")
 		} else {
 			addText(Red, s)
 		}
-
 	}
 
 	err := filepath.Walk(directory, func(path string, info os.FileInfo, err error) error {
@@ -237,12 +236,12 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 						addHeader("File Info")
 						addText(Green, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
 						filePath = strings.TrimPrefix(filePath, directory+"/")
-						addText(Green, "Path: %s\n", filePath)
-						addText(Green, "SHA1: %s\n", fileHash)
+						addText(Green, "Path: %s", filePath)
+						addText(Green, "SHA1: %s", fileHash)
 						addText(color.Transparent, separator)
 					}
 					printHeader("File Info")
-					printInfo(fatihColor.FgGreen, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
+					printInfo(fatihColor.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 					filePath = strings.TrimPrefix(filePath, directory+"/")
 					printInfo(fatihColor.FgGreen, "Path: %s\n", filePath)
 					printInfo(fatihColor.FgGreen, "SHA1: %s\n", fileHash)
