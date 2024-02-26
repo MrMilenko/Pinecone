@@ -4,10 +4,8 @@ build-prod:
 	go build -ldflags "-s -w" -o bin/
 run:
 	go run .
-tests:
-	go test ./...
 clean:
-	rm -rf bin/ muscurdi_db/
+	rm -rf bin/
 
 build-mac: clean
 	mkdir bin
