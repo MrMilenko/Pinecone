@@ -1,29 +1,98 @@
-build:
-	go build -o bin/
-build-prod:
-	go build -ldflags "-s -w" -o bin/
-run:
-	go run .
-tests:
-	go test ./...
-clean:
-	rm -rf bin/ muscurdi_db/
+name: On Release Published
 
-build-mac: clean
-	mkdir bin
-	fyne package -os darwin -icon assets/logo.png --release
-	mv Pinecone.app bin/
-  cp -r data/ bin/data/
+on:
+  release:
+    types: [published]
 
-build-linux: clean
-	mkdir bin
-	fyne package -os linux -icon assets/logo.png --release
-	mv Pinecone.tar.xz bin/
-  cp -r data/ bin/data/
+jobs:
+  publish-binaries-linux:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
 
-build-win: clean
-	mkdir bin
-	fyne package -os windows -icon assets/logo.png --release
-	mv Pinecone.exe bin/
-  cp -r data/ bin/data/
-  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+
+      - name: Get dependencies
+        run: |
+          sudo apt-get update \
+          && sudo apt-get install gcc \
+          libgl1-mesa-dev libegl1-mesa-dev \
+          libgles2-mesa-dev libx11-dev xorg-dev \
+          libwayland-dev libxkbcommon-dev bc
+
+      - name: Install FyneCLi tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-linux
+
+      - name: Rename archive
+        run: mv bin/Pinecone.tar.xz bin/Pinecone_linux.tar.xz
+
+      - name: Upload Linux Bin
+        uses: djn24/add-asset-to-release@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/Pinecone_linux.tar.xz'
+
+  publish-binaries-mac:
+    timeout-minutes: 20
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+
+      - name: Install FyneCLi tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-mac
+      
+      - name: Zip App
+        run: zip -vr muscurdi_macos.zip bin/Pinecone.app -x "*.DS_Store" && mv muscurdi_macos.zip bin/
+
+      - name: Upload MacOS Bin
+        uses: djn24/add-asset-to-release@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/muscurdi_macos.zip'
+
+  publish-binaries-win:
+    timeout-minutes: 20
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+      
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v2
+        with:
+          platform: x64
+
+      - name: Install FyneCLi tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-win
+      
+      - name: Zip Binary
+        shell: pwsh
+        run: Compress-Archive "bin/Pinecone.exe" "Pinecone_win.zip" && mv Pinecone_win.zip bin/
+
+      - name: Upload Win Bin
+        uses: djn24/add-asset-to-release@v1
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/Pinecone_win.zip'
