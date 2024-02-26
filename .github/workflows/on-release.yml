@@ -54,14 +54,6 @@ jobs:
         with:
           go-version: '^1.21.5'
       
-      - name: Get dependencies
-        run: |
-          sudo apt-get update \
-          && sudo apt-get install gcc \
-          libgl1-mesa-dev libegl1-mesa-dev \
-          libgles2-mesa-dev libx11-dev xorg-dev \
-          libwayland-dev libxkbcommon-dev bc
-      
       - name: Install FyneCLi tool
         run: go install fyne.io/fyne/v2/cmd/fyne@latest
 
@@ -89,15 +81,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: '^1.21.5'
-
-      - name: Get dependencies
-        run: |
-          sudo apt-get update \
-          && sudo apt-get install gcc \
-          libgl1-mesa-dev libegl1-mesa-dev \
-          libgles2-mesa-dev libx11-dev xorg-dev \
-          libwayland-dev libxkbcommon-dev bc
-      
+          
       - name: Set up MinGW
         uses: egor-tensin/setup-mingw@v2
         with:
