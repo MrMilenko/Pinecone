@@ -15,6 +15,8 @@ jobs:
 
       - name: Setup Go
         uses: actions/setup-go@v4
+        with:
+          go-version: '^1.21.5'
 
       - name: Get dependencies
         run: |
@@ -49,7 +51,17 @@ jobs:
 
       - name: Setup Go
         uses: actions/setup-go@v4
-
+        with:
+          go-version: '^1.21.5'
+      
+      - name: Get dependencies
+        run: |
+          sudo apt-get update \
+          && sudo apt-get install gcc \
+          libgl1-mesa-dev libegl1-mesa-dev \
+          libgles2-mesa-dev libx11-dev xorg-dev \
+          libwayland-dev libxkbcommon-dev bc
+      
       - name: Install FyneCLi tool
         run: go install fyne.io/fyne/v2/cmd/fyne@latest
 
@@ -57,7 +69,7 @@ jobs:
         run: make build-mac
       
       - name: Zip App
-        run: zip -vr muscurdi_macos.zip bin/Pinecone.app -x "*.DS_Store" && mv muscurdi_macos.zip bin/
+        run: zip -vr Pinecone_macos.zip bin/Pinecone.app -x "*.DS_Store" && mv Pinecone_macos.zip bin/
 
       - name: Upload MacOS Bin
         uses: djn24/add-asset-to-release@v1
@@ -75,6 +87,16 @@ jobs:
 
       - name: Setup Go
         uses: actions/setup-go@v4
+        with:
+          go-version: '^1.21.5'
+
+      - name: Get dependencies
+        run: |
+          sudo apt-get update \
+          && sudo apt-get install gcc \
+          libgl1-mesa-dev libegl1-mesa-dev \
+          libgles2-mesa-dev libx11-dev xorg-dev \
+          libwayland-dev libxkbcommon-dev bc
       
       - name: Set up MinGW
         uses: egor-tensin/setup-mingw@v2
