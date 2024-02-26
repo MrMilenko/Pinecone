@@ -67,7 +67,7 @@ jobs:
         uses: djn24/add-asset-to-release@v1
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          path: 'bin/muscurdi_macos.zip'
+          path: 'bin/Pinecone_macos.zip'
 
   publish-binaries-win:
     timeout-minutes: 20
