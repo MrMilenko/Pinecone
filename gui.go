@@ -109,7 +109,7 @@ func saveSettings(settings *Settings) error {
 	return nil
 }
 
-func showSettingsDialog(parent fyne.Window, settings *Settings, app fyne.App) {
+func showSettingsDialog(settings *Settings, app fyne.App) {
 	settingsWindow := app.NewWindow("Settings")
 	settingsWindow.Resize(fyne.Size{Width: 200, Height: 100})
 
@@ -345,7 +345,7 @@ func startGUI(options GUIOptions) {
 			fmt.Println(err)
 			settings = &Settings{}
 		}
-		showSettingsDialog(w, settings, a)
+		showSettingsDialog(settings, a)
 	})
 
 	// Exit the application

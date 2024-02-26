@@ -91,7 +91,7 @@ func checkForContent(directory string) error {
 		subDirDLC := filepath.Join(path, "$c")
 		subInfoDLC, err := os.Stat(subDirDLC)
 		if err == nil && subInfoDLC.IsDir() {
-			err = processDLCContent(subDirDLC, titleData, titleID, directory)
+			err = processDLCContent(subDirDLC, titleData, directory)
 			if err != nil {
 				return err
 			}
@@ -115,7 +115,7 @@ func checkForContent(directory string) error {
 	return err
 }
 
-func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
+func processDLCContent(subDirDLC string, titleData TitleData, directory string) error {
 	subContents, err := os.ReadDir(subDirDLC)
 	if err != nil {
 		return err
