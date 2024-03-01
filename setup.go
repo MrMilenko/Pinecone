@@ -92,7 +92,7 @@ func checkParsingSettings() error {
 		}
 		fmt.Println("Checking for Content...")
 		fmt.Println("====================================================================================================")
-		err := checkForContent("dump/TDATA")
+		err := checkForContent(dumpLocation + "/TDATA")
 		if err != nil {
 			return err
 		}
