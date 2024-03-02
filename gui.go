@@ -280,7 +280,7 @@ func saveOutput() {
 	for _, obj := range outputContainer.Objects {
 		if textObj, ok := obj.(*canvas.Text); ok {
 			// Append the text value to the string
-			fileText += textObj.Text
+			fileText += textObj.Text + "\n"
 		}
 	}
 	err := os.WriteFile(outputPath, []byte(fileText), 0o644)
