@@ -1,7 +1,7 @@
 Website = "https://github.com/Xbox-Preservation-Project/Pinecone"
 
 [Details]
-Icon = "Icon.png"
+Icon = "images/cleet.png"
 Name = "Pinecone"
 ID = "com.xbox-preservation.pinecone"
 Version = "0.5.0"

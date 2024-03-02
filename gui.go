@@ -1,10 +1,10 @@
+//go:generate fyne bundle -o bundled.go images/xboxIcon.svg
 package main
 
 import (
 	"encoding/json"
 	"fmt"
 	"image/color"
-	"log"
 	"os"
 	"path"
 	"path/filepath"
@@ -40,17 +40,6 @@ type Settings struct {
 const (
 	guiHeaderWidth = 50
 )
-
-func loadImage(name, path string) *fyne.StaticResource {
-	imgBytes, err := os.ReadFile(path)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return &fyne.StaticResource{
-		StaticName:    name,
-		StaticContent: imgBytes,
-	}
-}
 
 func addHeader(title string) {
 	title = strings.TrimSpace(title)
@@ -315,7 +304,7 @@ func startGUI(options GUIOptions) {
 
 	w.Resize(fyne.Size{Width: 800, Height: 600})
 
-	tdataButtonIcon := loadImage("tdataButton", options.DataFolder+"/buttons/xboxS.svg")
+	tdataButtonIcon := theme.NewThemedResource(resourceXboxIconSvg)
 
 	// set folder to scan, but only if it is a TDATA folder.
 	setFolder := widget.NewButtonWithIcon("Set Dump Folder", tdataButtonIcon, func() {
