@@ -21,7 +21,6 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-var outputContainer = container.New(layout.NewVBoxLayout())
 
 type GUIOptions struct {
 	DataFolder   string
@@ -36,6 +35,9 @@ type Settings struct {
 	Reddit                     string `json:"reddit"`
 	EnableDiscordNotifications bool   `json:"enableDiscordNotifications"`
 }
+
+var outputContainer = container.New(layout.NewVBoxLayout())
+var guiCyan = color.RGBA{0, 200, 200, 255}
 
 const (
 	guiHeaderWidth = 50
@@ -187,25 +189,19 @@ func setDumpFolder(window fyne.Window) {
 		// Convert path to be used in the checkForContent function
 		tmpDumpPath = strings.Replace(tmpDumpPath, "file://", "", -1)
 		// set global scanpath variable to the selected folder
-		// output := widget.NewLabel("")
 
 		if _, err := os.Stat(path.Join(tmpDumpPath + "TDATA")); os.IsNotExist(err) {
 			dumpLocation = tmpDumpPath
-			// We don't want usernames in the log, so we'll just show the folder name AFTER passing it to checkForContent
-			// path = strings.Replace(path, homeDir, "", -1)
 			output := canvas.NewText("Path set to: "+tmpDumpPath, theme.ForegroundColor())
 			outputContainer.Add(output)
 		} else {
 			output := canvas.NewText("Incorrect pathing. Please select a dump with TDATA folder.\n", theme.ForegroundColor())
 			outputContainer.Add(output)
 		}
-		// outputContainer.Add(output)
 	}, window)
 }
 
 func guiScanDump() {
-	fmt.Println("DEVLIN: HMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM")
-
 	err := checkDumpFolder(dumpLocation)
 	if nil != err {
 		fmt.Println("ERROR: ", err.Error())
@@ -239,7 +235,6 @@ func guiShowDownloadConfirmation(window fyne.Window, filePath string, url string
 	confirmation := dialog.NewConfirm("Confirmation", message, func(confirmed bool) {
 		if confirmed {
 			// Action to perform if confirmed
-			// dialog.ShowInformation("Confirmed", "Action confirmed", window)
 			err := loadJSONData(filePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
 			if err != nil {
 				text := fmt.Sprintf("error downloading data: %v", err)
@@ -250,7 +245,6 @@ func guiShowDownloadConfirmation(window fyne.Window, filePath string, url string
 			guiScanDump()
 		} else {
 			// Action to perform if canceled
-			// dialog.ShowInformation("Canceled", "Action canceled", window)
 			output := canvas.NewText("Download aborted by user", theme.ErrorColor())
 			outputContainer.Add(output)
 		}

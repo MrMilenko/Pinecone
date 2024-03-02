@@ -170,9 +170,9 @@ func processDLCContent(subDirDLC string, titleData TitleData, directory string) 
 		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
 		if archivedName != "" {
 			if guiEnabled {
-				addText(theme.SuccessColor(), "Content is known and archived %s", archivedName)
+				addText(guiCyan, "Content is known and archived %s", archivedName)
 			}
-			printInfo(fatihColor.FgGreen, "Content is known and archived %s\n", archivedName)
+			printInfo(fatihColor.FgCyan, "Content is known and archived %s\n", archivedName)
 
 		} else {
 			if guiEnabled {
@@ -230,17 +230,17 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 				if knownHash == fileHash {
 					if guiEnabled {
 						addHeader("File Info")
-						addText(theme.SuccessColor(), "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
+						addText(guiCyan, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
 						filePath = strings.TrimPrefix(filePath, directory+"/")
-						addText(theme.SuccessColor(), "Path: %s", filePath)
-						addText(theme.SuccessColor(), "SHA1: %s", fileHash)
+						addText(guiCyan, "Path: %s", filePath)
+						addText(guiCyan, "SHA1: %s", fileHash)
 						addText(color.Transparent, separator)
 					}
 					printHeader("File Info")
-					printInfo(fatihColor.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
+					printInfo(fatihColor.FgCyan, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 					filePath = strings.TrimPrefix(filePath, directory+"/")
-					printInfo(fatihColor.FgGreen, "Path: %s\n", filePath)
-					printInfo(fatihColor.FgGreen, "SHA1: %s\n", fileHash)
+					printInfo(fatihColor.FgCyan, "Path: %s\n", filePath)
+					printInfo(fatihColor.FgCyan, "SHA1: %s\n", fileHash)
 					fmt.Println(separator)
 
 					knownUpdateFound = true
