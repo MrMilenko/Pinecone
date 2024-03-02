@@ -147,9 +147,9 @@ func processDLCContent(subDirDLC string, titleData TitleData, directory string) 
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
 			if guiEnabled {
-				addText(theme.ErrorColor(), "Unknown content found at: %s", subContentPath)
+				addText(theme.WarningColor(), "Unknown content found at: %s", subContentPath)
 			}
-			printInfo(fatihColor.FgRed, "Unknown content found at: %s\n", subContentPath)
+			printInfo(fatihColor.FgYellow, "Unknown content found at: %s\n", subContentPath)
 
 			continue
 		}
@@ -255,16 +255,16 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		if !knownUpdateFound {
 			if guiEnabled {
 				addHeader("File Info")
-				addText(theme.ErrorColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
+				addText(theme.WarningColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
 				filePath = strings.TrimPrefix(filePath, directory+"/")
-				addText(theme.ErrorColor(), "Path: %s", filePath)
-				addText(theme.ErrorColor(), "SHA1: %s", fileHash)
+				addText(theme.WarningColor(), "Path: %s", filePath)
+				addText(theme.WarningColor(), "SHA1: %s", fileHash)
 			}
 			printHeader("File Info")
-			printInfo(fatihColor.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
+			printInfo(fatihColor.FgYellow, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
 			filePath = strings.TrimPrefix(filePath, directory+"/")
-			printInfo(fatihColor.FgRed, "Path: %s\n", filePath)
-			printInfo(fatihColor.FgRed, "SHA1: %s\n", fileHash)
+			printInfo(fatihColor.FgYellow, "Path: %s\n", filePath)
+			printInfo(fatihColor.FgYellow, "SHA1: %s\n", fileHash)
 
 		}
 	}
