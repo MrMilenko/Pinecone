@@ -33,13 +33,13 @@ jobs:
         run: make build-linux
 
       - name: Rename archive
-        run: mv bin/Pinecone.tar.xz bin/Pinecone_linux.tar.xz
+        run: zip -r Pinecone_linux.zip bin/Pinecone.tar.xz bin/data && mv Pinecone_linux.zip bin/Pinecone_linux.zip
 
       - name: Upload Linux Bin
         uses: djn24/add-asset-to-release@v2
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          path: 'bin/Pinecone_linux.tar.xz'
+          path: 'bin/Pinecone_linux.zip'
 
   publish-binaries-mac:
     timeout-minutes: 20
@@ -61,7 +61,8 @@ jobs:
         run: make build-mac
       
       - name: Zip App
-        run: zip -vr Pinecone_macos.zip bin/Pinecone.app -x "*.DS_Store" && mv Pinecone_macos.zip bin/
+        run: zip -vr Pinecone_macos.zip bin/Pinecone.app bin/data -x "*.DS_Store" && mv Pinecone_macos.zip bin/
+
 
       - name: Upload MacOS Bin
         uses: djn24/add-asset-to-release@v2
