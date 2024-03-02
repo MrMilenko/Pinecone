@@ -62,9 +62,9 @@ func checkForContent(directory string) error {
 
 	logOutput := func(s string) {
 		if !guiEnabled {
-			printInfo(fatihColor.FgYellow, s+"\n")
+			printInfo(fatihColor.FgBlue, s+"\n")
 		} else {
-			addText(theme.ErrorColor(), s)
+			addText(theme.PrimaryColorNamed(theme.ColorBlue), s)
 		}
 	}
 
@@ -147,9 +147,9 @@ func processDLCContent(subDirDLC string, titleData TitleData, directory string) 
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
 			if guiEnabled {
-				addText(theme.WarningColor(), "Unknown content found at: %s", subContentPath)
+				addText(theme.ErrorColor(), "Unknown content found at: %s", subContentPath)
 			}
-			printInfo(fatihColor.FgYellow, "Unknown content found at: %s\n", subContentPath)
+			printInfo(fatihColor.FgRed, "Unknown content found at: %s\n", subContentPath)
 
 			continue
 		}
@@ -170,15 +170,15 @@ func processDLCContent(subDirDLC string, titleData TitleData, directory string) 
 		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
 		if archivedName != "" {
 			if guiEnabled {
-				addText(theme.SuccessColor(), "Content is known and archived (%s)", archivedName)
+				addText(theme.SuccessColor(), "Content is known and archived %s", archivedName)
 			}
-			printInfo(fatihColor.FgGreen, "Content is known and archived (%s)\n", archivedName)
+			printInfo(fatihColor.FgGreen, "Content is known and archived %s\n", archivedName)
 
 		} else {
 			if guiEnabled {
-				addText(theme.WarningColor(), "%s has unarchived content found at: %s", titleData.TitleName, subContentPath)
+				addText(theme.ErrorColor(), "%s has unarchived content found at: %s", titleData.TitleName, subContentPath)
 			}
-			printInfo(fatihColor.FgYellow, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
+			printInfo(fatihColor.FgRed, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
 
 		}
 	}
@@ -255,16 +255,16 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		if !knownUpdateFound {
 			if guiEnabled {
 				addHeader("File Info")
-				addText(theme.WarningColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
+				addText(theme.ErrorColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
 				filePath = strings.TrimPrefix(filePath, directory+"/")
-				addText(theme.WarningColor(), "Path: %s", filePath)
-				addText(theme.WarningColor(), "SHA1: %s", fileHash)
+				addText(theme.ErrorColor(), "Path: %s", filePath)
+				addText(theme.ErrorColor(), "SHA1: %s", fileHash)
 			}
 			printHeader("File Info")
-			printInfo(fatihColor.FgYellow, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
+			printInfo(fatihColor.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
 			filePath = strings.TrimPrefix(filePath, directory+"/")
-			printInfo(fatihColor.FgYellow, "Path: %s\n", filePath)
-			printInfo(fatihColor.FgYellow, "SHA1: %s\n", fileHash)
+			printInfo(fatihColor.FgRed, "Path: %s\n", filePath)
+			printInfo(fatihColor.FgRed, "SHA1: %s\n", fileHash)
 
 		}
 	}
