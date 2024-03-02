@@ -91,7 +91,7 @@ jobs:
       - name: Zip Binary
         shell: pwsh
         # run: Compress-Archive "bin/Pinecone.exe" "Pinecone_win.zip" && mv Pinecone_win.zip bin/
-        run: Compress-Archive -Path "bin/Pinecone.exe", "bin/data" -DestinationPath "Pinecone_win.zip"
+        run: Compress-Archive -Path "bin/Pinecone.exe", "bin/data" -DestinationPath "Pinecone_win.zip" && mv Pinecone_win.zip bin/
 
       - name: Upload Win Bin
         uses: djn24/add-asset-to-release@v2
