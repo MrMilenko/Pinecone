@@ -13,6 +13,7 @@ var (
 	fatxplorer    = false
 	dumpLocation  = "dump"
 	helpFlag      = false
+	guiFlag       = flag.Bool("gui", false, "Launch the GUI")
 )
 
 func main() {
@@ -40,18 +41,23 @@ func main() {
 		fmt.Println("  -f, --fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
 		fmt.Println("  -l --location:    Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
 		fmt.Println("  -h, --help:       Display this help information.")
+		fmt.Println("  -gui:        Launch the GUI")
 		return
 	}
 
-	jsonFilePath := "data/id_database.json"
-	jsonDataFolder := "data"
-	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
+	if *guiFlag {
+		startGUI()
+	} else {
+		jsonFilePath := "data/id_database.json"
+		jsonDataFolder := "data"
+		jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
-	cliOpts := CLIOptions{
-		DataFolder:   jsonDataFolder,
-		JSONFilePath: jsonFilePath,
-		JSONUrl:      jsonURL,
+		cliOpts := CLIOptions{
+			DataFolder:   jsonDataFolder,
+			JSONFilePath: jsonFilePath,
+			JSONUrl:      jsonURL,
+		}
+
+		startCLI(cliOpts)
 	}
-
-	startCLI(cliOpts)
 }
