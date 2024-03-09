@@ -4,12 +4,14 @@ import (
 	"crypto/sha1"
 	"encoding/json"
 	"fmt"
+	"image/color"
 	"io"
 	"os"
 	"path/filepath"
 	"strings"
 
-	"github.com/fatih/color"
+	"fyne.io/fyne/v2/theme"
+	fatihColor "github.com/fatih/color"
 )
 
 func getSHA1Hash(filePath string) (string, error) {
@@ -44,7 +46,7 @@ func loadIgnoreList(filepath string) ([]string, error) {
 
 func contains(slice []string, val string) bool {
 	for _, item := range slice {
-		//fmt.Printf("Comparing %q to %q\n", item, val)
+		// fmt.Printf("Comparing %q to %q\n", item, val)
 		if item == val {
 			return true
 		}
@@ -54,8 +56,16 @@ func contains(slice []string, val string) bool {
 
 func checkForContent(directory string) error {
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
-		printInfo(color.FgYellow, "%s directory not found\n", directory)
+		printInfo(fatihColor.FgYellow, "%s directory not found\n", directory)
 		return fmt.Errorf("%s directory not found", directory)
+	}
+
+	logOutput := func(s string) {
+		if !guiEnabled {
+			printInfo(fatihColor.FgBlue, s+"\n")
+		} else {
+			addText(theme.PrimaryColorNamed(theme.ColorBlue), s)
+		}
 	}
 
 	err := filepath.Walk(directory, func(path string, info os.FileInfo, err error) error {
@@ -72,17 +82,21 @@ func checkForContent(directory string) error {
 		if !ok {
 			return nil
 		}
+
+		if guiEnabled {
+			addHeader(titleData.TitleName)
+		}
 		printHeader(titleData.TitleName)
 
 		subDirDLC := filepath.Join(path, "$c")
 		subInfoDLC, err := os.Stat(subDirDLC)
 		if err == nil && subInfoDLC.IsDir() {
-			err = processDLCContent(subDirDLC, titleData, titleID, directory)
+			err = processDLCContent(subDirDLC, titleData, directory)
 			if err != nil {
 				return err
 			}
 		} else {
-			printInfo(color.FgYellow, "No DLC Found for %s..\n", titleID)
+			logOutput(fmt.Sprintf("No DLC Found for %s...", titleID))
 		}
 
 		subDirUpdates := filepath.Join(path, "$u")
@@ -93,7 +107,7 @@ func checkForContent(directory string) error {
 				return err
 			}
 		} else {
-			printInfo(color.FgYellow, "No Title Updates Found in $u for %s..\n", titleID)
+			logOutput(fmt.Sprintf("No Title Updates Found in $u for %s...", titleID))
 		}
 
 		return nil
@@ -101,7 +115,7 @@ func checkForContent(directory string) error {
 	return err
 }
 
-func processDLCContent(subDirDLC string, titleData TitleData, titleID string, directory string) error {
+func processDLCContent(subDirDLC string, titleData TitleData, directory string) error {
 	subContents, err := os.ReadDir(subDirDLC)
 	if err != nil {
 		return err
@@ -132,7 +146,11 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 		contentID := strings.ToLower(subContent.Name())
 		if !contains(titleData.ContentIDs, contentID) {
-			printInfo(color.FgRed, "Unknown content found at: %s\n", subContentPath)
+			if guiEnabled {
+				addText(theme.ErrorColor(), "Unknown content found at: %s", subContentPath)
+			}
+			printInfo(fatihColor.FgRed, "Unknown content found at: %s\n", subContentPath)
+
 			continue
 		}
 
@@ -151,9 +169,17 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 
 		subContentPath = strings.TrimPrefix(subContentPath, directory+"/")
 		if archivedName != "" {
-			printInfo(color.FgGreen, "Content is known and archived (%s)\n", archivedName)
+			if guiEnabled {
+				addText(guiCyan, "Content is known and archived %s", archivedName)
+			}
+			printInfo(fatihColor.FgCyan, "Content is known and archived %s\n", archivedName)
+
 		} else {
-			printInfo(color.FgYellow, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
+			if guiEnabled {
+				addText(theme.ErrorColor(), "%s has unarchived content found at: %s", titleData.TitleName, subContentPath)
+			}
+			printInfo(fatihColor.FgRed, "%s has unarchived content found at: %s\n", titleData.TitleName, subContentPath)
+
 		}
 	}
 
@@ -164,7 +190,11 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 	// Load the ignore list from ignorelist.json in the data folder
 	ignoreList, err := loadIgnoreList("data/ignorelist.json")
 	if err != nil {
-		printInfo(color.FgYellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.\n", err.Error())
+		if guiEnabled {
+			addText(theme.WarningColor(), "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.", err.Error())
+		}
+		printInfo(fatihColor.FgYellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.\n", err.Error())
+
 		ignoreList = []string{} // Empty ignore list to prevent panics
 	}
 
@@ -186,7 +216,11 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		filePath := filepath.Join(subDirUpdates, f.Name())
 		fileHash, err := getSHA1Hash(filePath)
 		if err != nil {
-			printInfo(color.FgRed, "Error calculating hash for file: %s, error: %s\n", f.Name(), err.Error())
+			if guiEnabled {
+				addText(theme.ErrorColor(), "Error calculating hash for file: %s, error: %s", f.Name(), err.Error())
+			}
+			printInfo(fatihColor.FgRed, "Error calculating hash for file: %s, error: %s\n", f.Name(), err.Error())
+
 			continue
 		}
 
@@ -194,12 +228,21 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		for _, knownUpdate := range titleData.TitleUpdatesKnown {
 			for knownHash, name := range knownUpdate {
 				if knownHash == fileHash {
+					if guiEnabled {
+						addHeader("File Info")
+						addText(guiCyan, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
+						filePath = strings.TrimPrefix(filePath, directory+"/")
+						addText(guiCyan, "Path: %s", filePath)
+						addText(guiCyan, "SHA1: %s", fileHash)
+						addText(color.Transparent, separator)
+					}
 					printHeader("File Info")
-					printInfo(color.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
+					printInfo(fatihColor.FgCyan, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 					filePath = strings.TrimPrefix(filePath, directory+"/")
-					printInfo(color.FgGreen, "Path: %s\n", filePath)
-					printInfo(color.FgGreen, "SHA1: %s\n", fileHash)
+					printInfo(fatihColor.FgCyan, "Path: %s\n", filePath)
+					printInfo(fatihColor.FgCyan, "SHA1: %s\n", fileHash)
 					fmt.Println(separator)
+
 					knownUpdateFound = true
 					break
 				}
@@ -210,11 +253,19 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 		}
 
 		if !knownUpdateFound {
+			if guiEnabled {
+				addHeader("File Info")
+				addText(theme.ErrorColor(), "Unknown Title Update found for %s (%s)", titleData.TitleName, titleID)
+				filePath = strings.TrimPrefix(filePath, directory+"/")
+				addText(theme.ErrorColor(), "Path: %s", filePath)
+				addText(theme.ErrorColor(), "SHA1: %s", fileHash)
+			}
 			printHeader("File Info")
-			printInfo(color.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
+			printInfo(fatihColor.FgRed, "Unknown Title Update found for %s (%s)\n", titleData.TitleName, titleID)
 			filePath = strings.TrimPrefix(filePath, directory+"/")
-			printInfo(color.FgRed, "Path: %s\n", filePath)
-			printInfo(color.FgRed, "SHA1: %s\n", fileHash)
+			printInfo(fatihColor.FgRed, "Path: %s\n", filePath)
+			printInfo(fatihColor.FgRed, "SHA1: %s\n", fileHash)
+
 		}
 	}
 

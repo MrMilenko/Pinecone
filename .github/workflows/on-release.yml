@@ -1,0 +1,100 @@
+name: On Release Published
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-binaries-linux:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '^1.21.5'
+
+      - name: Get dependencies
+        run: |
+          sudo apt-get update \
+          && sudo apt-get install gcc \
+          libgl1-mesa-dev libegl1-mesa-dev \
+          libgles2-mesa-dev libx11-dev xorg-dev \
+          libwayland-dev libxkbcommon-dev bc
+
+      - name: Install FyneCLI tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-linux
+
+      - name: Rename archive
+        run: zip -r Pinecone_linux.zip bin/Pinecone.tar.xz bin/data && mv Pinecone_linux.zip bin/Pinecone_linux.zip
+
+      - name: Upload Linux Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/Pinecone_linux.zip'
+
+  publish-binaries-mac:
+    timeout-minutes: 20
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '^1.21.5'
+      
+      - name: Install FyneCLI tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-mac
+      
+      - name: Zip App
+        run: zip -vr Pinecone_macos.zip bin/Pinecone.app bin/data -x "*.DS_Store" && mv Pinecone_macos.zip bin/
+
+
+      - name: Upload MacOS Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/Pinecone_macos.zip'
+
+  publish-binaries-win:
+    timeout-minutes: 20
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '^1.21.5'
+          
+      - name: Install FyneCLI tool
+        run: go install fyne.io/fyne/v2/cmd/fyne@latest
+
+      - name: Build
+        run: make build-win
+      
+      - name: Zip Binary
+        shell: pwsh
+        run: Compress-Archive -Path "bin/Pinecone.exe", "bin/data" -DestinationPath "Pinecone_win.zip" && mv Pinecone_win.zip bin/
+
+      - name: Upload Win Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: 'bin/Pinecone_win.zip'
