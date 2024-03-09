@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"path"
+	"runtime"
 )
 
 var (
@@ -50,6 +51,10 @@ func main() {
 	}
 
 	dumpLocation = path.Clean(dumpLocation)
+	if runtime.GOOS == "darwin" && "dump" == dumpLocation {
+		dumpLocation = path.Clean("../dump")
+	}
+
 	jsonFilePath := "data/id_database.json"
 	jsonDataFolder := "data"
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
