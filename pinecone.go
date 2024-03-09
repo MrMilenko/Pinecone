@@ -3,7 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"os"
 	"path"
+	"path/filepath"
+	"runtime"
 )
 
 var (
@@ -16,6 +20,7 @@ var (
 	helpFlag      = false
 	guiEnabled    = true
 	version       = "0.5.0"
+	dataPath      = "data"
 )
 
 func main() {
@@ -49,16 +54,44 @@ func main() {
 		return
 	}
 
-	dumpLocation = path.Clean(dumpLocation)
-	jsonFilePath := "data/id_database.json"
-	jsonDataFolder := "data"
+	switch runtime.GOOS {
+	case "linux":
+		homedir, err := os.UserHomeDir()
+		if err != nil {
+			log.Fatal(err)
+		}
+		dataPath = path.Clean(homedir + "/.config/Pinecone/data/")
+	case "darwin":
+		if dumpLocation == "dump" {
+			dumpLocation = path.Clean("../dump")
+		}
+		homedir, err := os.UserHomeDir()
+		if err != nil {
+			log.Fatal(err)
+		}
+		dataPath = path.Clean(homedir + "/.config/Pinecone/data/")
+	default:
+		dataPath = path.Clean("data")
+	}
+
+	_, err := os.Stat(dataPath)
+	if os.IsNotExist(err) {
+		if err = os.MkdirAll(dataPath, os.ModePerm); err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	jsonFilePath := filepath.Join(dataPath, "id_database.json")
+	jsonDataFolder := dataPath
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
+	ignoreListURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/ignorelist.json"
 
 	if guiEnabled {
 		guiOpts := GUIOptions{
 			DataFolder:   jsonDataFolder,
 			JSONFilePath: jsonFilePath,
 			JSONUrl:      jsonURL,
+			IgnoreURL:    ignoreListURL,
 		}
 
 		startGUI(guiOpts)
@@ -67,6 +100,7 @@ func main() {
 			DataFolder:   jsonDataFolder,
 			JSONFilePath: jsonFilePath,
 			JSONUrl:      jsonURL,
+			IgnoreURL:    ignoreListURL,
 		}
 
 		startCLI(cliOpts)
