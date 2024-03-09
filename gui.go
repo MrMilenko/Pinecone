@@ -33,7 +33,6 @@ type Settings struct {
 	Discord                    string `json:"discord"`
 	Twitter                    string `json:"twitter"`
 	Reddit                     string `json:"reddit"`
-	EnableDiscordNotifications bool   `json:"enableDiscordNotifications"`
 }
 
 var outputContainer = container.New(layout.NewVBoxLayout())
@@ -132,18 +131,6 @@ func showSettingsDialog(settings *Settings, app fyne.App) {
 		settings.Reddit = text
 	}
 
-	enableDiscordCheckbox := widget.NewCheck("Enable Discord Notifications", func(checked bool) {
-		settings.EnableDiscordNotifications = checked
-
-		err := saveSettings(settings)
-		if err != nil {
-			dialog.ShowError(err, settingsWindow)
-			return
-		}
-	})
-
-	enableDiscordCheckbox.SetChecked(settings.EnableDiscordNotifications)
-
 	saveButton := widget.NewButton("Save", func() {
 		err := saveSettings(settings)
 		if err != nil {
@@ -163,7 +150,6 @@ func showSettingsDialog(settings *Settings, app fyne.App) {
 		discordEntry,
 		twitterEntry,
 		redditEntry,
-		enableDiscordCheckbox,
 		container.NewHBox(
 			layout.NewSpacer(),
 			saveButton,
