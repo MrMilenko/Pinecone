@@ -21,7 +21,6 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-
 type GUIOptions struct {
 	DataFolder   string
 	JSONFilePath string
@@ -29,14 +28,16 @@ type GUIOptions struct {
 }
 
 type Settings struct {
-	UserName                   string `json:"username"`
-	Discord                    string `json:"discord"`
-	Twitter                    string `json:"twitter"`
-	Reddit                     string `json:"reddit"`
+	UserName string `json:"username"`
+	Discord  string `json:"discord"`
+	Twitter  string `json:"twitter"`
+	Reddit   string `json:"reddit"`
 }
 
-var outputContainer = container.New(layout.NewVBoxLayout())
-var guiCyan = color.RGBA{0, 200, 200, 255}
+var (
+	outputContainer = container.New(layout.NewVBoxLayout())
+	guiCyan         = color.RGBA{0, 139, 139, 255}
+)
 
 const (
 	guiHeaderWidth = 50
