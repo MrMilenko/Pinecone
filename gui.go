@@ -242,7 +242,7 @@ func guiShowDownloadConfirmation(window fyne.Window, filePath string, url string
 	confirmation.Show()
 }
 
-func saveOutput() {
+func saveOutput(settings *Settings) {
 	// Get current time
 	t := time.Now()
 	// Format time to be used in filename
@@ -257,8 +257,21 @@ func saveOutput() {
 			panic(err)
 		}
 	}
-	// Write output to file
 	fileText := ""
+	// Add user info to top of file
+	if settings.UserName != "" {
+		fileText += fmt.Sprintf("Username: %s\n", settings.UserName)
+	}
+	if settings.Discord != "" {
+		fileText += fmt.Sprintf("Discord Username: @%s\n", settings.Discord)
+	}
+	if settings.Twitter != "" {
+		fileText += fmt.Sprintf("Twitter Username: @%s\n", settings.Twitter)
+	}
+	if settings.Reddit != "" {
+		fileText += fmt.Sprintf("Reddit Username: u/%s\n", settings.Reddit)
+	}
+	// Write output to file
 	for _, obj := range outputContainer.Objects {
 		if textObj, ok := obj.(*canvas.Text); ok {
 			// Append the text value to the string
@@ -298,7 +311,12 @@ func startGUI(options GUIOptions) {
 	})
 	// Save output to a file in the homeDir with a timestamp.
 	saveOutput := widget.NewButtonWithIcon("Save Output", theme.DocumentSaveIcon(), func() {
-		saveOutput()
+		settings, err := loadSettings()
+		if err != nil {
+			fmt.Println(err)
+			settings = &Settings{}
+		}
+		saveOutput(settings)
 	})
 
 	updateJSON := widget.NewButtonWithIcon("Update Database", theme.DownloadIcon(), func() {
