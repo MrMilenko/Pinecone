@@ -22,9 +22,11 @@ import (
 )
 
 type GUIOptions struct {
-	DataFolder   string
-	JSONFilePath string
-	JSONUrl      string
+	DataFolder     string
+	JSONFilePath   string
+	IgnoreFilePath string
+	JSONUrl        string
+	IgnoreURL      string
 }
 
 type Settings struct {
@@ -61,7 +63,7 @@ func addText(textColor color.Color, format string, args ...interface{}) {
 }
 
 func loadSettings() (*Settings, error) {
-	settingsPath := filepath.Join("pineconeSettings.json")
+	settingsPath := filepath.Join(dataPath, "pineconeSettings.json")
 	settingsFile, err := os.Open(settingsPath)
 	if err != nil {
 		if os.IsNotExist(err) {
@@ -82,7 +84,7 @@ func loadSettings() (*Settings, error) {
 }
 
 func saveSettings(settings *Settings) error {
-	settingsPath := filepath.Join("pineconeSettings.json")
+	settingsPath := filepath.Join(dataPath, "pineconeSettings.json")
 	settingsFile, err := os.Create(settingsPath)
 	if err != nil {
 		return err
@@ -223,7 +225,7 @@ func guiShowDownloadConfirmation(window fyne.Window, filePath string, url string
 	confirmation := dialog.NewConfirm("Confirmation", message, func(confirmed bool) {
 		if confirmed {
 			// Action to perform if confirmed
-			err := loadJSONData(filePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
+			err := loadJSONData(filePath, "Xbox-Preservation-Project", "Pinecone", dataPath+"/id_database.json", &titles, true)
 			if err != nil {
 				text := fmt.Sprintf("error downloading data: %v", err)
 				output := canvas.NewText(text, theme.ErrorColor())
@@ -248,7 +250,7 @@ func saveOutput(settings *Settings) {
 	// Format time to be used in filename
 	timestamp := t.Format("2006-01-02-15-04-05")
 	// Define the path to the output file
-	outputPath := filepath.Join("output", "output-"+timestamp+".txt")
+	outputPath := filepath.Join(dataPath, "output", "output-"+timestamp+".txt")
 	// Create the 'output' directory if it doesn't exist
 	outputDir := filepath.Dir(outputPath)
 	if _, err := os.Stat(outputDir); os.IsNotExist(err) {
