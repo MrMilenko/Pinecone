@@ -62,15 +62,21 @@ PineCone
 
 # Example output
 
-```
-Local JSON file exists.
-Loading JSON data...
-Traversing directory structure...
-Found folder for "Advent Rising".
-Advent Rising has unarchived content found at: TDATA/4d4a0009/$c/4d4a000900000003
-Title ID 50430001 not present in JSON file. May want to investigate!
-Traversing directory structure for Title Updates...
-TDATA/4d4a0009/$u/test.xbe: 87088e689b192c389693b3db38d5f26f2c4d55ae
+```sh
+Pinecone v0.5.0
+Please share output of this program with the Pinecone team if you find anything interesting!
+Checking for Content...
+====================================================================================================
+============================================== Halo 2 ==============================================
+    Content is known and archived Bonus Map Pack
+    Content is known and archived Killtacular Pack
+    Content is known and archived Maptacular Pack
+    Content is known and archived Blastacular Pack
+============================================ File Info =============================================
+    Title update found for Halo 2 (4d530064) (0000000300000803:RF English Update 5)
+    Path: dump\TDATA\4d530064\$u\default.xbe
+    SHA1: f1cc1ae660161f4439fc29ee131310a86e326447
+
 ```
 
 # Building from source
@@ -100,12 +106,12 @@ go install mvdan.cc/gofumpt@latest
 
 ## Packaging for Release
 
-Fyne provides a simple way to build for release. Simply run the following command:
+Using our Makefile, run:
 
 ```sh
-fyne package -os {OS-NAME}
+make build-{OS-NAME}
 ```
 
-Where `OS-NAME` is either `windows`, `linux`, or `darwin`(macOS) for your operating system of choice.
+Where `OS-NAME` is either `win`, `linux`, or `mac` for your operating system of choice.
 
 `FyneApp.toml` can be modified to change a variety of build variables, which you can find in the [fyne docs](https://docs.fyne.io/).
