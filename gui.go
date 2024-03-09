@@ -203,6 +203,7 @@ func guiScanDump() {
 }
 
 func guiStartScan(options GUIOptions, window fyne.Window) {
+	outputContainer.RemoveAll()
 	if dumpLocation == "" {
 		output := canvas.NewText("Please set a path first.", theme.ForegroundColor())
 		outputContainer.Add(output)
