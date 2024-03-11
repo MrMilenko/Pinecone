@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"path"
 )
 
 var (
@@ -12,10 +11,8 @@ var (
 	summarizeFlag = false
 	titleIDFlag   = ""
 	fatxplorer    = false
-	dumpLocation  = "./dump/"
+	dumpLocation  = "dump"
 	helpFlag      = false
-	guiEnabled    = true
-	version       = "0.5.0"
 )
 
 func main() {
@@ -27,12 +24,10 @@ func main() {
 	flag.StringVar(&titleIDFlag, "tID", "", "Filter statistics by Title ID")
 	flag.BoolVar(&fatxplorer, "fatxplorer", false, "Use FatXplorer's X: drive")
 	flag.BoolVar(&fatxplorer, "f", false, "Use FatXplorer's X: drive")
-	flag.StringVar(&dumpLocation, "location", "./dump/", "Directory to search for TDATA/UDATA directories")
-	flag.StringVar(&dumpLocation, "l", "./dump/", "Directory to search for TDATA/UDATA directories")
+	flag.StringVar(&dumpLocation, "location", "dump", "Directory to search for TDATA/UDATA directories")
+	flag.StringVar(&dumpLocation, "l", "dump", "Directory to search for TDATA/UDATA directories")
 	flag.BoolVar(&helpFlag, "help", false, "Display help information")
 	flag.BoolVar(&helpFlag, "h", false, "Display help information")
-	flag.BoolVar(&guiEnabled, "gui", true, "Enable GUI")
-	flag.BoolVar(&guiEnabled, "g", true, "Enable GUI")
 
 	flag.Parse() // Parse command line flags
 
@@ -45,30 +40,18 @@ func main() {
 		fmt.Println("  -f, --fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
 		fmt.Println("  -l --location:    Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
 		fmt.Println("  -h, --help:       Display this help information.")
-		fmt.Println("  -g, --gui:        Enable the GUI interface (default = true)")
 		return
 	}
 
-	dumpLocation = path.Clean(dumpLocation)
 	jsonFilePath := "data/id_database.json"
 	jsonDataFolder := "data"
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
-	if guiEnabled {
-		guiOpts := GUIOptions{
-			DataFolder:   jsonDataFolder,
-			JSONFilePath: jsonFilePath,
-			JSONUrl:      jsonURL,
-		}
-
-		startGUI(guiOpts)
-	} else {
-		cliOpts := CLIOptions{
-			DataFolder:   jsonDataFolder,
-			JSONFilePath: jsonFilePath,
-			JSONUrl:      jsonURL,
-		}
-
-		startCLI(cliOpts)
+	cliOpts := CLIOptions{
+		DataFolder:   jsonDataFolder,
+		JSONFilePath: jsonFilePath,
+		JSONUrl:      jsonURL,
 	}
+
+	startCLI(cliOpts)
 }

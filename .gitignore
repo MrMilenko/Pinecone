@@ -11,7 +11,6 @@ dump/**/
 *.dll
 *.so
 *.dylib
-pinecone
 
 # Test binary, built with `go test -c`
 *.test
@@ -24,6 +23,3 @@ pinecone
 
 # Go workspace file
 go.work
-
-output/
-pineconeSettings.json
