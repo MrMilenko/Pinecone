@@ -98,7 +98,7 @@ func printTotalStats() {
 	fmt.Println("Total Archived Items:", totalArchivedItems)
 }
 
-func cliPromptForDownload(url string) bool {
+func promptForDownload(url string) bool {
 	var response string
 	fmt.Printf("The required JSON data is not found. It can be downloaded from %s\n", url)
 	fmt.Print("Do you want to download it now? (yes/no): ")
@@ -113,7 +113,7 @@ func startCLI(options CLIOptions) {
 		log.Fatalln(err)
 	}
 
-	err = checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag, nil)
+	err = checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateFlag)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -123,7 +123,7 @@ func startCLI(options CLIOptions) {
 		log.Fatalln(err)
 	}
 
-	fmt.Printf("Pinecone v%s\n", version)
+	fmt.Println("Pinecone v0.4.3b")
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 
 	err = checkParsingSettings()

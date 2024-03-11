@@ -8,8 +8,6 @@ import (
 	"net/http"
 	"os"
 	"regexp"
-
-	"fyne.io/fyne/v2/theme"
 )
 
 func removeCommentsFromJSON(jsonStr string) string {
@@ -42,7 +40,8 @@ func downloadJSONData(url string) ([]byte, error) {
 
 func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateFlag bool) error {
 	if updateFlag {
-		// Notify we're checking for updates
+
+		//Notify we're checking for updates
 		fmt.Printf("Checking for PineCone updates..\n")
 
 		// Download JSON data
@@ -65,22 +64,14 @@ func loadJSONData(jsonFilePath, owner, repo, path string, v interface{}, updateF
 		}
 
 		// Write the newly downloaded JSON to file
-		if guiEnabled {
-			addText(theme.ForegroundColor(), "Updating %s...", jsonFilePath)
-		} else {
-			fmt.Printf("Updating %s...\n", jsonFilePath)
-		}
-		err = os.WriteFile(jsonFilePath, jsonData, 0o644)
+		fmt.Printf("Updating %s...\n", jsonFilePath)
+		err = os.WriteFile(jsonFilePath, jsonData, 0644)
 		if err != nil {
 			return err
 		}
 
 		// Load the newly downloaded JSON data
-		if guiEnabled {
-			addText(theme.ForegroundColor(), "Reloading %s...", path)
-		} else {
-			fmt.Printf("Reloading %s...\n", path)
-		}
+		fmt.Printf("Reloading %s...\n", path)
 		jsonStr := removeCommentsFromJSON(string(jsonData))
 		err = json.Unmarshal([]byte(jsonStr), &v)
 		if err != nil {
