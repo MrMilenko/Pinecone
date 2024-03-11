@@ -29,20 +29,12 @@ func getSHA1Hash(filePath string) (string, error) {
 	return fmt.Sprintf("%x", hash.Sum(nil)), nil
 }
 
-func loadIgnoreList(filePath string) ([]string, error) {
+func loadIgnoreList(filepath string) ([]string, error) {
 	var ignoreList []string
 
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filepath)
 	if err != nil {
-		// Download JSON data
-		jsonData, err := downloadJSONData("https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/ignorelist.json")
-		if err != nil {
-			return nil, err
-		}
-		err = os.WriteFile(filepath.Join(dataPath, "ignorelist.json"), jsonData, 0o644)
-		if err != nil {
-			return nil, err
-		}
+		return nil, err
 	}
 
 	if err := json.Unmarshal(data, &ignoreList); err != nil {
@@ -196,7 +188,7 @@ func processDLCContent(subDirDLC string, titleData TitleData, directory string) 
 
 func processUpdates(subDirUpdates string, titleData TitleData, titleID string, directory string) error {
 	// Load the ignore list from ignorelist.json in the data folder
-	ignoreList, err := loadIgnoreList(filepath.Join(dataPath, "ignorelist.json"))
+	ignoreList, err := loadIgnoreList("data/ignorelist.json")
 	if err != nil {
 		if guiEnabled {
 			addText(theme.WarningColor(), "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.", err.Error())

@@ -16,7 +16,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: "^1.21.5"
+          go-version: '^1.21.5'
 
       - name: Get dependencies
         run: |
@@ -33,13 +33,13 @@ jobs:
         run: make build-linux
 
       - name: Rename archive
-        run: mv bin/Pinecone.tar.xz bin/Pinecone_linux.tar.xz
+        run: zip -r Pinecone_linux.zip bin/Pinecone.tar.xz bin/data && mv Pinecone_linux.zip bin/Pinecone_linux.zip
 
       - name: Upload Linux Bin
         uses: djn24/add-asset-to-release@v2
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          path: "bin/Pinecone_linux.tar.xz"
+          path: 'bin/Pinecone_linux.zip'
 
   publish-binaries-mac:
     timeout-minutes: 20
@@ -52,22 +52,23 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: "^1.21.5"
-
+          go-version: '^1.21.5'
+      
       - name: Install FyneCLI tool
         run: go install fyne.io/fyne/v2/cmd/fyne@latest
 
       - name: Build
         run: make build-mac
-
+      
       - name: Zip App
-        run: zip -vr Pinecone_macos.zip bin/Pinecone.app -x "*.DS_Store" && mv Pinecone_macos.zip bin/
+        run: zip -vr Pinecone_macos.zip bin/Pinecone.app bin/data -x "*.DS_Store" && mv Pinecone_macos.zip bin/
+
 
       - name: Upload MacOS Bin
         uses: djn24/add-asset-to-release@v2
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          path: "bin/Pinecone_macos.zip"
+          path: 'bin/Pinecone_macos.zip'
 
   publish-binaries-win:
     timeout-minutes: 20
@@ -80,14 +81,14 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: "^1.21.5"
-
+          go-version: '^1.21.5'
+          
       - name: Install FyneCLI tool
         run: go install fyne.io/fyne/v2/cmd/fyne@latest
 
       - name: Build
         run: make build-win
-
+      
       - name: Zip Binary
         shell: pwsh
         run: Compress-Archive -Path "bin/Pinecone.exe", "bin/data" -DestinationPath "Pinecone_win.zip" && mv Pinecone_win.zip bin/
@@ -96,4 +97,4 @@ jobs:
         uses: djn24/add-asset-to-release@v2
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          path: "bin/Pinecone_win.zip"
+          path: 'bin/Pinecone_win.zip'

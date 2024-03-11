@@ -14,11 +14,9 @@ const (
 )
 
 type CLIOptions struct {
-	DataFolder     string
-	JSONFilePath   string
-	IgnoreFilePath string
-	JSONUrl        string
-	IgnoreURL      string
+	DataFolder   string
+	JSONFilePath string
+	JSONUrl      string
 }
 
 func printHeader(title string) {
