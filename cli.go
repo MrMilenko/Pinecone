@@ -123,7 +123,7 @@ func startCLI(options CLIOptions) {
 		log.Fatalln(err)
 	}
 
-	fmt.Println("Pinecone v0.4.3b")
+	fmt.Printf("Pinecone v%s\n", version)
 	fmt.Println("Please share output of this program with the Pinecone team if you find anything interesting!")
 
 	err = checkParsingSettings()

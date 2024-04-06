@@ -44,7 +44,7 @@ func loadIgnoreList(filepath string) ([]string, error) {
 
 func contains(slice []string, val string) bool {
 	for _, item := range slice {
-		//fmt.Printf("Comparing %q to %q\n", item, val)
+		// fmt.Printf("Comparing %q to %q\n", item, val)
 		if item == val {
 			return true
 		}
@@ -161,25 +161,14 @@ func processDLCContent(subDirDLC string, titleData TitleData, titleID string, di
 }
 
 func processUpdates(subDirUpdates string, titleData TitleData, titleID string, directory string) error {
-	// Load the ignore list from ignorelist.json in the data folder
-	ignoreList, err := loadIgnoreList("data/ignorelist.json")
-	if err != nil {
-		printInfo(color.FgYellow, "Warning: error loading data/ignorelist.json: %s. Proceeding without ignore list.\n", err.Error())
-		ignoreList = []string{} // Empty ignore list to prevent panics
-	}
-
 	files, err := os.ReadDir(subDirUpdates)
 	if err != nil {
 		return err
 	}
 
+	knownUpdateFound := false
 	for _, f := range files {
 		if filepath.Ext(f.Name()) != ".xbe" {
-			continue
-		}
-
-		// Skip if the file is in the ignore list
-		if contains(ignoreList, f.Name()) {
 			continue
 		}
 
@@ -190,7 +179,6 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 			continue
 		}
 
-		knownUpdateFound := false
 		for _, knownUpdate := range titleData.TitleUpdatesKnown {
 			for knownHash, name := range knownUpdate {
 				if knownHash == fileHash {
@@ -207,6 +195,10 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 			if knownUpdateFound {
 				break
 			}
+		}
+
+		if knownUpdateFound {
+			break
 		}
 
 		if !knownUpdateFound {
