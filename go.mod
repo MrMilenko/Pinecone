@@ -1,4 +1,4 @@
-module pinecone
+module github.com/Xbox-Preservation-Project/Pinecone
 
 go 1.21.5
 
