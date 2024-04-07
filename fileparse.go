@@ -183,7 +183,7 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 			for knownHash, name := range knownUpdate {
 				if knownHash == fileHash {
 					printHeader("File Info")
-					printInfo(color.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
+					printInfo(color.FgGreen, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name[17:])
 					filePath = strings.TrimPrefix(filePath, directory+"/")
 					printInfo(color.FgGreen, "Path: %s\n", filePath)
 					printInfo(color.FgGreen, "SHA1: %s\n", fileHash)
