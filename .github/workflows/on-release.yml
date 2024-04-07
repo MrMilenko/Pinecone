@@ -1,0 +1,106 @@
+name: On Release Published
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-binaries-linux:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "^1.21.5"
+
+      - name: Build
+        run: go build .
+
+      - name: Rename archive
+        run: zip -r Pinecone_linux.zip data Pinecone
+
+      - name: Upload Linux Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: "Pinecone_linux.zip"
+
+  publish-binaries-mac-intel:
+    timeout-minutes: 20
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "^1.21.5"
+
+      - name: Build
+        run: GOOS=darwin GOARCH=amd64 go build -o Pinecone.app
+
+      - name: Zip App
+        run: zip -vr Pinecone_macos_intel.zip data Pinecone.app -x "*.DS_Store"
+
+      - name: Upload MacOS Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: "Pinecone_macos_intel.zip"
+
+  publish-binaries-mac-arm:
+    timeout-minutes: 20
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "^1.21.5"
+
+      - name: Build
+        run: GOOS=darwin GOARCH=arm64 go build -o Pinecone.app
+
+      - name: Zip App
+        run: zip -vr Pinecone_macos_arm.zip data Pinecone.app -x "*.DS_Store"
+
+      - name: Upload MacOS Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: "Pinecone_macos_arm.zip"
+
+  publish-binaries-win:
+    timeout-minutes: 20
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "^1.21.5"
+
+      - name: Build
+        run: go build .
+
+      - name: Zip Binary
+        shell: pwsh
+        run: Compress-Archive -Path "Pinecone.exe", "data" -DestinationPath "Pinecone_win.zip"
+      - name: Upload Win Bin
+        uses: djn24/add-asset-to-release@v2
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          path: "Pinecone_win.zip"

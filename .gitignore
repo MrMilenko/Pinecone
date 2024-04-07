@@ -3,6 +3,7 @@ dump/.DS_Store
 dump/TDATA/.DS_Store
 .DS_Store
 dump/**/
+Pinecone
 
 # Go related
 # Binaries for programs and plugins
@@ -11,6 +12,7 @@ dump/**/
 *.dll
 *.so
 *.dylib
+*.app
 
 # Test binary, built with `go test -c`
 *.test
