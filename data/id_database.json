@@ -1112,8 +1112,10 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "5345003720050214": "Feb 14th Roster Update",
+                "5345003720050318": "Mar 18th Roster Update"
+        }]},
         "54540092": {
             "Title Name": "Major League Baseball 2K6",
             "Content IDs": [
@@ -1335,7 +1337,7 @@
             ],
             "Title Updates Known": [{
                 "a023e20ff0a1b5e43d1ca8d3fce0690ca8df386f": "0000000100000101:NTSC 0101",
-                "5454007900000000000000000000000000000000": "0000000200000102:PAL 0102"
+                "ae116259eb5b014d4382dca0061157d96adb546d": "0000000200000102:PAL 0102"
             }],
             "Archived": []
         },
@@ -1473,7 +1475,7 @@
                 "0000000100000101"
             ],
             "Title Updates Known": [{
-                "5345001300000000000000000000000000000000": "0000000100000101:NTSC 0101"
+                "b2d248470c4780f6a20283c90b4bdfd14abfdfce": "0000000100000101:NTSC 0101"
             }],
             "Archived": [{
                 "5345001320021105": "Roster Update 11/5/2002",
@@ -1527,8 +1529,9 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "414300130000000c": "Halloween"
+        }]},
         "53450011": {
             "Title Name": "NFL 2K3",
             "Content IDs": [
@@ -2588,7 +2591,8 @@
                 "5553000c00000200",
                 "5553000c00000500",
                 "5553000c00000501",
-                "5553000c00000502"
+                "5553000c00000502",
+				"5553000cfa0000ff"
             ],
             "Title Updates": [
                 "0000000900000109",
@@ -2608,7 +2612,8 @@
                 "5553000c00000200": "Kola cell (North America)",
                 "5553000c00000500": "Vselka Submarine (PAL Disc/Live)",
                 "5553000c00000501": "Infiltration (Japan)",
-                "5553000c00000502": "Submarine (Japan)"
+                "5553000c00000502": "Submarine (Japan)",
+                "5553000cfa0000ff": "Sample Content Package"
         }]},
         "55530038": {
             "Title Name": "Tom Clancy's Splinter Cell Chaos Theory",
