@@ -107,7 +107,7 @@
                 "0000000400000204"
                 ],
             "Title Updates Known": [{
-                "4541006200000000000000000000000000000000": "0000000100000101:NTSC 0101",
+                "fa4095b260be4c64aa75eb28b079e6beb0cc6267": "0000000100000101:NTSC 0101",
                 "ca76b7f7a44a026cbf01a31e0e41570d7ec56c52": "0000000100000201:NTSC 0201",
                 "4541006200000000000000000000000000000001": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
                 "d13c5482209853a5c133626b94f403fe319d3283": "0000000200000202:PAL Dutch/English/Spanish/Swedish 0202",
@@ -1530,7 +1530,8 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
-                "414300130000000c": "Halloween"
+                "414300130000000c": "Halloween",
+                "4143001300000010": "Thanksgiving"
         }]},
         "53450011": {
             "Title Name": "NFL 2K3",
