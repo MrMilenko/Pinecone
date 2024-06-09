@@ -13,7 +13,7 @@ var (
 	fatxplorer    = false
 	dumpLocation  = "dump"
 	helpFlag      = false
-	version       = "0.5.0"
+	version       = "0.5.1"
 )
 
 func main() {
