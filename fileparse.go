@@ -63,41 +63,49 @@ func checkForContent(directory string) error {
 			return err
 		}
 
-		if !info.IsDir() || len(info.Name()) != 8 {
-			return nil
-		}
-
-		titleID := strings.ToLower(info.Name())
-		titleData, ok := titles.Titles[titleID]
-		if !ok {
-			return nil
-		}
-		printHeader(titleData.TitleName)
-
-		subDirDLC := filepath.Join(path, "$c")
-		subInfoDLC, err := os.Stat(subDirDLC)
-		if err == nil && subInfoDLC.IsDir() {
-			err = processDLCContent(subDirDLC, titleData, titleID, directory)
-			if err != nil {
-				return err
+		// Check directories that are exactly 8 characters long, potential titleID
+		if info.IsDir() && len(info.Name()) == 8 {
+			titleID := strings.ToLower(info.Name())
+			titleData, ok := titles.Titles[titleID]
+			if ok {
+				printHeader(titleData.TitleName) // Process known titles as before
 			}
-		} else {
-			printInfo(color.FgYellow, "No DLC Found for %s..\n", titleID)
-		}
 
-		subDirUpdates := filepath.Join(path, "$u")
-		subInfoUpdates, err := os.Stat(subDirUpdates)
-		if err == nil && subInfoUpdates.IsDir() {
-			err = processUpdates(subDirUpdates, titleData, titleID, directory)
-			if err != nil {
-				return err
+			// Check and potentially process $c subdirectory
+			subDirDLC := filepath.Join(path, "$c")
+			subInfoDLC, err := os.Stat(subDirDLC)
+			if err == nil && subInfoDLC.IsDir() {
+				if ok { // Process content if titleID is known
+					err = processDLCContent(subDirDLC, titleData, titleID, directory)
+					if err != nil {
+						return err
+					}
+				} else {
+					printInfo(color.FgYellow, "DLC content found in unrecognized directory: %s\n", subDirDLC)
+				}
 			}
-		} else {
-			printInfo(color.FgYellow, "No Title Updates Found in $u for %s..\n", titleID)
-		}
 
+			// Check and potentially process $u subdirectory
+			subDirUpdates := filepath.Join(path, "$u")
+			subInfoUpdates, err := os.Stat(subDirUpdates)
+			if err == nil && subInfoUpdates.IsDir() {
+				if ok { // Process updates if titleID is known
+					err = processUpdates(subDirUpdates, titleData, titleID, directory)
+					if err != nil {
+						return err
+					}
+				} else {
+					printInfo(color.FgYellow, "Updates found in unrecognized directory: %s\n", subDirUpdates)
+				}
+			}
+
+			if !ok {
+				return filepath.SkipDir // Skip further processing in unrecognized directories
+			}
+		}
 		return nil
 	})
+
 	return err
 }
 
