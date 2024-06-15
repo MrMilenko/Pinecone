@@ -1113,8 +1113,12 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
-                "5345003720050214": "Feb 14th Roster Update",
-                "5345003720050318": "Mar 18th Roster Update"
+                "5345003720050214":"Feb 14th Roster Update",
+                "5345003720050318":"Mar 18th Roster Update",
+				"5345003720050417":"Apr 17th Roster Update",
+				"5345003720050513":"May 13th Roster Update",
+				"5345003720050621":"June 21st Roster Update",
+				"5345003720050803":"August 3rd Roster"
         }]},
         "54540092": {
             "Title Name": "Major League Baseball 2K6",
@@ -2697,7 +2701,7 @@
                 "0000002100000121"
             ],
             "Title Updates Known": [{
-                "4d53003500000000000000000000000000000000": "0000000100000101:NTSC 0101",
+                "072eb1eb812488af3660b470c08bca92239fdaa8": "0000000100000101:NTSC 0101",
                 "4d53003500000000000000000000000000000001": "0000000100000501:NTSC 0501",
                 "e37590238068f327665b7cae1adb2e4700276f16": "0000000100000601:NTSC standalone 0601",
                 "4d53003500000000000000000000000000000002": "0000000200000102:PAL 0102",
@@ -2955,7 +2959,7 @@
         "584c0005": {
             "Title Name": "Xbox Live Connectivity Tool",
             "Content IDs": [],
-            "Title Updates": [
+         A   "Title Updates": [
                 "0000000000030003",
                 "0000000200050005"
             ],
