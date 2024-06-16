@@ -1523,8 +1523,12 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "4d53000b00000002": "Fall Roster Update",
+                "4d53000b00000003": "Winter Roster Update",
+		"4d53000b00000004": "All-Star Update",
+		"4d53000b00000006": "Spring Roster Update"
+        }]},
         "41430013": {
             "Title Name": "NBA Jam",
             "Content IDs": [
@@ -2959,7 +2963,7 @@
         "584c0005": {
             "Title Name": "Xbox Live Connectivity Tool",
             "Content IDs": [],
-         A   "Title Updates": [
+            "Title Updates": [
                 "0000000000030003",
                 "0000000200050005"
             ],
