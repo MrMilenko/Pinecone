@@ -27,7 +27,7 @@ jobs:
           libwayland-dev libxkbcommon-dev bc
 
       - name: Build
-        run: go -ldflags "-s -w" build .
+        run: go build .
 
       - name: Rename archive
         run: zip -r Pinecone_linux.zip data Pinecone
@@ -52,7 +52,7 @@ jobs:
           go-version: "^1.21.5"
 
       - name: Build
-        run: GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o Pinecone.app
+        run: GOOS=darwin GOARCH=amd64 go build -o Pinecone.app
 
       - name: Zip App
         run: zip -vr Pinecone_macos_intel.zip data Pinecone.app -x "*.DS_Store"
@@ -77,7 +77,7 @@ jobs:
           go-version: "^1.21.5"
 
       - name: Build
-        run: GOOS=darwin GOARCH=arm64 go build -ldflags "-s -w" -o Pinecone.app
+        run: GOOS=darwin GOARCH=arm64 go build -o Pinecone.app
 
       - name: Zip App
         run: zip -vr Pinecone_macos_arm.zip data Pinecone.app -x "*.DS_Store"
@@ -102,7 +102,7 @@ jobs:
           go-version: "^1.21.5"
 
       - name: Build
-        run: go build -ldflags "-s -w" .
+        run: go build .
 
       - name: Zip Binary
         shell: pwsh
