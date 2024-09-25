@@ -13,7 +13,7 @@ var (
 	fatxplorer    = false
 	dumpLocation  = "dump"
 	helpFlag      = false
-	version       = "0.5.1"
+	version       = "0.6.0"
 	guiEnabled    = true
 	dataPath      = "data"
 )
