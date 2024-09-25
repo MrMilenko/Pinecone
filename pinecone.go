@@ -14,6 +14,7 @@ var (
 	dumpLocation  = "dump"
 	helpFlag      = false
 	version       = "0.5.1"
+	guiEnabled    = true
 )
 
 func main() {
@@ -29,6 +30,8 @@ func main() {
 	flag.StringVar(&dumpLocation, "l", "dump", "Directory to search for TDATA/UDATA directories")
 	flag.BoolVar(&helpFlag, "help", false, "Display help information")
 	flag.BoolVar(&helpFlag, "h", false, "Display help information")
+	flag.BoolVar(&guiEnabled, "gui", true, "Enable GUI")
+	flag.BoolVar(&guiEnabled, "g", true, "Enable GUI")
 
 	flag.Parse() // Parse command line flags
 
@@ -40,6 +43,7 @@ func main() {
 		fmt.Println("  -tID, --titleid:  Filter statistics by Title ID (-titleID=ABCD1234). If not set, statistics are computed for all titles.")
 		fmt.Println("  -f, --fatxplorer: Use FATXPlorer's X drive as the root directory. If not set, runs as normal. (Windows Only)")
 		fmt.Println("  -l --location:    Directory where TDATA/UDATA folders are stored. If not set, checks in \"dump\"")
+		fmt.Println("  -g, --gui:        Enable the GUI interface (default = true)")
 		fmt.Println("  -h, --help:       Display this help information.")
 		return
 	}
@@ -48,11 +52,21 @@ func main() {
 	jsonDataFolder := "data"
 	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
 
-	cliOpts := CLIOptions{
-		DataFolder:   jsonDataFolder,
-		JSONFilePath: jsonFilePath,
-		JSONUrl:      jsonURL,
-	}
+	if guiEnabled {
+		guiOpts := GUIOptions{
+			DataFolder:   jsonDataFolder,
+			JSONFilePath: jsonFilePath,
+			JSONUrl:      jsonURL,
+		}
 
-	startCLI(cliOpts)
+		startGUI(guiOpts)
+	} else {
+		cliOpts := CLIOptions{
+			DataFolder:   jsonDataFolder,
+			JSONFilePath: jsonFilePath,
+			JSONUrl:      jsonURL,
+		}
+
+		startCLI(cliOpts)
+	}
 }
