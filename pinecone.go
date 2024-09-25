@@ -15,6 +15,7 @@ var (
 	helpFlag      = false
 	version       = "0.5.1"
 	guiEnabled    = true
+	dataPath      = "data"
 )
 
 func main() {

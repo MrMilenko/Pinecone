@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"image/color"
+	"log"
 	"os"
 	"path"
 	"path/filepath"
@@ -289,6 +290,17 @@ func saveOutput(settings *Settings) {
 	outputContainer.Add(output)
 }
 
+func loadImage(name, path string) *fyne.StaticResource {
+	imgBytes, err := os.ReadFile(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return &fyne.StaticResource{
+		StaticName:    name,
+		StaticContent: imgBytes,
+	}
+}
+
 func startGUI(options GUIOptions) {
 	a := app.New()
 	windowName := fmt.Sprintf("Pinecone %s", version)
@@ -301,7 +313,7 @@ func startGUI(options GUIOptions) {
 
 	w.Resize(fyne.Size{Width: 800, Height: 600})
 
-	tdataButtonIcon := theme.NewThemedResource(resourceXboxIconSvg)
+	tdataButtonIcon := loadImage("tdatabutton", "./images/xboxIcon.svg")
 
 	// set folder to scan, but only if it is a TDATA folder.
 	setFolder := widget.NewButtonWithIcon("Set Dump Folder", tdataButtonIcon, func() {

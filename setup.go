@@ -4,6 +4,10 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/theme"
 )
 
 func checkDataFolder(dataFolder string) error {
@@ -17,29 +21,43 @@ func checkDataFolder(dataFolder string) error {
 	return nil
 }
 
-func checkDatabaseFile(jsonFilePath string, jsonURL string, updateFlag bool) error {
+func checkDatabaseFile(jsonFilePath string, jsonURL string, updateFlag bool, window ...fyne.Window) error {
 	// Check if JSON file exists
 	if _, err := os.Stat(jsonFilePath); os.IsNotExist(err) {
 		// Prompt for download if JSON file doesn't exist
-		if promptForDownload(jsonURL) {
-			err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
-			if err != nil {
-				return fmt.Errorf("Error downloading data: %v ", err)
+		if guiEnabled {
+			if len(window) != 1 {
+				output1 := canvas.NewText("ERROR: Your local developer did not use the a function correctly!", theme.ErrorColor())
+				output2 := canvas.NewText("Please open a GitHub issue and show them this output", theme.ErrorColor())
+				outputContainer.Add(output1)
+				outputContainer.Add(output2)
 			}
+
+			guiShowDownloadConfirmation(window[0], jsonFilePath, jsonURL)
 		} else {
-			return fmt.Errorf("Download aborted by user.")
+			if cliPromptForDownload(jsonURL) {
+				err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", "data/id_database.json", &titles, true)
+				if err != nil {
+					return fmt.Errorf("error downloading data: %v ", err)
+				}
+			} else {
+				return fmt.Errorf("download aborted by user")
+			}
 		}
 	} else if updateFlag {
 		// Handle manual update
 		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", jsonFilePath, &titles, true)
 		if err != nil {
-			return fmt.Errorf("Error updating data: %v", err)
+			return fmt.Errorf("error updating data: %v", err)
 		}
 	} else {
 		// Load existing JSON data
 		err := loadJSONData(jsonFilePath, "Xbox-Preservation-Project", "Pinecone", jsonFilePath, &titles, false)
 		if err != nil {
-			return fmt.Errorf("Error loading data: %v", err)
+			return fmt.Errorf("error loading data: %v", err)
+		}
+		if guiEnabled {
+			guiScanDump()
 		}
 	}
 	return nil
