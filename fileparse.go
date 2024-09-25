@@ -223,17 +223,17 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 				if knownHash == fileHash {
 					if guiEnabled {
 						addHeader("File Info")
-						addText(guiCyan, "Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
+						addText(theme.PrimaryColorNamed(theme.ColorGreen), "Known and Archived Title update found for %s (%s) (%s)", titleData.TitleName, titleID, name)
 						filePath = strings.TrimPrefix(filePath, directory+"/")
-						addText(guiCyan, "Path: %s", filePath)
-						addText(guiCyan, "SHA1: %s", fileHash)
+						addText(theme.PrimaryColorNamed(theme.ColorGreen), "Path: %s", filePath)
+						addText(theme.PrimaryColorNamed(theme.ColorGreen), "SHA1: %s", fileHash)
 						addText(color.Transparent, separator)
 					}
 					printHeader("File Info")
-					printInfo(fatihColor.FgCyan, "Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
+					printInfo(fatihColor.FgGreen, "Known and Archive Title update found for %s (%s) (%s)\n", titleData.TitleName, titleID, name)
 					filePath = strings.TrimPrefix(filePath, directory+"/")
-					printInfo(fatihColor.FgCyan, "Path: %s\n", filePath)
-					printInfo(fatihColor.FgCyan, "SHA1: %s\n", fileHash)
+					printInfo(fatihColor.FgGreen, "Path: %s\n", filePath)
+					printInfo(fatihColor.FgGreen, "SHA1: %s\n", fileHash)
 					fmt.Println(separator)
 
 					knownUpdateFound = true
@@ -243,10 +243,6 @@ func processUpdates(subDirUpdates string, titleData TitleData, titleID string, d
 			if knownUpdateFound {
 				break
 			}
-		}
-
-		if knownUpdateFound {
-			break
 		}
 
 		if !knownUpdateFound {
