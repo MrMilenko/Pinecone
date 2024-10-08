@@ -4,6 +4,7 @@ go 1.21.5
 
 require (
 	fyne.io/fyne/v2 v2.5.1
+	github.com/dweymouth/fyne-tooltip v0.2.0
 	github.com/fatih/color v1.16.0
 )
 

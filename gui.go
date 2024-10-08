@@ -20,6 +20,9 @@ import (
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
+
+	fynetooltip "github.com/dweymouth/fyne-tooltip"
+	ttwidget "github.com/dweymouth/fyne-tooltip/widget"
 )
 
 type GUIOptions struct {
@@ -316,15 +319,18 @@ func startGUI(options GUIOptions) {
 	tdataButtonIcon := loadImage("tdatabutton", "./images/xboxIcon.svg")
 
 	// set folder to scan, but only if it is a TDATA folder.
-	setFolder := widget.NewButtonWithIcon("Set Dump Folder", tdataButtonIcon, func() {
+	setFolder := ttwidget.NewButtonWithIcon("", tdataButtonIcon, func() {
 		setDumpFolder(w)
 	})
+	setFolder.SetToolTip("Set Dump Folder")
 
-	scanPath := widget.NewButtonWithIcon("Scan For Content", theme.SearchIcon(), func() {
+	scanPath := ttwidget.NewButtonWithIcon("", theme.SearchIcon(), func() {
 		guiStartScan(options, w)
 	})
+	scanPath.SetToolTip("Scan For Content")
+
 	// Save output to a file in the homeDir with a timestamp.
-	saveOutput := widget.NewButtonWithIcon("Save Output", theme.DocumentSaveIcon(), func() {
+	saveOutput := ttwidget.NewButtonWithIcon("", theme.DocumentSaveIcon(), func() {
 		settings, err := loadSettings()
 		if err != nil {
 			fmt.Println(err)
@@ -332,16 +338,19 @@ func startGUI(options GUIOptions) {
 		}
 		saveOutput(settings)
 	})
+	saveOutput.SetToolTip("Save Output")
 
-	updateJSON := widget.NewButtonWithIcon("Update Database", theme.DownloadIcon(), func() {
+	updateJSON := ttwidget.NewButtonWithIcon("", theme.DownloadIcon(), func() {
 		updateJSON := true
 		err := checkDatabaseFile(options.JSONFilePath, options.JSONUrl, updateJSON, nil)
 		if err != nil {
 			fmt.Println(err)
 		}
 	})
+	updateJSON.SetToolTip("Update Database")
+
 	// Create the settings button with the settings icon
-	settingsButton := widget.NewButtonWithIcon("Settings", theme.SettingsIcon(), func() {
+	settingsButton := ttwidget.NewButtonWithIcon("", theme.SettingsIcon(), func() {
 		// Open the settings screen
 		settings, err := loadSettings()
 		if err != nil {
@@ -350,11 +359,13 @@ func startGUI(options GUIOptions) {
 		}
 		showSettingsDialog(settings, a)
 	})
+	settingsButton.SetToolTip("Settings")
 
 	// Exit the application
-	exit := widget.NewButtonWithIcon("Exit", theme.LogoutIcon(), func() {
+	exit := ttwidget.NewButtonWithIcon("", theme.LogoutIcon(), func() {
 		a.Quit()
 	})
+	exit.SetToolTip("Exit")
 
 	// Create a container with vertical box layout for the hamburger menu
 	sideMenu := container.NewVBox()
@@ -376,6 +387,6 @@ func startGUI(options GUIOptions) {
 	fullContent := container.NewBorder(nil, nil, sideMenu, nil, mainContent)
 
 	// Place the buttons to the left and the output to the center
-	w.SetContent(fullContent)
+	w.SetContent(fynetooltip.AddWindowToolTipLayer(fullContent, w.Canvas()))
 	w.ShowAndRun()
 }
