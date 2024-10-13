@@ -98,7 +98,7 @@ func printTotalStats() {
 	fmt.Println("Total Archived Items:", totalArchivedItems)
 }
 
-func promptForDownload(url string) bool {
+func cliPromptForDownload(url string) bool {
 	var response string
 	fmt.Printf("The required JSON data is not found. It can be downloaded from %s\n", url)
 	fmt.Print("Do you want to download it now? (yes/no): ")
