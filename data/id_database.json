@@ -2190,13 +2190,13 @@
             "Archived": []
         },
         "4d4d0001": {
-            "Title Name": "Stacked with Daniel Negreanu",
+            "Title Name": "Stacked",
             "Content IDs": [],
             "Title Updates": [
                 "0000000200000302"
             ],
             "Title Updates Known": [{
-                "4d4d000100000000000000000000000000000000": "0000000200000302:NTSC 0302"
+                "35e0cfdbbca4d9a443639892da9ed1a0f5ed9e20": "0000000200000302:NTSC 0302"
             }],
             "Archived": []
         },
