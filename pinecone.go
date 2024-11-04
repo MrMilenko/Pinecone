@@ -51,7 +51,7 @@ func main() {
 
 	jsonFilePath := "data/id_database.json"
 	jsonDataFolder := "data"
-	jsonURL := "https://api.github.com/repos/Xbox-Preservation-Project/Pinecone/contents/data/id_database.json"
+	jsonURL := "https://api.github.com/repos/MrMilenko/Pinecone/contents/data/id_database.json"
 
 	if guiEnabled {
 		guiOpts := GUIOptions{
