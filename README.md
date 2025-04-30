@@ -11,7 +11,7 @@ Pinecone is no longer under active development. The application itself is stable
 
 For ongoing preservation efforts, we recommend using **XCAT**, which has become the community standard: [https://consolemods.org/wiki/Xbox:XCAT](https://consolemods.org/wiki/Xbox:XCAT)
 
-Small patches may still be made to improve usability—especially for those of you with stacks of old drives still waiting to be scanned :)
+Small patches may still be made to improve usability and fix bugs, especially for those of you with stacks of old drives still waiting to be scanned :)
 
 ## A Thank You to the Community
 
