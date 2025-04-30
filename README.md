@@ -1,7 +1,61 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MrMilenko/PineCone/main/images/cleet.png "width="200" />
+  <img src="https://raw.githubusercontent.com/MrMilenko/PineCone/main/images/old-cleet.png "width="200" />
 </p>
 <p align="center">I'm Cleet. Cletus T. Pine.</p>
+
+## Pinecone – Project Status
+
+**Project Status: Stable**
+
+Pinecone is no longer under active development. The application itself is stable and functional. Only critical bug fixes or updates to the DLC/Title Update JSON may be made as needed.
+
+For ongoing preservation efforts, we recommend using **XCAT**, which has become the community standard: [https://consolemods.org/wiki/Xbox:XCAT](https://consolemods.org/wiki/Xbox:XCAT)
+
+Small patches may still be made to improve usability—especially for those of you with stacks of old drives still waiting to be scanned :)
+
+### A Thank You to the Community
+
+Pinecone began as an effort to rescue lost content from aging original Xbox hard drives. It grew into a utility that helped others do the same, preserving DLC, title updates, and (occasionally) other forgotten data before those drives were wiped, trashed, or sold.
+
+This project was built on the work and research of many in the Xbox preservation scene but one name deserves special recognition:
+
+**Harcroft** laid the groundwork. His years of documentation on content formats, Title Update structures, and obscure folder layouts made Pinecone possible.
+
+### Why It’s “Done”
+
+The preservation landscape has improved dramatically. With tools like [**XCAT**](https://consolemods.org/wiki/Xbox:XCAT), the process is now faster, more automated, and hardware-friendly.
+
+You can now:
+- Scan consoles directly
+- Upload unarchived content for analysis
+- Use modern drive unlocking via [**PrometheOS**](https://github.com/Team-Resurgent/PrometheOS-Firmware)
+
+Special thanks to **Crunchbite**, **xbox7887**, **Siktah**, **SkyeHDD**, and **Team Resurgent** for these advancements.
+
+Pinecone served its purpose and now Cleet can rest.
+
+
+### If You're Just Finding This
+
+The full source code and binaries will remain available here on GitHub.  
+You're welcome to fork it, use it, or build on it however you see fit.
+
+Thanks to everyone who contributed, tested, or shared Pinecone.  
+You helped preserve a part of Xbox history that would have otherwise been lost.
+
+## Community Links
+
+**Discords**  
+- [ConsoleMods Wiki Discord](https://discord.gg/x5vEnkR4C8)
+- [Xbox-Scene Discord](https://discord.gg/xbox-scene)
+
+**Sites**  
+- [ConsoleMods.org](https://consolemods.org/wiki/Main_Page)
+- [Digiex.net](https://digiex.net/downloads/download-center-2-0/xbox-content/)
+
+**Wikis**   
+- [XCAT Wiki](https://consolemods.org/wiki/Xbox:XCAT)  
+- [PrometheOS Wiki](https://consolemods.org/wiki/Xbox:PrometheOS)
 
 # PineCone
 
