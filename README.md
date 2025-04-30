@@ -3,7 +3,7 @@
 </p>
 <p align="center">I'm Cleet. Cletus T. Pine.</p>
 
-## Pinecone – Project Status
+## Pinecone
 
 **Project Status: Stable**
 
@@ -13,7 +13,7 @@ For ongoing preservation efforts, we recommend using **XCAT**, which has become 
 
 Small patches may still be made to improve usability—especially for those of you with stacks of old drives still waiting to be scanned :)
 
-### A Thank You to the Community
+## A Thank You to the Community
 
 Pinecone began as an effort to rescue lost content from aging original Xbox hard drives. It grew into a utility that helped others do the same, preserving DLC, title updates, and (occasionally) other forgotten data before those drives were wiped, trashed, or sold.
 
@@ -21,7 +21,7 @@ This project was built on the work and research of many in the Xbox preservation
 
 **Harcroft** laid the groundwork. His years of documentation on content formats, Title Update structures, and obscure folder layouts made Pinecone possible.
 
-### Why It’s “Done”
+## Why It’s “Done”
 
 The preservation landscape has improved dramatically. With tools like [**XCAT**](https://consolemods.org/wiki/Xbox:XCAT), the process is now faster, more automated, and hardware-friendly.
 
@@ -35,7 +35,7 @@ Special thanks to **Crunchbite**, **xbox7887**, **Siktah**, **SkyeHDD**, and **T
 Pinecone served its purpose and now Cleet can rest.
 
 
-### If You're Just Finding This
+## If You're Just Finding This
 
 The full source code and binaries will remain available here on GitHub.  
 You're welcome to fork it, use it, or build on it however you see fit.
