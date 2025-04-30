@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/MrMilenko/PineCone/main/images/old-cleet.png "width="200" />
 </p>
-<p align="center">I'm Cleet. Cletus T. Pine.</p>
+<p align="center">Cleet's taking a nap.</p>
 
 **Project Status: Stable**
 
