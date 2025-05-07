@@ -70,7 +70,9 @@
                 "e00eb8c6af9b2940da116daa18b0de93c6989755": "0000000100000201:NTSC 0201"
                 }],
             "Archived": [{
-                "4143001c00000003": "ASB Rosters"
+                "4143001c00000001": "ASB Rosters (roster 1)",
+                "4143001c00000002": "ASB Rosters (roster 2)",
+                "4143001c00000003": "ASB Rosters (roster 3)"		    
         }]},
         "4d530041": {
             "Title Name": "Amped 2",
@@ -441,7 +443,8 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
-                "4b4e003700000010": "Song Pack 16",
+                "4b4e003700000001": "Song Pack 1",
+		"4b4e003700000010": "Song Pack 16",
                 "4b4e003700000011": "Song Pack 17"
         }]},
         "4b4e001d": {
@@ -908,7 +911,7 @@
             ],
             "Title Updates Known": [{
                 "80f3bf79e60d7f08a9befc8866bf626324142d5d": "0000000000000101:RF 0101",
-                "4d53008200000000000000000000000000000001": "0000000000000201:RF 0201",
+                "f2a79ec5602b210d8ae33ff2600b5aaba9093db4": "0000000000000201:RF 0201",
                 "af4c19c73dff53677744f3359a2a7b16a236187c": "0000000000000301:RF 0301",
                 "d496b362910d00c1d9271cd4489b512203ddfc24": "0000000000000401:RF 0401"
                 }],
@@ -1243,31 +1246,45 @@
                 "dd7ff55c5981b6c1b24a5f8149c22fa2ff22e67f": "0000000100000401:NTSC+PAL 0401",
                 "a84b1da97c8597226578f282a9a8b9c755e687f9": "0000000100000601:NTSC+PAL 0601",
                 "4d53001700000000000000000000000000000003": "0000000400000504:NTSC-J South-East Asia 0504",
-                "4d53001700000000000000000000000000000004": "0000000700000207:NTSC-J Japan 0207",
+                "1554ed5aab448f09ba5eb730016635dc027e5a62": "0000000700000207:NTSC-J Japan 0207",
                 "4d53001700000000000000000000000000000005": "0000000700000407:NTSC-J Japan 0407"
             }],
             "Archived": [{
                 "4d53001700000001": "1 - Hell's Kitchen",
+		"4d53001700000002": "1 - Hell's Kitchen (Region 2)",
 		"4d53001700000004": "1 - Hell's Kitchen (Region 4)",
                 "4d53001700000005": "2 - Raven",
+		"4d53001700000006": "2 - Raven (Region 2)",
                 "4d53001700000008": "2 - Raven (Region 4)",
                 "4d53001700000009": "3 - Stone Cold",
+		"4d5300170000000a": "3 - Stone Cold (Region 2)",
                 "4d5300170000000c": "3 - Stone Cold (Region 4)",
                 "4d5300170000000d": "4 - Corvus",
-                "4d53001700000010": "4 - Corvus (Region 4)",
+                "4d5300170000000e": "4 - Corvus (Region 2)",
+		"4d53001700000010": "4 - Corvus (Region 4)",
                 "4d53001700000011": "5 - Midtown Mayhem",
-                "4d53001700000014": "5 - Midtown Mayhem (Region 4)",
+                "4d53001700000012": "5 - Midtown Mayhem (Region 2)",
+		"4d53001700000014": "5 - Midtown Mayhem (Region 4)",
                 "4d53001700000015": "6 - Desert Storm",
-                "4d53001700000018": "6 - Desert Storm (Region 4)",
+                "4d53001700000016": "6 - Desert Storm (Region 2)",
+		"4d53001700000018": "6 - Desert Storm (Region 4)",
                 "4d53001700000019": "7 - Hellbringer",
-                "4d5300170000001c": "7 - Hellbringer (Region 4)",
+                "4d5300170000001a": "7 - Hellbringer (Region 2)",
+		"4d5300170000001c": "7 - Hellbringer (Region 4)",
                 "4d5300170000001d": "8 - Loki",
-                "4d53001700000020": "8 - Loki (Region 4)",
+                "4d5300170000001e": "8 - Loki (Region 2)",
+		"4d53001700000020": "8 - Loki (Region 4)",
                 "4d53001700000021": "9 - Demolition Town",
-                "4d53001700000024": "9 - Demolition Town (Region 4)",
+                "4d53001700000022": "9 - Demolition Town (Region 2)",
+		"4d53001700000024": "9 - Demolition Town (Region 4)",
                 "4d53001700000025": "10 - Rock Solid",
+		"4d53001700000026": "10 - Rock Solid (Region 2)",
+		"4d53001700000028": "10 - Rock Solid (Region 4)",
                 "4d53001700000029": "11 - Jotenheim",
+		"4d5300170000002a": "11 - Jotenheim (Region 2)",
+		"4d5300170000002c": "11 - Jotenheim (Region 4)",
                 "4d5300170000002d": "12 - Gametypes",
+		"4d5300170000002e": "12 - Gametypes (Region 2)",
                 "4d53001700000030": "12 - Gametypes (Region 4)",
                 "4d53001700000035": "14 - Objective Package",
 		"4d53001700000035": "14 - Objective Package (Region 4)"
