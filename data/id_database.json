@@ -50,7 +50,7 @@
                 "4143001800000001": "ASB 2004 Roster #1",
                 "4143001800000002": "ASB 2004 Roster #2",
                 "4143001800000003": "ASB 2004 Roster #3",
-		"4143001800000005": "ASB 2004 Roster #4",
+                "4143001800000005": "ASB 2004 Roster #4",
                 "4143001800000005": "ASB 2004 Roster #5",
                 "4143001800000006": "ASB 2004 Roster #6",
                 "4143001800000007": "ASB 2004 Roster #7",
@@ -400,9 +400,9 @@
                 "20380171ab803ce8db790704c6159d97bb4b633f": "0000000100000101:NTSC 0101"
             }],
             "Archived": [{
-		"4b4e002900000001": "Song Pack 1",
-		"4b4e002900000002": "Song Pack 2",
-		"4b4e002900000003": "Song Pack 3",
+                "4b4e002900000001": "Song Pack 1",
+                "4b4e002900000002": "Song Pack 2",
+                "4b4e002900000003": "Song Pack 3",
                 "4b4e002900000004": "Song Pack 4",
                 "4b4e002900000005": "Song Pack 5",
                 "4b4e002900000006": "Song Pack 6",
@@ -600,7 +600,8 @@
             "Archived": [{
                     "5345002220030910": "Week 1 Roster Update (2003-09-10)",
                     "5345002220031008": "Week 5 Roster Update (2003-10-08)",
-                    "5345002220031201": "ESPN NFL Roster (2003-12-01)"
+                    "5345002220031201": "ESPN NFL Roster (2003-12-01)",
+                    "5345002220040102": "ESPN NFL Roster (2004-01-02) Final"
         }]},
         "5345002c": {
             "Title Name": "ESPN NFL Football (2K4) PAL",
@@ -766,7 +767,7 @@
             "Archived": [{
                 "5451002200000001": "Epilogue 1",
                 "5451002200000002": "Epilogue 2",
-		"5451002200001001": "Epilogue 1 (Japan, Korea)",
+                "5451002200001001": "Epilogue 1 (Japan, Korea)",
                 "5451002200001002": "Epilogue 2 (Japan, Korea)"
         }]},
         "545100f8": {
@@ -1251,43 +1252,43 @@
             }],
             "Archived": [{
                 "4d53001700000001": "1 - Hell's Kitchen",
-		"4d53001700000002": "1 - Hell's Kitchen (Region 2)",
-		"4d53001700000004": "1 - Hell's Kitchen (Region 4)",
+                "4d53001700000002": "1 - Hell's Kitchen (Region 2)",
+                "4d53001700000004": "1 - Hell's Kitchen (Region 4)",
                 "4d53001700000005": "2 - Raven",
-		"4d53001700000006": "2 - Raven (Region 2)",
+                "4d53001700000006": "2 - Raven (Region 2)",
                 "4d53001700000008": "2 - Raven (Region 4)",
                 "4d53001700000009": "3 - Stone Cold",
-		"4d5300170000000a": "3 - Stone Cold (Region 2)",
+                "4d5300170000000a": "3 - Stone Cold (Region 2)",
                 "4d5300170000000c": "3 - Stone Cold (Region 4)",
                 "4d5300170000000d": "4 - Corvus",
                 "4d5300170000000e": "4 - Corvus (Region 2)",
-		"4d53001700000010": "4 - Corvus (Region 4)",
+                "4d53001700000010": "4 - Corvus (Region 4)",
                 "4d53001700000011": "5 - Midtown Mayhem",
                 "4d53001700000012": "5 - Midtown Mayhem (Region 2)",
-		"4d53001700000014": "5 - Midtown Mayhem (Region 4)",
+                "4d53001700000014": "5 - Midtown Mayhem (Region 4)",
                 "4d53001700000015": "6 - Desert Storm",
                 "4d53001700000016": "6 - Desert Storm (Region 2)",
-		"4d53001700000018": "6 - Desert Storm (Region 4)",
+                "4d53001700000018": "6 - Desert Storm (Region 4)",
                 "4d53001700000019": "7 - Hellbringer",
                 "4d5300170000001a": "7 - Hellbringer (Region 2)",
-		"4d5300170000001c": "7 - Hellbringer (Region 4)",
+                "4d5300170000001c": "7 - Hellbringer (Region 4)",
                 "4d5300170000001d": "8 - Loki",
                 "4d5300170000001e": "8 - Loki (Region 2)",
-		"4d53001700000020": "8 - Loki (Region 4)",
+                "4d53001700000020": "8 - Loki (Region 4)",
                 "4d53001700000021": "9 - Demolition Town",
                 "4d53001700000022": "9 - Demolition Town (Region 2)",
-		"4d53001700000024": "9 - Demolition Town (Region 4)",
+                "4d53001700000024": "9 - Demolition Town (Region 4)",
                 "4d53001700000025": "10 - Rock Solid",
-		"4d53001700000026": "10 - Rock Solid (Region 2)",
-		"4d53001700000028": "10 - Rock Solid (Region 4)",
+                "4d53001700000026": "10 - Rock Solid (Region 2)",
+                "4d53001700000028": "10 - Rock Solid (Region 4)",
                 "4d53001700000029": "11 - Jotenheim",
-		"4d5300170000002a": "11 - Jotenheim (Region 2)",
-		"4d5300170000002c": "11 - Jotenheim (Region 4)",
+                "4d5300170000002a": "11 - Jotenheim (Region 2)",
+                "4d5300170000002c": "11 - Jotenheim (Region 4)",
                 "4d5300170000002d": "12 - Gametypes",
-		"4d5300170000002e": "12 - Gametypes (Region 2)",
+                "4d5300170000002e": "12 - Gametypes (Region 2)",
                 "4d53001700000030": "12 - Gametypes (Region 4)",
                 "4d53001700000035": "14 - Objective Package",
-		"4d53001700000035": "14 - Objective Package (Region 4)"
+                "4d53001700000035": "14 - Objective Package (Region 4)"
         }]},
         "4d53006b": {
             "Title Name": "MechAssault 2 Lone Wolf",
@@ -1634,11 +1635,12 @@
             "Title Updates": [
                 "0000000400000104",
                 "0000000400000204",
-                "0000000000d91f03"
+                "0000000000d91e03",
+				"0000000000d91f03"
             ],
             "Title Updates Known": [{
-                "4d53004d00000000000000000000000000000000": "00d91d0300d91e03:NTSC 1e03",
-		"7fa53dd7a7e0f821efcb9ca7b39f3e88ff06b7d1": "00d91d0300d91f03:NTSC 1f03",
+                "085d7f3061c699d990100c3995621590dfb83a51": "00d91d0300d91e03:NTSC 1e03",
+                "7fa53dd7a7e0f821efcb9ca7b39f3e88ff06b7d1": "00d91d0300d91f03:NTSC 1f03",
                 "4d53004d00000000000000000000000000000001": "0000000400000104:PAL 0104",
                 "4d53004d00000000000000000000000000000002": "0000000400000204:PAL 0204"
             }],
@@ -2146,6 +2148,7 @@
                 "5345002100230008": "segaGT Online Competition Info 8",
                 "534500210023000e": "segaGT Online Competition Info 14",
                 "534500210023000f": "segaGT Online Competition Info 15",
+                "5345002100230010": "segaGT Online Competition Info 16",
                 "5345002100230013": "segaGT Online Competition Info 19",
                 "5345002100230017": "segaGT Online Competition Info 23"
         }]},
@@ -2215,7 +2218,12 @@
                 "4156001b0aaaaaa2": "Oil Rig",
                 "4156001b0aaaaaa3": "Kremenchug Hydroelectric",
                 "4156001b0aaaaaa4": "Ruins",
-                "4156001b0aaaaaa5": "Cheapshot Forest"
+                "4156001b0aaaaaa5": "Cheapshot Forest",
+                "4156001b2aaaaaa1": "Kowloon Market",
+                "4156001b2aaaaaa2": "Oil Rig",
+                "4156001b2aaaaaa3": "Kremenchug Hydroelectric",
+                "4156001b2aaaaaa4": "Ruins",
+                "4156001b2aaaaaa5": "Cheapshot Forest"
         }]},
         "53450029": {
             "Title Name": "Spikeout Battle Street",
@@ -2372,7 +2380,13 @@
             "Archived": [{
                 "4c41000400388005": "Kashyyyk Conquest",
                 "4c410004003d0001": "Rhen Var CZ",
-                "4c410004003d0003": "Raxus CZ"
+                "4c410004003d0003": "Raxus CZ",
+                "4c41000410388005": "Kashyyyk Conquest",
+                "4c410004103d0001": "Rhen Var CZ",
+                "4c410004103d0003": "Raxus CZ",
+                "4c41000420388005": "Kashyyyk Conquest",
+                "4c410004203d0001": "Rhen Var CZ",
+                "4c410004203d0003": "Raxus CZ"
         }]},
         "43430009": {
             "Title Name": "Steel Battalion Line of Contact",
@@ -2427,8 +2441,8 @@
             "Title Updates Known": [{
                 "93a8a92d39723e514670001e8961e2eb78286017": "0000000500000105:NTSC Xbox Live Starter 0105",
                 "5e58054f273aecbcb4f70b1b823034d99468b3c6": "0000001600000116:NTSC Clone Wars combo 0116",
-                "5451001c00000000000000000000000000000001": "0000001700000117:unknown NTSC-J? 0117",
-                "5451001c00000000000000000000000000000002": "0000001e0000011e:NTSC standalone 011e",
+                "5451001c00000000000000000000000000000001": "0000001700000117:NTSC-J Clone Wars combo Asia 0117",
+                "a6a5c71c876b3080ed934229b41fb576e4454e7b": "0000001e0000011e:NTSC standalone 011e",
                 "1711750501dd57420d4df4413f96a09a801ed000": "0000001e0000021e:NTSC standalone 021e",
                 "5451001c00000000000000000000000000000003": "0000002100000121:PAL 0121",
                 "a271aed43e475931c662f7136ead3f31ed3321e1": "0000002100000221:PAL 0221"
@@ -2857,7 +2871,7 @@
             ],
             "Title Updates Known": [{
                 "c0b37772c8e5d5283bd7a9226d4435708eed954d": "0000050400000604:NTSC-J 0604",
-		"f1371219c0097410b09a6292a157ab2937b96015": "0000000000000605:NTSC+PAL 0605"
+                "f1371219c0097410b09a6292a157ab2937b96015": "0000000000000605:NTSC+PAL 0605"
             }],
             "Archived": [{
                 "4947002400000010": "Inferno",
@@ -2869,8 +2883,8 @@
                 "4947002400000040": "OtarosRun",
                 "4947002400000041": "OtarosRun",
                 "49470024000001ff": "Sample Content Package",
-		"494700240000ffff": "Content Coming Soon",
-		"49470024f00003ff": "Sample Content Package"
+                "494700240000ffff": "Content Coming Soon",
+                "49470024f00003ff": "Sample Content Package"
         }]},
         "4d570021": {
             "Title Name": "Unreal Championship 2",
@@ -3077,8 +3091,8 @@
                 "0000000200050005"
             ],
             "Title Updates Known": [{
-		"f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
-		"584c000500000000000000000000000000000001": "0000000200050005:NTSC+PAL 50005"
+                "f3c00e984f92fce29d048a4782d4e5ec5ab3a25c": "0000000000030003:NTSC 30002",
+                "584c000500000000000000000000000000000001": "0000000200050005:NTSC+PAL 50005"
             }],
             "Archived": []
         },
@@ -3116,13 +3130,13 @@
             ],
             "Title Updates": [
                 "0000000000000202",
-		"0000000000000302",
-		"0000000400000104",
+                "0000000000000302",
+                "0000000400000104",
                 "0000000400000204"
             ],
             "Title Updates Known": [{
                 "4d53005a00000000000000000000000000000000": "0000000000000202:PAL 0202",
-		"ca03aa4125324de26c7e1178e68fa97422efa822": "0000000000000302:PAL 0302",
+                "ca03aa4125324de26c7e1178e68fa97422efa822": "0000000000000302:PAL 0302",
                 "4d53005a00000000000000000000000000000001": "0000000400000104:NTSC 0104",
                 "16a03666894efcca51b039fad65e5e5f138c1a2a": "0000000400000204:NTSC 0204"
             }],
