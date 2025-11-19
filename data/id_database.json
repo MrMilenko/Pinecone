@@ -523,6 +523,18 @@
             }],
             "Archived": []
         },
+        "53450024": {
+            "Title Name": "ESPN College Hoops (2K4)",
+            "Content IDs": [
+                "5345002401120903",
+                "5345002402011304"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
+                "5345002401120903": "NCAA Schedule Update 1",
+                "5345002402011304": "NCAA Roster Update 1"
+        }]},
         "53450028": {
             "Title Name": "ESPN Major League Baseball (2K4)",
             "Content IDs": [
