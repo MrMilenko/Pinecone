@@ -116,9 +116,9 @@
                 "6d0d9a72f4b056b80e5a7ea5686c91ccfbdd2a87": "0000000200000102:PAL Dutch/English/Spanish/Swedish 0102",
                 "d13c5482209853a5c133626b94f403fe319d3283": "0000000200000202:PAL Dutch/English/Spanish/Swedish 0202",
                 "4541006200000000000000000000000000000002": "0000000300000103:PAL French/German/Italian 0103",
-                "4541006200000000000000000000000000000003": "0000000300000203:PAL French/German/Italian 0203",
-                "4541006200000000000000000000000000000004": "0000000400000104:unknown 0104",
-                "4541006200000000000000000000000000000005": "0000000400000204:unknown 0204"
+                "754034fd24aecf2c9df21fcf60888c2a1f90b5d1": "0000000300000203:PAL French/German/Italian 0203",
+                "4541006200000000000000000000000000000004": "0000000400000104:Asia 0104",
+                "4541006200000000000000000000000000000005": "0000000400000204:Asia 0204"
                 }],
             "Archived": [{
                 "4541006200000001": "Warsome Booster Pack"
@@ -1653,7 +1653,7 @@
             "Title Updates Known": [{
                 "085d7f3061c699d990100c3995621590dfb83a51": "00d91d0300d91e03:NTSC 1e03",
                 "7fa53dd7a7e0f821efcb9ca7b39f3e88ff06b7d1": "00d91d0300d91f03:NTSC 1f03",
-                "4d53004d00000000000000000000000000000001": "0000000400000104:PAL 0104",
+                "085d7f3061c699d990100c3995621590dfb83a51": "0000000400000104:PAL 0104",
                 "4d53004d00000000000000000000000000000002": "0000000400000204:PAL 0204"
             }],
             "Archived": []
@@ -1975,7 +1975,7 @@
                 "0000000500000105"
             ],
             "Title Updates Known": [{
-                "434d001100000000000000000000000000000000": "0000000100000101:PAL TOCA 2 Europe 0101",
+                "fdc8817a36c3c49c83b43cb9e05ddb57b2be80a6": "0000000100000101:PAL TOCA 2 Europe 0101",
                 "13d6979fd1dc6cd57038eefc688b1452a97432bf": "0000000200000102:NTSC TOCA 2 North America 0102",
                 "434d001100000000000000000000000000000001": "0000000300000103:NTSC-J TOCA 2 Japan 0103",
                 "d06c284e85926cfe9cd0bf0a402bacf7e6bcef45": "0000000400000104:PAL DTM 2 Germany 0104",
@@ -1999,23 +1999,8 @@
                 "4d53003900010003": "4 vehicles, 2 careers",
                 "4d53003900020001": "2 new skins for each car"
         }]},
-        "584c0008": {
-            "Title Name": "Re-Volt Online August Beta worldwide/Xbox Live Starter Kit Disc 1.0 Japan",
-            "Content IDs": [
-                "584c000800000001",
-                "584c000800000002",
-                "584c000800000003",
-                "584c000800000004",
-                "584c000800000005",
-                "584c000800000006",
-                "584c000800000007"
-            ],
-            "Title Updates": [],
-            "Title Updates Known": [],
-            "Archived": []
-        },
         "584c0001": {
-            "Title Name": "Re-Volt Xbox Live Beta Starter Kit Disc 1.0",
+            "Title Name": "Re-Volt Xbox Live Beta Starter Kit Disc v.1.0",
             "Content IDs": [
                 "584c000100000001",
                 "584c000100000002",
@@ -2035,6 +2020,24 @@
                 "584c000100000005": "Evil Candy Car Keys",
                 "584c000100000006": "Evil Toyeca Car Keys",
                 "584c000100000007": "UFO Car Keys"
+        }]},
+        "584c0008": {
+            "Title Name": "Re-Volt Xbox Live Starter Kit Disc v.1.0 Japan",
+            "Content IDs": [
+                "584c000800000001",
+                "584c000800000002",
+                "584c000800000003",
+                "584c000800000004",
+                "584c000800000005",
+                "584c000800000006",
+                "584c000800000007"
+            ],
+            "Title Updates": [],
+            "Title Updates Known": [],
+            "Archived": [{
+                "584c000800000001": "Evil Phat Car",
+                "584c000800000002": "Evil Candy Car",
+                "584c000800000003": "Evil Toyeca Car"
         }]},
         "41560010": {
             "Title Name": "Return to Castle Wolfenstein Tides of War",
