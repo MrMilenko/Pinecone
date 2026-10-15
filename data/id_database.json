@@ -2212,7 +2212,7 @@
                 "5454008f00000003": "Even the Odds Pack"
         }]},
         "4156001b": {
-            "Title Name": "Soldier of Fortune: Double Helix",
+            "Title Name": "Soldier of Fortune II: Double Helix",
             "Content IDs": [
                 "4156001b0aaaaaa1",
                 "4156001b0aaaaaa2",
@@ -2238,11 +2238,16 @@
                 "4156001b0aaaaaa3": "Kremenchug Hydroelectric",
                 "4156001b0aaaaaa4": "Ruins",
                 "4156001b0aaaaaa5": "Cheapshot Forest",
-                "4156001b2aaaaaa1": "Kowloon Market",
-                "4156001b2aaaaaa2": "Oil Rig",
-                "4156001b2aaaaaa3": "Kremenchug Hydroelectric",
-                "4156001b2aaaaaa4": "Ruins",
-                "4156001b2aaaaaa5": "Cheapshot Forest"
+                "4156001b1aaaaaa1": "Kowloon Market (Japan/Asia)",
+                "4156001b1aaaaaa2": "Oil Rig (Japan/Asia)",
+                "4156001b1aaaaaa3": "Kremenchug Hydroelectric (Japan/Asia)",
+                "4156001b1aaaaaa4": "Ruins (Japan/Asia)",
+                "4156001b1aaaaaa5": "Cheapshot Forest (Japan/Asia)"
+				"4156001b2aaaaaa1": "Kowloon Market (PAL regions)",
+                "4156001b2aaaaaa2": "Oil Rig (PAL regions)",
+                "4156001b2aaaaaa3": "Kremenchug Hydroelectric (PAL regions)",
+                "4156001b2aaaaaa4": "Ruins (PAL regions)",
+                "4156001b2aaaaaa5": "Cheapshot Forest (PAL regions)"
         }]},
         "53450029": {
             "Title Name": "Spikeout Battle Street",
