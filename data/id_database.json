@@ -294,7 +294,7 @@
                 "6b0e6f62d79bf47b96cbdb400c63c87bce504607": "0000000100000101:NTSC 0101",
                 "9da1a0e186e7122188b92802e733fefccd8fae2f": "0000000100000201:NTSC 0201",
                 "4d53002100000000000000000000000000000001": "0000000200000102:NTSC-J 0102",
-                "4d53002100000000000000000000000000000002": "0000000200000202:NTSC-J 0202",
+                "f52259413d7d9a8612686dcf51c0dec4d4f15986": "0000000200000202:NTSC-J 0202",
                 "15fe15f8ada0d4d7ff5ca19c2709250d619aec8e": "0000000300000103:PAL 0103",
                 "2d685be249a2353c5c0149015492e55fb142adac": "0000000300000203:PAL 0203"
                 }],
@@ -584,7 +584,9 @@
             "Title Updates Known": [],
             "Archived": [{
                     "5345002320031105": "ESPN NBA Roster (2003-11-05)",
-                    "5345002320031222": "ESPN NBA Roster (2003-12-22)"
+                    "5345002320031222": "ESPN NBA Roster (2003-12-22)",
+                    "5345002320040223": "ESPN NBA Roster (2004-02-23)",
+                    "5345002320040419": "ESPN NBA Roster (2004-04-19)"
         }]},
         "5345002e": {
             "Title Name": "ESPN NBA Basketball (2K4) PAL",
@@ -882,7 +884,7 @@
                 "4d53006400000000000000000000000000000007": "0000000600000106:RF Italian Update 1",
                 "4d53006400000000000000000000000000000008": "0000000600000206:RF Italian Update 2",
                 "d74b56d1fe7145f2f24e2979aaec37d472206e96": "0000000600000306:RF Italian Update 3",
-                "4d53006400000000000000000000000000000009": "0000000600000406:RF Italian Update 4",
+                "766e4285aff12ad6e2d7ac615a6d5acb60bde0ef": "0000000600000406:RF Italian Update 4",
                 "3d396ef0f0aa31e20a1c2fd93809188dacf71716": "0000000600000506:RF Italian Update 5",
                 "4d5300640000000000000000000000000000000a": "0000000700000107:RF Spanish Update 1",
                 "4d5300640000000000000000000000000000000b": "0000000700000207:RF Spanish Update 2",
@@ -1176,8 +1178,10 @@
             ],
             "Title Updates": [],
             "Title Updates Known": [],
-            "Archived": []
-        },
+            "Archived": [{
+                "5454009220060508": "May 8th Roster Update",
+                "5454009220060614": "June 14th Roster Update"
+        }]},
         "545400b1": {
             "Title Name": "Major League Baseball 2K7",
             "Content IDs": [
@@ -1260,7 +1264,7 @@
                 "a84b1da97c8597226578f282a9a8b9c755e687f9": "0000000100000601:NTSC+PAL 0601",
                 "4d53001700000000000000000000000000000003": "0000000400000504:NTSC-J South-East Asia 0504",
                 "1554ed5aab448f09ba5eb730016635dc027e5a62": "0000000700000207:NTSC-J Japan 0207",
-                "4d53001700000000000000000000000000000005": "0000000700000407:NTSC-J Japan 0407"
+                "ed874e28ff06cff244b6faa9aba1654090f40e61": "0000000700000407:NTSC-J Japan 0407"
             }],
             "Archived": [{
                 "4d53001700000001": "1 - Hell's Kitchen",
@@ -2438,6 +2442,8 @@
             "Title Updates": [],
             "Title Updates Known": [],
             "Archived": [{
+                "5656002500000011": "ONE STOP SHOPPING (PAL)",
+                "5656002500000012": "MILITANT HIDEOUT (PAL)",
                 "5656002500001011": "ONE STOP SHOPPING",
                 "5656002500001012": "MILITANT HIDEOUT"
         }]},
@@ -2800,7 +2806,7 @@
                 "0000000600000206"
             ],
             "Title Updates Known": [{
-                "5553001900000000000000000000000000000000": "0000000200000102:RF worldwide 0102",
+                "eb2d0a59db4b4e0c3495543a706ce5efb9a86ede": "0000000200000102:RF worldwide 0102",
                 "096eca78e1778cb514a1745f16d04275f6e1327a": "0000000200000202:RF worldwide 0202",
                 "a2bcaadecf36bbdd9e5c531c69d2ec905776179f": "0000000200000302:RF worldwide 0302",
                 "bd8c144b9162484a5d079af9c26d5e2635a94b0a": "0000000200000402:RF worldwide 0402",
